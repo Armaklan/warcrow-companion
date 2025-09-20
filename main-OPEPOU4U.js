@@ -140,7 +140,10 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
   </p>
   <p>
     Au d\xE9but de son activation, l\u2019unit\xE9 peut ignorer les effets de Soif de sang jusqu\u2019\xE0 la fin de son activation en r\xE9ussissant un test de VOL.
-  </p>`},{title:"Terrain favori (E)",details:"<p>Ignore les effets des d\xE9cors de type E (un ou plusieurs). Si l\u2019unit\xE9 commence son activation adjacente \xE0 un tel d\xE9cor, ajoutez +2 \xE0 sa premi\xE8re valeur de MOV et \xE0 son mouvement de charge.</p>"},{title:"Teinte",details:`<p>Votre unit\xE9 re\xE7oit <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au d\xE9but de chaque manche, apr\xE8s l'\xE9tape "V\xE9rifier les effets de la teinte."</p>`},{title:"Vis\xE9e",details:"<p>Peut relancer ses jets d\u2019attaque \xE0 distance. La cible ne b\xE9n\xE9ficie pas du Couvert (D).</p>"}],d_=[{title:"D\xE9placer",details:`
+  </p>`},{title:"Terrain favori (E)",details:`
+<p>L'unit\xE9 peut ignorer les effets des d\xE9cors de type E, ce qui peut d\xE9signer un type de d\xE9cor, un mot-cl\xE9, ou plusieurs de ces \xE9lements (s\xE9par\xE9s dans ce cas par des trait | ).</p>
+<p>De plus, si votre unit\xE9 est adjacente \xE0 un d\xE9cor de type Terrain favori au d\xE9but de son activation, ajoutez 2 pas \xE0 sa premi\xE8re valeur de mouvement, et \xE0 son mouvement de charge.</p>
+`},{title:"Teinte",details:`<p>Votre unit\xE9 re\xE7oit <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au d\xE9but de chaque manche, apr\xE8s l'\xE9tape "V\xE9rifier les effets de la teinte."</p>`},{title:"Vis\xE9e",details:"<p>Peut relancer ses jets d\u2019attaque \xE0 distance. La cible ne b\xE9n\xE9ficie pas du Couvert (D).</p>"}],d_=[{title:"D\xE9placer",details:`
     <ul>
         <li>D\xE9placez l'unit\xE9 de votre premi\xE8re valeur de mouvement.</li>
         <li>Puis d\xE9placez l'unit\xE9 de votre seconde valeur de mouvement.</li>
