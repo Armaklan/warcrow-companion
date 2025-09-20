@@ -6,17 +6,17 @@ export interface CollapsibleItem {
 
 export const ETATS: CollapsibleItem[] = [
   {
-    title: 'Effrayé', details: `<p>Votre unité doit relancer tous ses tests de Volonté réussis (maximum une fois par test).</p>
-<p><strong>Fin :</strong> Retirez cet état quand vous réussissez un test de Volonté.</p>`, icon: 'effraye.png'
+    title: 'Effrayé', details: `<p>Quand il effectue un test de volonté, l'unité doit relancer une fois tous les dés indiquant au moins <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>.</p>
+<p>Retirez cet état après avoir effectué un test de Volonté.</p>`, icon: 'effraye.png'
   },
   {
     title: 'Ralenti',
     details: `<p>
-Votre unité ne peut pas utiliser sa deuxième valeur de mouvement (MOV) lors des actions de mouvement et d’assaut.
+Votre unité ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (MOV) lors des actions de mouvement et d’assaut.
   De plus, vous devez soustraire 4 pas à votre mouvement de charge (min. 0).
 </p>
 <p><em>Exemple :</em> Si votre unité a un mouvement 3-2 (9), elle ne peut se déplacer que de 3 pas et ne peut charger que jusqu’à 5 pas.</p>
-<p><strong>Fin :</strong> Retirez cet état à la fin de l’activation durant laquelle votre unité effectue un mouvement ou un assaut.</p>`,
+<p>Retirez cet état à la fin de l’activation durant laquelle votre unité effectue un mouvement, un assaut ou une charge.</p>`,
     icon: 'ralenti.png'
   },
   {
@@ -40,7 +40,8 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
 <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>. Si vous avez plusieurs dés, c’est votre adversaire qui choisit lequel.
 </p>
 <p>Vous devez appliquer cet effet après avoir effectué votre jet et toutes les relances possibles, mais avant l’étape des variations.</p>
-<p><strong>Fin :</strong> Retirez cet état à la fin de l’activation durant laquelle vous avez subi ses effets (si vous n’avez pu annuler aucun dé, l’état persiste).</p>`,
+<p>Vous ne pouvez ajouter de variation lors de vos jets d'attaques.</p>
+<p>Retirez cet état à la fin de la résolution de l'action durant laquelle vous avez subi ses effets (si vous n’avez pu annuler aucun dé, l’état persiste).</p>`,
     icon: 'desarme.png'
   },
   {
@@ -52,7 +53,8 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
     Vous devez appliquer cet effet après avoir effectué votre jet et toutes les relances possibles,
     mais avant l’étape des variations.
   </p>
-  <p><strong>Fin :</strong> Retirez cet état à la fin de l’activation durant laquelle vous avez subi ses effets
+  <p>Vous ne pouvez ajouter de variation lors de vos jets de défense.</p>
+  <p>Retirez cet état à la fin de la résolution de l'action durant laquelle vous avez subi ses effets
     (si vous n’avez pu annuler aucun dé, l’état demeure actif).</p>`, icon: 'vulnerable.png'
   }
 ];
