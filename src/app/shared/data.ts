@@ -70,7 +70,28 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   },
   {
     title: 'Éclaireur',
-    details: '<p>Ces unités se déploient après toutes les autres. Elles peuvent aussi rester secrètes et être déployées une fois la partie commencée, en respectant des conditions de placement (zone de déploiement, hors combat, hors LdV ennemie, etc.). Si elles entrent après le début, elles doivent s’activer immédiatement en ne réalisant qu’une seule action (non complexe).</p>'
+    details: `
+      <p>
+      Les unités d’Éclaireurs peuvent se déployer juste après que toutes les autres unités des deux camps ont fini de se déployer. Ils représentent des avant-gardes qui ont reconnu le terrain et qui choisissent la meilleure position.
+      </p>
+      <p>Si votre aversaire possède aussi des éclaieurs, celui qui a l'initiative décide qui déploie 1 de ses unités d'Eclaireurs en premier. Vous et votre adversaire devez alterner jusqu'à ce que vous ayez déployé tous vos Eclaireurs.
+      </p>
+      <p>
+      Vous pouvez aussi garder vos unités d’Éclaireurs secrètes et les déployer une fois la partie commencée, en respectant les contraintes
+        suivantes :</p>
+    <ul>
+      <li>
+        Vous pouvez déployer votre unité d’Éclaireurs n’importe où dans votre zone de déploiement (mais pas engagée en combat).
+      </li>
+      <li>
+        Vous pouvez déployer votre unité d’Éclaireurs adjacente à un des bords du champ de bataille, tant que vous êtes hors de la  zone de déploiement de votre adversaire et qu’aucune unité ennemie à 12 pas ou moins n’a de LdV sur votre unité.
+      </li>
+    </ul>
+
+    <p>
+      Si vous déployez une unité d’Éclaireur après le début de la partie, vous devez l’activer immédiatement et consommer une de vos deux actions pour son activation. Ainsi, elle ne pourra réaliser qu’une seule action, qui ne peut pas être une action complexe.
+    </p>
+    `
   },
   {
     title: 'Élite',
