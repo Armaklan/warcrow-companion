@@ -19,7 +19,7 @@ import { MatSidenav } from '@angular/material/sidenav';
   ],
   template: `
   <mat-sidenav-container class="app-container">
-    <mat-sidenav #sidenav mode="side" [opened]="isWideScreen">
+    <mat-sidenav #sidenav [mode]="isWideScreen ? 'side' : 'over'" [opened]="isWideScreen">
       <mat-nav-list>
         <a mat-list-item routerLink="/actions" (click)="closeOnMobile()">
           <mat-icon>bolt</mat-icon>
@@ -55,6 +55,9 @@ import { MatSidenav } from '@angular/material/sidenav';
   `,
   styles: [`
     :host { display: block; }
+    .app-container { height: 100vh; }
+    /* Ensure the sidenav is opaque so underlying content doesn't show through */
+    mat-sidenav { background: #fff; color: rgba(0,0,0,0.87); }
   `]
 })
 export class App {
