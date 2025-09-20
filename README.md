@@ -54,6 +54,21 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
+## Installation en WebApp (Android)
+
+Cette application est désormais installable comme application Web (PWA) sur Android.
+
+Étapes:
+- Déployez l'app en HTTPS (Chrome exige HTTPS pour l'installation).
+- Ouvrez l'URL de l'application dans Chrome Android.
+- Ouvrez le menu ⋮ puis choisissez « Ajouter à l'écran d'accueil » ou « Installer l'application ».
+- Confirmez. L'application apparaîtra comme une app autonome (mode plein écran, barre d'état thème bleu).
+
+Notes techniques:
+- Un fichier de manifeste est fourni à `public/manifest.webmanifest`.
+- Un Service Worker simple est fourni à `public/sw.js` et est enregistré automatiquement.
+- Les icônes utilisent un pictogramme existant (`/success.png`) comme placeholder. Vous pouvez remplacer par de vraies icônes 192×192 et 512×512 en plaçant des fichiers PNG dans `public/` et en mettant à jour `manifest.webmanifest`.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
