@@ -148,7 +148,7 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
   `},{title:"Capacit\xE9 de teinte",details:`
       <ul>
         <li>Choisissez votre capacit\xE9 de teinte.</li>
-        <li>D\xE9pensez <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>ical-align: -0.2em;"/> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
+        <li>D\xE9pensez <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>
         <li>Appliquez les effets de la capacit\xE9.</li>
     </ul>
   `},{title:"Utiliser une comp\xE9tence",details:`
