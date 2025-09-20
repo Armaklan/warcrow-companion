@@ -224,7 +224,10 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   },
   {
     title: 'Terrain favori (E)',
-    details: '<p>Ignore les effets des décors de type E (un ou plusieurs). Si l’unité commence son activation adjacente à un tel décor, ajoutez +2 à sa première valeur de MOV et à son mouvement de charge.</p>'
+    details: `
+<p>L'unité peut ignorer les effets des décors de type E, ce qui peut désigner un type de décor, un mot-clé, ou plusieurs de ces élements (séparés dans ce cas par des trait | ).</p>
+<p>De plus, si votre unité est adjacente à un décor de type Terrain favori au début de son activation, ajoutez 2 pas à sa première valeur de mouvement, et à son mouvement de charge.</p>
+`
   },
   {
     title: 'Teinte',
