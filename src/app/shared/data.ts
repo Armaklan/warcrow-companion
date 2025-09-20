@@ -250,7 +250,7 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
   {title: 'Capacité de teinte', details: `
       <ul>
         <li>Choisissez votre capacité de teinte.</li>
-        <li>Dépensez <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>ical-align: -0.2em;"/> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
+        <li>Dépensez <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>
         <li>Appliquez les effets de la capacité.</li>
     </ul>
   `},
