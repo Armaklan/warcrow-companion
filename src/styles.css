@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", Arial, sans-serif; }
+
+.app-container { height: 100vh; }
+.mat-sidenav { width: 280px; }
+.content { padding: 16px; }
+.toolbar-title { font-weight: 600; }
+.spacer { flex: 1 1 auto; }
+
+@media (max-width: 600px) {
+  .content { padding: 12px; }
+}
