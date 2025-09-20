@@ -33,6 +33,10 @@ import { MatSidenav } from '@angular/material/sidenav';
           <mat-icon>info</mat-icon>
           <span>États</span>
         </a>
+        <a mat-list-item routerLink="/teinte" (click)="closeOnMobile()">
+          <mat-icon>palette</mat-icon>
+          <span>Teinte</span>
+        </a>
       </mat-nav-list>
     </mat-sidenav>
 
@@ -43,7 +47,7 @@ import { MatSidenav } from '@angular/material/sidenav';
             <mat-icon>menu</mat-icon>
           </button>
         }
-        <span class="toolbar-title">Référence — Actions / Mots‑clefs / États</span>
+        <span class="toolbar-title">Warcrow Companion</span>
         <span class="spacer"></span>
       </mat-toolbar>
 

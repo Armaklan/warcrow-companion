@@ -15,7 +15,7 @@ import { MatDividerModule } from '@angular/material/divider';
       <app-collapsible-list [items]="actionsSimples"></app-collapsible-list>
     </section>
     <section>
-      <h2>Actions complexes</h2>
+      <h2>Actions longues</h2>
       <app-collapsible-list [items]="actionsComplexes"></app-collapsible-list>
     </section>
   `

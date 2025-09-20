@@ -204,6 +204,10 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
     details: '<p>Ignore les effets des décors de type E (un ou plusieurs). Si l’unité commence son activation adjacente à un tel décor, ajoutez +2 à sa première valeur de MOV et à son mouvement de charge.</p>'
   },
   {
+    title: 'Teinte',
+    details: '<p>Votre unité reçoit <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au début de chaque manche, après l\'étape "Vérifier les effets de la teinte."</p>'
+  },
+  {
     title: 'Visée',
     details: '<p>Peut relancer ses jets d’attaque à distance. La cible ne bénéficie pas du Couvert (D).</p>'
   }
@@ -211,14 +215,79 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
 
 
 export const ACTIONS_SIMPLES: CollapsibleItem[] = [
-  {title: 'Mouvement', details: 'Se déplacer jusqu’à sa vitesse.'},
-  {title: 'Attaque', details: 'Se déplacer jusqu’à sa vitesse.'},
-  {title: 'Utiliser une compétence', details: 'Lancer un sort.'},
-  {title: 'Lancer un sort', details: 'Lancer un sort.'}
+  {title: 'Déplacer', details: `
+    <ul>
+        <li>Déplacez l'unité de votre première valeur de mouvement.</li>
+        <li>Puis déplacez l'unité de votre seconde valeur de mouvement.</li>
+    </ul>
+  `},
+  {title: 'Attaque de mêlée', details: `
+    <ul>
+        <li>Faites une manoeuvres de positionnement si nécessaire.</li>
+        <li>Résolvez un jet face à face entre le jet d'attaque et le jet de défense. Chaque <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> non annulé inflige <img src="sang.png" alt="1 blessure" style="height: 1em; vertical-align: -0.2em;"/> à l'unité ennemie.</li>
+        <li>L'unité qui a subis le plus de dégâts (au moins <img src="sang.png" alt="1 blessure" style="height: 1em; vertical-align: -0.2em;"/>) est stressée à la fin de l'activation.</li>
+        <li>L'unité gagante peut <b>forcer au repli</b> l'unité perdante et décider de la poursuivre, ou non (première valeur de Mouvement).</b></li>
+        <li>Faites une seconde manoeuvre de positionnement si nécessaire à la fin du combat.</li>
+    </ul>
+  `},
+  {title: 'Attaque à distance', details: `
+    <ul>
+        <li>Le défenseur ne peut utiliser que <img src="de-b.png" alt="dé bleu" style="height: 1em; vertical-align: -0.2em;"/>  <img src="de-v.png" alt="dé vert" style="height: 1em; vertical-align: -0.2em;"/> <img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/> <img src="bouclier.png" alt="bouclier" style="height: 1em; vertical-align: -0.2em;"/> et <img src="bouclier-hollow.png" alt="bouclier hollow" style="height: 1em; vertical-align: -0.2em;"/> dans son jet de défense.</li>
+        <li>Résolvez un jet face à face entre le jet d'attaque et le jet de défense. Chaque <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> non annulé inflige <img src="sang.png" alt="1 blessure" style="height: 1em; vertical-align: -0.2em;"/> à l'unité ennemie. Le défenseur ne peut pas agir sur les variations.</li>
+    </ul>
+  `},
+  {title: 'Lancer un sort', details: `
+      <ul>
+        <li>Choisissez votre sort et déclarez si vous appliquez des altérations.</li>
+        <li>Créez le jet de teinte : prenez <img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/> pour chaque jeton de teinte sur votre unité Mage. Chaque altération ajoute autant de <img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/> que son coût l'indique.</li>
+        <li>Résolvez un jet face à face entre votre valeur de VOL et le jet de teinte.</li>
+        <li>Votre adversaire peut tenter de bloquer le sort avec le VOL d'un mage, ou avec Dissipation.</li>
+        <li>Si après la résolution, vous obtenez au moins <img src="succes.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> sur le jet, appliquez les effets du sort.</li>
+        <li>Pour chaque <img src="bouclier-hollow.png" alt="Bouclier hollow" style="height: 1em; vertical-align: -0.2em;"/> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
+        <li>Si vous avez obtenu au moins un <img src="alert-hollow.png" alt="alert hollow" style="height: 1em; vertical-align: -0.2em;"/> sur le jet de teinte, appliquez les effets de la teinte à la fin de l'activation.</li>
+    </ul>
+  `},
+  {title: 'Capacité de teinte', details: `
+      <ul>
+        <li>Choisissez votre capacité de teinte.</li>
+        <li>Dépensez <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>ical-align: -0.2em;"/> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
+        <li>Appliquez les effets de la capacité.</li>
+    </ul>
+  `},
+  {title: 'Utiliser une compétence', details: `
+      <ul>
+        <li>Choisissez votre compétence et vérifier que les conditions sont remplis.</li>
+        <li>Appliquez les effets de la capacité.</li>
+    </ul>
+  `}
 ];
 
 export const ACTIONS_COMPLEXES: CollapsibleItem[] = [
-  {title: 'Assaut', details: 'Enchaînement d’attaques coordonnées.'},
-  {title: 'Charge', details: 'Avancer en ligne droite puis attaquer.'},
-  {title: 'Repose', details: 'Avancer en ligne droite puis attaquer.'},
+  {title: 'Assaut', details: `
+    <ul>
+        <li>Déplacez-vous jusqu'à engager le combat avec l'ennemi, en utilisant votre première puis votre seconde valeur de mouvement.</li>
+        <li>Résolvez une attaque de mêlée contre lui.</li>
+    </ul>
+  `},
+  {title: 'Charge', details: `
+    <ul>
+        <li>Déplacez-vous en ligne droite, en utilisant le mouvement de charge, jusqu'à engager le combat avec l'ennemi.</li>
+        <li>Résolvez une attaque de mêlée contre lui. Vous pouvez relancer le jet d'attaque.</li>
+    </ul>
+  `},
+  {title: 'Repos', details: `
+    <p>Quand votre unité effectue cette action, utilisez autant des options suivantes</p>
+    <ul>
+        <li>Eliminer tout son stress.</li>
+        <li>Supprimer n'importe quel état de son profil.</li>
+        <li>Effectuer un mouvement en utilisant uniquement sa deuxième valeur de Mouvement.</li>
+    </ul>
+    <p>Même si elle a déjà été activée pendant ce round, l'unité n'est pas stressée en effectuant cette action.</p>
+  `},
+  {title: 'Utiliser une compétence longue', details: `
+      <ul>
+        <li>Choisissez votre compétence avec le symbole <img src="complexe.png" alt="longue" style="height: 1em; vertical-align: -0.2em;"/> et vérifier que les conditions sont remplis.</li>
+        <li>Appliquez les effets de la capacité.</li>
+    </ul>
+  `}
 ];
