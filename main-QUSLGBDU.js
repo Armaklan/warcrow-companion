@@ -37,7 +37,28 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
   </p>
   <p>Vous ne pouvez ajouter de variation lors de vos jets de d\xE9fense.</p>
   <p>Retirez cet \xE9tat \xE0 la fin de la r\xE9solution de l'action durant laquelle vous avez subi ses effets
-    (si vous n\u2019avez pu annuler aucun d\xE9, l\u2019\xE9tat demeure actif).</p>`,icon:"vulnerable.png"}],l_=[{title:"Couvert (D)",details:"<p>Les unit\xE9s adjacentes \xE0 cette unit\xE9 (alli\xE9es ou non) b\xE9n\xE9ficient d\u2019un couvert contre les attaques \xE0 distance. La valeur D indique les d\xE9s ou symboles automatiques que les unit\xE9s adjacentes ajoutent \xE0 leur jet de d\xE9fense.</p>"},{title:"Dissipation (D)",details:'<p>Lorsque cette unit\xE9 est cibl\xE9e par un sort, elle peut tenter de le bloquer. La valeur D indique le d\xE9 ou les symboles automatiques \xE0 lancer pour bloquer le sort. Cette unit\xE9 ne gagne pas de Teinte sur un <img src="bouclier-hollow.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/>. On ne peut pas bloquer un sort plus d\u2019une fois ni avec plus d\u2019une unit\xE9.</p>'},{title:"\xC9claireur",details:"<p>Ces unit\xE9s se d\xE9ploient apr\xE8s toutes les autres. Elles peuvent aussi rester secr\xE8tes et \xEAtre d\xE9ploy\xE9es une fois la partie commenc\xE9e, en respectant des conditions de placement (zone de d\xE9ploiement, hors combat, hors LdV ennemie, etc.). Si elles entrent apr\xE8s le d\xE9but, elles doivent s\u2019activer imm\xE9diatement en ne r\xE9alisant qu\u2019une seule action (non complexe).</p>"},{title:"\xC9lite",details:'<p>Apr\xE8s les jets de d\xE9s (relances incluses) et avant les variations, cette unit\xE9 peut remplacer tout <img src="success-hollow.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/> par <img src="success.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/>, tout <img src="bouclier-hollow.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/> par <img src="bouclier.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/>, et tout <img src="alert-hollow.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/> par <img src="alert.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/>. Cet effet s\u2019applique \xE0 tous ses jets.</p>'},{title:"Embusqu\xE9",details:`
+    (si vous n\u2019avez pu annuler aucun d\xE9, l\u2019\xE9tat demeure actif).</p>`,icon:"vulnerable.png"}],l_=[{title:"Couvert (D)",details:"<p>Les unit\xE9s adjacentes \xE0 cette unit\xE9 (alli\xE9es ou non) b\xE9n\xE9ficient d\u2019un couvert contre les attaques \xE0 distance. La valeur D indique les d\xE9s ou symboles automatiques que les unit\xE9s adjacentes ajoutent \xE0 leur jet de d\xE9fense.</p>"},{title:"Dissipation (D)",details:'<p>Lorsque cette unit\xE9 est cibl\xE9e par un sort, elle peut tenter de le bloquer. La valeur D indique le d\xE9 ou les symboles automatiques \xE0 lancer pour bloquer le sort. Cette unit\xE9 ne gagne pas de Teinte sur un <img src="bouclier-hollow.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/>. On ne peut pas bloquer un sort plus d\u2019une fois ni avec plus d\u2019une unit\xE9.</p>'},{title:"\xC9claireur",details:`
+      <p>
+      Les unit\xE9s d\u2019\xC9claireurs peuvent se d\xE9ployer juste apr\xE8s que toutes les autres unit\xE9s des deux camps ont fini de se d\xE9ployer. Ils repr\xE9sentent des avant-gardes qui ont reconnu le terrain et qui choisissent la meilleure position.
+      </p>
+      <p>Si votre aversaire poss\xE8de aussi des \xE9claieurs, celui qui a l'initiative d\xE9cide qui d\xE9ploie 1 de ses unit\xE9s d'Eclaireurs en premier. Vous et votre adversaire devez alterner jusqu'\xE0 ce que vous ayez d\xE9ploy\xE9 tous vos Eclaireurs.
+      </p>
+      <p>
+      Vous pouvez aussi garder vos unit\xE9s d\u2019\xC9claireurs secr\xE8tes et les d\xE9ployer une fois la partie commenc\xE9e, en respectant les contraintes
+        suivantes :</p>
+    <ul>
+      <li>
+        Vous pouvez d\xE9ployer votre unit\xE9 d\u2019\xC9claireurs n\u2019importe o\xF9 dans votre zone de d\xE9ploiement (mais pas engag\xE9e en combat).
+      </li>
+      <li>
+        Vous pouvez d\xE9ployer votre unit\xE9 d\u2019\xC9claireurs adjacente \xE0 un des bords du champ de bataille, tant que vous \xEAtes hors de la  zone de d\xE9ploiement de votre adversaire et qu\u2019aucune unit\xE9 ennemie \xE0 12 pas ou moins n\u2019a de LdV sur votre unit\xE9.
+      </li>
+    </ul>
+
+    <p>
+      Si vous d\xE9ployez une unit\xE9 d\u2019\xC9claireur apr\xE8s le d\xE9but de la partie, vous devez l\u2019activer imm\xE9diatement et consommer une de vos deux actions pour son activation. Ainsi, elle ne pourra r\xE9aliser qu\u2019une seule action, qui ne peut pas \xEAtre une action complexe.
+    </p>
+    `},{title:"\xC9lite",details:'<p>Apr\xE8s les jets de d\xE9s (relances incluses) et avant les variations, cette unit\xE9 peut remplacer tout <img src="success-hollow.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/> par <img src="success.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/>, tout <img src="bouclier-hollow.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/> par <img src="bouclier.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/>, et tout <img src="alert-hollow.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/> par <img src="alert.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/>. Cet effet s\u2019applique \xE0 tous ses jets.</p>'},{title:"Embusqu\xE9",details:`
     <p>
     Les unit\xE9s Embusqu\xE9es se cachent, pr\xEAtes \xE0 entrer en action apr\xE8s le d\xE9but de la bataille en frappant par surprise.
     Vous pouvez garder vos unit\xE9s Embusqu\xE9es secr\xE8tes et ne les d\xE9ployer qu\u2019apr\xE8s avoir commenc\xE9 la partie.
