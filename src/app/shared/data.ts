@@ -20,6 +20,20 @@ Votre unité ne peut pas utiliser sa deuxième valeur de mouvement (MOV) lors de
     icon: 'ralenti.png'
   },
   {
+    title: 'Démoralisé',
+    details: `<p>Si votre unité est démoralisée :</p>
+  <ul>
+    <li>Elle ne peut plus être activée d’aucune façon.</li>
+    <li>Elle ne peut se stresser d’aucune façon et ne peut pas réduire son stress.</li>
+    <li>Elle ne peut pas contrôler d’objectifs (sa valeur de conquête est nulle).</li>
+    <li>Si elle participe à un combat, elle fuira toujours après le résultat (voir “Attaque de mêlée”).</li>
+  </ul>
+
+  <h3>Unité démoralisée</h3>
+  <p>Si votre unité est stressée au-delà de sa valeur de MOR, vous devez effectuer un test de VOL à la fin de l’activation en cours. Si vous ne le réussissez pas, votre unité sera démoralisée et devra fuir immédiatement (voir “Fuite”).</p>`,
+    icon: 'demoraliser.png'
+  },
+  {
     title: 'Désarmé',
     details: `<p>
 Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a obtenu au moins un symbole
