@@ -12,7 +12,16 @@ Votre unit\xE9 ne peut pas utiliser sa deuxi\xE8me valeur de mouvement (MOV) lor
   De plus, vous devez soustraire 4 pas \xE0 votre mouvement de charge (min. 0).
 </p>
 <p><em>Exemple :</em> Si votre unit\xE9 a un mouvement 3-2 (9), elle ne peut se d\xE9placer que de 3 pas et ne peut charger que jusqu\u2019\xE0 5 pas.</p>
-<p><strong>Fin :</strong> Retirez cet \xE9tat \xE0 la fin de l\u2019activation durant laquelle votre unit\xE9 effectue un mouvement ou un assaut.</p>`,icon:"ralenti.png"},{title:"D\xE9sarm\xE9",details:`<p>
+<p><strong>Fin :</strong> Retirez cet \xE9tat \xE0 la fin de l\u2019activation durant laquelle votre unit\xE9 effectue un mouvement ou un assaut.</p>`,icon:"ralenti.png"},{title:"D\xE9moralis\xE9",details:`<p>Si votre unit\xE9 est d\xE9moralis\xE9e :</p>
+  <ul>
+    <li>Elle ne peut plus \xEAtre activ\xE9e d\u2019aucune fa\xE7on.</li>
+    <li>Elle ne peut se stresser d\u2019aucune fa\xE7on et ne peut pas r\xE9duire son stress.</li>
+    <li>Elle ne peut pas contr\xF4ler d\u2019objectifs (sa valeur de conqu\xEAte est nulle).</li>
+    <li>Si elle participe \xE0 un combat, elle fuira toujours apr\xE8s le r\xE9sultat (voir \u201CAttaque de m\xEAl\xE9e\u201D).</li>
+  </ul>
+
+  <h3>Unit\xE9 d\xE9moralis\xE9e</h3>
+  <p>Si votre unit\xE9 est stress\xE9e au-del\xE0 de sa valeur de MOR, vous devez effectuer un test de VOL \xE0 la fin de l\u2019activation en cours. Si vous ne le r\xE9ussissez pas, votre unit\xE9 sera d\xE9moralis\xE9e et devra fuir imm\xE9diatement (voir \u201CFuite\u201D).</p>`,icon:"demoraliser.png"},{title:"D\xE9sarm\xE9",details:`<p>
 Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels elle a obtenu au moins un symbole
 <img src="success.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/>. Si vous avez plusieurs d\xE9s, c\u2019est votre adversaire qui choisit lequel.
 </p>
