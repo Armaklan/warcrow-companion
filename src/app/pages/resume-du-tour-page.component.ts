@@ -10,14 +10,13 @@ import { CommonModule } from '@angular/common';
     <h2>Début de la manche</h2>
     <ol>
       <li>Celui qui a l'initiative choisit qui joue en premier pendant cette manche.</li>
-      <li>Vérifier les effets de la teinte.</li>
     </ol>
     <h2>Phase du tour</h2>
     <ol>
       <li>
         <p>La premier jour active une de ses unités</p>
         <ul>
-          <li>L'unité peut effectuer 2 actions simples différentes, ou une action longue.</li>
+          <li>L'unité peut effectuer 2 actions simples différentes, ou une action longue. L'action de mouvement est une exception et peut être selectionnée 2 fois.</li>
           <li>Si l'unité a déjà été activé durant le tour, elle est stressé.</li>
           <li>A la fin de l'activation, vérifier le contrôle des objectifs.</li>
         </ul>
@@ -39,6 +38,7 @@ import { CommonModule } from '@angular/common';
           <li>de 2 si l'unité n'a pas été activée durant cette manche.</li>
         </ul>
       </li>
+      <li>Vérifier les effets de la teinte.</li>
       <li><b>Personne n'est laissé pour compte.</b> Les unités non activée, non démoralisée, et non engagées peuvent se déplacer.</li>
       <li>Retirez les jetons d'activation.</li>
       <li>
