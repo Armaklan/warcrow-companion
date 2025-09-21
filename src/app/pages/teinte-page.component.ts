@@ -35,27 +35,19 @@ import { CommonModule } from '@angular/common';
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>Rien ne se passe</td>
+            <td>1-4</td>
+            <td>L'unité est stressé.</td>
           </tr>
           <tr>
-            <td>2</td>
+            <td>5-6</td>
             <td>
-              Toutes les unités à moins de 5 pas de cette unité doivent réussir un test de VOL ou recevoir l'état Effrayé.
+              L'unité est stressé et encaisse <img src="sang.png" alt="1 blessure" style="height: 1em; vertical-align: -0.2em;"/>.
             </td>
           </tr>
           <tr>
-            <td>3</td>
-            <td>L'unité reçoit <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/>.</td>
+            <td>7+</td>
+            <td>L'unité est détruite. Toutes les unités dans les 5 pas reçoivent <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/>.</td>
           </tr>
-          <tr>
-            <td>4</td>
-            <td>L'unité gagne Intimidation (2). Toutes les unités dans un rayon de 8 pas doivent réussir un test de VOL avec au moins 2 <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> ou recevoir l'état Effrayé. </td>
-          </tr>
-        <tr>
-        <td>5+</td>
-        <td>L'unité est détruite. Toutes les unités dans un rayon de 2 pages doivent réussir un test de VOL avec au moins 2 <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> ou elles subissent <img src="sang.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> pour deux troupes dans l'unité (arrondi à l'entier supérieur).</td>
-        </tr>
         </tbody>
       </table>
     </section>

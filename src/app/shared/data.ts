@@ -27,6 +27,7 @@ Votre unité ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (
     <li>Elle ne peut se stresser d’aucune façon et ne peut pas réduire son stress.</li>
     <li>Elle ne peut pas contrôler d’objectifs (sa valeur de conquête est nulle).</li>
     <li>Si elle participe à un combat, elle fuira toujours après le résultat (voir “Attaque de mêlée”).</li>
+    <li>Elle ne peut pas activer de capacités de commandement.</li>
   </ul>
 
   <h3>Unité démoralisée</h3>
@@ -273,15 +274,27 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
     </ul>
   `},
   {title: 'Lancer un sort', details: `
-      <ul>
-        <li>Choisissez votre sort et déclarez si vous appliquez des altérations.</li>
-        <li>Créez le jet de teinte : prenez <img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/> pour chaque jeton de teinte sur votre unité Mage. Chaque altération ajoute autant de <img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/> que son coût l'indique.</li>
-        <li>Résolvez un jet face à face entre votre valeur de VOL et le jet de teinte.</li>
-        <li>Votre adversaire peut tenter de bloquer le sort avec le VOL d'un mage, ou avec Dissipation.</li>
-        <li>Si après la résolution, vous obtenez au moins <img src="succes.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> sur le jet, appliquez les effets du sort.</li>
+      <ol>
+        <li>Choisissez votre sort et déclarez si vous appliquez des altérations, puis vérifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
+        <li>Si vous adversaire à une unité qui peut tenter de bloquer le sort, faite le test.</li>
+        <li>Résolvez un jet face à face entre la VOL du lanceur de sort et le test de dissipation.</li>
+        <li>Une fois durant la phase de choix des variations, le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <img src="succes.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/></li>
+        <li>Si vous obtenez au moins <img src="succes.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> sur le jet, appliquez les effets du sort. Si vous avez selectionnée des alterations ayant un coût en <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, dépensez-les.</li>
+      </ol>
+      <p>Jet de teinte</p>
+      <ol>
+        <li>Créez le jet de teinte : prenez <img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/> comme indiqué dans les altérations choisis du sort.</li>
         <li>Pour chaque <img src="bouclier-hollow.png" alt="Bouclier hollow" style="height: 1em; vertical-align: -0.2em;"/> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
-        <li>Si vous avez obtenu au moins un <img src="alert-hollow.png" alt="alert hollow" style="height: 1em; vertical-align: -0.2em;"/> sur le jet de teinte, appliquez les effets de la teinte à la fin de l'activation.</li>
-    </ul>
+        <li>Si le lanceur possède des <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, appliquez les effets de la teinte.</li>
+      </ol>
+      <p>Bloquer un sort</p>
+      <ol>
+        <li>Déclarer votre intention de bloquer le sort pendant l'état 2 du lancement.</li>
+        <li>Formez le test de blocage : prenez 3 <img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/>, ou les dés indiqués par la compétence Dissipation, et lancez les. Le résultat sera opposé au test de lancement du sort durant l'étape 3./</li>
+        <li>Pour chaque <img src="bouclier-hollow.png" alt="Bouclier hollow" style="height: 1em; vertical-align: -0.2em;"/> obtenu, l'unité qui bloque le sort reçoit <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/> </li>
+        <li>Si vous avez obtenu au moins un <img src="bouclier-hollow.png" alt="Bouclier hollow" style="height: 1em; vertical-align: -0.2em;"/>, appliquez les effets de la teinte à la fin de l'activation. </li>
+      </ol>
+      <p>Vous ne pouvez pas tenter de bloquer un sort plus d'une fois ou avec plusieurs unités.</p>
   `},
   {title: 'Capacité de teinte', details: `
       <ul>
