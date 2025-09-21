@@ -352,6 +352,7 @@ export const CAPACITES: CollapsibleItem[] = [
     title: 'Actions de teinte',
     details: `
       <p>Les actions de teintes sont des actions. Leur fonctionnement est décrite dans la liste des actions. </p>
-    `
+    `,
+    icon: 'teint.png'
   }
 ];
