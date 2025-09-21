@@ -99,7 +99,8 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
     details: '<p>Après les jets de dés (relances incluses) et avant les variations, cette unité peut remplacer tout ' +
       '<img src="success-hollow.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> par <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>, ' +
       'tout <img src="bouclier-hollow.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> par <img src="bouclier.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>,' +
-      ' et tout <img src="alert-hollow.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> par <img src="alert.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>. Cet effet s’applique à tous ses jets.</p>'
+      ' et tout <img src="alert-hollow.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> par <img src="alert.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>. Cet effet s’applique à tous ses jets.</p>' +
+      '<p>Cette règle s\'applique aux tests de VOL, d\'attaque, défense, ainsi qu\'aux effets de compétences ou sort de l\'unité. Cela ne s\'applique pas aux autres tests comme le blocage de sort, la dissipation, ou les tests de teintes.</p>'
   },
   {
     title: 'Embusqué / Ambusher',
@@ -156,7 +157,7 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
     title: 'Intimidation (N) / Intimidating',
     details: `
     <p>
-    Lorsque cette unité engage le combat, l’unité ennemie doit effectuer un test de VOL et obtenir
+    Lorsque cette unité engage ou est engagé au combat, l’unité ennemie doit effectuer un test de VOL et obtenir
     au moins autant de
     <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>
     que la valeur <strong>N</strong> pour éviter d’être stressée.
@@ -165,7 +166,8 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
     Pour chaque
     <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>
     manquant, l’unité ennemie gagne 1 point de stress.
-  </p>`
+  </p>
+  <p>Une unité ne peut subir les effets de l'intimidation qu'une fois par activation.</p>`
   },
   {
     title: 'Massive / Large',
@@ -208,7 +210,7 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   {
     title: 'Soif de sang (X) / Bloodlust',
     details: `<p>
-    Si l’unité n’est pas engagée en combat lorsqu’elle est activée, elle est obligée de charger
+    Si l’unité n’est pas engagée en combat lorsqu’elle est activée, elle est obligée d'engager (charge ou assaut)
     <img src="complexe.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>
     une unité ennemie <strong>X</strong>, à chaque fois que c’est possible.
     <em>X</em> peut être le nom d’une unité, un mot-clé ou plusieurs de ces éléments (séparés par des traits « | »).
@@ -217,7 +219,7 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
     l’unité ennemie la plus proche.
   </p>
   <p>
-    Si l’unité charge en raison de sa Soif de sang, elle peut relancer tous ses jets d’attaque tant qu’elle est engagée avec l’unité ennemie (et pas seulement lorsqu’elle charge).
+    Si l’unité engage en raison de sa Soif de sang, elle peut relancer tous ses jets d’attaque durant les activations où elle est engagée avec l’unité ennemie (et pas seulement lorsqu’elle charge ou fait un assaut).
   </p>
   <p>
     Au début de son activation, l’unité peut ignorer les effets de Soif de sang jusqu’à la fin de son activation en réussissant un test de VOL.
@@ -227,7 +229,6 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
     title: 'Terrain favori (E) / Preferred terrain',
     details: `
 <p>L'unité peut ignorer les effets des décors de type E, ce qui peut désigner un type de décor, un mot-clé, ou plusieurs de ces élements (séparés dans ce cas par des trait | ).</p>
-<p>De plus, si votre unité est adjacente à un décor de type Terrain favori au début de son activation, ajoutez 2 pas à sa première valeur de mouvement, et à son mouvement de charge.</p>
 `
   },
   {
