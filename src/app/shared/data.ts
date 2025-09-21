@@ -317,3 +317,41 @@ export const ACTIONS_COMPLEXES: CollapsibleItem[] = [
     </ul>
   `}
 ];
+
+// Nouvelles données: Capacités (compétence, passive, commandement, ...)
+export const CAPACITES: CollapsibleItem[] = [
+  {
+    title: 'Compétence',
+    details: `
+      <p>Les compétences sont des capacités que vous pouvez activez à l'aide d'une action simple ou complexe.</p>
+    `,
+    icon: 'competence.png'
+  },
+  {
+    title: 'Passive',
+    details: `
+      <p>Les passives sont des effets toujours actifs. Tant que l'unité remplit les conditions, l'effet s'applique automatiquement.</p>
+    `,
+    icon: 'passive.png'
+  },
+  {
+    title: 'Commandement',
+    details: `
+      <p>Les capacités de commandement s'activent par la dépense de point de commandement.</p>
+    `,
+    icon: 'commandement.png'
+  },
+  {
+    title: 'Sort',
+    details: `
+      <p>Les sorts sont des actions de magie. Leur fonctionnement est décrite dans la liste des actions. </p>
+    `,
+    icon: 'sort.png'
+  },
+  {
+    title: 'Actions de teinte',
+    details: `
+      <p>Les actions de teintes sont des actions. Leur fonctionnement est décrite dans la liste des actions. </p>
+    `
+  }
+];

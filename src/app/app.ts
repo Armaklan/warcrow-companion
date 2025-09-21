@@ -25,6 +25,10 @@ import { MatSidenav } from '@angular/material/sidenav';
           <mat-icon>bolt</mat-icon>
           <span>Actions</span>
         </a>
+        <a mat-list-item routerLink="/capacites" (click)="closeOnMobile()">
+          <mat-icon>psychology</mat-icon>
+          <span>Capacités</span>
+        </a>
         <a mat-list-item routerLink="/resume-du-tour" (click)="closeOnMobile()">
           <mat-icon>summarize</mat-icon>
           <span>Résumé du tour</span>
