@@ -255,6 +255,16 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>L'unité gagante peut <b>forcer au repli</b> l'unité perdante et décider de la poursuivre, ou non (première valeur de Mouvement).</b></li>
         <li>Faites une seconde manoeuvre de positionnement si nécessaire à la fin du combat.</li>
     </ul>
+    <p>
+        <b>Manoeuvre de repositionnement</b>
+    </p>
+    <ul>
+      <li>En commençant par votre leader, vous devez placez les soldats non engagés de votre unité au contact d'au moins un soldat ennemi.</li>
+      <li>Vos soldats doivent toujours rester en formation.</li>
+      <li>Vous pouvez échanger la position de votre leader avec celle de n'importe quel soldat engagé avec l'ennemi.</li>
+      <li>S'il vous est impossible d'engager un soldat en combat, vous devez le placer au contact de votre leader, ou, à défaut, de toute autre soldat de votre unité.</li>
+      <li>S'il n'est pas possible de respecter un des points, placez le soldat le plus près possible de votre leader.</li>
+    </ul>
   `},
   {title: 'Attaque à distance', details: `
     <ul>
