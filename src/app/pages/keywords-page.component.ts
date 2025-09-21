@@ -9,9 +9,37 @@ import { MOTS_CLEFS } from '../shared/data';
   imports: [CommonModule, CollapsibleListComponent],
   template: `
     <h1>Mots‑clefs</h1>
-    <app-collapsible-list [items]="motsClefs"></app-collapsible-list>
-  `
+
+    <div class="filter-bar">
+      <input
+        type="search"
+        placeholder="Filtrer par titre..."
+        (input)="onFilterInput($event)"
+        [value]="filterText"
+        aria-label="Filtrer les mots-clefs par titre"
+      />
+    </div>
+
+    <app-collapsible-list [items]="filteredMotsClefs"></app-collapsible-list>
+  `,
+  styles: [
+    `.filter-bar { margin: 12px 0 16px; }
+     .filter-bar input { width: 100%; max-width: 480px; padding: 8px 12px; font-size: 16px; }
+    `
+  ]
 })
 export class KeywordsPageComponent {
+  filterText = '';
   motsClefs = MOTS_CLEFS;
+
+  get filteredMotsClefs() {
+    const q = this.filterText.toLowerCase().trim();
+    if (!q) return this.motsClefs;
+    return this.motsClefs.filter(i => i.title.toLowerCase().includes(q));
+  }
+
+  onFilterInput(event: Event) {
+    const target = event.target as HTMLInputElement | null;
+    this.filterText = target?.value ?? '';
+  }
 }
