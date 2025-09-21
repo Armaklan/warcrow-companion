@@ -156,6 +156,16 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         <li>L'unit\xE9 gagante peut <b>forcer au repli</b> l'unit\xE9 perdante et d\xE9cider de la poursuivre, ou non (premi\xE8re valeur de Mouvement).</b></li>
         <li>Faites une seconde manoeuvre de positionnement si n\xE9cessaire \xE0 la fin du combat.</li>
     </ul>
+    <p>
+        <b>Manoeuvre de repositionnement</b>
+    </p>
+    <ul>
+      <li>En commen\xE7ant par votre leader, vous devez placez les soldats non engag\xE9s de votre unit\xE9 au contact d'au moins un soldat ennemi.</li>
+      <li>Vos soldats doivent toujours rester en formation.</li>
+      <li>Vous pouvez \xE9changer la position de votre leader avec celle de n'importe quel soldat engag\xE9 avec l'ennemi.</li>
+      <li>S'il vous est impossible d'engager un soldat en combat, vous devez le placer au contact de votre leader, ou, \xE0 d\xE9faut, de toute autre soldat de votre unit\xE9.</li>
+      <li>S'il n'est pas possible de respecter un des points, placez le soldat le plus pr\xE8s possible de votre leader.</li>
+    </ul>
   `},{title:"Attaque \xE0 distance",details:`
     <ul>
         <li>Le d\xE9fenseur ne peut utiliser que <img src="de-b.png" alt="d\xE9 bleu" style="height: 1em; vertical-align: -0.2em;"/>  <img src="de-v.png" alt="d\xE9 vert" style="height: 1em; vertical-align: -0.2em;"/> <img src="de-n.png" alt="d\xE9 noir" style="height: 1em; vertical-align: -0.2em;"/> <img src="bouclier.png" alt="bouclier" style="height: 1em; vertical-align: -0.2em;"/> et <img src="bouclier-hollow.png" alt="bouclier hollow" style="height: 1em; vertical-align: -0.2em;"/> dans son jet de d\xE9fense.</li>
