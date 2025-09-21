@@ -6,11 +6,11 @@ export interface CollapsibleItem {
 
 export const ETATS: CollapsibleItem[] = [
   {
-    title: 'Effrayé', details: `<p>Quand il effectue un test de volonté, l'unité doit relancer une fois tous les dés indiquant au moins <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>.</p>
+    title: 'Effrayé / Frightened', details: `<p>Quand il effectue un test de volonté, l'unité doit relancer une fois tous les dés indiquant au moins <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>.</p>
 <p>Retirez cet état après avoir effectué un test de Volonté.</p>`, icon: 'effraye.png'
   },
   {
-    title: 'Ralenti',
+    title: 'Ralenti / Slowed',
     details: `<p>
 Votre unité ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (MOV) lors des actions de mouvement et d’assaut.
   De plus, vous devez soustraire 4 pas à votre mouvement de charge (min. 0).
@@ -20,7 +20,7 @@ Votre unité ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (
     icon: 'ralenti.png'
   },
   {
-    title: 'Démoralisé',
+    title: 'Démoralisé / Demoralized',
     details: `<p>Si votre unité est démoralisée :</p>
   <ul>
     <li>Elle ne peut plus être activée d’aucune façon.</li>
@@ -34,7 +34,7 @@ Votre unité ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (
     icon: 'demoraliser.png'
   },
   {
-    title: 'Désarmé',
+    title: 'Désarmé / Disarmed',
     details: `<p>
 Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a obtenu au moins un symbole
 <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>. Si vous avez plusieurs dés, c’est votre adversaire qui choisit lequel.
@@ -45,7 +45,7 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
     icon: 'desarme.png'
   },
   {
-    title: 'Vulnérable', details: `<p>
+    title: 'Vulnérable / Vulnerable', details: `<p>
     Votre unité doit annuler un dé de ses jets de défense dans lesquels elle a obtenu au moins un <img src="bouclier.png" alt="bouclier" style="height: 1em; vertical-align: -0.2em;"/>.
     Si vous avez plusieurs dés, c’est votre adversaire qui choisit lequel.
   </p>
@@ -61,15 +61,15 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
 
 export const MOTS_CLEFS: CollapsibleItem[] = [
   {
-    title: 'Couvert (D)',
+    title: 'Couvert (D) / Cover',
     details: '<p>Les unités adjacentes à cette unité (alliées ou non) bénéficient d’un couvert contre les attaques à distance. La valeur D indique les dés ou symboles automatiques que les unités adjacentes ajoutent à leur jet de défense.</p>'
   },
   {
-    title: 'Dissipation (D)',
+    title: 'Dissipation (D) / Dispel',
     details: '<p>Lorsque cette unité est ciblée par un sort, elle peut tenter de le bloquer. La valeur D indique le dé ou les symboles automatiques à lancer pour bloquer le sort. Cette unité ne gagne pas de Teinte sur un <img src="bouclier-hollow.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>. On ne peut pas bloquer un sort plus d’une fois ni avec plus d’une unité.</p>'
   },
   {
-    title: 'Éclaireur',
+    title: 'Éclaireur / Scout',
     details: `
       <p>
       Les unités d’Éclaireurs peuvent se déployer juste après que toutes les autres unités des deux camps ont fini de se déployer. Ils représentent des avant-gardes qui ont reconnu le terrain et qui choisissent la meilleure position.
@@ -94,14 +94,14 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
     `
   },
   {
-    title: 'Élite',
+    title: 'Élite / Elite',
     details: '<p>Après les jets de dés (relances incluses) et avant les variations, cette unité peut remplacer tout ' +
       '<img src="success-hollow.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> par <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>, ' +
       'tout <img src="bouclier-hollow.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> par <img src="bouclier.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>,' +
       ' et tout <img src="alert-hollow.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> par <img src="alert.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>. Cet effet s’applique à tous ses jets.</p>'
   },
   {
-    title: 'Embusqué',
+    title: 'Embusqué / Ambusher',
     details: `
     <p>
     Les unités Embusquées se cachent, prêtes à entrer en action après le début de la bataille en frappant par surprise.
@@ -132,27 +132,27 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
 `
   },
   {
-    title: 'Équipage',
+    title: 'Équipage / Manned',
     details: '<ul><li>L’unité ignore les effets d’Intimidation.</li><li>L’unité n’est stressée que si elle est activée plusieurs fois au cours d’un même round.</li></ul>'
   },
   {
-    title: 'Fureur',
+    title: 'Fureur / Raging',
     details: '<p>Ajoute <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> à ses jets d’attaque lorsqu’elle charge.</p>'
   },
   {
-    title: 'Golem',
+    title: 'Golem / Golem',
     details: '<ul><li>Ignore l’Intimidation.</li><li>Immunisé contre Effrayé.</li><li>Ne peut pas être démoralisé. Si le stress dépasse la valeur de MOR, ignorez l’excédent.</li></ul>'
   },
   {
-    title: 'Inamovible',
+    title: 'Inamovible / Immovable',
     details: '<p>Ne peut pas être attirée, bousculée, placée, replacée ni forcée au repli, sauf si vous le souhaitez.</p>'
   },
   {
-    title: 'Intrépide',
+    title: 'Intrépide / Fearless',
     details: '<p>Ignore Intimidation et immunisé contre Effrayé.</p>'
   },
   {
-    title: 'Intimidation (N)',
+    title: 'Intimidation (N) / Intimidating',
     details: `
     <p>
     Lorsque cette unité engage le combat, l’unité ennemie doit effectuer un test de VOL et obtenir
@@ -167,7 +167,7 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   </p>`
   },
   {
-    title: 'Massive',
+    title: 'Massive / Large',
     details: `<ul>
     <li>
       Les unités Massives peuvent traverser les unités qui ne le sont pas.
@@ -192,7 +192,7 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   </ul>`
   },
   {
-    title: 'Rage de berserker',
+    title: 'Rage de berserker / Berseker rage',
     details: `<p>
     Votre unité peut s’infliger
     <img src="sang.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>
@@ -205,7 +205,7 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   </p>`
   },
   {
-    title: 'Soif de sang (X)',
+    title: 'Soif de sang (X) / Bloodlust',
     details: `<p>
     Si l’unité n’est pas engagée en combat lorsqu’elle est activée, elle est obligée de charger
     <img src="complexe.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>
@@ -223,18 +223,18 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   </p>`
   },
   {
-    title: 'Terrain favori (E)',
+    title: 'Terrain favori (E) / Preferred terrain',
     details: `
 <p>L'unité peut ignorer les effets des décors de type E, ce qui peut désigner un type de décor, un mot-clé, ou plusieurs de ces élements (séparés dans ce cas par des trait | ).</p>
 <p>De plus, si votre unité est adjacente à un décor de type Terrain favori au début de son activation, ajoutez 2 pas à sa première valeur de mouvement, et à son mouvement de charge.</p>
 `
   },
   {
-    title: 'Teinte',
+    title: 'Teinte / Tinge',
     details: '<p>Votre unité reçoit <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au début de chaque manche, après l\'étape "Vérifier les effets de la teinte."</p>'
   },
   {
-    title: 'Visée',
+    title: 'Visée / Aim',
     details: '<p>Peut relancer ses jets d’attaque à distance. La cible ne bénéficie pas du Couvert (D).</p>'
   }
 ];

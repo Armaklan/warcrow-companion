@@ -29,5 +29,14 @@ export interface CollapsibleItem { title: string; details: string; icon?: string
   ]
 })
 export class CollapsibleListComponent {
-  @Input() items: CollapsibleItem[] = [];
+  private _items: CollapsibleItem[] = [];
+
+  @Input()
+  set items(value: CollapsibleItem[]) {
+    const arr = Array.isArray(value) ? [...value] : [];
+    this._items = arr.sort((a, b) => a.title.localeCompare(b.title, 'fr', { sensitivity: 'base' }));
+  }
+  get items(): CollapsibleItem[] {
+    return this._items;
+  }
 }
