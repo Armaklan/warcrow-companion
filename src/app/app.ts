@@ -33,6 +33,10 @@ import { MatSidenav } from '@angular/material/sidenav';
           <mat-icon>summarize</mat-icon>
           <span>Résumé du tour</span>
         </a>
+        <a mat-list-item routerLink="/resume-opposition" (click)="closeOnMobile()">
+          <mat-icon>groups</mat-icon>
+          <span>Résumé d'une opposition</span>
+        </a>
         <a mat-list-item routerLink="/mots-clefs" (click)="closeOnMobile()">
           <mat-icon>label</mat-icon>
           <span>Mots‑clefs</span>
