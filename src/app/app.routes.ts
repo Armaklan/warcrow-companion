@@ -7,11 +7,13 @@ import { ResumeDuTourPageComponent } from './pages/resume-du-tour-page.component
 import { CapacitesPageComponent } from './pages/capacites-page.component';
 import { KeywordsDecorsPageComponent } from './pages/keywords-decors-page.component';
 import { DecorsPageComponent } from './pages/decors-page.component';
+import { ResumeOppositionPageComponent } from './pages/resume-opposition-page.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'actions' },
   { path: 'actions', component: ActionsPageComponent, title: 'Actions' },
   { path: 'resume-du-tour', component: ResumeDuTourPageComponent, title: 'Résumé du tour' },
+  { path: 'resume-opposition', component: ResumeOppositionPageComponent, title: "Résumé d'une opposition" },
   { path: 'mots-clefs', component: KeywordsPageComponent, title: 'Mots‑clefs' },
   { path: 'mots-clefs-decors', component: KeywordsDecorsPageComponent, title: 'Mots clef de décors' },
   { path: 'etats', component: StatesPageComponent, title: 'États' },
