@@ -177,8 +177,8 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         <li>Choisissez votre sort et d\xE9clarez si vous appliquez des alt\xE9rations, puis v\xE9rifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
         <li>Si vous adversaire \xE0 une unit\xE9 qui peut tenter de bloquer le sort, faite le test.</li>
         <li>R\xE9solvez un jet face \xE0 face entre la VOL du lanceur de sort et le test de dissipation.</li>
-        <li>Une fois durant la phase de choix des variations, le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <img src="succes.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/></li>
-        <li>Si vous obtenez au moins <img src="succes.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/> sur le jet, appliquez les effets du sort. Si vous avez selectionn\xE9e des alterations ayant un co\xFBt en <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, d\xE9pensez-les.</li>
+        <li>Une fois durant la phase de choix des variations, le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <img src="success.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/></li>
+        <li>Si vous obtenez au moins <img src="success.png" alt="succ\xE8s" style="height: 1em; vertical-align: -0.2em;"/> sur le jet, appliquez les effets du sort. Si vous avez selectionn\xE9e des alterations ayant un co\xFBt en <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, d\xE9pensez-les.</li>
       </ol>
       <p>Jet de teinte</p>
       <ol>
