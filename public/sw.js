@@ -1,11 +1,11 @@
 // A very small service worker to enable PWA installability
 const CACHE_NAME = 'warcrow-companion-v1';
 const CORE_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.webmanifest',
-  '/favicon.ico',
-  '/success.png',
+  '/warcrow-companion/',
+  '/warcrow-companion/index.html',
+  '/warcrow-companion/manifest.webmanifest',
+  '/warcrow-companion/favicon.ico',
+  '/warcrow-companion/warcrow.png',
 ];
 
 self.addEventListener('install', (event) => {
