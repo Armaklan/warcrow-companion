@@ -73,6 +73,10 @@ import { MatSidenav } from '@angular/material/sidenav';
 
       <div class="content">
         <router-outlet></router-outlet>
+
+        <footer>
+        <i>Warcrow is a © Corvus Belli game. All rule belong to it.</i>
+        </footer>
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
