@@ -1,5 +1,5 @@
 // A very small service worker to enable PWA installability
-const CACHE_NAME = 'warcrow-companion-v1';
+const CACHE_NAME = 'warcrow-companion-v2';
 const CORE_ASSETS = [
   '/warcrow-companion/',
   '/warcrow-companion/index.html',
@@ -21,24 +21,21 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Network-first for navigation requests, cache-first for others (very basic)
+// Network-first for all requests, with cache fallback. Keeps cache updated for next time.
 self.addEventListener('fetch', (event) => {
   const req = event.request;
-  if (req.mode === 'navigate') {
-    event.respondWith(
-      fetch(req).then((res) => {
-        const copy = res.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
-        return res;
-      }).catch(() => caches.match(req).then(r => r || caches.match('/warcrow-companion/index.html')))
-    );
-    return;
-  }
   event.respondWith(
-    caches.match(req).then((cached) => cached || fetch(req).then((res) => {
+    fetch(req).then((res) => {
       const copy = res.clone();
       caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
       return res;
-    }).catch(() => cached))
+    }).catch(() => {
+      // On failure (offline), try cache; for navigations, fallback to cached index.html
+      return caches.match(req).then((cached) => {
+        if (cached) return cached;
+        if (req.mode === 'navigate') return caches.match('/warcrow-companion/index.html');
+        return undefined;
+      });
+    })
   );
 });
