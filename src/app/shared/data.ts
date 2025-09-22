@@ -428,8 +428,7 @@ export const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
     title: 'Mortel (X:D) / Lethal',
     details: `
       <p>Les unités définies par X et
-      adjacentes à ce décor au début
-      de leur activation, subissent une
+      rentrant au contact avec ce décor, subissent une
       attaque de mêlée résolue avec un
       jet D. Le décor ne peut pas subir
       de dégâts et ne force pas les unités
@@ -446,9 +445,23 @@ export const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
   },
   {
     title: 'Piège / Trap',
-    details: `<p>Ce décor a été créé par une unité utilisant une compétence ou un
-      sort. Les unités capables de supprimer les pièges peuvent retirer
-      ce décor du champ de bataille.</p>`
+    details: `
+      <p>Ce décor a été créé par une unité utilisant une compétence ou un
+        sort. Les unités capables de supprimer les pièges peuvent retirer
+        ce décor du champ de bataille.
+      </p>
+      <p>
+        Placer un piège
+      </p>
+      <p>Toutes les unités qui placent un piège doivent suivre les règles suivantes :</p>
+      <ul>
+        <li>A moins que ce soit spécifiée, l'élement de piège doit avoir un diamètre de 6 pas.</li>
+        <li>Vous ne pouvez le placer par dessus un élement impassable.</li>
+        <li>Les unités ne sont pas des élements de terrain, vous pouvez donc placer un piège sous l'une d'entre elle.
+        Prenez leur position actuelle comme point de référence, soulevez les unités, et placez le piège en dessous avant
+         de reposer les figurines aussi près que possible de leurs positions initiale.</li>
+      </ul>
+    `
   },
   {
     title: 'Sinistre (X) / Sinister',
