@@ -1,11 +1,11 @@
-// Simple service worker for Warcrow Companion
-const CACHE_NAME = 'warcrow-cache-v1';
+// A very small service worker to enable PWA installability
+const CACHE_NAME = 'warcrow-companion-v1';
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/manifest.webmanifest',
+  '/favicon.ico',
   '/success.png',
-  // Note: Angular build outputs hashed file names; we rely on runtime caching for those.
 ];
 
 self.addEventListener('install', (event) => {
@@ -16,28 +16,29 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))).then(() => self.clients.claim())
+    caches.keys().then((keys) => Promise.all(keys.map(k => k !== CACHE_NAME ? caches.delete(k) : undefined)))
+      .then(() => self.clients.claim())
   );
 });
 
+// Network-first for navigation requests, cache-first for others (very basic)
 self.addEventListener('fetch', (event) => {
   const req = event.request;
-  // Only handle GET
-  if (req.method !== 'GET') return;
-
-  // Try cache first, then network, and update cache in background
+  if (req.mode === 'navigate') {
+    event.respondWith(
+      fetch(req).then((res) => {
+        const copy = res.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
+        return res;
+      }).catch(() => caches.match(req).then(r => r || caches.match('/index.html')))
+    );
+    return;
+  }
   event.respondWith(
-    caches.match(req).then(cached => {
-      const fetchPromise = fetch(req).then(networkRes => {
-        // Cache a copy of successful responses
-        if (networkRes && networkRes.status === 200 && networkRes.type === 'basic') {
-          const resClone = networkRes.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(req, resClone)).catch(() => {});
-        }
-        return networkRes;
-      }).catch(() => cached);
-
-      return cached || fetchPromise;
-    })
+    caches.match(req).then((cached) => cached || fetch(req).then((res) => {
+      const copy = res.clone();
+      caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
+      return res;
+    }).catch(() => cached))
   );
 });
