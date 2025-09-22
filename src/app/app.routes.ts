@@ -6,6 +6,7 @@ import { TeintePageComponent } from './pages/teinte-page.component';
 import { ResumeDuTourPageComponent } from './pages/resume-du-tour-page.component';
 import { CapacitesPageComponent } from './pages/capacites-page.component';
 import { KeywordsDecorsPageComponent } from './pages/keywords-decors-page.component';
+import { DecorsPageComponent } from './pages/decors-page.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'actions' },
@@ -16,5 +17,6 @@ export const routes: Routes = [
   { path: 'etats', component: StatesPageComponent, title: 'États' },
   { path: 'teinte', component: TeintePageComponent, title: 'Teinte' },
   { path: 'capacites', component: CapacitesPageComponent, title: 'Capacités' },
+  { path: 'decors', component: DecorsPageComponent, title: 'Décors' },
   { path: '**', redirectTo: 'actions' }
 ];

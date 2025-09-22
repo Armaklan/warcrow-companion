@@ -471,3 +471,56 @@ export const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
         </p>`
   }
 ];
+
+
+// Nouvelle data: Décors
+export interface Decor {
+  title: string;
+  keywords: {
+    name: string,
+    value?: string
+  }[];
+  dimensions: string;
+}
+
+export const DECORS: Decor[] = [{
+  title: 'Clôture/Barricade',
+  keywords: [{name: 'Couvert', value: `<img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/>`}],
+  dimensions: `Socle de 4 à 13 pas de long et pas plus d'un pas de large`
+},{
+  title: 'Mur',
+  keywords: [{name: 'Couvert', value: `<img src="de-b.png" alt="dé bleu" style="height: 1em; vertical-align: -0.2em;"/>`}],
+  dimensions: `Socle de 4 à 13 pas de long et pas plus d'un pas de large`
+},{
+  title: 'Petite structure',
+  keywords: [{name: 'Bloque la LdV'}, {name: 'Couvert', value: `<img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/>`}, {name: 'Infranchissable'}],
+  dimensions: `Socle d'une surface équivalente à un carré de 4 à 7 pas de coté`
+},{
+  title: 'Bâtiment',
+  keywords: [{name: 'Bloque la LdV'}, {name: 'Couvert', value: `<img src="de-b.png" alt="dé bleu" style="height: 1em; vertical-align: -0.2em;"/>`}, {name: 'Infranchissable'}],
+  dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
+},{
+  title: 'Forêt clairsemée',
+  keywords: [{name: 'Bloque la LdV'}, {name: 'Couvert', value: `<img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/>`}],
+  dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
+},{
+  title: 'Forêt dense',
+  keywords: [{name: 'Accidenté', value: 'Cavalerie, Golem'}, {name: 'Bloque la LdV'}, {name: 'Couvert', value: `<img src="de-b.png" alt="dé bleu" style="height: 1em; vertical-align: -0.2em;"/>`}],
+  dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
+}, {
+  title: 'Rivière',
+  keywords: [{name: 'Accidenté'}],
+  dimensions: `Socle d'une longue de 4 à 13 pas et d'une largeur maximale de 7 pas`
+}, {
+  title: 'Lac',
+  keywords: [{name: 'Infranchissable'}],
+  dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
+},{
+  title: 'Ruines',
+  keywords: [{name: 'Accidenté'}, {name: 'Couvert', value: `<img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/>`}],
+  dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
+},{
+  title: 'Terrain accidenté',
+  keywords: [{name: 'Accidenté'}],
+  dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
+}];
