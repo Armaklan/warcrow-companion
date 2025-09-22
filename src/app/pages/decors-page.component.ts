@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { DECORS } from '../shared/data';
 
 @Component({
   selector: 'app-decors-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <style>
       .decors-table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; }
@@ -56,7 +57,7 @@ import { DECORS } from '../shared/data';
               <span class="keywords">
                 @for (kw of d.keywords; track $index) {
                   <span class="kw">
-                    <span>{{ kw.name }}</span>
+                    <a [routerLink]="'/mots-clefs-decors'" [queryParams]="{ q: kw.name }">{{ kw.name }}</a>
                     @if (kw.value) { (<span [innerHTML]="kw.value"></span>) }
                   </span>
                 }

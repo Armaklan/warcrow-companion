@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollapsibleListComponent } from '../components/collapsible-list.component';
 import { MOTS_CLEFS_DECORS } from '../shared/data';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-keywords-decors-page',
@@ -31,6 +32,13 @@ import { MOTS_CLEFS_DECORS } from '../shared/data';
 export class KeywordsDecorsPageComponent {
   filterText = '';
   items = MOTS_CLEFS_DECORS;
+
+  constructor(private route: ActivatedRoute) {
+    this.route.queryParamMap.subscribe(pm => {
+      const q = (pm.get('q') ?? '').trim();
+      this.filterText = q;
+    });
+  }
 
   get filtered() {
     const q = this.filterText.toLowerCase().trim();
