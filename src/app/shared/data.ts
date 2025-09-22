@@ -286,8 +286,8 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>Choisissez votre sort et déclarez si vous appliquez des altérations, puis vérifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
         <li>Si vous adversaire à une unité qui peut tenter de bloquer le sort, faite le test.</li>
         <li>Résolvez un jet face à face entre la VOL du lanceur de sort et le test de dissipation.</li>
-        <li>Une fois durant la phase de choix des variations, le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <img src="succes.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/></li>
-        <li>Si vous obtenez au moins <img src="succes.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> sur le jet, appliquez les effets du sort. Si vous avez selectionnée des alterations ayant un coût en <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, dépensez-les.</li>
+        <li>Une fois durant la phase de choix des variations, le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/></li>
+        <li>Si vous obtenez au moins <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> sur le jet, appliquez les effets du sort. Si vous avez selectionnée des alterations ayant un coût en <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, dépensez-les.</li>
       </ol>
       <p>Jet de teinte</p>
       <ol>
