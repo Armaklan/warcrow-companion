@@ -3,27 +3,27 @@
   "short_name": "Warcrow",
   "description": "Compagnon de jeu Warcrow: actions, états, mots‑clefs et teinte.",
   "lang": "fr",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/warcrow-companion/",
+  "scope": "/warcrow-companion/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "theme_color": "#1976d2",
   "background_color": "#121212",
   "icons": [
     {
-      "src": "/warcrow.png",
+      "src": "/warcrow-companion/warcrow.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/warcrow.png",
+      "src": "/warcrow-companion/warcrow.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/warcrow.png",
+      "src": "/warcrow-companion/warcrow.png",
       "sizes": "any",
       "type": "image/png",
       "purpose": "maskable"
