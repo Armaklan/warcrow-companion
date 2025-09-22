@@ -6,7 +6,7 @@ export interface CollapsibleItem {
 
 export const ETATS: CollapsibleItem[] = [
   {
-    title: 'Effrayé / Frightened', details: `<p>Quand il effectue un test de volonté, l'unité doit relancer une fois tous les dés indiquant au moins <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>.</p>
+    title: 'Effrayé / Frightened', details: `<p>Quand il effectue un test de volonté, l'unité doit relancer une fois tous les dés indiquant au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>.</p>
 <p>Retirez cet état après avoir effectué un test de Volonté.</p>`, icon: 'effraye.png'
   },
   {
@@ -38,7 +38,7 @@ Votre unité ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (
     title: 'Désarmé / Disarmed',
     details: `<p>
 Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a obtenu au moins un symbole
-<img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>. Si vous avez plusieurs dés, c’est votre adversaire qui choisit lequel.
+<span class="warcrow-font-Success" role="img" aria-label="succès" ></span>. Si vous avez plusieurs dés, c’est votre adversaire qui choisit lequel.
 </p>
 <p>Vous devez appliquer cet effet après avoir effectué votre jet et toutes les relances possibles, mais avant l’étape des variations.</p>
 <p>Vous ne pouvez ajouter de variation lors de vos jets d'attaques.</p>
@@ -47,7 +47,7 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
   },
   {
     title: 'Vulnérable / Vulnerable', details: `<p>
-    Votre unité doit annuler un dé de ses jets de défense dans lesquels elle a obtenu au moins un <img src="bouclier.png" alt="bouclier" style="height: 1em; vertical-align: -0.2em;"/>.
+    Votre unité doit annuler un dé de ses jets de défense dans lesquels elle a obtenu au moins un <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>.
     Si vous avez plusieurs dés, c’est votre adversaire qui choisit lequel.
   </p>
   <p>
@@ -67,7 +67,7 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   },
   {
     title: 'Dissipation (D) / Dispel',
-    details: '<p>Lorsque cette unité est ciblée par un sort, elle peut tenter de le bloquer. La valeur D indique le dé ou les symboles automatiques à lancer pour bloquer le sort. Cette unité ne gagne pas de Teinte sur un <img src="bouclier-hollow.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>. On ne peut pas bloquer un sort plus d’une fois ni avec plus d’une unité.</p>'
+    details: '<p>Lorsque cette unité est ciblée par un sort, elle peut tenter de le bloquer. La valeur D indique le dé ou les symboles automatiques à lancer pour bloquer le sort. Cette unité ne gagne pas de Teinte sur un <span class="warcrow-font-HollowBlock" role="img" aria-label="Hollow Block" ></span>. On ne peut pas bloquer un sort plus d’une fois ni avec plus d’une unité.</p>'
   },
   {
     title: 'Éclaireur / Scout',
@@ -97,9 +97,9 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   {
     title: 'Élite / Elite',
     details: '<p>Après les jets de dés (relances incluses) et avant les variations, cette unité peut remplacer tout ' +
-      '<img src="success-hollow.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> par <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>, ' +
-      'tout <img src="bouclier-hollow.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> par <img src="bouclier.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>,' +
-      ' et tout <img src="alert-hollow.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> par <img src="alert.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>. Cet effet s’applique à tous ses jets.</p>' +
+      '<span class="warcrow-font-HollowSuccess" role="img" aria-label="Succès Hollow" ></span> par <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>, ' +
+      'tout <span class="warcrow-font-HollowBlock" role="img" aria-label="Hollow Block" ></span> par <span class="warcrow-font-Block" role="img" aria-label="Blockl" ></span>,' +
+      ' et tout <span class="warcrow-font-HollowSpecial" role="img" aria-label="Hollow Special" ></span> par <span class="warcrow-font-Special" role="img" aria-label="Special" ></span>. Cet effet s’applique à tous ses jets.</p>' +
       '<p>Cette règle s\'applique aux tests de VOL, d\'attaque, défense, ainsi qu\'aux effets de compétences ou sort de l\'unité. Cela ne s\'applique pas aux autres tests comme le blocage de sort, la dissipation, ou les tests de teintes.</p>'
   },
   {
@@ -139,7 +139,7 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   },
   {
     title: 'Fureur / Raging',
-    details: '<p>Ajoute <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> à ses jets d’attaque lorsqu’elle charge.</p>'
+    details: '<p>Ajoute <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> à ses jets d’attaque lorsqu’elle charge.</p>'
   },
   {
     title: 'Golem / Golem',
@@ -159,12 +159,12 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
     <p>
     Lorsque cette unité engage ou est engagé au combat, l’unité ennemie doit effectuer un test de VOL et obtenir
     au moins autant de
-    <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>
+    <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>
     que la valeur <strong>N</strong> pour éviter d’être stressée.
   </p>
   <p>
     Pour chaque
-    <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>
+    <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>
     manquant, l’unité ennemie gagne 1 point de stress.
   </p>
   <p>Une unité ne peut subir les effets de l'intimidation qu'une fois par activation.</p>`
@@ -176,10 +176,10 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
       Les unités Massives peuvent traverser les unités qui ne le sont pas.
       Les unités traversées doivent réussir un test de VOL pour éviter le stress.
       De plus, une unité traversée doit faire un jet opposé avec sa défense contre autant de
-      <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>
+      <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>
       qu’il y a de soldats dans ladite unité (jusqu’à un maximum de 3).
       Elle subira autant de dégâts que de
-      <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>
+      <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>
       non annulés.
     </li>
     <li>
@@ -198,7 +198,7 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
     title: 'Rage de berserker / Berseker rage',
     details: `<p>
     Votre unité peut s’infliger
-    <img src="sang.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>
+    <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span>
     pour ajouter un symbole de votre choix à un jet d’attaque, de défense ou de VOL.
     Vous devez le faire après le jet de dés mais avant de passer à l’étape des variations.
   </p>
@@ -211,11 +211,11 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
     title: 'Soif de sang (X) / Bloodlust',
     details: `<p>
     Si l’unité n’est pas engagée en combat lorsqu’elle est activée, elle est obligée d'engager (charge ou assaut)
-    <img src="complexe.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>
+    <span class="warcrow-font-LongAction" role="img" aria-label="LongAction" ></span>
     une unité ennemie <strong>X</strong>, à chaque fois que c’est possible.
     <em>X</em> peut être le nom d’une unité, un mot-clé ou plusieurs de ces éléments (séparés par des traits « | »).
     Si aucune valeur n’est spécifiée pour <em>X</em>, l’unité doit charger
-    <img src="complexe.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/>
+    <span class="warcrow-font-LongAction" role="img" aria-label="LongAction" ></span>
     l’unité ennemie la plus proche.
   </p>
   <p>
@@ -255,8 +255,8 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
     title: 'Attaque de mêlée', details: `
     <ul>
         <li>Faites une manoeuvres de positionnement si nécessaire.</li>
-        <li>Résolvez un jet face à face entre le jet d'attaque et le jet de défense. Chaque <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> non annulé inflige <img src="sang.png" alt="1 blessure" style="height: 1em; vertical-align: -0.2em;"/> à l'unité ennemie.</li>
-        <li>L'unité qui a subis le plus de dégâts (au moins <img src="sang.png" alt="1 blessure" style="height: 1em; vertical-align: -0.2em;"/>) est stressée à la fin de l'activation.</li>
+        <li>Résolvez un jet face à face entre le jet d'attaque et le jet de défense. Chaque <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> non annulé inflige <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> à l'unité ennemie.</li>
+        <li>L'unité qui a subis le plus de dégâts (au moins <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span>) est stressée à la fin de l'activation.</li>
         <li>L'unité gagante peut <b>forcer au repli</b> l'unité perdante et décider de la poursuivre, ou non (première valeur de Mouvement).</b></li>
         <li>Faites une seconde manoeuvre de positionnement si nécessaire à la fin du combat.</li>
     </ul>
@@ -275,8 +275,8 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
   {
     title: 'Attaque à distance', details: `
     <ul>
-        <li>Le défenseur ne peut utiliser que <img src="de-b.png" alt="dé bleu" style="height: 1em; vertical-align: -0.2em;"/>  <img src="de-v.png" alt="dé vert" style="height: 1em; vertical-align: -0.2em;"/> <img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/> <img src="bouclier.png" alt="bouclier" style="height: 1em; vertical-align: -0.2em;"/> et <img src="bouclier-hollow.png" alt="bouclier hollow" style="height: 1em; vertical-align: -0.2em;"/> dans son jet de défense.</li>
-        <li>Résolvez un jet face à face entre le jet d'attaque et le jet de défense. Chaque <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> non annulé inflige <img src="sang.png" alt="1 blessure" style="height: 1em; vertical-align: -0.2em;"/> à l'unité ennemie. Le défenseur ne peut pas agir sur les variations.</li>
+        <li>Le défenseur ne peut utiliser que <span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>  <span class="warcrow-font-Green" role="img" aria-label="Green dice" ></span> <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> <span class="warcrow-font-Block" role="img" aria-label="Block" ></span> et <span class="warcrow-font-HollowBlock" role="img" aria-label="Hollow Block" ></span> dans son jet de défense.</li>
+        <li>Résolvez un jet face à face entre le jet d'attaque et le jet de défense. Chaque <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> non annulé inflige <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> à l'unité ennemie. Le défenseur ne peut pas agir sur les variations.</li>
     </ul>
   `
   },
@@ -286,21 +286,21 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>Choisissez votre sort et déclarez si vous appliquez des altérations, puis vérifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
         <li>Si vous adversaire à une unité qui peut tenter de bloquer le sort, faite le test.</li>
         <li>Résolvez un jet face à face entre la VOL du lanceur de sort et le test de dissipation.</li>
-        <li>Une fois durant la phase de choix des variations, le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/></li>
-        <li>Si vous obtenez au moins <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> sur le jet, appliquez les effets du sort. Si vous avez selectionnée des alterations ayant un coût en <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, dépensez-les.</li>
+        <li>Une fois durant la phase de choix des variations, le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succès" ></span></li>
+        <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> sur le jet, appliquez les effets du sort. Si vous avez selectionnée des alterations ayant un coût en <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, dépensez-les.</li>
       </ol>
       <p>Jet de teinte</p>
       <ol>
-        <li>Créez le jet de teinte : prenez <img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/> comme indiqué dans les altérations choisis du sort.</li>
-        <li>Pour chaque <img src="bouclier-hollow.png" alt="Bouclier hollow" style="height: 1em; vertical-align: -0.2em;"/> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
+        <li>Créez le jet de teinte : prenez <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> comme indiqué dans les altérations choisis du sort.</li>
+        <li>Pour chaque <span class="warcrow-font-HollowBlock" role="img" aria-label="Hollow Block" ></span> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
         <li>Si le lanceur possède des <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, appliquez les effets de la teinte.</li>
       </ol>
       <p>Bloquer un sort</p>
       <ol>
         <li>Déclarer votre intention de bloquer le sort pendant l'état 2 du lancement.</li>
-        <li>Formez le test de blocage : prenez 3 <img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/>, ou les dés indiqués par la compétence Dissipation, et lancez les. Le résultat sera opposé au test de lancement du sort durant l'étape 3./</li>
-        <li>Pour chaque <img src="bouclier-hollow.png" alt="Bouclier hollow" style="height: 1em; vertical-align: -0.2em;"/> obtenu, l'unité qui bloque le sort reçoit <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/> </li>
-        <li>Si vous avez obtenu au moins un <img src="bouclier-hollow.png" alt="Bouclier hollow" style="height: 1em; vertical-align: -0.2em;"/>, appliquez les effets de la teinte à la fin de l'activation. </li>
+        <li>Formez le test de blocage : prenez 3 <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, ou les dés indiqués par la compétence Dissipation, et lancez les. Le résultat sera opposé au test de lancement du sort durant l'étape 3./</li>
+        <li>Pour chaque <span class="warcrow-font-HollowBlock" role="img" aria-label="Hollow Block" ></span> obtenu, l'unité qui bloque le sort reçoit <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/> </li>
+        <li>Si vous avez obtenu au moins un <span class="warcrow-font-HollowBlock" role="img" aria-label="Hollow Block" ></span>, appliquez les effets de la teinte à la fin de l'activation. </li>
       </ol>
       <p>Vous ne pouvez pas tenter de bloquer un sort plus d'une fois ou avec plusieurs unités.</p>
   `
@@ -355,7 +355,7 @@ export const ACTIONS_COMPLEXES: CollapsibleItem[] = [
   {
     title: 'Utiliser une compétence longue', details: `
       <ul>
-        <li>Choisissez votre compétence avec le symbole <img src="complexe.png" alt="longue" style="height: 1em; vertical-align: -0.2em;"/> et vérifier que les conditions sont remplis.</li>
+        <li>Choisissez votre compétence avec le symbole <span class="warcrow-font-LongAction" role="img" aria-label="Long Action" ></span> et vérifier que les conditions sont remplis.</li>
         <li>Appliquez les effets de la capacité.</li>
     </ul>
   `
@@ -498,27 +498,27 @@ export interface Decor {
 
 export const DECORS: Decor[] = [{
   title: 'Clôture/Barricade',
-  keywords: [{name: 'Couvert', value: `<img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/>`}],
+  keywords: [{name: 'Couvert', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`}],
   dimensions: `Socle de 4 à 13 pas de long et pas plus d'un pas de large`
 },{
   title: 'Mur',
-  keywords: [{name: 'Couvert', value: `<img src="de-b.png" alt="dé bleu" style="height: 1em; vertical-align: -0.2em;"/>`}],
+  keywords: [{name: 'Couvert', value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>`}],
   dimensions: `Socle de 4 à 13 pas de long et pas plus d'un pas de large`
 },{
   title: 'Petite structure',
-  keywords: [{name: 'Bloque la LdV'}, {name: 'Couvert', value: `<img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/>`}, {name: 'Infranchissable'}],
+  keywords: [{name: 'Bloque la LdV'}, {name: 'Couvert', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`}, {name: 'Infranchissable'}],
   dimensions: `Socle d'une surface équivalente à un carré de 4 à 7 pas de coté`
 },{
   title: 'Bâtiment',
-  keywords: [{name: 'Bloque la LdV'}, {name: 'Couvert', value: `<img src="de-b.png" alt="dé bleu" style="height: 1em; vertical-align: -0.2em;"/>`}, {name: 'Infranchissable'}],
+  keywords: [{name: 'Bloque la LdV'}, {name: 'Couvert', value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>`}, {name: 'Infranchissable'}],
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
 },{
   title: 'Forêt clairsemée',
-  keywords: [{name: 'Bloque la LdV'}, {name: 'Couvert', value: `<img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/>`}],
+  keywords: [{name: 'Bloque la LdV'}, {name: 'Couvert', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`}],
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
 },{
   title: 'Forêt dense',
-  keywords: [{name: 'Accidenté', value: 'Cavalerie, Golem'}, {name: 'Bloque la LdV'}, {name: 'Couvert', value: `<img src="de-b.png" alt="dé bleu" style="height: 1em; vertical-align: -0.2em;"/>`}],
+  keywords: [{name: 'Accidenté', value: 'Cavalerie, Golem'}, {name: 'Bloque la LdV'}, {name: 'Couvert', value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>`}],
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
 }, {
   title: 'Rivière',
@@ -530,7 +530,7 @@ export const DECORS: Decor[] = [{
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
 },{
   title: 'Ruines',
-  keywords: [{name: 'Accidenté'}, {name: 'Couvert', value: `<img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/>`}],
+  keywords: [{name: 'Accidenté'}, {name: 'Couvert', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`}],
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
 },{
   title: 'Terrain accidenté',

@@ -41,7 +41,7 @@ import { CommonModule } from '@angular/common';
           <tr>
             <td>5-6</td>
             <td>
-              L'unité est stressé et encaisse <img src="sang.png" alt="1 blessure" style="height: 1em; vertical-align: -0.2em;"/>.
+              L'unité est stressé et encaisse <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span>.
             </td>
           </tr>
           <tr>
@@ -69,14 +69,14 @@ import { CommonModule } from '@angular/common';
         <tr>
           <td>2-7</td>
           <td>
-            <p>Lancez 1 <img src="de-o.png" alt="dé orange" style="height: 1em; vertical-align: -0.2em;"/> et appliquez les effets qui correspondent exactement au résultat obtenu :</p>
+            <p>Lancez 1 <span class="warcrow-font-Orange" role="img" aria-label="Orange Dice" ></span> et appliquez les effets qui correspondent exactement au résultat obtenu :</p>
             <ul>
-              <li><img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> : Devenir stressé</li>
-              <li><img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> <img src="alert.png" alt="alert" style="height: 1em; vertical-align: -0.2em;"/> : Recevoir <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
-              <li><img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> <img src="alert-hollow.png" alt="alert-hollow" style="height: 1em; vertical-align: -0.2em;"/> : Recevoir l'état Ralenti</li>
-              <li><img src="success-hollow.png" alt="succès hollow" style="height: 1em; vertical-align: -0.2em;"/> <img src="alert.png" alt="alert" style="height: 1em; vertical-align: -0.2em;"/> : Déplacer (3)</li>
-              <li><img src="alert.png" alt="alert" style="height: 1em; vertical-align: -0.2em;"/> : Soigner <img src="sang.png" alt="1 blessure" style="height: 1em; vertical-align: -0.2em;"/></li>
-              <li><img src="alert-hollow.png" alt="alert-hollow" style="height: 1em; vertical-align: -0.2em;"/> : Souffrir <img src="sang.png" alt="1 blessure" style="height: 1em; vertical-align: -0.2em;"/></li>
+              <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> : Devenir stressé</li>
+              <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> <span class="warcrow-font-Special" role="img" aria-label="Special" ></span> : Recevoir <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
+              <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> <span class="warcrow-font-HollowSpecial" role="img" aria-label="HollowSpecial" ></span> : Recevoir l'état Ralenti</li>
+              <li><span class="warcrow-font-HollowSuccess" role="img" aria-label="Succès Hollow" ></span> <span class="warcrow-font-Special" role="img" aria-label="Special" ></span> : Déplacer (3)</li>
+              <li><span class="warcrow-font-Special" role="img" aria-label="Special" ></span> : Soigner <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span></li>
+              <li><span class="warcrow-font-HollowSpecial" role="img" aria-label="HollowSpecial" ></span> : Souffrir <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span></li>
             </ul>
           </td>
         </tr>
