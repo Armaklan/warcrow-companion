@@ -243,13 +243,16 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
 
 
 export const ACTIONS_SIMPLES: CollapsibleItem[] = [
-  {title: 'Déplacer', details: `
+  {
+    title: 'Déplacer', details: `
     <ul>
         <li>Déplacez l'unité de votre première valeur de mouvement.</li>
         <li>Puis déplacez l'unité de votre seconde valeur de mouvement.</li>
     </ul>
-  `},
-  {title: 'Attaque de mêlée', details: `
+  `
+  },
+  {
+    title: 'Attaque de mêlée', details: `
     <ul>
         <li>Faites une manoeuvres de positionnement si nécessaire.</li>
         <li>Résolvez un jet face à face entre le jet d'attaque et le jet de défense. Chaque <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> non annulé inflige <img src="sang.png" alt="1 blessure" style="height: 1em; vertical-align: -0.2em;"/> à l'unité ennemie.</li>
@@ -267,14 +270,18 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
       <li>S'il vous est impossible d'engager un soldat en combat, vous devez le placer au contact de votre leader, ou, à défaut, de toute autre soldat de votre unité.</li>
       <li>S'il n'est pas possible de respecter un des points, placez le soldat le plus près possible de votre leader.</li>
     </ul>
-  `},
-  {title: 'Attaque à distance', details: `
+  `
+  },
+  {
+    title: 'Attaque à distance', details: `
     <ul>
         <li>Le défenseur ne peut utiliser que <img src="de-b.png" alt="dé bleu" style="height: 1em; vertical-align: -0.2em;"/>  <img src="de-v.png" alt="dé vert" style="height: 1em; vertical-align: -0.2em;"/> <img src="de-n.png" alt="dé noir" style="height: 1em; vertical-align: -0.2em;"/> <img src="bouclier.png" alt="bouclier" style="height: 1em; vertical-align: -0.2em;"/> et <img src="bouclier-hollow.png" alt="bouclier hollow" style="height: 1em; vertical-align: -0.2em;"/> dans son jet de défense.</li>
         <li>Résolvez un jet face à face entre le jet d'attaque et le jet de défense. Chaque <img src="success.png" alt="succès" style="height: 1em; vertical-align: -0.2em;"/> non annulé inflige <img src="sang.png" alt="1 blessure" style="height: 1em; vertical-align: -0.2em;"/> à l'unité ennemie. Le défenseur ne peut pas agir sur les variations.</li>
     </ul>
-  `},
-  {title: 'Lancer un sort', details: `
+  `
+  },
+  {
+    title: 'Lancer un sort', details: `
       <ol>
         <li>Choisissez votre sort et déclarez si vous appliquez des altérations, puis vérifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
         <li>Si vous adversaire à une unité qui peut tenter de bloquer le sort, faite le test.</li>
@@ -296,36 +303,46 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>Si vous avez obtenu au moins un <img src="bouclier-hollow.png" alt="Bouclier hollow" style="height: 1em; vertical-align: -0.2em;"/>, appliquez les effets de la teinte à la fin de l'activation. </li>
       </ol>
       <p>Vous ne pouvez pas tenter de bloquer un sort plus d'une fois ou avec plusieurs unités.</p>
-  `},
-  {title: 'Capacité de teinte', details: `
+  `
+  },
+  {
+    title: 'Capacité de teinte', details: `
       <ul>
         <li>Choisissez votre capacité de teinte.</li>
         <li>Dépensez <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>
         <li>Appliquez les effets de la capacité.</li>
     </ul>
-  `},
-  {title: 'Utiliser une compétence', details: `
+  `
+  },
+  {
+    title: 'Utiliser une compétence', details: `
       <ul>
         <li>Choisissez votre compétence et vérifier que les conditions sont remplis.</li>
         <li>Appliquez les effets de la capacité.</li>
     </ul>
-  `}
+  `
+  }
 ];
 
 export const ACTIONS_COMPLEXES: CollapsibleItem[] = [
-  {title: 'Assaut', details: `
+  {
+    title: 'Assaut', details: `
     <ul>
         <li>Déplacez-vous jusqu'à engager le combat avec l'ennemi, en utilisant votre première puis votre seconde valeur de mouvement.</li>
         <li>Résolvez une attaque de mêlée contre lui.</li>
     </ul>
-  `},
-  {title: 'Charge', details: `
+  `
+  },
+  {
+    title: 'Charge', details: `
     <ul>
         <li>Déplacez-vous en ligne droite, en utilisant le mouvement de charge, jusqu'à engager le combat avec l'ennemi.</li>
         <li>Résolvez une attaque de mêlée contre lui. Vous pouvez relancer le jet d'attaque.</li>
     </ul>
-  `},
-  {title: 'Repos', details: `
+  `
+  },
+  {
+    title: 'Repos', details: `
     <p>Quand votre unité effectue cette action, utilisez autant des options suivantes</p>
     <ul>
         <li>Eliminer tout son stress.</li>
@@ -333,13 +350,16 @@ export const ACTIONS_COMPLEXES: CollapsibleItem[] = [
         <li>Effectuer un mouvement en utilisant uniquement sa deuxième valeur de Mouvement.</li>
     </ul>
     <p>Même si elle a déjà été activée pendant ce round, l'unité n'est pas stressée en effectuant cette action.</p>
-  `},
-  {title: 'Utiliser une compétence longue', details: `
+  `
+  },
+  {
+    title: 'Utiliser une compétence longue', details: `
       <ul>
         <li>Choisissez votre compétence avec le symbole <img src="complexe.png" alt="longue" style="height: 1em; vertical-align: -0.2em;"/> et vérifier que les conditions sont remplis.</li>
         <li>Appliquez les effets de la capacité.</li>
     </ul>
-  `}
+  `
+  }
 ];
 
 // Nouvelles données: Capacités (compétence, passive, commandement, ...)
@@ -378,5 +398,76 @@ export const CAPACITES: CollapsibleItem[] = [
       <p>Les actions de teintes sont des actions. Leur fonctionnement est décrite dans la liste des actions. </p>
     `,
     icon: 'teint.png'
+  }
+];
+
+
+export const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
+  {
+    title: 'Accidenté (X) / Rugged',
+    details: `
+        <p>Les unités définies par X reçoivent l'état Ralenti du moment qu'elles sont adjacentes au décors pendant leur activation. De plus, elles ne peuvent pas déclarer de charge si la trajectoire du mouvement de la charge les amènes à être adjacentes au décors.</p>
+        <p>X peut être le nom d'une unité, d'une caractéristique, d'un mot-clé, ou de plusieurs de ce élements. Si aucune valeur X n'est spécifiée, l'effet s'applique à toutes les unités.</p>
+    `
+  },
+  {
+    title: 'Bloque la LdV / Block LoS',
+    details: `
+      Ce décor bloque tous les LdV tracées à travers lui, ainsi que celles tracées depuis son intérieur et vers son intérieur. A moins qu'un décor ne possède ce mot-clé, il n'est jamais considéré comme bloquant les LdV.
+    `
+  },
+  {
+    title: 'Couvert (D) / Cover',
+    details: `<p>Les unités adjacentes à ce décor peuvent bénéficier d'un couvert lors d'une attaque à distance. La valeur D indique les dés ou symboles automatique que les unités adjacentes ajoutent à leur jet de défense.</p>`
+  },
+  {
+    title: 'Infranchissable / Impassable',
+    details: `<p>Les unités ne peuvent pas traverser ce décor, n'y y finir leur mouvement. Si un décor gagne la caractéristique Infranchissable pendant la bataille, les unités qui s'y trouvent doivent se déplacer pour devenir adjacentes.</p>`
+  },
+  {
+    title: 'Mortel (X:D) / Lethal',
+    details: `
+      <p>Les unités définies par X et
+      adjacentes à ce décor au début
+      de leur activation, subissent une
+      attaque de mêlée résolue avec un
+      jet D. Le décor ne peut pas subir
+      de dégâts et ne force pas les unités
+      au repli.</p>
+      <p>X peut être le nom d’une unité,
+      d’une caractéristique, d’un mot-clé
+      ou de plusieurs de ces éléments
+      (dans ce cas séparés par des traits
+      “|”) (voir “Personnages. Rejoindre
+      une unité” pour des exemples de
+      X). Si aucune valeur n’est spécifiée
+      pour X, l’effet s’applique à toutes
+      les unités.</p>`
+  },
+  {
+    title: 'Piège / Trap',
+    details: `<p>Ce décor a été créé par une unité utilisant une compétence ou un
+      sort. Les unités capables de supprimer les pièges peuvent retirer
+      ce décor du champ de bataille.</p>`
+  },
+  {
+    title: 'Sinistre (X) / Sinister',
+    details: `<p>
+        Les unités définies par X qui se
+        trouvent jusqu’à 4 pas de ce décor au début de leur activation
+        doivent réussir un test de VOL ou
+        devenir stressées.
+        </p>
+        <p>
+        X peut être le nom d’une unité,
+        d’une caractéristique, d’un mot-clé
+        ou de plusieurs de ces éléments
+        (dans ce cas séparés par des traits
+        “|”) (voir “Personnages. Rejoindre
+        une unité” pour des exemples de
+        X). Si aucune valeur n’est spécifiée
+        pour X, l’effet s’applique à toutes
+        les unités.
+        </p>`
   }
 ];

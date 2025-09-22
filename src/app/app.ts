@@ -37,6 +37,10 @@ import { MatSidenav } from '@angular/material/sidenav';
           <mat-icon>label</mat-icon>
           <span>Mots‑clefs</span>
         </a>
+        <a mat-list-item routerLink="/mots-clefs-decors" (click)="closeOnMobile()">
+          <mat-icon>terrain</mat-icon>
+          <span>Mots clef de décors</span>
+        </a>
         <a mat-list-item routerLink="/etats" (click)="closeOnMobile()">
           <mat-icon>info</mat-icon>
           <span>États</span>
