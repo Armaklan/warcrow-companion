@@ -523,6 +523,16 @@ export const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
         pour X, l’effet s’applique à toutes
         les unités.
         </p>`
+  },
+  {
+    title: 'Brouillard',
+    details: `
+    <p>
+        Le brouillard est représenté sous forme de marqueurs.
+    </p>
+    <p>Une unité qui terminé son activation dans les 4 pas d'un marqueur Brouillard reçoit 1 teinte. </p>
+    <p>Le brouillard ne coupe pas les lignes de vue et n'interrompt pas le mouvement.
+    Une unité ne peut placer un marqueur brouillard à moins de 10 pas d'un autre marqueur brouillard.</p>`
   }
 ];
 
