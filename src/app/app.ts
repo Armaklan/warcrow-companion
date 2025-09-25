@@ -1,13 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatSidenav } from '@angular/material/sidenav';
+import {Component, ViewChild} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterLink, RouterOutlet} from '@angular/router';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatSidenav} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -18,74 +18,107 @@ import { MatSidenav } from '@angular/material/sidenav';
     MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatButtonModule, MatDividerModule
   ],
   template: `
-  <mat-sidenav-container class="app-container">
-    <mat-sidenav #sidenav [mode]="isWideScreen ? 'side' : 'over'" [opened]="isWideScreen">
-      <mat-nav-list>
-        <a mat-list-item routerLink="/actions" (click)="closeOnMobile()">
-          <mat-icon>bolt</mat-icon>
-          <span>Actions</span>
-        </a>
-        <a mat-list-item routerLink="/capacites" (click)="closeOnMobile()">
-          <mat-icon>psychology</mat-icon>
-          <span>Capacités</span>
-        </a>
-        <a mat-list-item routerLink="/etats" (click)="closeOnMobile()">
-          <mat-icon>info</mat-icon>
-          <span>États et marqueurs</span>
-        </a>
-        <a mat-list-item routerLink="/mots-clefs" (click)="closeOnMobile()">
-          <mat-icon>label</mat-icon>
-          <span>Mots‑clefs</span>
-        </a>
-        <a mat-list-item routerLink="/mots-clefs-decors" (click)="closeOnMobile()">
-          <mat-icon>terrain</mat-icon>
-          <span>Mots clef de décors</span>
-        </a>
-        <a mat-list-item routerLink="/resume-du-tour" (click)="closeOnMobile()">
-          <mat-icon>summarize</mat-icon>
-          <span>Résumé du tour</span>
-        </a>
-        <a mat-list-item routerLink="/resume-opposition" (click)="closeOnMobile()">
-          <mat-icon>groups</mat-icon>
-          <span>Résumé d'une opposition</span>
-        </a>
-        <a mat-list-item routerLink="/decors" (click)="closeOnMobile()">
-          <mat-icon>landscape</mat-icon>
-          <span>Décors</span>
-        </a>
-        <a mat-list-item routerLink="/teinte" (click)="closeOnMobile()">
-          <mat-icon>palette</mat-icon>
-          <span>Teinte</span>
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
+    <mat-sidenav-container class="app-container">
+      <mat-sidenav #sidenav [mode]="isWideScreen ? 'side' : 'over'" [opened]="isWideScreen">
+        <mat-nav-list>
+          <a mat-list-item routerLink="/actions" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>bolt</mat-icon>
+              <span>Actions</span>
+            </div>
+          </a>
+          <a mat-list-item routerLink="/capacites" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>psychology</mat-icon>
+              <span>Capacités</span>
+            </div>
+          </a>
+          <a mat-list-item routerLink="/etats" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>info</mat-icon>
+              <span>États et marqueurs</span>
+            </div>
+          </a>
+          <a mat-list-item routerLink="/mots-clefs" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>label</mat-icon>
+              <span>Mots‑clefs</span>
+            </div>
+          </a>
+          <a mat-list-item routerLink="/mots-clefs-decors" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>terrain</mat-icon>
+              <span>Mots clef de décors</span>
+            </div>
+          </a>
+          <a mat-list-item routerLink="/resume-du-tour" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>summarize</mat-icon>
+              <span>Résumé du tour</span>
+            </div>
+          </a>
+          <a mat-list-item routerLink="/resume-opposition" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>groups</mat-icon>
+              <span>Résumé d'une opposition</span>
+            </div>
+          </a>
+          <a mat-list-item routerLink="/decors" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>landscape</mat-icon>
+              <span>Décors</span>
+            </div>
+          </a>
+          <a mat-list-item routerLink="/teinte" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>palette</mat-icon>
+              <span>Teinte</span>
+            </div>
+          </a>
+        </mat-nav-list>
+      </mat-sidenav>
 
-    <mat-sidenav-content>
-      <mat-toolbar color="primary">
-        @if (!isWideScreen) {
-          <button mat-icon-button (click)="sidenav.toggle()" aria-label="Ouvrir le menu">
-            <mat-icon>menu</mat-icon>
-          </button>
-        }
-        <span class="toolbar-title">Warcrow Companion</span>
-        <span class="spacer"></span>
-      </mat-toolbar>
+      <mat-sidenav-content>
+        <mat-toolbar color="primary">
+          @if (!isWideScreen) {
+            <button mat-icon-button (click)="sidenav.toggle()" aria-label="Ouvrir le menu">
+              <mat-icon>menu</mat-icon>
+            </button>
+          }
+          <span class="toolbar-title">Warcrow Companion</span>
+          <span class="spacer"></span>
+        </mat-toolbar>
 
-      <div class="content">
-        <router-outlet></router-outlet>
+        <div class="content">
+          <router-outlet></router-outlet>
 
-        <footer>
-        <i>Warcrow is a © Corvus Belli game. All rule belong to it.</i>
-        </footer>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+          <footer>
+            <i>Warcrow is a © Corvus Belli game. All rule belong to it.</i>
+          </footer>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   `,
   styles: [`
-    :host { display: block; }
-    .app-container { height: 100vh; }
+    :host {
+      display: block;
+    }
+
+    .app-container {
+      height: 100vh;
+    }
+
     /* Ensure the sidenav is opaque so underlying content doesn't show through */
-    mat-sidenav { background: #fff; color: rgba(0,0,0,0.87); }
+    mat-sidenav {
+      background: #fff;
+      color: rgba(0, 0, 0, 0.87);
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
   `]
 })
 export class App {
