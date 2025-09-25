@@ -73,10 +73,10 @@ import { CommonModule } from '@angular/common';
             <ul>
               <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> : Devenir stressé</li>
               <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> <span class="warcrow-font-Special" role="img" aria-label="Special" ></span> : Recevoir <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
-              <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> <span class="warcrow-font-HollowSpecial" role="img" aria-label="HollowSpecial" ></span> : Recevoir l'état Ralenti</li>
+              <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow-Special" ></span> : Recevoir l'état Ralenti</li>
               <li><span class="warcrow-font-HollowSuccess" role="img" aria-label="Succès Hollow" ></span> <span class="warcrow-font-Special" role="img" aria-label="Special" ></span> : Déplacer (3)</li>
               <li><span class="warcrow-font-Special" role="img" aria-label="Special" ></span> : Soigner <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span></li>
-              <li><span class="warcrow-font-HollowSpecial" role="img" aria-label="HollowSpecial" ></span> : Souffrir <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span></li>
+              <li><span class="warcrow-font-Hollow-Special" role="img" aria-label="HollowSpecial" ></span> : Souffrir <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span></li>
             </ul>
           </td>
         </tr>
