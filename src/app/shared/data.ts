@@ -6,12 +6,12 @@ export interface CollapsibleItem {
 
 export const ETATS: CollapsibleItem[] = [
   {
-    title: 'Effrayé / Frightened', details: `<p>Quand il effectue un test de volonté, l'unité doit relancer une fois tous les dés indiquant au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>.</p>
+    title: 'Effrayé / Frightened', details: `<b>Etat</b><p>Quand il effectue un test de volonté, l'unité doit relancer une fois tous les dés indiquant au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>.</p>
 <p>Retirez cet état après avoir effectué un test de Volonté.</p>`, icon: 'effraye.png'
   },
   {
     title: 'Ralenti / Slowed',
-    details: `<p>
+    details: `<b>Etat</b><p>
 Votre unité ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (MOV) lors des actions de mouvement et d’assaut.
   De plus, vous devez soustraire 4 pas à votre mouvement de charge (min. 0).
 </p>
@@ -21,7 +21,7 @@ Votre unité ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (
   },
   {
     title: 'Démoralisé / Demoralized',
-    details: `<p>Si votre unité est démoralisée :</p>
+    details: `<b>Etat</b></b><p>Si votre unité est démoralisée :</p>
   <ul>
     <li>Elle ne peut plus être activée d’aucune façon.</li>
     <li>Elle ne peut se stresser d’aucune façon et ne peut pas réduire son stress.</li>
@@ -31,12 +31,36 @@ Votre unité ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (
   </ul>
 
   <h3>Unité démoralisée</h3>
-  <p>Si votre unité est stressée au-delà de sa valeur de MOR, vous devez effectuer un test de VOL à la fin de l’activation en cours. Si vous ne le réussissez pas, votre unité sera démoralisée et devra fuir immédiatement (voir “Fuite”).</p>`,
+  <p>Si votre unité est stressée au-delà de sa valeur de MOR, vous devez effectuer un test de VOL à la fin de l’activation en cours. Si vous ne le réussissez pas, votre unité sera démoralisée et devra fuir immédiatement (voir “Fuite”).</p>
+  <p>Si votre stress excède la valeur de votre MOR de 2, il vous faut 2 <span class="warcrow-font-Success" role="img" aria-label="succès" > pour réussir ce test.</p>
+  <h3>Fuite</h3>
+  <p>Si votre unité fuit, vous devez immédiatement la
+    déplacer en utilisant ses 2 valeurs de MOV vers votre
+    zone de déploiement, en suivant l’itinéraire le plus
+    court possible. Si elle s’y trouve déjà, vous devez la
+    déplacer vers le bord du champ de bataille le plus
+    proche. Lorsqu’une unité en fuite entre en contact
+    avec un bord du champ de bataille, retirez-la de
+    la partie. Elle compte comme ayant été éliminée à
+    toutes fins utiles. Pour qu’une unité soit considérée
+    comme étant entrée dans votre zone de déploiement,
+    les socles de tous ses soldats doivent se trouver
+    intégralement dans les limites de la zone. Il suffit que
+    le socle d’un des soldats de l’unité touche le bord du
+    champ de bataille pour que l’unité quitte ce dernier.
+  </p>
+  <h3>Rallier une unité démoralisée</h3>
+  <p>Lorsque le compteur de tour atteint le jeton de démoralisation de votre unité, faites un test de VOL pour la rallier :</p>
+  <ul>
+  <li>Réussite : L'unité n'est plus démoralisé. Son stress diminue à MOR-1. Elle peut effectuer une fois l'action de mouvement.</li>
+  <li>Echec : avancez le jeton de démoralisation de 2 crans sur le compteur de tour. Votre unité poursuit sa fuite.</li>
+</ul>
+    `,
     icon: 'demoraliser.png'
   },
   {
     title: 'Désarmé / Disarmed',
-    details: `<p>
+    details: `<b>Etat</b><p>
 Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a obtenu au moins un symbole
 <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>. Si vous avez plusieurs dés, c’est votre adversaire qui choisit lequel.
 </p>
@@ -46,7 +70,7 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
     icon: 'desarme.png'
   },
   {
-    title: 'Vulnérable / Vulnerable', details: `<p>
+    title: 'Vulnérable / Vulnerable', details: `<b>Etat</b><p>
     Votre unité doit annuler un dé de ses jets de défense dans lesquels elle a obtenu au moins un <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>.
     Si vous avez plusieurs dés, c’est votre adversaire qui choisit lequel.
   </p>
@@ -57,6 +81,23 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
   <p>Vous ne pouvez ajouter de variation lors de vos jets de défense.</p>
   <p>Retirez cet état à la fin de la résolution de l'action durant laquelle vous avez subi ses effets
     (si vous n’avez pu annuler aucun dé, l’état demeure actif).</p>`, icon: 'vulnerable.png'
+  },
+  {
+    title: 'Stress',
+    details: `
+      <p>Tant que votre unité a au moins autant de stress que son MOR et un marqueur d'activation, vous ne pouvez l’activer que pour effectuer l’action complexe de repos.</p>
+      <p>Si votre unité est stressée au-delà de sa valeur de MOR, vous devez effectuer un test de VOL à la fin de l’activation en cours. Si vous ne le réussissez pas,
+      votre unité sera démoralisée et devra fuir immédiatement</p>
+    `,
+    icon: 'stress-token.png'
+  },
+  {
+    title: 'Activation',
+    details: `
+      <p>Placez ce marqueur sur votre unité après son activation. Si elle est activée une nouvelle fois dans la manche, stressez-le.</p>
+      <p>A la fin de la manche, retirez ce marqueur.</p>
+    `,
+    icon: 'activation.png'
   }
 ];
 
@@ -500,25 +541,37 @@ export const DECORS: Decor[] = [{
   title: 'Clôture/Barricade',
   keywords: [{name: 'Couvert', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`}],
   dimensions: `Socle de 4 à 13 pas de long et pas plus d'un pas de large`
-},{
+}, {
   title: 'Mur',
   keywords: [{name: 'Couvert', value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>`}],
   dimensions: `Socle de 4 à 13 pas de long et pas plus d'un pas de large`
-},{
+}, {
   title: 'Petite structure',
-  keywords: [{name: 'Bloque la LdV'}, {name: 'Couvert', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`}, {name: 'Infranchissable'}],
+  keywords: [{name: 'Bloque la LdV'}, {
+    name: 'Couvert',
+    value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`
+  }, {name: 'Infranchissable'}],
   dimensions: `Socle d'une surface équivalente à un carré de 4 à 7 pas de coté`
-},{
+}, {
   title: 'Bâtiment',
-  keywords: [{name: 'Bloque la LdV'}, {name: 'Couvert', value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>`}, {name: 'Infranchissable'}],
+  keywords: [{name: 'Bloque la LdV'}, {
+    name: 'Couvert',
+    value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>`
+  }, {name: 'Infranchissable'}],
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
-},{
+}, {
   title: 'Forêt clairsemée',
-  keywords: [{name: 'Bloque la LdV'}, {name: 'Couvert', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`}],
+  keywords: [{name: 'Bloque la LdV'}, {
+    name: 'Couvert',
+    value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`
+  }],
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
-},{
+}, {
   title: 'Forêt dense',
-  keywords: [{name: 'Accidenté', value: 'Cavalerie, Golem'}, {name: 'Bloque la LdV'}, {name: 'Couvert', value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>`}],
+  keywords: [{name: 'Accidenté', value: 'Cavalerie, Golem'}, {name: 'Bloque la LdV'}, {
+    name: 'Couvert',
+    value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>`
+  }],
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
 }, {
   title: 'Rivière',
@@ -528,11 +581,14 @@ export const DECORS: Decor[] = [{
   title: 'Lac',
   keywords: [{name: 'Infranchissable'}],
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
-},{
+}, {
   title: 'Ruines',
-  keywords: [{name: 'Accidenté'}, {name: 'Couvert', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`}],
+  keywords: [{name: 'Accidenté'}, {
+    name: 'Couvert',
+    value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`
+  }],
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
-},{
+}, {
   title: 'Terrain accidenté',
   keywords: [{name: 'Accidenté'}],
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`

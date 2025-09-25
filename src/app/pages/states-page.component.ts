@@ -8,7 +8,7 @@ import { ETATS } from '../shared/data';
   standalone: true,
   imports: [CommonModule, CollapsibleListComponent],
   template: `
-    <h1>États</h1>
+    <h1>États et marqueurs</h1>
     <app-collapsible-list [items]="etats"></app-collapsible-list>
   `
 })
