@@ -90,7 +90,7 @@ import {MatSidenav} from '@angular/material/sidenav';
         </mat-nav-list>
       </mat-sidenav>
 
-      <mat-sidenav-content>
+      <mat-sidenav-content (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
         <mat-toolbar color="primary">
           @if (!isWideScreen) {
             <button mat-icon-button (click)="sidenav.toggle()" aria-label="Ouvrir le menu">
@@ -138,11 +138,42 @@ export class App {
   @ViewChild('sidenav') sidenav!: MatSidenav;
   isWideScreen = window.matchMedia('(min-width: 960px)').matches;
 
+  private touchStartX: number | null = null;
+  private touchStartY: number | null = null;
+  private touchStartTime = 0;
+
   constructor() {
     const mq = window.matchMedia('(min-width: 960px)');
     const handler = (e: MediaQueryListEvent | MediaQueryList) => this.isWideScreen = e.matches;
     // @ts-ignore
     mq.addEventListener ? mq.addEventListener('change', handler) : mq.addListener(handler as any);
+  }
+
+  onTouchStart(event: TouchEvent) {
+    if (this.isWideScreen || this.sidenav?.opened) return;
+    const t = event.changedTouches[0];
+    // Only start if swipe begins near the left edge to avoid conflicts with horizontal scrolls in content
+    this.touchStartX = t.clientX;
+    this.touchStartY = t.clientY;
+    this.touchStartTime = Date.now();
+  }
+
+  onTouchEnd(event: TouchEvent) {
+    if (this.isWideScreen || this.sidenav?.opened) return;
+    if (this.touchStartX === null || this.touchStartY === null) return;
+
+    const t = event.changedTouches[0];
+    const dx = t.clientX - this.touchStartX;
+    const dy = Math.abs(t.clientY - this.touchStartY);
+    const dt = Date.now() - this.touchStartTime;
+
+    // Criteria: quick right swipe, small vertical movement, starts from very left edge
+    const startedAtEdge = this.touchStartX <= 30; // 30px from the left edge
+    if (startedAtEdge && dx >= 60 && dy <= 40 && dt <= 500) {
+      this.sidenav.open();
+    }
+
+    this.touchStartX = this.touchStartY = null;
   }
 
   closeOnMobile() {
