@@ -75,6 +75,12 @@ import {MatSidenav} from '@angular/material/sidenav';
               <span>Décors</span>
             </div>
           </a>
+          <a mat-list-item routerLink="/scenarios" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>menu_book</mat-icon>
+              <span>Scénarios</span>
+            </div>
+          </a>
           <a mat-list-item routerLink="/teinte" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>palette</mat-icon>

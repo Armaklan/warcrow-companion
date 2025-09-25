@@ -603,3 +603,103 @@ export const DECORS: Decor[] = [{
   keywords: [{name: 'Accidenté'}],
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
 }];
+
+// Nouvelle data: Scénarios
+export interface Scenario {
+  title: string;
+  image: string;
+  requiredMaterial?: string[];
+  roundLength: number;
+  endRoundScoring?: string[];
+  endGame: number;
+  // Additional notes/details; can contain HTML
+  additionnal?: string;
+}
+
+// Exported array for scenarios; left empty by default so consumers can populate or future PRs can add entries.
+export const SCENARIO: Scenario[] = [{
+  title: 'Prendre position',
+  image: 'scenario/take-position.png',
+  roundLength: 5,
+  endRoundScoring: [
+    `1 PM pour chaque objectif adversaire controllé`,
+    `1 PM si aucun objectif amis n'est controllé par l'adversaire`
+  ],
+  endGame: 3,
+  requiredMaterial: [
+    `2 marqueurs d'objectifs rouge`,
+    `2 marqueurs d'objectifs bleu`
+  ]
+}, {
+  title: `Zone d\'influence`,
+  image: 'scenario/influence-zone.png',
+  roundLength: 5,
+  endRoundScoring: [
+    `1 PM si vous contrôlez plus d'objectifs que l'adversaire.`,
+    `1 PM si vous contrôlez au moins un objectif adverse.`,
+    `1 PM si vous contrôlez au moins 2 objectifs.`
+  ],
+  endGame: 3,
+  requiredMaterial: [
+    `2 marqueurs d'objectifs rouge`,
+    `2 marqueurs d'objectifs bleu`,
+    `1 marqueur d'objectif marron`
+  ],
+  additionnal: `
+    <h2>Domaine stratégique</h2>
+    <ul>
+     <li>Toutes les unités qui ne sont pas démoralisées ont une valeur de conquête augmentée de 1.</li>
+     <li>Les modificateurs de conquêtes ne sont pas augmentés. </li>
+    </ul>
+    <h2>Zone d'influence</h2>
+    <p>Les unités peuvent contester le contrôle d'un objectif à 7 pas au lieu de 3.</p>
+  `
+}, {
+  title: `Expansion`,
+  image: 'scenario/expanse.png',
+  roundLength: 5,
+  endRoundScoring: [
+    `2 PM si vous contrôlez plus d'objectifs marron que l'adversaire.`,
+    `1 PM si vous contrôlez le même nombre d'objectif marron que l'adversaire.`,
+    `1 PM si vous contrôlez l'objectif bleu central.`
+  ],
+  endGame: 3,
+  requiredMaterial: [
+    `4 marqueurs d'objectifs marron`,
+    `1 marqueurs d'objectifs bleu`
+  ],
+  additionnal: `
+    <h2>Préparation</h2>
+    <p>Les objectifs marrons commencent avec un marqueur de contrôle de la compagnie qui a sa zone de déploiement adjacente au marqueur.</p>
+  `
+}, {
+  title: `Butin`,
+  image: 'scenario/loot.png',
+  roundLength: 5,
+  endRoundScoring: [
+    `1 PM si vous possédez au moins 1 butin.`,
+    `1 PM si vous possédez plus de butins que l'adversaire  .`,
+    `1 PM si votre adversaire ne possède pas de butin.`
+  ],
+  endGame: 3,
+  requiredMaterial: [
+    `2 marqueurs d'objectifs rouge`,
+    `2 marqueurs d'objectifs bleu`,
+    `1 marqueur d'objectif marron`
+  ],
+  additionnal: `
+    <h2>Butin</h2>
+    <p>Les marqueurs d'objectif servent à représenter le butin. Ils utilisent ces règles à la place de celle du livre de règles :</p>
+    <ul>
+        <li>Un unité adjacente à un objectif peut se stressé pour le récupérer. Placez le sur votre fiche de profil.</li>
+        <li>Les unités peuvent traverser les marqueurs objectifs mais pas s'arrêter dessus.</li>
+        <li>Les unités ne peuvent saisir d'objectif de la couleur adverse.</li>
+        <li>Une unité ne peut pas porter plus d'un marqueur objectif à la fois.</li>
+        <li>Quand une unité portant un objectif doit quitter de la table, la compagnie
+        doit placer l'objectif à coté du leader de l'unité avant de le retirer de la table. Si une unité est détruite
+        mais contenait dans ces rangs un personnage officier, donnez-lui l'objectif. </li>
+        <li>Quand une unité portant un objectif est démoralisée, placez l'objectif au sol à coté du leader avant la fuite.</li>
+        <li>Si un personnage quitte une unité qui porte un objectif, il peut choisir de prendre ou de laisser l'objectif.</li>
+    </ul>
+  `
+}];
