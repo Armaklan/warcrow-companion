@@ -168,8 +168,8 @@ export class App {
     const dt = Date.now() - this.touchStartTime;
 
     // Criteria: quick right swipe, small vertical movement, starts from very left edge
-    const startedAtEdge = this.touchStartX <= 30; // 30px from the left edge
-    if (startedAtEdge && dx >= 60 && dy <= 40 && dt <= 500) {
+    const startedAtEdge = this.touchStartX <= 150; // 30px from the left edge
+    if (startedAtEdge && dx >= 60 && dy <= 80 && dt <= 500) {
       this.sidenav.open();
     }
 
