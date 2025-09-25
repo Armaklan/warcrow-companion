@@ -8,6 +8,7 @@ import { CapacitesPageComponent } from './pages/capacites-page.component';
 import { KeywordsDecorsPageComponent } from './pages/keywords-decors-page.component';
 import { DecorsPageComponent } from './pages/decors-page.component';
 import { ResumeOppositionPageComponent } from './pages/resume-opposition-page.component';
+import { PersonnageEtUnitePageComponent } from './pages/personnage-et-unite-page.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'actions' },
@@ -20,5 +21,6 @@ export const routes: Routes = [
   { path: 'teinte', component: TeintePageComponent, title: 'Teinte' },
   { path: 'capacites', component: CapacitesPageComponent, title: 'Capacités' },
   { path: 'decors', component: DecorsPageComponent, title: 'Décors' },
+  { path: 'personnage-unite', component: PersonnageEtUnitePageComponent, title: 'Personnage et unité' },
   { path: '**', redirectTo: 'actions' }
 ];

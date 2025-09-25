@@ -63,6 +63,12 @@ import {MatSidenav} from '@angular/material/sidenav';
               <span>Résumé d'une opposition</span>
             </div>
           </a>
+          <a mat-list-item routerLink="/personnage-unite" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>person</mat-icon>
+              <span>Personnages et unités</span>
+            </div>
+          </a>
           <a mat-list-item routerLink="/decors" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>landscape</mat-icon>
