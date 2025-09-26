@@ -50,7 +50,6 @@ import { CommonModule } from '@angular/common';
       </li>
       <li>Avancez le jeton de fin de manche selon les conditions du scénario.</li>
     </ol>
-    <p>Cette page sera bientôt renseignée.</p>
   `
 })
 export class ResumeDuTourPageComponent {}

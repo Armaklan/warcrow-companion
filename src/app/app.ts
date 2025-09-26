@@ -135,13 +135,13 @@ import {SearchEntry, SearchService} from './shared/search.service';
   styles: [`
     :host { display: block; }
     .app-container { height: 100vh; }
-    mat-sidenav { background: #fff; color: rgba(0, 0, 0, 0.87); }
+    mat-sidenav { background: var(--wc-surface); color: rgba(0, 0, 0, 0.87); }
     .menu-item { display: flex; align-items: center; gap: 8px; }
-    .menu-search { padding: 12px; border-bottom: 1px solid #eee; }
+    .menu-search { padding: 12px; border-bottom: 1px solid var(--wc-border); background: #ffffffcc; backdrop-filter: blur(2px); }
     .search-field { width: 100%; }
     .search-results { max-height: 320px; overflow: auto; margin-top: 8px; border: 1px solid #e0e0e0; border-radius: 8px; }
     .search-results .result { display: block; padding: 8px 12px; text-decoration: none; color: inherit; cursor: pointer; }
-    .search-results .result:hover { background: rgba(0,0,0,0.04); }
+    .search-results .result:hover { background: var(--wc-hover); }
     .search-results .title { font-weight: 600; }
     .search-results .meta { font-size: 12px; color: #666; }
   `]

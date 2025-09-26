@@ -1,16 +1,50 @@
+/* Brand variables */
+:root {
+  --wc-primary: #173b15; /* Warcrow green */
+  --wc-primary-contrast: #ffffff;
+  --wc-surface: #f6faf5; /* subtle tinted background */
+  --wc-surface-strong: #e6efe5; /* stronger surface for headers */
+  --wc-border: #d9e4d8;
+  --wc-hover: rgba(23, 59, 21, 0.06);
+}
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", Arial, sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--wc-surface); color: #1f1f1f; }
 
 .app-container { height: 100vh; }
+/* Sidenav width remains the same; background set in app component override */
 .mat-sidenav { width: 280px; }
 .content { padding: 16px; }
 .toolbar-title { font-weight: 600; }
 .spacer { flex: 1 1 auto; }
 
+/* Headings and links use brand accent */
+h1, h2, h3 { color: var(--wc-primary); }
+a { color: var(--wc-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Angular Material quick brand touches */
+.mat-toolbar.mat-primary { background: var(--wc-primary); color: var(--wc-primary-contrast); }
+.mat-expansion-panel-header:hover { background: var(--wc-hover); }
+
+/* Tables (e.g., Décors) */
+.decors-table thead th { background: var(--wc-surface-strong) !important; color: #11330f !important; }
+.decors-table tbody tr + tr td { border-top-color: var(--wc-border) !important; }
+.decors-table tbody tr:nth-child(even) { background: #ffffff !important; }
+
+/* Search results panel */
+.search-results { border-color: var(--wc-border) !important; }
+.search-results .result:hover { background: var(--wc-hover) !important; }
+.search-results .title { color: #163513; }
+
+/* Selection color */
+::selection { background: var(--wc-primary); color: var(--wc-primary-contrast); }
+
 @media (max-width: 600px) {
   .content { padding: 12px; }
 }
 
+/* Dice icon colors remain unchanged */
 .warcrow-font-Blue::before { color: #00aeef; }
 .warcrow-font-Green::before { color: #41ad49; }
 .warcrow-font-Orange::before { color: #f4792a; }
