@@ -311,6 +311,19 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
       <li>S'il vous est impossible d'engager un soldat en combat, vous devez le placer au contact de votre leader, ou, à défaut, de toute autre soldat de votre unité.</li>
       <li>S'il n'est pas possible de respecter un des points, placez le soldat le plus près possible de votre leader.</li>
     </ul>
+    <p>
+        <b>Forcer au repli</b>
+    </p>
+    <ul>
+        <li>L'unité forcer au repli peut se stresser pour l'empêcher.</li>
+        <li>Un unité qui se replie doit se déplacer de la première valeur de son mouvement. Elle doit mettre le plus de distance possible avec son adversaire.</li>
+        <li>L'unité gagnante peut poursuivre l'unité qui se replie en se déplaçant avec sa première valeur de mouvement. Si le leader entre en contact socle à socle avec l'adversaire, il peut l'engager (vous n’êtes pas considéré
+            comme ayant chargé).</li>
+    </ul>
+    <p><b>Elimination d'une unité</b></p>
+    <ul>
+        <li>Si vous avez complètement éliminé l'unité ennemie, votre unité peut effectuer l'action de mouvement gratuitement une fois (cela ne compte pas comme une activation).</li>
+    </ul>
   `
   },
   {
