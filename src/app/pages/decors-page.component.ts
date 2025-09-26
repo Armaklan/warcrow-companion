@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DECORS } from '../shared/data';
 
 @Component({
@@ -51,7 +51,7 @@ import { DECORS } from '../shared/data';
       </thead>
       <tbody>
         @for (d of decorsSorted; track d.title) {
-          <tr>
+          <tr [attr.id]="slug(d.title)">
             <td><strong>{{ d.title }}</strong></td>
             <td [attr.data-label]="'Mots‑clef'">
               <span class="keywords">
@@ -73,7 +73,22 @@ import { DECORS } from '../shared/data';
 export class DecorsPageComponent {
   decors = DECORS;
 
+  constructor(route: ActivatedRoute) {
+    route.queryParamMap.subscribe(pm => {
+      const id = pm.get('open');
+      if (!id) return;
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 0);
+    });
+  }
+
   get decorsSorted() {
     return [...this.decors].sort((a, b) => a.title.localeCompare(b.title, 'fr', { sensitivity: 'base' }));
+  }
+
+  slug(text: string): string {
+    return text.toLowerCase().normalize('NFD').replace(/\p{Diacritic}+/gu, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   }
 }

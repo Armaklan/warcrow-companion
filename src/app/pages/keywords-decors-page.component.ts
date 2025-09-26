@@ -21,7 +21,7 @@ import { ActivatedRoute } from '@angular/router';
       />
     </div>
 
-    <app-collapsible-list [items]="filtered"></app-collapsible-list>
+    <app-collapsible-list [items]="filtered" [selectedId]="openId"></app-collapsible-list>
   `,
   styles: [
     `.filter-bar { margin: 12px 0 16px; }
@@ -31,12 +31,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class KeywordsDecorsPageComponent {
   filterText = '';
+  openId: string | null = null;
   items = MOTS_CLEFS_DECORS;
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParamMap.subscribe(pm => {
       const q = (pm.get('q') ?? '').trim();
       this.filterText = q;
+      this.openId = pm.get('open');
     });
   }
 
