@@ -6,7 +6,7 @@ export interface CollapsibleItem {
 
 export const ETATS: CollapsibleItem[] = [
   {
-    title: 'Effrayé / Frightened', details: `<b>Etat</b><p>Quand il effectue un test de volonté, l'unité doit relancer une fois tous les dés indiquant au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>.</p>
+    title: 'Effrayé / Découragé / Frightened', details: `<b>Etat</b><p>Quand il effectue un test de volonté, l'unité doit relancer une fois tous les dés indiquant au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>.</p>
 <p>Retirez cet état après avoir effectué un test de Volonté.</p>`, icon: 'effraye.png'
   },
   {
@@ -338,7 +338,8 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
       </ol>
       <p>Bloquer un sort</p>
       <ol>
-        <li>Déclarer votre intention de bloquer le sort pendant l'état 2 du lancement.</li>
+        <li>Déclarer votre intention de bloquer le sort pendant l'état 2 du lancement. </li>
+        <li>Le sort peut être bloqué par la cible si elle a le mot-clef Dissipation, ou par un mage situé à moins de 20 pas de l'ennemi qui lance le sort.</li>
         <li>Formez le test de blocage : prenez 3 <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, ou les dés indiqués par la compétence Dissipation, et lancez les. Le résultat sera opposé au test de lancement du sort durant l'étape 3./</li>
         <li>Pour chaque <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> obtenu, l'unité qui bloque le sort reçoit <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/> </li>
         <li>Si vous avez obtenu au moins un <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>, appliquez les effets de la teinte à la fin de l'activation. </li>
