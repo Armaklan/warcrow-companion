@@ -274,7 +274,13 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   },
   {
     title: 'Teinte / Tinge',
-    details: '<p>Votre unité reçoit <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au début de chaque manche, après l\'étape "Vérifier les effets de la teinte."</p>'
+    details: `
+    <p>Votre unité reçoit <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au début de chaque manche.</p>
+    <b>Personnage rejoignant une unité</b>
+    <p>L'unité rejointe est considéré comme ayant le mot-clé Teinte quand le personnage l'a rejoint. Elle recevra donc <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au début de chaque manque. </p>
+    <b>Unité en dehors du champs de bataille</b>
+    <p>Les unités hors du champs de bataille ne reçoivent pas de <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> grâce à ce mot-clé.</p>
+    `
   },
   {
     title: 'Visée / Aim',
@@ -340,8 +346,9 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>Choisissez votre sort et déclarez si vous appliquez des altérations, puis vérifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
         <li>Si vous adversaire à une unité qui peut tenter de bloquer le sort, faite le test.</li>
         <li>Résolvez un jet face à face entre la VOL du lanceur de sort et le test de dissipation.</li>
-        <li>Une fois durant la phase de choix des variations, le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succès" ></span></li>
-        <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> sur le jet, appliquez les effets du sort. Si vous avez selectionnée des alterations ayant un coût en <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, dépensez-les.</li>
+        <li>Déclarez les altérations utilisant de la <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/> et dépensez-là..</li>
+        <li>Le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succès" ></span></li>
+        <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> sur le jet, appliquez les effets du sort. </li>
       </ol>
       <p>Jet de teinte</p>
       <ol>
