@@ -175,7 +175,45 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
     Au d\xE9but de son activation, l\u2019unit\xE9 peut ignorer les effets de Soif de sang jusqu\u2019\xE0 la fin de son activation en r\xE9ussissant un test de VOL.
   </p>`},{title:"Terrain favori (E) / Preferred terrain",details:`
 <p>L'unit\xE9 peut ignorer les effets des d\xE9cors de type E, ce qui peut d\xE9signer un type de d\xE9cor, un mot-cl\xE9, ou plusieurs de ces \xE9lements (s\xE9par\xE9s dans ce cas par des trait | ).</p>
-`},{title:"Teinte / Tinge",details:`<p>Votre unit\xE9 re\xE7oit <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au d\xE9but de chaque manche, apr\xE8s l'\xE9tape "V\xE9rifier les effets de la teinte."</p>`},{title:"Vis\xE9e / Aim",details:"<p>Peut relancer ses jets d\u2019attaque \xE0 distance. La cible ne b\xE9n\xE9ficie pas du Couvert (D).</p>"}],sd=[{title:"D\xE9placer",details:`
+`},{title:"Teinte / Tinge",details:`
+    <p>Votre unit\xE9 re\xE7oit <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au d\xE9but de chaque manche.</p>
+    <b>Personnage rejoignant une unit\xE9</b>
+    <p>L'unit\xE9 rejointe est consid\xE9r\xE9 comme ayant le mot-cl\xE9 Teinte quand le personnage l'a rejoint. Elle recevra donc <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au d\xE9but de chaque manque. </p>
+    <b>Unit\xE9 en dehors du champs de bataille</b>
+    <p>Les unit\xE9s hors du champs de bataille ne re\xE7oivent pas de <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> gr\xE2ce \xE0 ce mot-cl\xE9.</p>
+    `},{title:"Vis\xE9e / Aim",details:"<p>Peut relancer ses jets d\u2019attaque \xE0 distance. La cible ne b\xE9n\xE9ficie pas du Couvert (D).</p>"},{title:"Rejoindre / Join",details:`
+      <p>Les Personnages capables d\u2019int\xE9grer une unit\xE9 ont le mot-cl\xE9 Rejoindre (X) dans leur profil, o\xF9 X peut \xEAtre le nom d\u2019une unit\xE9, une caract\xE9ristique,
+      un mot-cl\xE9 ou plusieurs de ces \xE9l\xE9ments s\xE9par\xE9s par des traits \u201C | \u201D. Dans ce dernier cas, l\u2019unit\xE9 cible doit poss\xE9der tous les mots-cl\xE9s ou
+      caract\xE9ristiques, ou \xEAtre nomm\xE9e comme au moins un des \xE9l\xE9ments.</p>
+      <p>Les personnages de type Officier deviennent automatiquement le leader de l'unit\xE9 qu'ils rejoignent.</p>
+    `},{title:"Bousculer (X) / Shove",details:`
+      <p>L\u2019unit\xE9 cibl\xE9e doit s\u2019\xE9loigner de votre unit\xE9 de X pas en suivant la trajectoire indiqu\xE9e en tra\xE7ant
+        une ligne reliant les centres des socles des leaders de votre unit\xE9 et de l\u2019unit\xE9 cibl\xE9e. Ce mouvement
+        ne provoque pas d\u2019attaque d\u2019opportunit\xE9.</p>
+      <p>
+        Si l\u2019unit\xE9 cibl\xE9e entre en contact avec une unit\xE9 ou un d\xE9cor Infranchissable durant ce mouvement,
+        celui-ci s\u2019interrompt imm\xE9diatement \xE0 cet endroit pr\xE9cis.
+      </p>
+    `},{title:"Attirer (X) / Attract",details:`
+      <p>L\u2019unit\xE9 cibl\xE9e doit s\u2019approcher de votre unit\xE9 de X pas en suivant la trajectoire indiqu\xE9e en tra\xE7ant
+        une ligne reliant les centres des socles des leaders de votre unit\xE9 et de l\u2019unit\xE9 cibl\xE9e. Ce mouvement
+        ne provoque pas d\u2019attaque d\u2019opportunit\xE9.</p>
+      <p>Si l\u2019unit\xE9 cibl\xE9e entre en contact avec une unit\xE9 ou un d\xE9cor Infranchissable durant ce mouvement,
+        celui-ci s\u2019interrompt imm\xE9diatement \xE0 cet endroit pr\xE9cis.</p>
+    `},{title:"Placer (X) / Place",details:`
+      <p>Indiquez un point sur le champ de bataille \xE0 X pas du leader de votre unit\xE9. Celui qui contr\xF4le l\u2019unit\xE9
+      cibl\xE9e doit prendre son leader et le placer sur le point indiqu\xE9. Vous devez ensuite placer le reste des
+      soldats de l\u2019unit\xE9 cibl\xE9e en formation.</p>
+      <p>Ce mouvement de l\u2019unit\xE9 plac\xE9e ne provoque pas d\u2019attaques d\u2019opportunit\xE9.</p>
+      <p>Vous ne pouvez pas placer de figurines sur d\u2019autres figurines et vous ne pouvez pas placer une unit\xE9
+      sur un d\xE9cor Infranchissable.</p>
+    `},{title:"Replacer (X) / Displace",details:`
+      <p>L\u2019unit\xE9 que vous replacez doit effectuer un mouvement rectiligne de X pas dans la direction que
+      vous choisissez. Les effets des d\xE9cors (sauf Infranchissable) n\u2019affectent pas ce mouvement. Il ne
+      provoque pas d\u2019attaque d\u2019opportunit\xE9.</p>
+      <p>Si l\u2019unit\xE9 replac\xE9e entre en contact avec une unit\xE9 ou un d\xE9cor Infranchissable durant ce mouvement,
+      celui-ci s\u2019interrompt imm\xE9diatement \xE0 cet endroit pr\xE9cis.</p>
+    `}],sd=[{title:"D\xE9placer",details:`
     <ul>
         <li>D\xE9placez l'unit\xE9 de votre premi\xE8re valeur de mouvement.</li>
         <li>Puis d\xE9placez l'unit\xE9 de votre seconde valeur de mouvement.</li>
@@ -221,8 +259,9 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         <li>Choisissez votre sort et d\xE9clarez si vous appliquez des alt\xE9rations, puis v\xE9rifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
         <li>Si vous adversaire \xE0 une unit\xE9 qui peut tenter de bloquer le sort, faite le test.</li>
         <li>R\xE9solvez un jet face \xE0 face entre la VOL du lanceur de sort et le test de dissipation.</li>
-        <li>Une fois durant la phase de choix des variations, le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span></li>
-        <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span> sur le jet, appliquez les effets du sort. Si vous avez selectionn\xE9e des alterations ayant un co\xFBt en <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, d\xE9pensez-les.</li>
+        <li>D\xE9clarez les alt\xE9rations utilisant de la <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/> et d\xE9pensez-l\xE0..</li>
+        <li>Le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span></li>
+        <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span> sur le jet, appliquez les effets du sort. </li>
       </ol>
       <p>Jet de teinte</p>
       <ol>
