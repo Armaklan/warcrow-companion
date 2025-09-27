@@ -285,6 +285,58 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   {
     title: 'Visée / Aim',
     details: '<p>Peut relancer ses jets d’attaque à distance. La cible ne bénéficie pas du Couvert (D).</p>'
+  },
+  {
+    title: 'Rejoindre / Join',
+    details: `
+      <p>Les Personnages capables d’intégrer une unité ont le mot-clé Rejoindre (X) dans leur profil, où X peut être le nom d’une unité, une caractéristique,
+      un mot-clé ou plusieurs de ces éléments séparés par des traits “ | ”. Dans ce dernier cas, l’unité cible doit posséder tous les mots-clés ou
+      caractéristiques, ou être nommée comme au moins un des éléments.</p>
+      <p>Les personnages de type Officier deviennent automatiquement le leader de l'unité qu'ils rejoignent.</p>
+    `
+  },
+  {
+    title: 'Bousculer (X) / Shove',
+    details: `
+      <p>L’unité ciblée doit s’éloigner de votre unité de X pas en suivant la trajectoire indiquée en traçant
+        une ligne reliant les centres des socles des leaders de votre unité et de l’unité ciblée. Ce mouvement
+        ne provoque pas d’attaque d’opportunité.</p>
+      <p>
+        Si l’unité ciblée entre en contact avec une unité ou un décor Infranchissable durant ce mouvement,
+        celui-ci s’interrompt immédiatement à cet endroit précis.
+      </p>
+    `
+  },
+  {
+    title: 'Attirer (X) / Attract',
+    details: `
+      <p>L’unité ciblée doit s’approcher de votre unité de X pas en suivant la trajectoire indiquée en traçant
+        une ligne reliant les centres des socles des leaders de votre unité et de l’unité ciblée. Ce mouvement
+        ne provoque pas d’attaque d’opportunité.</p>
+      <p>Si l’unité ciblée entre en contact avec une unité ou un décor Infranchissable durant ce mouvement,
+        celui-ci s’interrompt immédiatement à cet endroit précis.</p>
+    `
+  },
+  {
+    title: 'Placer (X) / Place',
+    details: `
+      <p>Indiquez un point sur le champ de bataille à X pas du leader de votre unité. Celui qui contrôle l’unité
+      ciblée doit prendre son leader et le placer sur le point indiqué. Vous devez ensuite placer le reste des
+      soldats de l’unité ciblée en formation.</p>
+      <p>Ce mouvement de l’unité placée ne provoque pas d’attaques d’opportunité.</p>
+      <p>Vous ne pouvez pas placer de figurines sur d’autres figurines et vous ne pouvez pas placer une unité
+      sur un décor Infranchissable.</p>
+    `
+  },
+  {
+    title: 'Replacer (X) / Displace',
+    details: `
+      <p>L’unité que vous replacez doit effectuer un mouvement rectiligne de X pas dans la direction que
+      vous choisissez. Les effets des décors (sauf Infranchissable) n’affectent pas ce mouvement. Il ne
+      provoque pas d’attaque d’opportunité.</p>
+      <p>Si l’unité replacée entre en contact avec une unité ou un décor Infranchissable durant ce mouvement,
+      celui-ci s’interrompt immédiatement à cet endroit précis.</p>
+    `
   }
 ];
 
