@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { DECORS } from '../shared/data';
+import { FR } from '../shared/data.fr';
 
 @Component({
   selector: 'app-decors-page',
@@ -71,7 +71,7 @@ import { DECORS } from '../shared/data';
   `
 })
 export class DecorsPageComponent {
-  decors = DECORS;
+  decors = FR.DECORS;
 
   constructor(route: ActivatedRoute) {
     route.queryParamMap.subscribe(pm => {

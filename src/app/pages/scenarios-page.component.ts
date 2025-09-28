@@ -4,7 +4,7 @@ import {RouterLink} from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
-import {SCENARIO} from '../shared/data';
+import { FR } from '../shared/data.fr';
 import {Scenario} from '../shared/data.model';
 
 @Component({
@@ -47,5 +47,5 @@ import {Scenario} from '../shared/data.model';
   `]
 })
 export class ScenariosPageComponent {
-  scenarios: Scenario[] = SCENARIO;
+  scenarios: Scenario[] = FR.SCENARIO;
 }

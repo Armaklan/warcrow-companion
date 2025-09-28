@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollapsibleListComponent } from '../components/collapsible-list.component';
-import { MOTS_CLEFS_DECORS } from '../shared/data';
+import { FR } from '../shared/data.fr';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -32,7 +32,7 @@ import { ActivatedRoute } from '@angular/router';
 export class KeywordsDecorsPageComponent {
   filterText = '';
   openId: string | null = null;
-  items = MOTS_CLEFS_DECORS;
+  items = FR.MOTS_CLEFS_DECORS;
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParamMap.subscribe(pm => {

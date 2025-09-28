@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollapsibleListComponent } from '../components/collapsible-list.component';
-import { MOTS_CLEFS } from '../shared/data';
+import { FR } from '../shared/data.fr';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -32,7 +32,7 @@ import { ActivatedRoute } from '@angular/router';
 export class KeywordsPageComponent {
   filterText = '';
   openId: string | null = null;
-  motsClefs = MOTS_CLEFS;
+  motsClefs = FR.MOTS_CLEFS;
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParamMap.subscribe(pm => this.openId = pm.get('open'));

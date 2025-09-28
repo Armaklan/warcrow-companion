@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollapsibleListComponent } from '../components/collapsible-list.component';
-import { CAPACITES } from '../shared/data';
+import { FR } from '../shared/data.fr';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CapacitesPageComponent {
   openId: string | null = null;
-  capacites = CAPACITES;
+  capacites = FR.CAPACITES;
 
   constructor(route: ActivatedRoute) {
     route.queryParamMap.subscribe(pm => this.openId = pm.get('open'));

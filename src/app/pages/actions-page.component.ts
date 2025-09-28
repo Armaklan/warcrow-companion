@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollapsibleListComponent } from '../components/collapsible-list.component';
-import { ACTIONS_SIMPLES, ACTIONS_COMPLEXES } from '../shared/data';
+import { FR } from '../shared/data.fr';
 import { MatDividerModule } from '@angular/material/divider';
 import { ActivatedRoute } from '@angular/router';
 
@@ -22,8 +22,8 @@ import { ActivatedRoute } from '@angular/router';
   `
 })
 export class ActionsPageComponent implements AfterViewInit {
-  actionsSimples = ACTIONS_SIMPLES;
-  actionsComplexes = ACTIONS_COMPLEXES;
+  actionsSimples = FR.ACTIONS_SIMPLES;
+  actionsComplexes = FR.ACTIONS_COMPLEXES;
 
   @ViewChild('simpleList') simpleList?: CollapsibleListComponent;
   @ViewChild('complexList') complexList?: CollapsibleListComponent;

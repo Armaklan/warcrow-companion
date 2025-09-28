@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {SCENARIO} from '../shared/data';
+import { FR } from '../shared/data.fr';
 import {Scenario} from '../shared/data.model';
 
 @Component({
@@ -71,8 +71,8 @@ export class ScenarioDetailPageComponent {
   constructor(route: ActivatedRoute) {
     const idParam = route.snapshot.paramMap.get('id');
     const idx = idParam ? Number(idParam) : NaN;
-    if (!Number.isNaN(idx) && idx >= 0 && idx < SCENARIO.length) {
-      this.scenario = SCENARIO[idx];
+    if (!Number.isNaN(idx) && idx >= 0 && idx < FR.SCENARIO.length) {
+      this.scenario = FR.SCENARIO[idx];
     }
   }
 }

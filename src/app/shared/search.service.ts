@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ACTIONS_COMPLEXES, ACTIONS_SIMPLES, CAPACITES, DECORS, ETATS, MOTS_CLEFS, MOTS_CLEFS_DECORS } from './data';
+import { FR } from './data.fr';
 
 export interface SearchEntry {
   kind: 'action' | 'capacite' | 'etat' | 'mot-clef' | 'mot-clef-decor' | 'decor';
@@ -30,36 +30,36 @@ export class SearchService {
     const entries: SearchEntry[] = [];
 
     // Actions simples
-    for (const a of ACTIONS_SIMPLES) {
+    for (const a of FR.ACTIONS_SIMPLES) {
       entries.push({ kind: 'action', title: a.title, route: '/actions', openId: this.slug(a.title), subtitle: 'Action simple' });
     }
     // Actions complexes
-    for (const a of ACTIONS_COMPLEXES) {
+    for (const a of FR.ACTIONS_COMPLEXES) {
       entries.push({ kind: 'action', title: a.title, route: '/actions', openId: this.slug(a.title), subtitle: 'Action longue' });
     }
 
     // Capacités
-    for (const c of CAPACITES) {
+    for (const c of FR.CAPACITES) {
       entries.push({ kind: 'capacite', title: c.title, route: '/capacites', openId: this.slug(c.title) });
     }
 
     // États
-    for (const e of ETATS) {
+    for (const e of FR.ETATS) {
       entries.push({ kind: 'etat', title: e.title, route: '/etats', openId: this.slug(e.title) });
     }
 
     // Mots-clefs généraux
-    for (const k of MOTS_CLEFS) {
+    for (const k of FR.MOTS_CLEFS) {
       entries.push({ kind: 'mot-clef', title: k.title, route: '/mots-clefs', openId: this.slug(k.title) });
     }
 
     // Mots-clefs de décors
-    for (const k of MOTS_CLEFS_DECORS) {
+    for (const k of FR.MOTS_CLEFS_DECORS) {
       entries.push({ kind: 'mot-clef-decor', title: k.title, route: '/mots-clefs-decors', openId: this.slug(k.title) });
     }
 
     // Décors
-    for (const d of DECORS) {
+    for (const d of FR.DECORS) {
       entries.push({ kind: 'decor', title: d.title, route: '/decors', openId: this.slug(d.title) });
       // Also index decor keywords by name but route to mots-clefs-decors page
       for (const kw of d.keywords) {
