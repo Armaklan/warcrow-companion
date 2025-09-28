@@ -712,6 +712,55 @@ const PERSONNAGE_UNITE = {
   `
 };
 
+const RESUME_TOUR = {
+  title: 'Turn Summary',
+  html: `
+    <h2>Start of the Round</h2>
+    <ol>
+      <li>The player with the initiative chooses who will play first this round.</li>
+    </ol>
+    <h2>Round Sequence</h2>
+    <ol>
+      <li>
+        <p>The first player activates one of their units.</p>
+        <ul>
+          <li>The unit may perform 2 different simple actions, or 1 long action. The Move action is an exception and may be chosen twice.</li>
+          <li>If the unit has already been activated during the round, it becomes Stressed.</li>
+          <li>At the end of the activation, check objective control.</li>
+        </ul>
+      </li>
+      <li>
+        The second player activates one of their units following the same process.
+      </li>
+      <li>Resolve event tokens and end the turn.</li>
+      <li>Repeat the sequence until the last turn of the round has been played.</li>
+    </ol>
+    <h2>End of the Round</h2>
+    <ol>
+      <li>Apply any “end of round” effects.</li>
+      <li>Gain your Victory Points (VP).</li>
+      <li>
+        <p>Reduce stress on your units (except demoralized units):</p>
+        <ul>
+          <li>by 1 if the unit was activated during this round.</li>
+          <li>by 2 if the unit was not activated during this round.</li>
+        </ul>
+      </li>
+      <li>Check Tinge effects.</li>
+      <li><b>No one left behind.</b> Units that are not activated, not demoralized, and not engaged may move.</li>
+      <li>Remove activation tokens.</li>
+      <li>
+        <p>Initiative changes hands.</p>
+        <ul>
+          <li>The player with the fewest Victory Points takes the initiative.</li>
+          <li>In case of a tie, the initiative changes player.</li>
+        </ul>
+      </li>
+      <li>Advance the end-of-round marker according to the scenario conditions.</li>
+    </ol>
+  `
+};
+
 export const LABEL = {
   menu:  {
     actions: 'Actions',
@@ -747,5 +796,6 @@ export const EN = {
   DECORS,
   SCENARIO,
   LABEL,
-  PERSONNAGE_UNITE
+  PERSONNAGE_UNITE,
+  RESUME_TOUR
 };
