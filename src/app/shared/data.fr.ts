@@ -86,6 +86,8 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
       <p>Tant que votre unité a au moins autant de stress que son MOR et un marqueur d'activation, vous ne pouvez l’activer que pour effectuer l’action complexe de repos.</p>
       <p>Si votre unité est stressée au-delà de sa valeur de MOR, vous devez effectuer un test de VOL à la fin de l’activation en cours. Si vous ne le réussissez pas,
       votre unité sera démoralisée et devra fuir immédiatement</p>
+      <p>Si le niveau de stress de votre unité excède son MOR de 2 ou plus, il faut 2 <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>
+      pour éviter d'être démoralisé et mis en fuite. </p>
     `,
     icon: 'stress-token.png'
   },

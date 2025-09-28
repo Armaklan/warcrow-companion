@@ -4,96 +4,123 @@ import { CollapsibleItem, Decor, Scenario } from './data.model';
 
 const ETATS: CollapsibleItem[] = [
   {
-    title: 'Effrayé / Découragé / Frightened', details: `<b>Etat</b><p>Quand il effectue un test de volonté, l'unité doit relancer une fois tous les dés indiquant au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>.</p>
-<p>Retirez cet état après avoir effectué un test de Volonté.</p>`, icon: 'effraye.png'
+    title: 'Frightened', details: `<b>State</b><p>When making a WP test, your unit must reroll the dice on which it rolls at least one <span class="warcrow-font-Success" role="img" aria-label="succès" >.
+Remove this state after making a willpower test.</p>`, icon: 'effraye.png'
   },
   {
-    title: 'Ralenti / Slowed',
-    details: `<b>Etat</b><p>
-Votre unité ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (MOV) lors des actions de mouvement et d’assaut.
-  De plus, vous devez soustraire 4 pas à votre mouvement de charge (min. 0).
+    title: 'Slowed',
+    details: `<b>State</b><p>
+Your unit can only use one of the two MOV values when performing the move and assault
+actions. Additionally, you must subtract 4 strides from your charge movement (up to a minimum
+value of 0). For example, if your unit has movement 3-2 (9), it can only move 3 and can only move 5
+when it charges
 </p>
-<p><em>Exemple :</em> Si votre unité a un mouvement 3-2 (9), elle ne peut se déplacer que de 3 pas et ne peut charger que jusqu’à 5 pas.</p>
-<p>Retirez cet état à la fin de l’activation durant laquelle votre unité effectue un mouvement, un assaut ou une charge.</p>`,
+<p>Remove this state at the end of the activation in which your unit performs the action move, charge
+or assault.</p>`,
     icon: 'ralenti.png'
   },
   {
-    title: 'Démoralisé / Demoralized',
-    details: `<b>Etat</b></b><p>Si votre unité est démoralisée :</p>
+    title: 'Demoralized',
+    details: `<b>State</b></b><p>If your unit is demoralized: :</p>
   <ul>
-    <li>Elle ne peut plus être activée d’aucune façon.</li>
-    <li>Elle ne peut se stresser d’aucune façon et ne peut pas réduire son stress.</li>
-    <li>Elle ne peut pas contrôler d’objectifs (sa valeur de conquête est nulle).</li>
-    <li>Si elle participe à un combat, elle fuira toujours après le résultat (voir “Attaque de mêlée”).</li>
-    <li>Elle ne peut pas activer de capacités de commandement.</li>
+    <li>It cannot be activated in any way.</li>
+    <li>It cannot stress itself in any way and cannot reduce its stress.</li>
+    <li>It cannot control objectives (we consider its conquest value null).</li>
+    <li>If it participates in combat, it will always flee after the result. (See “Melee Attack”).</li>
+    <li>It cannot activate its command abilities.</li>
   </ul>
 
-  <h3>Unité démoralisée</h3>
-  <p>Si votre unité est stressée au-delà de sa valeur de MOR, vous devez effectuer un test de VOL à la fin de l’activation en cours. Si vous ne le réussissez pas, votre unité sera démoralisée et devra fuir immédiatement (voir “Fuite”).</p>
-  <p>Si votre stress excède la valeur de votre MOR de 2, il vous faut 2 <span class="warcrow-font-Success" role="img" aria-label="succès" > pour réussir ce test.</p>
+  <h3>Demoralize a unit</h3>
+      <p>As long as your unit has an activation token and at least
+        as much stress as its MOR, you can only activate it to
+        perform the complex Rest action.</p>
+      <p>f your unit is stressed beyond its MOR value, you must
+        perform a WP test at the end of the current activation. If
+        you do not pass it, your unit will become demoralized
+        and must flee immediately. (See “Flee”).</p>
   <h3>Fuite</h3>
-  <p>Si votre unité fuit, vous devez immédiatement la
-    déplacer en utilisant ses 2 valeurs de MOV vers votre
-    zone de déploiement, en suivant l’itinéraire le plus
-    court possible. Si elle s’y trouve déjà, vous devez la
-    déplacer vers le bord du champ de bataille le plus
-    proche. Lorsqu’une unité en fuite entre en contact
-    avec un bord du champ de bataille, retirez-la de
-    la partie. Elle compte comme ayant été éliminée à
-    toutes fins utiles. Pour qu’une unité soit considérée
-    comme étant entrée dans votre zone de déploiement,
-    les socles de tous ses soldats doivent se trouver
-    intégralement dans les limites de la zone. Il suffit que
-    le socle d’un des soldats de l’unité touche le bord du
-    champ de bataille pour que l’unité quitte ce dernier.
+  <p>If your unit flees, you must immediately move it using
+both of its MOV values towards your deployment
+zone, following the shortest possible path and, if it
+is already there, move it towards the nearest edge
+of the battlefield. When a fleeing unit comes into
+contact with one of the battlefield edges, remove it.
+The unit will count as eliminated for all purposes.
   </p>
-  <h3>Rallier une unité démoralisée</h3>
-  <p>Lorsque le compteur de tour atteint le jeton de démoralisation de votre unité, faites un test de VOL pour la rallier :</p>
+  <p>
+    For a unit to be considered to have entered your
+  deployment zone, all its troops must have bases
+  completely within the zone’s limits. It is enough for
+  one of them to touch the border of the battlefield
+  for the unit to leave the battlefield.
+  </p>
+  <h3>Rally a demoralized unit</h3>
+  <p>When the turn counter marker
+  activates your unit’s broken unit token,
+  you must make a WP check to rally :</p>
   <ul>
-  <li>Réussite : L'unité n'est plus démoralisé. Son stress diminue à MOR-1. Elle peut effectuer une fois l'action de mouvement.</li>
-  <li>Echec : avancez le jeton de démoralisation de 2 crans sur le compteur de tour. Votre unité poursuit sa fuite.</li>
+  <li>If you pass the test : Your unit is no longer
+demoralized. Remove the broken
+unit tokens from the turn counter
+and their game profile. Reduce the unit’s stress level to
+its MOR value minus 1. You can perform the move action
+once. </li>
+  <li>If you don’t pass the test : Advance the demoralized unit
+token two positions on the turn counter. Your unit flees.</li>
 </ul>
     `,
     icon: 'demoraliser.png'
   },
   {
-    title: 'Désarmé / Disarmed',
-    details: `<b>Etat</b><p>
-Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a obtenu au moins un symbole
-<span class="warcrow-font-Success" role="img" aria-label="succès" ></span>. Si vous avez plusieurs dés, c’est votre adversaire qui choisit lequel.
+    title: 'Disarmed',
+    details: `<b>State</b><p>
+Your unit must cancel one die from its attack rolls in which it has obtained at least one
+1. In the case of multiple dice, your opponent will choose which one. You must apply this effect after
+<span class="warcrow-font-Success" role="img" aria-label="succès" ></span>. In the case of multiple dice, your opponent will choose which one.
+You must apply this effect after rolling the dice (with all possible repetitions), but just before starting the Switches step.
 </p>
-<p>Vous devez appliquer cet effet après avoir effectué votre jet et toutes les relances possibles, mais avant l’étape des variations.</p>
-<p>Vous ne pouvez ajouter de variation lors de vos jets d'attaques.</p>
-<p>Retirez cet état à la fin de la résolution de l'action durant laquelle vous avez subi ses effets (si vous n’avez pu annuler aucun dé, l’état persiste).</p>`,
+<p>You cannot add modifiers to your attack rolls.</p>
+<p>Remove this state at the end of the resolution of a roll in which you have applied its effects (if you
+have not been able to cancel any dice, the state is considered to remain active).</p>
+`,
     icon: 'desarme.png'
   },
   {
-    title: 'Vulnérable / Vulnerable', details: `<b>Etat</b><p>
-    Votre unité doit annuler un dé de ses jets de défense dans lesquels elle a obtenu au moins un <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>.
-    Si vous avez plusieurs dés, c’est votre adversaire qui choisit lequel.
+    title: 'Vulnerable', details: `<b>State</b><p>
+    Your unit must cancel one die from its defense rolls in which it has rolled at least one <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>.
+    In the case of multiple dice, your opponent will choose which one. You must apply this effect after
+rolling the dice (with all possible repetitions), but just before starting the Switches step.
   </p>
   <p>
-    Vous devez appliquer cet effet après avoir effectué votre jet et toutes les relances possibles,
-    mais avant l’étape des variations.
+    You cannot add modifiers to your attack rolls.
   </p>
-  <p>Vous ne pouvez ajouter de variation lors de vos jets de défense.</p>
-  <p>Retirez cet état à la fin de la résolution de l'action durant laquelle vous avez subi ses effets
-    (si vous n’avez pu annuler aucun dé, l’état demeure actif).</p>`, icon: 'vulnerable.png'
+  <p>Remove this state at the end of the resolution of a roll in which you have applied its effects (if you
+have not been able to cancel any dice, the state is considered to remain active).</p>`,
+    icon: 'vulnerable.png'
   },
   {
     title: 'Stress',
     details: `
-      <p>Tant que votre unité a au moins autant de stress que son MOR et un marqueur d'activation, vous ne pouvez l’activer que pour effectuer l’action complexe de repos.</p>
-      <p>Si votre unité est stressée au-delà de sa valeur de MOR, vous devez effectuer un test de VOL à la fin de l’activation en cours. Si vous ne le réussissez pas,
-      votre unité sera démoralisée et devra fuir immédiatement</p>
+      <p>As long as your unit has an activation token and at least
+        as much stress as its MOR, you can only activate it to
+        perform the complex Rest action.</p>
+      <p>f your unit is stressed beyond its MOR value, you must
+        perform a WP test at the end of the current activation. If
+        you do not pass it, your unit will become demoralized
+        and must flee immediately. (See “Flee”).</p>
+      <p>If the level of stress of your unit exceeds its MOR value
+        by 2 or more, then you will require 2 <span class="warcrow-font-Success" role="img" aria-label="succes" ></span> to pass the WP
+        roll to avoid being demoralized and required to flee (for
+        example, if you have MOR 2 and 4 levels of stress, you
+        must get 2 <span class="warcrow-font-Success" role="img" aria-label="succes" ></span> on your WP roll).</p>
     `,
     icon: 'stress-token.png'
   },
   {
-    title: 'Activation',
+    title: 'Activate',
     details: `
-      <p>Placez ce marqueur sur votre unité après son activation. Si elle est activée une nouvelle fois dans la manche, stressez-le.</p>
-      <p>A la fin de la manche, retirez ce marqueur.</p>
+      <p>Place this marker on your unit after it activates. If it activates again this round, stress it..</p>
+      <p>At the end of the round, remove this marker.</p>
     `,
     icon: 'activation.png'
   }
