@@ -1,4 +1,4 @@
-import { CollapsibleItem, Decor, Scenario } from './data.model';
+import {CollapsibleItem, Decor, Scenario} from './data.model';
 
 // Toutes les constantes sont regroupées dans l'objet FR
 
@@ -751,8 +751,48 @@ const SCENARIO: Scenario[] = [{
   `
 }];
 
+const PERSONNAGE_UNITE = {
+  title: 'Characters and Units',
+  html: `
+    <h3>Join a Unit during Activation</h3>
+    <p>During its activation, your Character may join a unit that meets the conditions of its Join keyword, as long as:</p>
+    <ul>
+      <li>There are no other Characters in the unit.</li>
+      <li>The unit is not Demoralized.</li>
+    </ul>
+
+    <p>The only action your Character may perform is Move, up to twice, to reach the unit.
+      Token and damage handling:</p>
+    <ul>
+      <li><b>Damage:</b> The Character keeps its Damage tokens on its own profile. The unit does not account for the Character’s damage.</li>
+      <li><b>Stress:</b> Keep the higher Stress level between the unit and the Character.</li>
+      <li><b>States:</b> Transfer State tokens to the unit. Remove any duplicates.</li>
+      <li><b>Effects:</b> Transfer Effect tokens to the unit.</li>
+      <li><b>Activation:</b> Remove the Character’s Activation token.</li>
+      <li><b>Tinge:</b> Compare the Tinge of the Character and the unit. The unit keeps the highest value.</li>
+    </ul>
+
+    <h3>Leave a Unit</h3>
+    <p>Declare to your opponent that your Character leaves the unit. At that moment, the Character is no longer part of the unit.
+      Then resolve token distribution:</p>
+    <ul>
+      <li><b>Damage:</b> The unit keeps all Damage tokens except those directly on the Character’s profile.</li>
+      <li><b>Stress:</b> The Character gains as many Stress tokens as the unit.</li>
+      <li><b>States:</b> The Character gains the same States as the unit.</li>
+      <li><b>Effects:</b> The Character keeps all Effect tokens.</li>
+      <li><b>Tinge:</b> The Character gains the same number of Tinge tokens as the unit.</li>
+      <li><b>Demoralized:</b> If the unit was Demoralized, the Character receives its own Demoralized token in the same position.</li>
+    </ul>
+    <p>Then, activate your Character.</p>
+    <p>If the Character was an Officer, the unit’s leader takes the position the Character occupied at the start of the activation.</p>
+    <p>A Character cannot leave and rejoin a unit during the same activation.</p>
+    <p>A Character cannot leave a unit engaged in combat.</p>
+  `
+};
+
+
 export const LABEL = {
-  menu:  {
+  menu: {
     actions: 'Actions',
     capacites: 'Capacités',
     etats: 'États et marqueurs',
@@ -785,5 +825,6 @@ export const FR = {
   MOTS_CLEFS_DECORS,
   DECORS,
   SCENARIO,
-  LABEL
+  LABEL,
+  PERSONNAGE_UNITE
 };

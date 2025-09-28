@@ -675,6 +675,43 @@ const SCENARIO: Scenario[] = [{
   `
 }];
 
+const PERSONNAGE_UNITE = {
+  title: 'Characters and Units',
+  html: `
+    <h3>Join a Unit during Activation</h3>
+    <p>During its activation, your Character may join a unit that meets the conditions of its Join keyword as long as:</p>
+    <ul>
+      <li>There are no other Characters in the unit.</li>
+      <li>The unit is not demoralized.</li>
+    </ul>
+
+    <p>The only action your character may perform is Move, up to twice, to reach the unit. Token and damage handling:</p>
+    <ul>
+      <li><b>Damage:</b> The character keeps its damage tokens on its own profile. The unit does not account for the character’s damage.</li>
+      <li><b>Stress:</b> Keep the higher stress level between the unit and the character.</li>
+      <li><b>States:</b> Transfer state tokens to the unit. Remove any duplicates.</li>
+      <li><b>Effects:</b> Transfer effect tokens to the unit.</li>
+      <li><b>Activation:</b> Remove the character’s activation token.</li>
+      <li><b>Tinge:</b> Compare the Tinge of the character and the unit. The unit keeps the highest value.</li>
+    </ul>
+
+    <h3>Leave a Unit</h3>
+    <p>Declare to your opponent that your character leaves the unit. At that moment, the character is no longer part of the unit. Then resolve token distribution:</p>
+    <ul>
+      <li><b>Damage:</b> The unit keeps all damage tokens, except those directly on the character’s profile.</li>
+      <li><b>Stress:</b> The character gains as many stress tokens as the unit.</li>
+      <li><b>States:</b> The character gains the same states as the unit.</li>
+      <li><b>Effects:</b> The character keeps all effect tokens.</li>
+      <li><b>Tinge:</b> The character gains the same number of Tinge tokens as the unit.</li>
+      <li><b>Demoralized:</b> If the unit was demoralized, the character receives its own demoralized token in the same position.</li>
+    </ul>
+    <p>Then, activate your character.</p>
+    <p>If the character was an Officer, the unit’s leader takes the position the character occupied at the start of the activation.</p>
+    <p>A character cannot leave and rejoin a unit during the same activation.</p>
+    <p>A character cannot leave a unit that is engaged in combat.</p>
+  `
+};
+
 export const LABEL = {
   menu:  {
     actions: 'Actions',
@@ -709,5 +746,6 @@ export const EN = {
   MOTS_CLEFS_DECORS,
   DECORS,
   SCENARIO,
-  LABEL
+  LABEL,
+  PERSONNAGE_UNITE
 };

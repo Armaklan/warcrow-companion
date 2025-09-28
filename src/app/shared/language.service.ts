@@ -15,6 +15,7 @@ export interface IData {
   DECORS: typeof FR.DECORS;
   SCENARIO: typeof FR.SCENARIO;
   LABEL: typeof FR.LABEL;
+  PERSONNAGE_UNITE: typeof FR.PERSONNAGE_UNITE;
 }
 
 @Injectable({ providedIn: 'root' })
