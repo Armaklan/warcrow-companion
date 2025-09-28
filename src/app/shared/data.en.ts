@@ -426,191 +426,167 @@ const ACTIONS_COMPLEXES: CollapsibleItem[] = [
 // Nouvelles données: Capacités (compétence, passive, commandement, ...)
 const CAPACITES: CollapsibleItem[] = [
   {
-    title: 'Compétence',
+    title: 'Skill',
     details: `
-      <p>Les compétences sont des capacités que vous pouvez activez à l'aide d'une action simple ou complexe.</p>
+      <p>Skills are abilities that you can activate by performing a simple or complex action.</p>
     `,
     icon: 'competence.png'
   },
   {
     title: 'Passive',
     details: `
-      <p>Les passives sont des effets toujours actifs. Tant que l'unité remplit les conditions, l'effet s'applique automatiquement.</p>
+      <p>Passive abilities are effects that are always active. As long as the unit meets the conditions, the effect applies automatically.</p>
     `,
     icon: 'passive.png'
   },
   {
-    title: 'Commandement',
+    title: 'Command',
     details: `
-      <p>Les capacités de commandement s'activent par la dépense de point de commandement.</p>
+      <p>Command abilities are activated by spending Command Tokens.</p>
     `,
     icon: 'commandement.png'
   },
   {
-    title: 'Sort',
+    title: 'Spell',
     details: `
-      <p>Les sorts sont des actions de magie. Leur fonctionnement est décrite dans la liste des actions. </p>
+      <p>Spells are magical actions. Their operation is described in the list of actions and in the Magic section.</p>
     `,
     icon: 'sort.png'
   },
   {
-    title: 'Actions de teinte',
+    title: 'Tinge Actions',
     details: `
-      <p>Les actions de teintes sont des actions. Leur fonctionnement est décrite dans la liste des actions. </p>
+      <p>Tinge actions are special actions related to the effects of magic. Their operation is described in the list of actions.</p>
     `,
     icon: 'teint.png'
   }
 ];
 
+
 const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
   {
-    title: 'Accidenté (X) / Rugged',
+    title: 'Rugged (X)',
     details: `
-        <p>Les unités définies par X reçoivent l'état Ralenti du moment qu'elles sont adjacentes au décors pendant leur activation. De plus, elles ne peuvent pas déclarer de charge si la trajectoire du mouvement de la charge les amènes à être adjacentes au décors.</p>
-        <p>X peut être le nom d'une unité, d'une caractéristique, d'un mot-clé, ou de plusieurs de ce élements. Si aucune valeur X n'est spécifiée, l'effet s'applique à toutes les unités.</p>
+      <p>Units defined by X gain the Slowed state while they are adjacent to this terrain element during their activation. In addition, they cannot declare a Charge if the trajectory of the Charge movement would make them adjacent to this terrain.</p>
+      <p>X can be the name of a unit, a characteristic, a keyword, or several of these elements. If no value for X is specified, the effect applies to all units.</p>
     `
   },
   {
-    title: 'Bloque la LdV / Block LoS',
+    title: 'Blocks LoS',
     details: `
-      Ce décor bloque tous les LdV tracées à travers lui, ainsi que celles tracées depuis son intérieur et vers son intérieur. A moins qu'un décor ne possède ce mot-clé, il n'est jamais considéré comme bloquant les LdV.
+      <p>This terrain blocks all Lines of Sight (LoS) drawn through it, as well as those drawn from within it or toward it. Unless a terrain element has this keyword, it is never considered to block LoS.</p>
     `
   },
   {
-    title: 'Couvert (D) / Cover',
-    details: `<p>Les unités adjacentes à ce décor peuvent bénéficier d'un couvert lors d'une attaque à distance. La valeur D indique les dés ou symboles automatique que les unités adjacentes ajoutent à leur jet de défense.</p>`
-  },
-  {
-    title: 'Infranchissable / Impassable',
-    details: `<p>Les unités ne peuvent pas traverser ce décor, n'y y finir leur mouvement. Si un décor gagne la caractéristique Infranchissable pendant la bataille, les unités qui s'y trouvent doivent se déplacer pour devenir adjacentes.</p>`
-  },
-  {
-    title: 'Mortel (X:D) / Lethal',
+    title: 'Cover (D)',
     details: `
-      <p>Les unités définies par X et
-      rentrant au contact avec ce décor, subissent une
-      attaque de mêlée résolue avec un
-      jet D. Le décor ne peut pas subir
-      de dégâts et ne force pas les unités
-      au repli.</p>
-      <p>X peut être le nom d’une unité,
-      d’une caractéristique, d’un mot-clé
-      ou de plusieurs de ces éléments
-      (dans ce cas séparés par des traits
-      “|”) (voir “Personnages. Rejoindre
-      une unité” pour des exemples de
-      X). Si aucune valeur n’est spécifiée
-      pour X, l’effet s’applique à toutes
-      les unités.</p>`
+      <p>Units adjacent to this terrain element can benefit from cover during a ranged attack. The value D indicates the dice or automatic symbols that adjacent units add to their defense roll.</p>
+    `
   },
   {
-    title: 'Piège / Trap',
+    title: 'Impassable',
     details: `
-      <p>Ce décor a été créé par une unité utilisant une compétence ou un
-        sort. Les unités capables de supprimer les pièges peuvent retirer
-        ce décor du champ de bataille.
-      </p>
-      <p>
-        Placer un piège
-      </p>
-      <p>Toutes les unités qui placent un piège doivent suivre les règles suivantes :</p>
+      <p>Units cannot move through this terrain element or end their movement on it. If a terrain element gains the Impassable characteristic during the battle, units inside it must move so they become adjacent to it.</p>
+    `
+  },
+  {
+    title: 'Lethal (X:D)',
+    details: `
+      <p>Units defined by X that come into contact with this terrain suffer a melee attack resolved with a D roll. The terrain cannot suffer damage and does not force units to retreat.</p>
+      <p>X can be the name of a unit, a characteristic, a keyword, or several of these elements (in this case separated by “|”) (see “Characters. Join a Unit” for examples of X). If no value is specified for X, the effect applies to all units.</p>
+    `
+  },
+  {
+    title: 'Trap',
+    details: `
+      <p>This terrain element has been created by a unit using a skill or spell. Units capable of removing traps can remove this terrain element from the battlefield.</p>
+      <p><b>Placing a Trap</b></p>
+      <p>All units that place a trap must follow these rules:</p>
       <ul>
-        <li>A moins que ce soit spécifiée, l'élement de piège doit avoir un diamètre de 6 pas.</li>
-        <li>Vous ne pouvez le placer par dessus un élement impassable.</li>
-        <li>Les unités ne sont pas des élements de terrain, vous pouvez donc placer un piège sous l'une d'entre elle.
-        Prenez leur position actuelle comme point de référence, soulevez les unités, et placez le piège en dessous avant
-         de reposer les figurines aussi près que possible de leurs positions initiale.</li>
+        <li>Unless otherwise specified, a trap element must have a diameter of 6 strides.</li>
+        <li>You cannot place it on top of an Impassable element.</li>
+        <li>Units are not considered terrain elements, so you may place a trap beneath one. Use their current position as reference, lift the units, place the trap underneath, then return the models as close as possible to their original positions.</li>
       </ul>
     `
   },
   {
-    title: 'Sinistre (X) / Sinister',
-    details: `<p>
-        Les unités définies par X qui se
-        trouvent jusqu’à 4 pas de ce décor au début de leur activation
-        doivent réussir un test de VOL ou
-        devenir stressées.
-        </p>
-        <p>
-        X peut être le nom d’une unité,
-        d’une caractéristique, d’un mot-clé
-        ou de plusieurs de ces éléments
-        (dans ce cas séparés par des traits
-        “|”) (voir “Personnages. Rejoindre
-        une unité” pour des exemples de
-        X). Si aucune valeur n’est spécifiée
-        pour X, l’effet s’applique à toutes
-        les unités.
-        </p>`
+    title: 'Sinister (X)',
+    details: `
+      <p>Units defined by X that are within 4 strides of this terrain element at the start of their activation must pass a WP test or become Stressed.</p>
+      <p>X can be the name of a unit, a characteristic, a keyword, or several of these elements (in this case separated by “|”) (see “Characters. Join a Unit” for examples of X). If no value for X is specified, the effect applies to all units.</p>
+    `
   },
   {
-    title: 'Brouillard',
+    title: 'Fog',
     details: `
-    <p>
-        Le brouillard est représenté sous forme de marqueurs.
-    </p>
-    <p>Une unité qui terminé son activation dans les 4 pas d'un marqueur Brouillard reçoit 1 teinte. </p>
-    <p>Le brouillard ne coupe pas les lignes de vue et n'interrompt pas le mouvement.
-    Une unité ne peut placer un marqueur brouillard à moins de 10 pas d'un autre marqueur brouillard.</p>`
+      <p>Fog is represented by markers.</p>
+      <p>A unit that ends its activation within 4 strides of a Fog marker gains 1 <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</p>
+      <p>Fog does not block Line of Sight and does not interrupt movement. A unit cannot place a Fog marker within 10 strides of another Fog marker.</p>
+    `
   }
 ];
 
+
 const DECORS: Decor[] = [{
-  title: 'Clôture/Barricade',
-  keywords: [{name: 'Couvert', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`}],
-  dimensions: `Socle de 4 à 13 pas de long et pas plus d'un pas de large`
+  title: 'Fence / Barricade',
+  keywords: [{name: 'Cover', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice"></span>`}],
+  dimensions: `Base between 4 and 13 strides long and no more than 1 stride wide`
 }, {
-  title: 'Mur',
-  keywords: [{name: 'Couvert', value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>`}],
-  dimensions: `Socle de 4 à 13 pas de long et pas plus d'un pas de large`
+  title: 'Wall',
+  keywords: [{name: 'Cover', value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice"></span>`}],
+  dimensions: `Base between 4 and 13 strides long and no more than 1 stride wide`
 }, {
-  title: 'Petite structure',
-  keywords: [{name: 'Bloque la LdV'}, {
-    name: 'Couvert',
-    value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`
-  }, {name: 'Infranchissable'}],
-  dimensions: `Socle d'une surface équivalente à un carré de 4 à 7 pas de coté`
+  title: 'Small Structure',
+  keywords: [
+    {name: 'Block LoS'},
+    {name: 'Cover', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice"></span>`},
+    {name: 'Impassable'}
+  ],
+  dimensions: `Base with a surface equivalent to a square measuring between 4 and 7 strides a side`
 }, {
-  title: 'Bâtiment',
-  keywords: [{name: 'Bloque la LdV'}, {
-    name: 'Couvert',
-    value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>`
-  }, {name: 'Infranchissable'}],
-  dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
+  title: 'Building',
+  keywords: [
+    {name: 'Block LoS'},
+    {name: 'Cover', value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice"></span>`},
+    {name: 'Impassable'}
+  ],
+  dimensions: `Base with a surface equivalent to a square measuring between 7 and 10 strides a side`
 }, {
-  title: 'Forêt clairsemée',
-  keywords: [{name: 'Bloque la LdV'}, {
-    name: 'Couvert',
-    value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`
-  }],
-  dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
+  title: 'Light Forest',
+  keywords: [
+    {name: 'Block LoS'},
+    {name: 'Cover', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice"></span>`}
+  ],
+  dimensions: `Base with a surface equivalent to a square measuring between 7 and 10 strides a side`
 }, {
-  title: 'Forêt dense',
-  keywords: [{name: 'Accidenté', value: 'Cavalerie, Golem'}, {name: 'Bloque la LdV'}, {
-    name: 'Couvert',
-    value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>`
-  }],
-  dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
+  title: 'Dense Forest',
+  keywords: [
+    {name: 'Rugged', value: 'Cavalry, Golem'},
+    {name: 'Block LoS'},
+    {name: 'Cover', value: `<span class="warcrow-font-Blue" role="img" aria-label="Blue dice"></span>`}
+  ],
+  dimensions: `Base with a surface equivalent to a square measuring between 7 and 10 strides a side`
 }, {
-  title: 'Rivière',
-  keywords: [{name: 'Accidenté'}],
-  dimensions: `Socle d'une longue de 4 à 13 pas et d'une largeur maximale de 7 pas`
+  title: 'River',
+  keywords: [{name: 'Rugged'}],
+  dimensions: `Base between 4 and 13 strides long and no more than 7 strides wide`
 }, {
-  title: 'Lac',
-  keywords: [{name: 'Infranchissable'}],
-  dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
+  title: 'Lake',
+  keywords: [{name: 'Impassable'}],
+  dimensions: `Base with a surface equivalent to a square measuring between 7 and 10 strides a side`
 }, {
-  title: 'Ruines',
-  keywords: [{name: 'Accidenté'}, {
-    name: 'Couvert',
-    value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`
-  }],
-  dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
+  title: 'Ruins',
+  keywords: [
+    {name: 'Rugged'},
+    {name: 'Cover', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice"></span>`}
+  ],
+  dimensions: `Base with a surface equivalent to a square measuring between 7 and 10 strides a side`
 }, {
-  title: 'Terrain accidenté',
-  keywords: [{name: 'Accidenté'}],
-  dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
+  title: 'Rugged Terrain',
+  keywords: [{name: 'Rugged'}],
+  dimensions: `Base with a surface equivalent to a square measuring between 7 and 10 strides a side`
 }];
+
 
 const SCENARIO: Scenario[] = [{
   title: 'Prendre position',
@@ -716,6 +692,11 @@ export const LABEL = {
   actions: {
     simple: 'Simple actions',
     complexe: 'Complex actions'
+  },
+  terrain: {
+    name: 'Terrain',
+    keywords: 'Keywords',
+    size: 'Size'
   }
 }
 

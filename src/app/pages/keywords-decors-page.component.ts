@@ -9,7 +9,7 @@ import { LanguageService } from '../shared/language.service';
   standalone: true,
   imports: [CommonModule, CollapsibleListComponent],
   template: `
-    <h1>Mots clef de décors</h1>
+    <h1>{{ labels.menu.motsClefsDecors }}</h1>
 
     <div class="filter-bar">
       <input
@@ -34,6 +34,7 @@ export class KeywordsDecorsPageComponent {
   filterText = '';
   openId: string | null = null;
   items = this.lang.data.MOTS_CLEFS_DECORS;
+  labels = this.lang.data.LABEL;
 
   constructor(private route: ActivatedRoute) {
     this.lang.langChanges.subscribe(() => this.items = this.lang.data.MOTS_CLEFS_DECORS);

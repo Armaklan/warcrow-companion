@@ -9,7 +9,7 @@ import { LanguageService } from '../shared/language.service';
   standalone: true,
   imports: [CommonModule, CollapsibleListComponent],
   template: `
-    <h1>Capacités</h1>
+    <h1>{{ labels.menu.capacites }}</h1>
     <app-collapsible-list [items]="capacites" [selectedId]="openId"></app-collapsible-list>
   `
 })
@@ -17,6 +17,7 @@ export class CapacitesPageComponent {
   lang = inject(LanguageService);
   openId: string | null = null;
   capacites = this.lang.data.CAPACITES;
+  labels = this.lang.data.LABEL;
 
   constructor(route: ActivatedRoute) {
     this.lang.langChanges.subscribe(() => this.capacites = this.lang.data.CAPACITES);

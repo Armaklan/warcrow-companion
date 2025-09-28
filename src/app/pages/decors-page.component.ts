@@ -39,14 +39,14 @@ import { LanguageService } from '../shared/language.service';
       }
     </style>
 
-    <h1>Décors</h1>
+    <h1>{{ labels.menu.decors }}</h1>
 
     <table class="decors-table">
       <thead>
         <tr>
-          <th>Décors</th>
-          <th>Mots‑clef</th>
-          <th>Dimensions</th>
+          <th>{{ labels.terrain.name }}</th>
+          <th>{{ labels.terrain.keywords }}</th>
+          <th>{{ labels.terrain.size }}</th>
         </tr>
       </thead>
       <tbody>
@@ -73,6 +73,7 @@ import { LanguageService } from '../shared/language.service';
 export class DecorsPageComponent {
   lang = inject(LanguageService);
   decors = this.lang.data.DECORS;
+  labels = this.lang.data.LABEL;
 
   constructor(route: ActivatedRoute) {
     this.lang.langChanges.subscribe(() => this.decors = this.lang.data.DECORS);

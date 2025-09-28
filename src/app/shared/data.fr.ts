@@ -768,6 +768,11 @@ export const LABEL = {
   actions: {
     simple: 'Actions simple',
     complexe: 'Actions complexe'
+  },
+  terrain: {
+    name: 'Décors',
+    keywords: 'Mots-clef',
+    size: 'Dimensions'
   }
 }
 
