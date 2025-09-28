@@ -3,7 +3,8 @@ import {CommonModule} from '@angular/common';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {SCENARIO, Scenario} from '../shared/data';
+import {SCENARIO} from '../shared/data';
+import {Scenario} from '../shared/data.model';
 
 @Component({
   selector: 'app-scenario-detail-page',

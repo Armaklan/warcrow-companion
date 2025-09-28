@@ -4,7 +4,8 @@ import {RouterLink} from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
-import {SCENARIO, Scenario} from '../shared/data';
+import {SCENARIO} from '../shared/data';
+import {Scenario} from '../shared/data.model';
 
 @Component({
   selector: 'app-scenarios-page',

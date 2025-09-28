@@ -1,8 +1,4 @@
-export interface CollapsibleItem {
-  title: string;
-  details: string;
-  icon?: string;
-}
+import { CollapsibleItem } from './data.model';
 
 export const ETATS: CollapsibleItem[] = [
   {
@@ -611,14 +607,7 @@ export const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
 
 
 // Nouvelle data: Décors
-export interface Decor {
-  title: string;
-  keywords: {
-    name: string,
-    value?: string
-  }[];
-  dimensions: string;
-}
+import { Decor } from './data.model';
 
 export const DECORS: Decor[] = [{
   title: 'Clôture/Barricade',
@@ -678,16 +667,7 @@ export const DECORS: Decor[] = [{
 }];
 
 // Nouvelle data: Scénarios
-export interface Scenario {
-  title: string;
-  image: string;
-  requiredMaterial?: string[];
-  roundLength: number;
-  endRoundScoring?: string[];
-  endGame: number;
-  // Additional notes/details; can contain HTML
-  additionnal?: string;
-}
+import { Scenario } from './data.model';
 
 // Exported array for scenarios; left empty by default so consumers can populate or future PRs can add entries.
 export const SCENARIO: Scenario[] = [{
