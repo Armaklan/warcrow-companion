@@ -883,6 +883,75 @@ export const LABEL = {
   }
 }
 
+const TEINTE_PAGE = {
+  title: 'Effet de la teinte',
+  html: `
+    <section>
+      <h2>Tableau des effets</h2>
+      <table class="teinte-table">
+        <thead>
+          <tr>
+            <th>Teinte</th>
+            <th>Effet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1-4</td>
+            <td>L'unité est stressé.</td>
+          </tr>
+          <tr>
+            <td>5-6</td>
+            <td>
+              L'unité est stressé et encaisse <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span>.
+            </td>
+          </tr>
+          <tr>
+            <td>7+</td>
+            <td>L'unité est détruite. Toutes les unités dans les 5 pas reçoivent <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Tableau des effets pour les héritiers de Yaldabaoth</h2>
+      <table class="teinte-table">
+        <thead>
+        <tr>
+          <th>Teinte</th>
+          <th>Effet</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>Rien ne se passe</td>
+        </tr>
+        <tr>
+          <td>2-7</td>
+          <td>
+            <p>Lancez 1 <span class="warcrow-font-Orange" role="img" aria-label="Orange Dice" ></span> et appliquez les effets qui correspondent exactement au résultat obtenu :</p>
+            <ul>
+              <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> : Devenir stressé</li>
+              <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> <span class="warcrow-font-Special" role="img" aria-label="Special" ></span> : Recevoir <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
+              <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow-Special" ></span> : Recevoir l'état Ralenti</li>
+              <li><span class="warcrow-font-HollowSuccess" role="img" aria-label="Succès Hollow" ></span> <span class="warcrow-font-Special" role="img" aria-label="Special" ></span> : Déplacer (3)</li>
+              <li><span class="warcrow-font-Special" role="img" aria-label="Special" ></span> : Soigner <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span></li>
+              <li><span class="warcrow-font-Hollow-Special" role="img" aria-label="HollowSpecial" ></span> : Souffrir <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>8+</td>
+          <td>L'unité est détruite. Toutes les unités dans un rayon de 5 pas reçoivent <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/>.</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  `
+};
+
 export const FR = {
   ETATS,
   MOTS_CLEFS,
@@ -895,5 +964,6 @@ export const FR = {
   LABEL,
   PERSONNAGE_UNITE,
   RESUME_TOUR,
-  RESUME_OPPOSITION
+  RESUME_OPPOSITION,
+  TEINTE_PAGE
 };

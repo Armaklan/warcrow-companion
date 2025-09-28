@@ -18,6 +18,7 @@ export interface IData {
   PERSONNAGE_UNITE: typeof FR.PERSONNAGE_UNITE;
   RESUME_TOUR: typeof FR.RESUME_TOUR;
   RESUME_OPPOSITION: typeof FR.RESUME_OPPOSITION;
+  TEINTE_PAGE: typeof FR.TEINTE_PAGE;
 }
 
 @Injectable({ providedIn: 'root' })

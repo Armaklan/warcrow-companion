@@ -803,6 +803,75 @@ export const LABEL = {
   }
 }
 
+const TEINTE_PAGE = {
+  title: 'Tinge Effects',
+  html: `
+    <section>
+      <h2>Effects Table</h2>
+      <table class="teinte-table">
+        <thead>
+          <tr>
+            <th>Tinge</th>
+            <th>Effect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1-4</td>
+            <td>The unit becomes Stressed.</td>
+          </tr>
+          <tr>
+            <td>5-6</td>
+            <td>
+              The unit becomes Stressed and suffers <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span>.
+            </td>
+          </tr>
+          <tr>
+            <td>7+</td>
+            <td>The unit is destroyed. All units within 5 strides gain <img src="teint.png" alt="tinge" style="height: 1em; vertical-align: -0.2em;"/>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Effects Table for the Heirs of Yaldabaoth</h2>
+      <table class="teinte-table">
+        <thead>
+        <tr>
+          <th>Tinge</th>
+          <th>Effect</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>Nothing happens</td>
+        </tr>
+        <tr>
+          <td>2-7</td>
+          <td>
+            <p>Roll 1 <span class="warcrow-font-Orange" role="img" aria-label="Orange Dice" ></span> and apply the effects that match exactly the result obtained:</p>
+            <ul>
+              <li><span class="warcrow-font-Success" role="img" aria-label="Success" ></span>: Become Stressed</li>
+              <li><span class="warcrow-font-Success" role="img" aria-label="Success" ></span> <span class="warcrow-font-Special" role="img" aria-label="Special" ></span>: Gain <img src="teint.png" alt="tinge" style="height: 1em; vertical-align: -0.2em;"/></li>
+              <li><span class="warcrow-font-Success" role="img" aria-label="Success" ></span> <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow-Special" ></span>: Gain the Slowed state</li>
+              <li><span class="warcrow-font-HollowSuccess" role="img" aria-label="Hollow Success" ></span> <span class="warcrow-font-Special" role="img" aria-label="Special" ></span>: Move (3)</li>
+              <li><span class="warcrow-font-Special" role="img" aria-label="Special" ></span>: Heal <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span></li>
+              <li><span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow Special" ></span>: Suffer <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>8+</td>
+          <td>The unit is destroyed. All units within 5 strides gain <img src="teint.png" alt="tinge" style="height: 1em; vertical-align: -0.2em;"/>.</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  `
+};
+
 export const EN = {
   ETATS,
   MOTS_CLEFS,
@@ -815,5 +884,6 @@ export const EN = {
   LABEL,
   PERSONNAGE_UNITE,
   RESUME_TOUR,
-  RESUME_OPPOSITION
+  RESUME_OPPOSITION,
+  TEINTE_PAGE
 };
