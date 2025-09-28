@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { ACTIONS_COMPLEXES, ACTIONS_SIMPLES, CAPACITES, DECORS, ETATS, MOTS_CLEFS, MOTS_CLEFS_DECORS } from './data';
+import { LanguageService } from './language.service';
 
 export interface SearchEntry {
-  kind: 'action' | 'capacite' | 'etat' | 'mot-clef' | 'mot-clef-decor' | 'decor';
+  kind: 'action' | 'abilitie' | 'state' | 'keyword' | 'terrain-keyword' | 'terrain';
   title: string;
   route: string;
   openId: string; // slug used in query param "open"
@@ -13,8 +13,9 @@ export interface SearchEntry {
 export class SearchService {
   private index: SearchEntry[] = [];
 
-  constructor() {
+  constructor(private lang: LanguageService) {
     this.buildIndex();
+    this.lang.langChanges.subscribe(() => this.buildIndex());
   }
 
   private slug(text: string): string {
@@ -28,43 +29,45 @@ export class SearchService {
 
   private buildIndex() {
     const entries: SearchEntry[] = [];
+    const D = this.lang.data;
+    const isFR = this.lang.currentLang === 'FR';
 
     // Actions simples
-    for (const a of ACTIONS_SIMPLES) {
-      entries.push({ kind: 'action', title: a.title, route: '/actions', openId: this.slug(a.title), subtitle: 'Action simple' });
+    for (const a of D.ACTIONS_SIMPLES) {
+      entries.push({ kind: 'action', title: a.title, route: '/actions', openId: this.slug(a.title), subtitle: isFR ? 'Action simple' : 'Simple action' });
     }
     // Actions complexes
-    for (const a of ACTIONS_COMPLEXES) {
-      entries.push({ kind: 'action', title: a.title, route: '/actions', openId: this.slug(a.title), subtitle: 'Action longue' });
+    for (const a of D.ACTIONS_COMPLEXES) {
+      entries.push({ kind: 'action', title: a.title, route: '/actions', openId: this.slug(a.title), subtitle: isFR ? 'Action longue' : 'Complex action' });
     }
 
     // Capacités
-    for (const c of CAPACITES) {
-      entries.push({ kind: 'capacite', title: c.title, route: '/capacites', openId: this.slug(c.title) });
+    for (const c of D.CAPACITES) {
+      entries.push({ kind: 'abilitie', title: c.title, route: '/capacites', openId: this.slug(c.title) });
     }
 
     // États
-    for (const e of ETATS) {
-      entries.push({ kind: 'etat', title: e.title, route: '/etats', openId: this.slug(e.title) });
+    for (const e of D.ETATS) {
+      entries.push({ kind: 'state', title: e.title, route: '/etats', openId: this.slug(e.title) });
     }
 
     // Mots-clefs généraux
-    for (const k of MOTS_CLEFS) {
-      entries.push({ kind: 'mot-clef', title: k.title, route: '/mots-clefs', openId: this.slug(k.title) });
+    for (const k of D.MOTS_CLEFS) {
+      entries.push({ kind: 'keyword', title: k.title, route: '/mots-clefs', openId: this.slug(k.title) });
     }
 
     // Mots-clefs de décors
-    for (const k of MOTS_CLEFS_DECORS) {
-      entries.push({ kind: 'mot-clef-decor', title: k.title, route: '/mots-clefs-decors', openId: this.slug(k.title) });
+    for (const k of D.MOTS_CLEFS_DECORS) {
+      entries.push({ kind: 'terrain-keyword', title: k.title, route: '/mots-clefs-decors', openId: this.slug(k.title) });
     }
 
     // Décors
-    for (const d of DECORS) {
-      entries.push({ kind: 'decor', title: d.title, route: '/decors', openId: this.slug(d.title) });
+    for (const d of D.DECORS) {
+      entries.push({ kind: 'terrain', title: d.title, route: '/decors', openId: this.slug(d.title) });
       // Also index decor keywords by name but route to mots-clefs-decors page
       for (const kw of d.keywords) {
         const kwTitle = kw.value ? `${kw.name}` : kw.name;
-        entries.push({ kind: 'mot-clef-decor', title: kwTitle, route: '/mots-clefs-decors', openId: this.slug(kw.name) });
+        entries.push({ kind: 'terrain-keyword', title: kwTitle, route: '/mots-clefs-decors', openId: this.slug(kw.name) });
       }
     }
 

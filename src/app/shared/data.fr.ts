@@ -1,10 +1,8 @@
-export interface CollapsibleItem {
-  title: string;
-  details: string;
-  icon?: string;
-}
+import {CollapsibleItem, Decor, Scenario} from './data.model';
 
-export const ETATS: CollapsibleItem[] = [
+// Toutes les constantes sont regroupées dans l'objet FR
+
+const ETATS: CollapsibleItem[] = [
   {
     title: 'Effrayé / Découragé / Frightened', details: `<b>Etat</b><p>Quand il effectue un test de volonté, l'unité doit relancer une fois tous les dés indiquant au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>.</p>
 <p>Retirez cet état après avoir effectué un test de Volonté.</p>`, icon: 'effraye.png'
@@ -65,7 +63,7 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
 <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>. Si vous avez plusieurs dés, c’est votre adversaire qui choisit lequel.
 </p>
 <p>Vous devez appliquer cet effet après avoir effectué votre jet et toutes les relances possibles, mais avant l’étape des variations.</p>
-<p>Vous ne pouvez ajouter de variation lors de vos jets d'attaques.</p>
+<p>Vous ne pouvez ajouter de modificateurs lors de vos jets d'attaques.</p>
 <p>Retirez cet état à la fin de la résolution de l'action durant laquelle vous avez subi ses effets (si vous n’avez pu annuler aucun dé, l’état persiste).</p>`,
     icon: 'desarme.png'
   },
@@ -78,7 +76,7 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
     Vous devez appliquer cet effet après avoir effectué votre jet et toutes les relances possibles,
     mais avant l’étape des variations.
   </p>
-  <p>Vous ne pouvez ajouter de variation lors de vos jets de défense.</p>
+  <p>Vous ne pouvez ajouter de modificateurs lors de vos jets de défense.</p>
   <p>Retirez cet état à la fin de la résolution de l'action durant laquelle vous avez subi ses effets
     (si vous n’avez pu annuler aucun dé, l’état demeure actif).</p>`, icon: 'vulnerable.png'
   },
@@ -88,6 +86,8 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
       <p>Tant que votre unité a au moins autant de stress que son MOR et un marqueur d'activation, vous ne pouvez l’activer que pour effectuer l’action complexe de repos.</p>
       <p>Si votre unité est stressée au-delà de sa valeur de MOR, vous devez effectuer un test de VOL à la fin de l’activation en cours. Si vous ne le réussissez pas,
       votre unité sera démoralisée et devra fuir immédiatement</p>
+      <p>Si le niveau de stress de votre unité excède son MOR de 2 ou plus, il faut 2 <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>
+      pour éviter d'être démoralisé et mis en fuite. </p>
     `,
     icon: 'stress-token.png'
   },
@@ -101,7 +101,7 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
   }
 ];
 
-export const MOTS_CLEFS: CollapsibleItem[] = [
+const MOTS_CLEFS: CollapsibleItem[] = [
   {
     title: 'Couvert (D) / Cover',
     details: '<p>Les unités adjacentes à cette unité (alliées ou non) bénéficient d’un couvert contre les attaques à distance. La valeur D indique les dés ou symboles automatiques que les unités adjacentes ajoutent à leur jet de défense.</p>'
@@ -340,8 +340,7 @@ export const MOTS_CLEFS: CollapsibleItem[] = [
   }
 ];
 
-
-export const ACTIONS_SIMPLES: CollapsibleItem[] = [
+const ACTIONS_SIMPLES: CollapsibleItem[] = [
   {
     title: 'Déplacer', details: `
     <ul>
@@ -438,7 +437,7 @@ export const ACTIONS_SIMPLES: CollapsibleItem[] = [
   }
 ];
 
-export const ACTIONS_COMPLEXES: CollapsibleItem[] = [
+const ACTIONS_COMPLEXES: CollapsibleItem[] = [
   {
     title: 'Assaut', details: `
     <ul>
@@ -477,7 +476,7 @@ export const ACTIONS_COMPLEXES: CollapsibleItem[] = [
 ];
 
 // Nouvelles données: Capacités (compétence, passive, commandement, ...)
-export const CAPACITES: CollapsibleItem[] = [
+const CAPACITES: CollapsibleItem[] = [
   {
     title: 'Compétence',
     details: `
@@ -515,8 +514,7 @@ export const CAPACITES: CollapsibleItem[] = [
   }
 ];
 
-
-export const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
+const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
   {
     title: 'Accidenté (X) / Rugged',
     details: `
@@ -609,18 +607,7 @@ export const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
   }
 ];
 
-
-// Nouvelle data: Décors
-export interface Decor {
-  title: string;
-  keywords: {
-    name: string,
-    value?: string
-  }[];
-  dimensions: string;
-}
-
-export const DECORS: Decor[] = [{
+const DECORS: Decor[] = [{
   title: 'Clôture/Barricade',
   keywords: [{name: 'Couvert', value: `<span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>`}],
   dimensions: `Socle de 4 à 13 pas de long et pas plus d'un pas de large`
@@ -677,20 +664,7 @@ export const DECORS: Decor[] = [{
   dimensions: `Socle d'une surface équivalente à un carré de 7 à 10 pas de coté`
 }];
 
-// Nouvelle data: Scénarios
-export interface Scenario {
-  title: string;
-  image: string;
-  requiredMaterial?: string[];
-  roundLength: number;
-  endRoundScoring?: string[];
-  endGame: number;
-  // Additional notes/details; can contain HTML
-  additionnal?: string;
-}
-
-// Exported array for scenarios; left empty by default so consumers can populate or future PRs can add entries.
-export const SCENARIO: Scenario[] = [{
+const SCENARIO: Scenario[] = [{
   title: 'Prendre position',
   image: 'scenario/take-position.png',
   roundLength: 5,
@@ -704,7 +678,7 @@ export const SCENARIO: Scenario[] = [{
     `2 marqueurs d'objectifs bleu`
   ]
 }, {
-  title: `Zone d\'influence`,
+  title: `Zone d'influence`,
   image: 'scenario/influence-zone.png',
   roundLength: 5,
   endRoundScoring: [
@@ -776,3 +750,242 @@ export const SCENARIO: Scenario[] = [{
     </ul>
   `
 }];
+
+const PERSONNAGE_UNITE = {
+  title: 'Characters and Units',
+  html: `
+    <h3>Rejoindre une unité durant l'activation</h3>
+    <p>Pendant son activation, votre Personnage peut intégrer
+    une unité qui remplit les conditions de son mot-clé
+    Rejoindre tant que :</p>
+    <ul>
+      <li>Il n’y a pas d’autres Personnages dans l’unité.</li>
+      <li>L’unité n’est pas démoralisée.</li>
+    </ul>
+
+    <p>La seule action que peut accomplir votre personnage est de se déplacer, jusqu'à 2 fois, pour rejoindre l'unité.
+      Concernant les jetons et dommages : </p>
+    <ul>
+      <li><b>Déĝats :</b>Le personnage conserve ses jetons de dégâts sur son propre profil. L'unité ne prend pas en compte
+        les dégâts du personnages.
+      </li>
+      <li><b>Stress :</b>Conservez le niveau de stress le plus élevé entre l'unité et le personnage.</li>
+      <li><b>Etats : </b>Les jetons états sont transférés sur l'unité. Retirez les états éventuellement en double.</li>
+      <li><b>Effets : </b>Transférez les jetons effets à l'unités.</li>
+      <li><b>Activation : </b>Retirez le jeton d'activation du personnage.</li>
+      <li><b>Teinte : </b>Comparer la teinte du personnage et de l'unité. L'unité garde la valeur la plus elevée.</li>
+    </ul>
+    <h3>Quitter une unité</h3>
+    <p>Déclarer à votre adversaire que votre personnage quitte l'unité. A cet instant le personne ne fait plus partie de l'unité.
+      Occupez-vous de la répartition des jetons.</p>
+    <ul>
+      <li><b>Déĝats :</b> L'unité conserve tous les jetons de dégâts, sauf ceux directement présent sur le profil du personnage.
+      </li>
+      <li><b>Stress :</b>Le personnage reçoit autant de jeton de stress que l'unité.</li>
+      <li><b>Etats : </b>Le personnage reçoit les mêmes états que l'unité.</li>
+      <li><b>Effets : </b>Le personnage conserve tous les jetons d'effet.</li>
+      <li><b>Teinte : </b>Le personnage reçoit le même nombre de jetons teinte que l'unité.</li>
+      <li><b>Démoralisé :</b>Si l'unité était démoralisé, le personnage reçoit son propre jeton démoralisé à la même position.</li>
+    </ul>
+    <p>Activez ensuite votre personnage.</p>
+    <p>Si le personnage était un officier, le leader de l'unité prend la place que le personnage occupais au début de l'activation.</p>
+    <p>Un personnage ne peut quitter et rejoindre une unité au cours d'une même activation.</p>
+    <p>Un personnage ne peut quitter une unité occupé en combat.</p>
+  `
+};
+
+const RESUME_TOUR = {
+  title: 'Résumé du tour',
+  html: `
+    <h2>Début de la manche</h2>
+    <ol>
+      <li>Celui qui a l'initiative choisit qui joue en premier pendant cette manche.</li>
+    </ol>
+    <h2>Phase du tour</h2>
+    <ol>
+      <li>
+        <p>Le premier joueur active une de ses unités</p>
+        <ul>
+          <li>L'unité peut effectuer 2 actions simples différentes, ou une action longue. L'action de mouvement est une exception et peut être sélectionnée 2 fois.</li>
+          <li>Si l'unité a déjà été activée durant le tour, elle est stressée.</li>
+          <li>À la fin de l'activation, vérifiez le contrôle des objectifs.</li>
+        </ul>
+      </li>
+      <li>
+        Le second joueur active une de ses unités en suivant le même processus.
+      </li>
+      <li>Résolvez les jetons d'événements et terminez le tour.</li>
+      <li>Répétez la séquence jusqu'à ce que le dernier tour de la manche soit joué.</li>
+    </ol>
+    <h2>Fin de la manche</h2>
+    <ol>
+      <li>Appliquez les effets de « fin de manche ».</li>
+      <li>Obtenez vos points de victoire (PV).</li>
+      <li>
+        <p>Réduisez le stress de vos unités (sauf les unités démoralisées) :</p>
+        <ul>
+          <li>de 1 si l'unité a été activée durant cette manche.</li>
+          <li>de 2 si l'unité n'a pas été activée durant cette manche.</li>
+        </ul>
+      </li>
+      <li>Vérifiez les effets de la Teinte.</li>
+      <li><b>Personne n'est laissé pour compte.</b> Les unités non activées, non démoralisées et non engagées peuvent se déplacer.</li>
+      <li>Retirez les jetons d'activation.</li>
+      <li>
+        <p>L'initiative change de main.</p>
+        <ul>
+          <li>Le joueur ayant le moins de points de victoire prend l'initiative.</li>
+          <li>En cas d'égalité, l'initiative change de joueur.</li>
+        </ul>
+      </li>
+      <li>Avancez le jeton de fin de manche selon les conditions du scénario.</li>
+    </ol>
+  `
+};
+
+const RESUME_OPPOSITION = {
+    title: "Opposed Roll Summary",
+    html: `
+    <ol>
+      <li><b>Gather your respective dice.</b> In the case of a Ranged Attack, the defender cannot use Attack dice (red, orange, yellow).</li>
+      <li>If a rule or effect allows you to add or forces you to remove dice, do so now. This is also when States are applied.</li>
+      <li><b>Roll the dice</b> simultaneously.</li>
+      <li><b>Add any automatic symbols</b> to your rolls, if applicable.</li>
+      <li><b>Active Player Variations.</b> The player whose activation is in progress may spend as many obtained symbols as desired to apply any number of available Variations for this roll.</li>
+      <li><b>Second Player Variations.</b> Then, the opponent has the same opportunity.</li>
+      <li><b>Resolution.</b> Cancel as many of your opponent’s <span class="warcrow-font-Success" role="img" aria-label="Success"></span> as you have <span class="warcrow-font-Block" role="img" aria-label="Block"></span> remaining. Likewise, your opponent cancels as many of your <span class="warcrow-font-Success" role="img" aria-label="Success"></span> as they have <span class="warcrow-font-Block" role="img" aria-label="Block"></span> left. Both players may then apply the effects derived from the remaining symbols on their rolls.</li>
+      <li>If it is a combat, the unit that suffered the most <span class="warcrow-font-Wound" role="img" aria-label="Wound"></span> is the defeated unit and becomes Stressed. It may be Forced to Retreat (see “Attack” action).</li>
+      <li>At the end of the activation only, any States that have taken effect are removed.</li>
+    </ol>
+  `
+  };
+
+
+
+export const LABEL = {
+  menu: {
+    actions: 'Actions',
+    capacites: 'Capacités',
+    etats: 'États et marqueurs',
+    motsClefs: 'Mots‑clefs',
+    motsClefsDecors: 'Mots clef de décors',
+    resumeTour: 'Résumé du tour',
+    resumeOpposition: "Résumé d'une opposition",
+    personnageUnite: 'Personnages et unités',
+    decors: 'Décors',
+    scenarios: 'Scénarios',
+    teinte: 'Teinte'
+  },
+  actions: {
+    simple: 'Actions simple',
+    complexe: 'Actions complexe'
+  },
+  terrain: {
+    name: 'Décors',
+    keywords: 'Mots-clef',
+    size: 'Dimensions'
+  },
+  scenario: {
+    back: 'Retour',
+    material: 'Matériel requis',
+    duree: {
+      title: 'Durée d\'un round',
+      detail: 'Un round dure',
+      turn: 'tours.'
+    },
+    score: {
+      title: 'Score',
+      detail: 'A la fin de chaque round, chaque compagnie obtient : '
+    },
+    end: {
+      title: 'Fin de la partie',
+      details: 'La partie se termine au bout de  ',
+      rounds: 'rounds.'
+    }
+  }
+}
+
+const TEINTE_PAGE = {
+  title: 'Effet de la teinte',
+  html: `
+    <section>
+      <h2>Tableau des effets</h2>
+      <table class="teinte-table">
+        <thead>
+          <tr>
+            <th>Teinte</th>
+            <th>Effet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1-4</td>
+            <td>L'unité est stressé.</td>
+          </tr>
+          <tr>
+            <td>5-6</td>
+            <td>
+              L'unité est stressé et encaisse <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span>.
+            </td>
+          </tr>
+          <tr>
+            <td>7+</td>
+            <td>L'unité est détruite. Toutes les unités dans les 5 pas reçoivent <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Tableau des effets pour les héritiers de Yaldabaoth</h2>
+      <table class="teinte-table">
+        <thead>
+        <tr>
+          <th>Teinte</th>
+          <th>Effet</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>Rien ne se passe</td>
+        </tr>
+        <tr>
+          <td>2-7</td>
+          <td>
+            <p>Lancez 1 <span class="warcrow-font-Orange" role="img" aria-label="Orange Dice" ></span> et appliquez les effets qui correspondent exactement au résultat obtenu :</p>
+            <ul>
+              <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> : Devenir stressé</li>
+              <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> <span class="warcrow-font-Special" role="img" aria-label="Special" ></span> : Recevoir <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
+              <li><span class="warcrow-font-Success" role="img" aria-label="succès" ></span> <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow-Special" ></span> : Recevoir l'état Ralenti</li>
+              <li><span class="warcrow-font-HollowSuccess" role="img" aria-label="Succès Hollow" ></span> <span class="warcrow-font-Special" role="img" aria-label="Special" ></span> : Déplacer (3)</li>
+              <li><span class="warcrow-font-Special" role="img" aria-label="Special" ></span> : Soigner <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span></li>
+              <li><span class="warcrow-font-Hollow-Special" role="img" aria-label="HollowSpecial" ></span> : Souffrir <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>8+</td>
+          <td>L'unité est détruite. Toutes les unités dans un rayon de 5 pas reçoivent <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/>.</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  `
+};
+
+export const FR = {
+  ETATS,
+  MOTS_CLEFS,
+  ACTIONS_SIMPLES,
+  ACTIONS_COMPLEXES,
+  CAPACITES,
+  MOTS_CLEFS_DECORS,
+  DECORS,
+  SCENARIO,
+  LABEL,
+  PERSONNAGE_UNITE,
+  RESUME_TOUR,
+  RESUME_OPPOSITION,
+  TEINTE_PAGE
+};

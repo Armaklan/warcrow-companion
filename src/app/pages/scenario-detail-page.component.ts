@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {SCENARIO, Scenario} from '../shared/data';
+import {Scenario} from '../shared/data.model';
+import { LanguageService } from '../shared/language.service';
 
 @Component({
   selector: 'app-scenario-detail-page',
@@ -12,11 +13,10 @@ import {SCENARIO, Scenario} from '../shared/data';
   template: `
     <a mat-button color="primary" routerLink="/scenarios">
       <mat-icon>arrow_back</mat-icon>
-      Retour</a>
+      {{ labels.scenario.back }}</a>
 
     @if (!scenario) {
-      <h1>Scénario introuvable</h1>
-      <p>Le scénario demandé n'existe pas.</p>
+      <h1>Not found</h1>
     } @else {
       <h1>{{ scenario.title }}</h1>
       @if (scenario.image) {
@@ -26,28 +26,28 @@ import {SCENARIO, Scenario} from '../shared/data';
       }
 
       <section class="block" *ngIf="scenario.requiredMaterial?.length">
-        <h2>Matériel requis</h2>
+        <h2>{{ labels.scenario.material }}</h2>
         <ul>
           <li *ngFor="let item of scenario.requiredMaterial">{{ item }}</li>
         </ul>
       </section>
 
       <section class="block">
-        <h2>Durée d'un round</h2>
-        <p>Un round dure {{ scenario.roundLength }} tours.</p>
+        <h2>{{ labels.scenario.duree.title }}</h2>
+        <p>{{ labels.scenario.duree.detail }} {{ scenario.roundLength }} {{ labels.scenario.duree.turn }}.</p>
       </section>
 
       <section class="block" *ngIf="scenario.endRoundScoring?.length">
-        <h2>Score</h2>
-        <p>A la fin de chaque round, chaque compagnie obtient :</p>
+        <h2>{{ labels.scenario.score.title }}</h2>
+        <p>{{ labels.scenario.score.detail }}</p>
         <ul>
           <li *ngFor="let s of scenario.endRoundScoring">{{ s }}</li>
         </ul>
       </section>
 
       <section class="block">
-        <h2>Fin de partie</h2>
-        <p>La partie se termine au bout de {{ scenario.endGame }} rounds.</p>
+        <h2>{{ labels.scenario.end.title }}</h2>
+        <p>{{ labels.scenario.end.details }} {{ scenario.endGame }} {{ labels.scenario.end.rounds }}</p>
       </section>
 
       @if (scenario.additionnal) {
@@ -65,13 +65,22 @@ import {SCENARIO, Scenario} from '../shared/data';
   `]
 })
 export class ScenarioDetailPageComponent {
+  lang = inject(LanguageService);
+  labels = this.lang.data.LABEL;
   scenario?: Scenario;
+  private idx: number | null = null;
 
-  constructor(route: ActivatedRoute) {
-    const idParam = route.snapshot.paramMap.get('id');
+  constructor(private route: ActivatedRoute) {
+    const idParam = this.route.snapshot.paramMap.get('id');
     const idx = idParam ? Number(idParam) : NaN;
-    if (!Number.isNaN(idx) && idx >= 0 && idx < SCENARIO.length) {
-      this.scenario = SCENARIO[idx];
-    }
+    this.idx = !Number.isNaN(idx) && idx >= 0 ? idx : null;
+    this.refreshScenario();
+    this.lang.langChanges.subscribe(() => this.refreshScenario());
+  }
+
+  private refreshScenario() {
+    if (this.idx === null) { this.scenario = undefined; return; }
+    const list = this.lang.data.SCENARIO;
+    this.scenario = (this.idx >= 0 && this.idx < list.length) ? list[this.idx] : undefined;
   }
 }

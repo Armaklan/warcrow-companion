@@ -1,15 +1,15 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component, inject, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollapsibleListComponent } from '../components/collapsible-list.component';
-import { MOTS_CLEFS } from '../shared/data';
 import { ActivatedRoute } from '@angular/router';
+import { LanguageService } from '../shared/language.service';
 
 @Component({
   selector: 'app-keywords-page',
   standalone: true,
   imports: [CommonModule, CollapsibleListComponent],
   template: `
-    <h1>Mots‑clefs</h1>
+    <h1>{{ labels.menu.motsClefs }}</h1>
 
     <div class="filter-bar">
       <input
@@ -30,11 +30,15 @@ import { ActivatedRoute } from '@angular/router';
   ]
 })
 export class KeywordsPageComponent {
+  lang = inject(LanguageService);
+
   filterText = '';
   openId: string | null = null;
-  motsClefs = MOTS_CLEFS;
+  motsClefs = this.lang.data.MOTS_CLEFS;
+  labels = this.lang.data.LABEL;
 
   constructor(private route: ActivatedRoute) {
+    this.lang.langChanges.subscribe(() => this.motsClefs = this.lang.data.MOTS_CLEFS);
     this.route.queryParamMap.subscribe(pm => this.openId = pm.get('open'));
   }
 

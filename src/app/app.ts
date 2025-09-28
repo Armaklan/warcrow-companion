@@ -11,6 +11,7 @@ import {MatSidenav} from '@angular/material/sidenav';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {SearchEntry, SearchService} from './shared/search.service';
+import { LanguageService } from './shared/language.service';
 
 @Component({
   selector: 'app-root',
@@ -40,71 +41,75 @@ import {SearchEntry, SearchService} from './shared/search.service';
             </div>
           }
         </div>
+        <div class="lang-switch">
+          <button mat-stroked-button color="primary" (click)="setLang('FR')" [disabled]="currentLang==='FR'" aria-label="Français">🇫🇷 FR</button>
+          <button mat-stroked-button color="primary" (click)="setLang('EN')" [disabled]="currentLang==='EN'" aria-label="English">🇬🇧 EN</button>
+        </div>
         <mat-nav-list>
           <a mat-list-item routerLink="/actions" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>bolt</mat-icon>
-              <span>Actions</span>
+              <span>{{ LABEL.menu.actions }}</span>
             </div>
           </a>
           <a mat-list-item routerLink="/capacites" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>psychology</mat-icon>
-              <span>Capacités</span>
+              <span>{{ LABEL.menu.capacites }}</span>
             </div>
           </a>
           <a mat-list-item routerLink="/etats" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>info</mat-icon>
-              <span>États et marqueurs</span>
+              <span>{{ LABEL.menu.etats }}</span>
             </div>
           </a>
           <a mat-list-item routerLink="/mots-clefs" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>label</mat-icon>
-              <span>Mots‑clefs</span>
+              <span>{{ LABEL.menu.motsClefs }}</span>
             </div>
           </a>
           <a mat-list-item routerLink="/mots-clefs-decors" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>terrain</mat-icon>
-              <span>Mots clef de décors</span>
+              <span>{{ LABEL.menu.motsClefsDecors }}</span>
             </div>
           </a>
           <a mat-list-item routerLink="/resume-du-tour" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>summarize</mat-icon>
-              <span>Résumé du tour</span>
+              <span>{{ LABEL.menu.resumeTour }}</span>
             </div>
           </a>
           <a mat-list-item routerLink="/resume-opposition" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>groups</mat-icon>
-              <span>Résumé d'une opposition</span>
+              <span>{{ LABEL.menu.resumeOpposition }}</span>
             </div>
           </a>
           <a mat-list-item routerLink="/personnage-unite" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>person</mat-icon>
-              <span>Personnages et unités</span>
+              <span>{{ LABEL.menu.personnageUnite }}</span>
             </div>
           </a>
           <a mat-list-item routerLink="/decors" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>landscape</mat-icon>
-              <span>Décors</span>
+              <span>{{ LABEL.menu.decors }}</span>
             </div>
           </a>
           <a mat-list-item routerLink="/scenarios" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>menu_book</mat-icon>
-              <span>Scénarios</span>
+              <span>{{ LABEL.menu.scenarios }}</span>
             </div>
           </a>
           <a mat-list-item routerLink="/teinte" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>palette</mat-icon>
-              <span>Teinte</span>
+              <span>{{ LABEL.menu.teinte }}</span>
             </div>
           </a>
         </mat-nav-list>
@@ -138,6 +143,7 @@ import {SearchEntry, SearchService} from './shared/search.service';
     mat-sidenav { background: var(--wc-surface); color: rgba(0, 0, 0, 0.87); }
     .menu-item { display: flex; align-items: center; gap: 8px; }
     .menu-search { padding: 12px; border-bottom: 1px solid var(--wc-border); background: #ffffffcc; backdrop-filter: blur(2px); }
+    .lang-switch { display: flex; gap: 8px; padding: 8px 12px; border-bottom: 1px solid var(--wc-border); background: #ffffffcc; position: sticky; top: 0; z-index: 1; }
     .search-field { width: 100%; }
     .search-results { max-height: 320px; overflow: auto; margin-top: 8px; border: 1px solid #e0e0e0; border-radius: 8px; }
     .search-results .result { display: block; padding: 8px 12px; text-decoration: none; color: inherit; cursor: pointer; }
@@ -148,6 +154,8 @@ import {SearchEntry, SearchService} from './shared/search.service';
 })
 export class App {
   @ViewChild('sidenav') sidenav!: MatSidenav;
+  get LABEL() { return this.lang.data.LABEL; }
+  get currentLang() { return this.lang.currentLang; }
   isWideScreen = window.matchMedia('(min-width: 960px)').matches;
 
   // Mobile swipe state
@@ -160,12 +168,14 @@ export class App {
   searchResults: SearchEntry[] = [];
   showResults = false;
 
-  constructor(private router: Router, private searchService: SearchService) {
+  constructor(private router: Router, private searchService: SearchService, public lang: LanguageService) {
     const mq = window.matchMedia('(min-width: 960px)');
     const handler = (e: MediaQueryListEvent | MediaQueryList) => this.isWideScreen = e.matches;
     // @ts-ignore
     mq.addEventListener ? mq.addEventListener('change', handler) : mq.addListener(handler as any);
   }
+
+  setLang(l: 'FR' | 'EN') { this.lang.setLang(l); }
 
   onSearchInput(event: Event) {
     const target = event.target as HTMLInputElement | null;
