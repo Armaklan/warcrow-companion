@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollapsibleListComponent } from '../components/collapsible-list.component';
-import { FR } from '../shared/data.fr';
 import { ActivatedRoute } from '@angular/router';
+import { LanguageService } from '../shared/language.service';
 
 @Component({
   selector: 'app-keywords-decors-page',
@@ -30,11 +30,13 @@ import { ActivatedRoute } from '@angular/router';
   ]
 })
 export class KeywordsDecorsPageComponent {
+  lang = inject(LanguageService);
   filterText = '';
   openId: string | null = null;
-  items = FR.MOTS_CLEFS_DECORS;
+  items = this.lang.data.MOTS_CLEFS_DECORS;
 
   constructor(private route: ActivatedRoute) {
+    this.lang.langChanges.subscribe(() => this.items = this.lang.data.MOTS_CLEFS_DECORS);
     this.route.queryParamMap.subscribe(pm => {
       const q = (pm.get('q') ?? '').trim();
       this.filterText = q;

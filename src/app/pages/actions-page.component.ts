@@ -1,9 +1,9 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import {AfterViewInit, Component, inject, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollapsibleListComponent } from '../components/collapsible-list.component';
-import { FR } from '../shared/data.fr';
 import { MatDividerModule } from '@angular/material/divider';
 import { ActivatedRoute } from '@angular/router';
+import { LanguageService } from '../shared/language.service';
 
 @Component({
   selector: 'app-actions-page',
@@ -22,13 +22,19 @@ import { ActivatedRoute } from '@angular/router';
   `
 })
 export class ActionsPageComponent implements AfterViewInit {
-  actionsSimples = FR.ACTIONS_SIMPLES;
-  actionsComplexes = FR.ACTIONS_COMPLEXES;
+  lang = inject(LanguageService);
+  actionsSimples = this.lang.data.ACTIONS_SIMPLES;
+  actionsComplexes = this.lang.data.ACTIONS_COMPLEXES;
 
   @ViewChild('simpleList') simpleList?: CollapsibleListComponent;
   @ViewChild('complexList') complexList?: CollapsibleListComponent;
 
   constructor(private route: ActivatedRoute) {
+    this.lang.langChanges.subscribe(() => {
+      this.actionsSimples = this.lang.data.ACTIONS_SIMPLES;
+      this.actionsComplexes = this.lang.data.ACTIONS_COMPLEXES;
+    });
+
     this.route.queryParamMap.subscribe(pm => {
       const id = pm.get('open');
       if (!id) return;

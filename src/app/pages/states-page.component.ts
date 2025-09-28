@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollapsibleListComponent } from '../components/collapsible-list.component';
-import { FR } from '../shared/data.fr';
 import { ActivatedRoute } from '@angular/router';
+import { LanguageService } from '../shared/language.service';
 
 @Component({
   selector: 'app-states-page',
@@ -14,10 +14,14 @@ import { ActivatedRoute } from '@angular/router';
   `
 })
 export class StatesPageComponent {
-  openId: string | null = null;
-  etats = FR.ETATS;
+  lang = inject(LanguageService);
+  route  = inject(ActivatedRoute);
 
-  constructor(route: ActivatedRoute) {
-    route.queryParamMap.subscribe(pm => this.openId = pm.get('open'));
+  openId: string | null = null;
+  etats = this.lang.data.ETATS;
+
+  constructor() {
+    this.lang.langChanges.subscribe(() => this.etats = this.lang.data.ETATS);
+    this.route.queryParamMap.subscribe(pm => this.openId = pm.get('open'));
   }
 }

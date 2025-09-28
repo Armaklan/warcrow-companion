@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { FR } from '../shared/data.fr';
+import { LanguageService } from '../shared/language.service';
 
 @Component({
   selector: 'app-decors-page',
@@ -71,9 +71,11 @@ import { FR } from '../shared/data.fr';
   `
 })
 export class DecorsPageComponent {
-  decors = FR.DECORS;
+  lang = inject(LanguageService);
+  decors = this.lang.data.DECORS;
 
   constructor(route: ActivatedRoute) {
+    this.lang.langChanges.subscribe(() => this.decors = this.lang.data.DECORS);
     route.queryParamMap.subscribe(pm => {
       const id = pm.get('open');
       if (!id) return;

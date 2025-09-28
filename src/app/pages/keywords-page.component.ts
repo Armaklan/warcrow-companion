@@ -1,8 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component, inject, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollapsibleListComponent } from '../components/collapsible-list.component';
-import { FR } from '../shared/data.fr';
 import { ActivatedRoute } from '@angular/router';
+import { LanguageService } from '../shared/language.service';
 
 @Component({
   selector: 'app-keywords-page',
@@ -30,11 +30,14 @@ import { ActivatedRoute } from '@angular/router';
   ]
 })
 export class KeywordsPageComponent {
+  lang = inject(LanguageService);
+
   filterText = '';
   openId: string | null = null;
-  motsClefs = FR.MOTS_CLEFS;
+  motsClefs = this.lang.data.MOTS_CLEFS;
 
   constructor(private route: ActivatedRoute) {
+    this.lang.langChanges.subscribe(() => this.motsClefs = this.lang.data.MOTS_CLEFS);
     this.route.queryParamMap.subscribe(pm => this.openId = pm.get('open'));
   }
 

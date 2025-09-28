@@ -11,7 +11,7 @@ import {MatSidenav} from '@angular/material/sidenav';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {SearchEntry, SearchService} from './shared/search.service';
-import { FR } from './shared/data.fr';
+import { LanguageService } from './shared/language.service';
 
 @Component({
   selector: 'app-root',
@@ -40,6 +40,10 @@ import { FR } from './shared/data.fr';
               }
             </div>
           }
+        </div>
+        <div class="lang-switch">
+          <button mat-stroked-button color="primary" (click)="setLang('FR')" [disabled]="currentLang==='FR'" aria-label="Français">🇫🇷 FR</button>
+          <button mat-stroked-button color="primary" (click)="setLang('EN')" [disabled]="currentLang==='EN'" aria-label="English">🇬🇧 EN</button>
         </div>
         <mat-nav-list>
           <a mat-list-item routerLink="/actions" (click)="closeOnMobile()">
@@ -139,6 +143,7 @@ import { FR } from './shared/data.fr';
     mat-sidenav { background: var(--wc-surface); color: rgba(0, 0, 0, 0.87); }
     .menu-item { display: flex; align-items: center; gap: 8px; }
     .menu-search { padding: 12px; border-bottom: 1px solid var(--wc-border); background: #ffffffcc; backdrop-filter: blur(2px); }
+    .lang-switch { display: flex; gap: 8px; padding: 8px 12px; border-bottom: 1px solid var(--wc-border); background: #ffffffcc; position: sticky; top: 0; z-index: 1; }
     .search-field { width: 100%; }
     .search-results { max-height: 320px; overflow: auto; margin-top: 8px; border: 1px solid #e0e0e0; border-radius: 8px; }
     .search-results .result { display: block; padding: 8px 12px; text-decoration: none; color: inherit; cursor: pointer; }
@@ -149,7 +154,8 @@ import { FR } from './shared/data.fr';
 })
 export class App {
   @ViewChild('sidenav') sidenav!: MatSidenav;
-  public readonly LABEL = FR.LABEL;
+  get LABEL() { return this.lang.data.LABEL; }
+  get currentLang() { return this.lang.currentLang; }
   isWideScreen = window.matchMedia('(min-width: 960px)').matches;
 
   // Mobile swipe state
@@ -162,12 +168,14 @@ export class App {
   searchResults: SearchEntry[] = [];
   showResults = false;
 
-  constructor(private router: Router, private searchService: SearchService) {
+  constructor(private router: Router, private searchService: SearchService, public lang: LanguageService) {
     const mq = window.matchMedia('(min-width: 960px)');
     const handler = (e: MediaQueryListEvent | MediaQueryList) => this.isWideScreen = e.matches;
     // @ts-ignore
     mq.addEventListener ? mq.addEventListener('change', handler) : mq.addListener(handler as any);
   }
+
+  setLang(l: 'FR' | 'EN') { this.lang.setLang(l); }
 
   onSearchInput(event: Event) {
     const target = event.target as HTMLInputElement | null;
