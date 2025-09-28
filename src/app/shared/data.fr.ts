@@ -749,6 +749,22 @@ const SCENARIO: Scenario[] = [{
   `
 }];
 
+export const LABEL = {
+  menu:  {
+    actions: 'Actions',
+    capacites: 'Capacités',
+    etats: 'États et marqueurs',
+    motsClefs: 'Mots‑clefs',
+    motsClefsDecors: 'Mots clef de décors',
+    resumeTour: 'Résumé du tour',
+    resumeOpposition: "Résumé d'une opposition",
+    personnageUnite: 'Personnages et unités',
+    decors: 'Décors',
+    scenarios: 'Scénarios',
+    teinte: 'Teinte'
+  }
+}
+
 export const FR = {
   ETATS,
   MOTS_CLEFS,
@@ -758,4 +774,5 @@ export const FR = {
   MOTS_CLEFS_DECORS,
   DECORS,
   SCENARIO,
+  LABEL
 };
