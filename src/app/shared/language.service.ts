@@ -46,6 +46,6 @@ export class LanguageService {
       const v = localStorage.getItem(LanguageService.STORAGE_KEY) as Lang | null;
       if (v === 'EN' || v === 'FR') return v;
     } catch {}
-    return 'FR';
+    return 'EN';
   }
 }
