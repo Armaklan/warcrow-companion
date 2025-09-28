@@ -839,6 +839,24 @@ const RESUME_TOUR = {
   `
 };
 
+const RESUME_OPPOSITION = {
+    title: "Opposed Roll Summary",
+    html: `
+    <ol>
+      <li><b>Gather your respective dice.</b> In the case of a Ranged Attack, the defender cannot use Attack dice (red, orange, yellow).</li>
+      <li>If a rule or effect allows you to add or forces you to remove dice, do so now. This is also when States are applied.</li>
+      <li><b>Roll the dice</b> simultaneously.</li>
+      <li><b>Add any automatic symbols</b> to your rolls, if applicable.</li>
+      <li><b>Active Player Variations.</b> The player whose activation is in progress may spend as many obtained symbols as desired to apply any number of available Variations for this roll.</li>
+      <li><b>Second Player Variations.</b> Then, the opponent has the same opportunity.</li>
+      <li><b>Resolution.</b> Cancel as many of your opponent’s <span class="warcrow-font-Success" role="img" aria-label="Success"></span> as you have <span class="warcrow-font-Block" role="img" aria-label="Block"></span> remaining. Likewise, your opponent cancels as many of your <span class="warcrow-font-Success" role="img" aria-label="Success"></span> as they have <span class="warcrow-font-Block" role="img" aria-label="Block"></span> left. Both players may then apply the effects derived from the remaining symbols on their rolls.</li>
+      <li>If it is a combat, the unit that suffered the most <span class="warcrow-font-Wound" role="img" aria-label="Wound"></span> is the defeated unit and becomes Stressed. It may be Forced to Retreat (see “Attack” action).</li>
+      <li>At the end of the activation only, any States that have taken effect are removed.</li>
+    </ol>
+  `
+  };
+
+
 
 export const LABEL = {
   menu: {
@@ -876,5 +894,6 @@ export const FR = {
   SCENARIO,
   LABEL,
   PERSONNAGE_UNITE,
-  RESUME_TOUR
+  RESUME_TOUR,
+  RESUME_OPPOSITION
 };

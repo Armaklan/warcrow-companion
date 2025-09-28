@@ -17,6 +17,7 @@ export interface IData {
   LABEL: typeof FR.LABEL;
   PERSONNAGE_UNITE: typeof FR.PERSONNAGE_UNITE;
   RESUME_TOUR: typeof FR.RESUME_TOUR;
+  RESUME_OPPOSITION: typeof FR.RESUME_OPPOSITION;
 }
 
 @Injectable({ providedIn: 'root' })
