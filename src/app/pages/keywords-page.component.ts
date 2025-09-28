@@ -9,7 +9,7 @@ import { LanguageService } from '../shared/language.service';
   standalone: true,
   imports: [CommonModule, CollapsibleListComponent],
   template: `
-    <h1>Mots‑clefs</h1>
+    <h1>{{ labels.menu.motsClefs }}</h1>
 
     <div class="filter-bar">
       <input
@@ -35,6 +35,7 @@ export class KeywordsPageComponent {
   filterText = '';
   openId: string | null = null;
   motsClefs = this.lang.data.MOTS_CLEFS;
+  labels = this.lang.data.LABEL;
 
   constructor(private route: ActivatedRoute) {
     this.lang.langChanges.subscribe(() => this.motsClefs = this.lang.data.MOTS_CLEFS);

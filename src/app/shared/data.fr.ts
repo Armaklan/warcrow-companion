@@ -764,6 +764,10 @@ export const LABEL = {
     decors: 'Décors',
     scenarios: 'Scénarios',
     teinte: 'Teinte'
+  },
+  actions: {
+    simple: 'Actions simple',
+    complexe: 'Actions complexe'
   }
 }
 

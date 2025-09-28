@@ -128,375 +128,298 @@ have not been able to cancel any dice, the state is considered to remain active)
 
 const MOTS_CLEFS: CollapsibleItem[] = [
   {
-    title: 'Couvert (D) / Cover',
-    details: '<p>Les unités adjacentes à cette unité (alliées ou non) bénéficient d’un couvert contre les attaques à distance. La valeur D indique les dés ou symboles automatiques que les unités adjacentes ajoutent à leur jet de défense.</p>'
+    title: 'Cover (D)',
+    details: '<p>Units adjacent to this unit (allied or not) can benefit from cover against ranged attacks. The value D indicates the automatic dice or symbols that adjacent units add to their defense roll.</p>'
   },
   {
-    title: 'Dissipation (D) / Dispel',
-    details: '<p>Lorsque cette unité est ciblée par un sort, elle peut tenter de le bloquer. La valeur D indique le dé ou les symboles automatiques à lancer pour bloquer le sort. Cette unité ne gagne pas de Teinte sur un <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>. On ne peut pas bloquer un sort plus d’une fois ni avec plus d’une unité.</p>'
+    title: 'Dispel (D)',
+    details: '<p>When this unit is targeted by a spell, it can attempt to block it. The D value indicates the dice or automatic symbols rolled to block the spell. This unit does not gain Tinge from a <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>. You cannot attempt to block a spell more than once or with more than one unit.</p>'
   },
   {
-    title: 'Éclaireur / Scout',
+    title: 'Scout',
     details: `
-      <p>
-      Les unités d’Éclaireurs peuvent se déployer juste après que toutes les autres unités des deux camps ont fini de se déployer. Ils représentent des avant-gardes qui ont reconnu le terrain et qui choisissent la meilleure position.
-      </p>
-      <p>Si votre aversaire possède aussi des éclaieurs, celui qui a l'initiative décide qui déploie 1 de ses unités d'Eclaireurs en premier. Vous et votre adversaire devez alterner jusqu'à ce que vous ayez déployé tous vos Eclaireurs.
-      </p>
-      <p>
-      Vous pouvez aussi garder vos unités d’Éclaireurs secrètes et les déployer une fois la partie commencée, en respectant les contraintes
-        suivantes :</p>
-    <ul>
-      <li>
-        Vous pouvez déployer votre unité d’Éclaireurs n’importe où dans votre zone de déploiement (mais pas engagée en combat).
-      </li>
-      <li>
-        Vous pouvez déployer votre unité d’Éclaireurs adjacente à un des bords du champ de bataille, tant que vous êtes hors de la  zone de déploiement de votre adversaire et qu’aucune unité ennemie à 12 pas ou moins n’a de LdV sur votre unité.
-      </li>
-    </ul>
-
-    <p>
-      Si vous déployez une unité d’Éclaireur après le début de la partie, vous devez l’activer immédiatement et consommer une de vos deux actions pour son activation. Ainsi, elle ne pourra réaliser qu’une seule action, qui ne peut pas être une action complexe.
-    </p>
+      <p>Scout units can deploy right after all other units on both sides have finished deploying. They represent advance guards that have recognized the terrain or the enemy and choose the best position.</p>
+      <p>If your opponent also has Scout units, whoever has the initiative decides who deploys one of their Scout units first. You and your opponent must alternate until you have deployed all of them.</p>
+      <p>You can also keep your Scout unit secret and deploy it once the game has started, under the following restrictions:</p>
+      <ul>
+        <li>You may deploy it unit anywhere in your deployment zone (it cannot be deployed engaged in combat).</li>
+        <li>You may deploy it unit adjacent to one of the battlefield edges, as long as you do not enter your opponent’s deployment zone and no enemy units within 12 strides have Line of Sight (LoS) to it.</li>
+      </ul>
+      <p>If you deploy it once the game has started, you must activate it immediately and spend one of your two actions for its activation. Thus, it can only perform one action that cannot be long.</p>
     `
   },
   {
-    title: 'Élite / Elite',
-    details: '<p>Après les jets de dés (relances incluses) et avant les variations, cette unité peut remplacer tout ' +
-      '<span class="warcrow-font-HollowSuccess" role="img" aria-label="Succès Hollow" ></span> par <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>, ' +
-      'tout <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> par <span class="warcrow-font-Block" role="img" aria-label="Blockl" ></span>,' +
-      ' et tout <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow Special" ></span> par <span class="warcrow-font-Special" role="img" aria-label="Special" ></span>. Cet effet s’applique à tous ses jets.</p>' +
-      '<p>Cette règle s\'applique aux tests de VOL, d\'attaque, défense, ainsi qu\'aux effets de compétences ou sort de l\'unité. Cela ne s\'applique pas aux autres tests comme le blocage de sort, la dissipation, ou les tests de teintes.</p>'
+    title: 'Elite',
+    details: '<p>Once the dice have been rolled (rerolls included) and before the switches step, this unit may replace any ' +
+      '<span class="warcrow-font-HollowSuccess" role="img" aria-label="Hollow Success" ></span> with <span class="warcrow-font-Success" role="img" aria-label="Success" ></span>, ' +
+      'any <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> with <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>, ' +
+      'and any <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow Special" ></span> with <span class="warcrow-font-Special" role="img" aria-label="Special" ></span>. This effect applies to all rolls made by this unit.</p>'
   },
   {
-    title: 'Embusqué / Ambusher',
+    title: 'Ambusher',
     details: `
-    <p>
-    Les unités Embusquées se cachent, prêtes à entrer en action après le début de la bataille en frappant par surprise.
-    Vous pouvez garder vos unités Embusquées secrètes et ne les déployer qu’après avoir commencé la partie.
-  </p>
-  <p>
-    Vous pouvez activer votre unité Embusquée pendant votre tour au lieu d’activer une autre unité,
-    comme si vos Embusqués étaient déjà sur le champ de bataille. Dans ce cas :
-  </p>
-  <ul>
-    <li>
-      <strong>Déployez l’unité sur le champ de bataille :</strong>
+      <p>Ambusher units wait in hiding, ready to strike once the battle has already started. You can keep your Ambusher units secret and not deploy them until after the game has started.</p>
+      <p>You can activate your Ambusher unit during your turn instead of another unit, as if it were already on the battlefield. In this case:</p>
       <ul>
         <li>
-          À n’importe quel endroit de votre zone de déploiement. Vous pouvez la déployer engagée en combat avec une unité ennemie.
-          Elle est considérée comme ayant chargé, mais l’unité ennemie ne peut pas tenir bon et tirer.
+          <strong>Deploy the unit on the battlefield:</strong>
+          <ul>
+            <li>Anywhere in your deployment zone. You can deploy it engaged in combat with an enemy unit. It is considered to have charged, but the enemy unit cannot hold or fire.</li>
+            <li>Anywhere on the battlefield, except in the opponent’s deployment zone, as long as no enemy units within 10 strides have Line of Sight (LoS) to it.</li>
+          </ul>
         </li>
-        <li>
-          N’importe où sur le champ de bataille, sauf dans la zone de déploiement ennemie, et aucune unité ennemie
-          à 10 pas ou moins ne doit avoir de Ligne de Vue (LdV) sur elle.
-        </li>
+        <li><strong>Then activate your unit.</strong></li>
       </ul>
-    </li>
-    <li>
-      <strong>Activez ensuite votre unité.</strong>
-    </li>
-  </ul>
-`
-  },
-  {
-    title: 'Équipage / Manned',
-    details: '<ul><li>L’unité ignore les effets d’Intimidation.</li><li>L’unité n’est stressée que si elle est activée plusieurs fois au cours d’un même round.</li></ul>'
-  },
-  {
-    title: 'Fureur / Raging',
-    details: '<p>Ajoute <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> à ses jets d’attaque lorsqu’elle charge.</p>'
-  },
-  {
-    title: 'Golem / Golem',
-    details: '<ul><li>Ignore l’Intimidation.</li><li>Immunisé contre Effrayé.</li><li>Ne peut pas être démoralisé. Si le stress dépasse la valeur de MOR, ignorez l’excédent.</li></ul>'
-  },
-  {
-    title: 'Inamovible / Immovable',
-    details: '<p>Ne peut pas être attirée, bousculée, placée, replacée ni forcée au repli, sauf si vous le souhaitez.</p>'
-  },
-  {
-    title: 'Intrépide / Fearless',
-    details: '<p>Ignore Intimidation et immunisé contre Effrayé.</p>'
-  },
-  {
-    title: 'Intimidation (N) / Intimidating',
-    details: `
-    <p>
-    Lorsque cette unité engage ou est engagé au combat, l’unité ennemie doit effectuer un test de VOL et obtenir
-    au moins autant de
-    <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>
-    que la valeur <strong>N</strong> pour éviter d’être stressée.
-  </p>
-  <p>
-    Pour chaque
-    <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>
-    manquant, l’unité ennemie gagne 1 point de stress.
-  </p>
-  <p>Une unité ne peut subir les effets de l'intimidation qu'une fois par activation.</p>`
-  },
-  {
-    title: 'Massive / Large',
-    details: `<ul>
-    <li>
-      Les unités Massives peuvent traverser les unités qui ne le sont pas.
-      Les unités traversées doivent réussir un test de VOL pour éviter le stress.
-      De plus, une unité traversée doit faire un jet opposé avec sa défense contre autant de
-      <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>
-      qu’il y a de soldats dans ladite unité (jusqu’à un maximum de 3).
-      Elle subira autant de dégâts que de
-      <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>
-      non annulés.
-    </li>
-    <li>
-      Même engagée en combat, une unité Massive peut charger une autre unité si elle a une Ligne de Vue (LdV)
-      sur elle et peut se déplacer pour l’engager. Ce mouvement de charge provoque une attaque d’opportunité.
-    </li>
-    <li>
-      Seules les autres unités Massives et les décors avec le mot-clé <em>Bloque la LdV</em> bloquent la LdV vers les unités Massives.
-    </li>
-    <li>
-      Les unités Massives sont toujours considérées comme <em>Inamovibles</em>.
-    </li>
-  </ul>`
-  },
-  {
-    title: 'Rage de berserker / Berseker rage',
-    details: `<p>
-    Votre unité peut s’infliger
-    <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span>
-    pour ajouter un symbole de votre choix à un jet d’attaque, de défense ou de VOL.
-    Vous devez le faire après le jet de dés mais avant de passer à l’étape des variations.
-  </p>
-  <p>
-    Vous ne pouvez pas vous infliger ce dégât si cela entraîne l’élimination de l’unité.
-    Ce dégât n’est pas pris en compte lors de la résolution d’un combat.
-  </p>`
-  },
-  {
-    title: 'Soif de sang (X) / Bloodlust',
-    details: `<p>
-    Si l’unité n’est pas engagée en combat lorsqu’elle est activée, elle est obligée d'engager (charge ou assaut)
-    <span class="warcrow-font-LongAction" role="img" aria-label="LongAction" ></span>
-    une unité ennemie <strong>X</strong>, à chaque fois que c’est possible.
-    <em>X</em> peut être le nom d’une unité, un mot-clé ou plusieurs de ces éléments (séparés par des traits « | »).
-    Si aucune valeur n’est spécifiée pour <em>X</em>, l’unité doit charger
-    <span class="warcrow-font-LongAction" role="img" aria-label="LongAction" ></span>
-    l’unité ennemie la plus proche.
-  </p>
-  <p>
-    Si l’unité engage en raison de sa Soif de sang, elle peut relancer tous ses jets d’attaque durant les activations où elle est engagée avec l’unité ennemie (et pas seulement lorsqu’elle charge ou fait un assaut).
-  </p>
-  <p>
-    Au début de son activation, l’unité peut ignorer les effets de Soif de sang jusqu’à la fin de son activation en réussissant un test de VOL.
-  </p>`
-  },
-  {
-    title: 'Terrain favori (E) / Preferred terrain',
-    details: `
-<p>L'unité peut ignorer les effets des décors de type E, ce qui peut désigner un type de décor, un mot-clé, ou plusieurs de ces élements (séparés dans ce cas par des trait | ).</p>
-`
-  },
-  {
-    title: 'Teinte / Tinge',
-    details: `
-    <p>Votre unité reçoit <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au début de chaque manche.</p>
-    <b>Personnage rejoignant une unité</b>
-    <p>L'unité rejointe est considéré comme ayant le mot-clé Teinte quand le personnage l'a rejoint. Elle recevra donc <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au début de chaque manque. </p>
-    <b>Unité en dehors du champs de bataille</b>
-    <p>Les unités hors du champs de bataille ne reçoivent pas de <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> grâce à ce mot-clé.</p>
     `
   },
   {
-    title: 'Visée / Aim',
-    details: '<p>Peut relancer ses jets d’attaque à distance. La cible ne bénéficie pas du Couvert (D).</p>'
+    title: 'Manned',
+    details: '<ul><li>Ignores the effects of Intimidating.</li><li>Becomes stressed only if activated more than once during the same round.</li></ul>'
   },
   {
-    title: 'Rejoindre / Join',
+    title: 'Raging',
+    details: '<p>Adds <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> to its attack rolls when it charges.</p>'
+  },
+  {
+    title: 'Golem',
+    details: '<ul><li>Ignores Intimidating.</li><li>Immune to the Frightened state.</li><li>Cannot be demoralized. If stress exceeds the unit’s MOR value, ignore the excess.</li></ul>'
+  },
+  {
+    title: 'Immovable',
+    details: '<p>Cannot be attracted, shoved, placed, displaced, or pushed back unless you want it to.</p>'
+  },
+  {
+    title: 'Fearless',
+    details: '<p>Ignores Intimidating and is immune to the Frightened state.</p>'
+  },
+  {
+    title: 'Intimidating (N)',
     details: `
-      <p>Les Personnages capables d’intégrer une unité ont le mot-clé Rejoindre (X) dans leur profil, où X peut être le nom d’une unité, une caractéristique,
-      un mot-clé ou plusieurs de ces éléments séparés par des traits “ | ”. Dans ce dernier cas, l’unité cible doit posséder tous les mots-clés ou
-      caractéristiques, ou être nommée comme au moins un des éléments.</p>
-      <p>Les personnages de type Officier deviennent automatiquement le leader de l'unité qu'ils rejoignent.</p>
+      <p>When this unit engages or is engaged in combat, the enemy unit must perform a WP test and obtain at least as many <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> as the value <strong>N</strong> to avoid stress.</p>
+      <p>For each missing <span class="warcrow-font-Success" role="img" aria-label="Success" ></span>, the enemy unit gains 1 stress point.</p>
+      <p>A unit can only suffer the effects of Intimidating once per activation.</p>
     `
   },
   {
-    title: 'Bousculer (X) / Shove',
+    title: 'Large',
     details: `
-      <p>L’unité ciblée doit s’éloigner de votre unité de X pas en suivant la trajectoire indiquée en traçant
-        une ligne reliant les centres des socles des leaders de votre unité et de l’unité ciblée. Ce mouvement
-        ne provoque pas d’attaque d’opportunité.</p>
-      <p>
-        Si l’unité ciblée entre en contact avec une unité ou un décor Infranchissable durant ce mouvement,
-        celui-ci s’interrompt immédiatement à cet endroit précis.
-      </p>
+      <ul>
+        <li>Large units can move through units that are not Large. Units moved through must pass a WP test to avoid stress. In addition, a unit moved through must make an opposed defense roll against as many <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> as there are troops in the unit (up to a maximum of 3). It suffers as much damage as the number of <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> not cancelled.</li>
+        <li>Even if engaged in combat, a Large unit can charge another unit if it has Line of Sight (LoS) and can move to engage it. This charge move provokes an opportunity attack.</li>
+        <li>Only other Large units and terrain elements with the keyword <em>Blocks LoS</em> block Line of Sight to Large units.</li>
+        <li>Large units are always considered <em>Immovable</em>.</li>
+      </ul>
     `
   },
   {
-    title: 'Attirer (X) / Attract',
+    title: 'Berserker Rage',
     details: `
-      <p>L’unité ciblée doit s’approcher de votre unité de X pas en suivant la trajectoire indiquée en traçant
-        une ligne reliant les centres des socles des leaders de votre unité et de l’unité ciblée. Ce mouvement
-        ne provoque pas d’attaque d’opportunité.</p>
-      <p>Si l’unité ciblée entre en contact avec une unité ou un décor Infranchissable durant ce mouvement,
-        celui-ci s’interrompt immédiatement à cet endroit précis.</p>
+      <p>Your unit can inflict <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> on itself to add one symbol of your choice to an attack, defense, or WP roll. You must do this after rolling the dice but before proceeding to the switches step.</p>
+      <p>You cannot inflict this damage if it would eliminate the unit. This damage is not taken into account when resolving combat.</p>
     `
   },
   {
-    title: 'Placer (X) / Place',
+    title: 'Bloodlust (X)',
     details: `
-      <p>Indiquez un point sur le champ de bataille à X pas du leader de votre unité. Celui qui contrôle l’unité
-      ciblée doit prendre son leader et le placer sur le point indiqué. Vous devez ensuite placer le reste des
-      soldats de l’unité ciblée en formation.</p>
-      <p>Ce mouvement de l’unité placée ne provoque pas d’attaques d’opportunité.</p>
-      <p>Vous ne pouvez pas placer de figurines sur d’autres figurines et vous ne pouvez pas placer une unité
-      sur un décor Infranchissable.</p>
+      <p>If the unit is not engaged in combat when activated, it must engage (Charge or Assault) <span class="warcrow-font-LongAction" role="img" aria-label="LongAction" ></span> an enemy unit <strong>X</strong> whenever possible. <em>X</em> can be the name of a unit, a keyword, or several elements separated by “|”. If no value is specified for <em>X</em>, the unit must charge <span class="warcrow-font-LongAction" role="img" aria-label="LongAction" ></span> the nearest enemy unit.</p>
+      <p>If the unit engages due to its Bloodlust, it may re-roll all of its attack rolls while engaged with that enemy unit (not just when charging or assaulting).</p>
+      <p>At the beginning of its activation, the unit can ignore the effects of Bloodlust until the end of its activation by passing a WP test.</p>
     `
   },
   {
-    title: 'Replacer (X) / Displace',
+    title: 'Preferred Terrain (E)',
     details: `
-      <p>L’unité que vous replacez doit effectuer un mouvement rectiligne de X pas dans la direction que
-      vous choisissez. Les effets des décors (sauf Infranchissable) n’affectent pas ce mouvement. Il ne
-      provoque pas d’attaque d’opportunité.</p>
-      <p>Si l’unité replacée entre en contact avec une unité ou un décor Infranchissable durant ce mouvement,
-      celui-ci s’interrompt immédiatement à cet endroit précis.</p>
+      <p>The unit can ignore the effects of terrain elements of type E, which can refer to a type of terrain, a keyword, or several such elements separated by “|”.</p>
+    `
+  },
+  {
+    title: 'Tinge',
+    details: `
+      <p>Your unit gains <img src="teint.png" alt="tinge" style="height: 1em; vertical-align: -0.2em;"/> at the start of each round.</p>
+      <b>Character joining a unit</b>
+      <p>The joined unit is considered to have the Tinge keyword while the character is part of it. It therefore gains <img src="teint.png" alt="tinge" style="height: 1em; vertical-align: -0.2em;"/> at the start of each round.</p>
+      <b>Unit outside the battlefield</b>
+      <p>Units outside the battlefield do not gain <img src="teint.png" alt="tinge" style="height: 1em; vertical-align: -0.2em;"/> from this keyword.</p>
+    `
+  },
+  {
+    title: 'Aim',
+    details: '<p>Can re-roll its ranged attack rolls. The target does not benefit from Cover (D).</p>'
+  },
+  {
+    title: 'Join (X)',
+    details: `
+      <p>Characters able to join a unit have the Join (X) keyword in their profile, where X can be the name of a unit, a characteristic, a keyword, or several such elements separated by “|”. In this case, the target unit must have all the keywords or characteristics, or be named as at least one of the elements.</p>
+      <p>Officer-type characters automatically become the leader of the unit they join.</p>
+    `
+  },
+  {
+    title: 'Shove (X)',
+    details: `
+      <p>The target unit must move away from your unit by X strides along a line connecting the centers of both units’ leaders’ bases. This movement does not provoke an opportunity attack.</p>
+      <p>If the target unit comes into contact with another unit or an Impassable terrain element during this movement, it stops immediately at that point.</p>
+    `
+  },
+  {
+    title: 'Attract (X)',
+    details: `
+      <p>The target unit must move toward your unit by X strides along a line connecting the centers of both units’ leaders’ bases. This movement does not provoke an opportunity attack.</p>
+      <p>If the target unit comes into contact with another unit or an Impassable terrain element during this movement, it stops immediately at that point.</p>
+    `
+  },
+  {
+    title: 'Place (X)',
+    details: `
+      <p>Indicate a point on the battlefield X strides from your unit’s leader. The controller of the target unit must take their unit leader and place it on that point. Then, place the rest of the target unit’s models in formation.</p>
+      <p>This movement does not provoke opportunity attacks. You cannot place models on top of others or on an Impassable terrain feature.</p>
+    `
+  },
+  {
+    title: 'Displace (X)',
+    details: `
+      <p>The unit you displace must make a straight movement of X strides in the chosen direction. The effects of terrain elements (except Impassable) do not affect this movement. It does not provoke an opportunity attack.</p>
+      <p>If the displaced unit comes into contact with another unit or an Impassable terrain element during this movement, it stops immediately at that point.</p>
     `
   }
 ];
 
 const ACTIONS_SIMPLES: CollapsibleItem[] = [
   {
-    title: 'Déplacer', details: `
-    <ul>
-        <li>Déplacez l'unité de votre première valeur de mouvement.</li>
-        <li>Puis déplacez l'unité de votre seconde valeur de mouvement.</li>
-    </ul>
-  `
-  },
-  {
-    title: 'Attaque de mêlée', details: `
-    <ul>
-        <li>Faites une manoeuvres de positionnement si nécessaire.</li>
-        <li>Résolvez un jet face à face entre le jet d'attaque et le jet de défense. Chaque <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> non annulé inflige <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> à l'unité ennemie.</li>
-        <li>L'unité qui a subis le plus de dégâts (au moins <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span>) est stressée à la fin de l'activation.</li>
-        <li>L'unité gagante peut <b>forcer au repli</b> l'unité perdante et décider de la poursuivre, ou non (première valeur de Mouvement).</b></li>
-        <li>Faites une seconde manoeuvre de positionnement si nécessaire à la fin du combat.</li>
-    </ul>
-    <p>
-        <b>Manoeuvre de repositionnement</b>
-    </p>
-    <ul>
-      <li>En commençant par votre leader, vous devez placez les soldats non engagés de votre unité au contact d'au moins un soldat ennemi.</li>
-      <li>Vos soldats doivent toujours rester en formation.</li>
-      <li>Vous pouvez échanger la position de votre leader avec celle de n'importe quel soldat engagé avec l'ennemi.</li>
-      <li>S'il vous est impossible d'engager un soldat en combat, vous devez le placer au contact de votre leader, ou, à défaut, de toute autre soldat de votre unité.</li>
-      <li>S'il n'est pas possible de respecter un des points, placez le soldat le plus près possible de votre leader.</li>
-    </ul>
-    <p>
-        <b>Forcer au repli</b>
-    </p>
-    <ul>
-        <li>L'unité forcer au repli peut se stresser pour l'empêcher.</li>
-        <li>Un unité qui se replie doit se déplacer de la première valeur de son mouvement. Elle doit mettre le plus de distance possible avec son adversaire.</li>
-        <li>L'unité gagnante peut poursuivre l'unité qui se replie en se déplaçant avec sa première valeur de mouvement. Si le leader entre en contact socle à socle avec l'adversaire, il peut l'engager (vous n’êtes pas considéré
-            comme ayant chargé).</li>
-    </ul>
-    <p><b>Elimination d'une unité</b></p>
-    <ul>
-        <li>Si vous avez complètement éliminé l'unité ennemie, votre unité peut effectuer l'action de mouvement gratuitement une fois (cela ne compte pas comme une activation).</li>
-    </ul>
-  `
-  },
-  {
-    title: 'Attaque à distance', details: `
-    <ul>
-        <li>Le défenseur ne peut utiliser que <span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>  <span class="warcrow-font-Green" role="img" aria-label="Green dice" ></span> <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> <span class="warcrow-font-Block" role="img" aria-label="Block" ></span> et <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> dans son jet de défense.</li>
-        <li>Résolvez un jet face à face entre le jet d'attaque et le jet de défense. Chaque <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> non annulé inflige <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> à l'unité ennemie. Le défenseur ne peut pas agir sur les variations.</li>
-    </ul>
-  `
-  },
-  {
-    title: 'Lancer un sort', details: `
-      <ol>
-        <li>Choisissez votre sort et déclarez si vous appliquez des altérations, puis vérifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
-        <li>Si vous adversaire à une unité qui peut tenter de bloquer le sort, faite le test.</li>
-        <li>Résolvez un jet face à face entre la VOL du lanceur de sort et le test de dissipation.</li>
-        <li>Déclarez les altérations utilisant de la <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/> et dépensez-là..</li>
-        <li>Le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succès" ></span></li>
-        <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> sur le jet, appliquez les effets du sort. </li>
-      </ol>
-      <p>Jet de teinte</p>
-      <ol>
-        <li>Créez le jet de teinte : prenez <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> comme indiqué dans les altérations choisis du sort.</li>
-        <li>Pour chaque <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
-        <li>Si le lanceur possède des <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, appliquez les effets de la teinte.</li>
-      </ol>
-      <p>Bloquer un sort</p>
-      <ol>
-        <li>Déclarer votre intention de bloquer le sort pendant l'état 2 du lancement. </li>
-        <li>Le sort peut être bloqué par la cible si elle a le mot-clef Dissipation, ou par un mage situé à moins de 20 pas de l'ennemi qui lance le sort.</li>
-        <li>Formez le test de blocage : prenez 3 <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, ou les dés indiqués par la compétence Dissipation, et lancez les. Le résultat sera opposé au test de lancement du sort durant l'étape 3./</li>
-        <li>Pour chaque <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> obtenu, l'unité qui bloque le sort reçoit <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/> </li>
-        <li>Si vous avez obtenu au moins un <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>, appliquez les effets de la teinte à la fin de l'activation. </li>
-      </ol>
-      <p>Vous ne pouvez pas tenter de bloquer un sort plus d'une fois ou avec plusieurs unités.</p>
-  `
-  },
-  {
-    title: 'Capacité de teinte', details: `
+    title: 'Move',
+    details: `
       <ul>
-        <li>Choisissez votre capacité de teinte.</li>
-        <li>Dépensez <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>
-        <li>Appliquez les effets de la capacité.</li>
-    </ul>
-  `
+        <li>Move the unit by its first MOV value.</li>
+        <li>Then move the unit by its second MOV value.</li>
+      </ul>
+    `
   },
   {
-    title: 'Utiliser une compétence', details: `
+    title: 'Melee Attack',
+    details: `
       <ul>
-        <li>Choisissez votre compétence et vérifier que les conditions sont remplis.</li>
-        <li>Appliquez les effets de la capacité.</li>
-    </ul>
-  `
+        <li>Perform a positioning maneuver if necessary.</li>
+        <li>Resolve a Face to Face roll between the attack roll and the defense roll. Each unblocked <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> inflicts a <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> on the enemy unit.</li>
+        <li>The unit that suffered the most damage (at least one <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span>) becomes stressed at the end of the activation.</li>
+        <li>The winning unit may <b>force the losing unit to retreat</b> and decide whether to pursue it (using its first MOV value).</li>
+        <li>Perform a second positioning maneuver if necessary at the end of the combat.</li>
+      </ul>
+      <p><b>Positioning Maneuver</b></p>
+      <ul>
+        <li>Starting with your Leader, place all unengaged soldiers in contact with at least one enemy soldier.</li>
+        <li>Your soldiers must always remain in formation.</li>
+        <li>You may swap the position of your Leader with that of any soldier engaged with the enemy.</li>
+        <li>If you cannot engage a soldier in combat, place it in contact with your Leader, or, if not possible, with any other soldier of your unit.</li>
+        <li>If any of the above cannot be fulfilled, place the soldier as close to your Leader as possible.</li>
+      </ul>
+      <p><b>Force to Retreat</b></p>
+      <ul>
+        <li>The unit being forced to retreat may gain 1 Stress to prevent it.</li>
+        <li>A retreating unit must move using its first MOV value, putting as much distance as possible from its opponent.</li>
+        <li>The winning unit may pursue the retreating one by moving with its first MOV value. If the Leader ends in base contact with the enemy Leader, it may engage it (you are not considered to have charged).</li>
+      </ul>
+      <p><b>Elimination of a Unit</b></p>
+      <ul>
+        <li>If you completely eliminate the enemy unit, your unit may perform a free Move action once (it does not count as an activation).</li>
+      </ul>
+    `
+  },
+  {
+    title: 'Ranged Attack',
+    details: `
+      <ul>
+        <li>The defender can only use <span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>, <span class="warcrow-font-Green" role="img" aria-label="Green dice" ></span>, <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, <span class="warcrow-font-Block" role="img" aria-label="Block" ></span> and <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> in their defense roll.</li>
+        <li>Resolve a Face to Face roll between the attack roll and the defense roll. Each unblocked <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> inflicts a <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> on the enemy unit. The defender cannot apply switches.</li>
+      </ul>
+    `
+  },
+  {
+    title: 'Cast a Spell',
+    details: `
+      <ol>
+        <li>Choose your spell and declare any alterations, then check the casting requirements. If they are not met, you cannot cast the spell.</li>
+        <li>If your opponent has a unit that can attempt to block the spell, perform the test.</li>
+        <li>Resolve a Face to Face roll between the caster’s WP and the Dispel test.</li>
+        <li>Declare any alterations that use <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/> and spend it.</li>
+        <li>The spellcaster may gain <img src="teint.png" alt="1 Tinge" style="height: 1em; vertical-align: -0.2em;"/> to add one <span class="warcrow-font-Success" role="img" aria-label="Success" ></span>.</li>
+        <li>If you roll at least one <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> on the check, apply the spell effects.</li>
+      </ol>
+      <p><b>Tinge Roll</b></p>
+      <ol>
+        <li>Create the Tinge roll: take the number of <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> indicated in the spell’s chosen alterations.</li>
+        <li>For each <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> rolled in the Tinge roll, gain one <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</li>
+        <li>If the caster has any <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>, apply the Tinge effects.</li>
+      </ol>
+      <p><b>Blocking a Spell</b></p>
+      <ol>
+        <li>Declare your intention to block the spell during step 2 of casting.</li>
+        <li>A spell may be blocked either by its target if it has the Dispel keyword, or by a Mage within 20 strides of the enemy caster.</li>
+        <li>Form the blocking test: take 3 <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, or the dice indicated by the Dispel skill, and roll them. The result will be opposed to the casting roll during step 3.</li>
+        <li>For each <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> rolled, the unit blocking the spell gains one <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</li>
+        <li>If you rolled at least one <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>, apply the Tinge effects at the end of the activation.</li>
+      </ol>
+      <p>You cannot attempt to block a spell more than once or with more than one unit.</p>
+    `
+  },
+  {
+    title: 'Tinge Ability',
+    details: `
+      <ul>
+        <li>Choose your Tinge ability.</li>
+        <li>Spend <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</li>
+        <li>Apply the effects of the ability.</li>
+      </ul>
+    `
+  },
+  {
+    title: 'Use a Skill',
+    details: `
+      <ul>
+        <li>Choose your skill and verify that its requirements are met.</li>
+        <li>Apply the effects of the ability.</li>
+      </ul>
+    `
   }
 ];
 
 const ACTIONS_COMPLEXES: CollapsibleItem[] = [
   {
-    title: 'Assaut', details: `
-    <ul>
-        <li>Déplacez-vous jusqu'à engager le combat avec l'ennemi, en utilisant votre première puis votre seconde valeur de mouvement.</li>
-        <li>Résolvez une attaque de mêlée contre lui.</li>
-    </ul>
-  `
-  },
-  {
-    title: 'Charge', details: `
-    <ul>
-        <li>Déplacez-vous en ligne droite, en utilisant le mouvement de charge, jusqu'à engager le combat avec l'ennemi.</li>
-        <li>Résolvez une attaque de mêlée contre lui. Vous pouvez relancer le jet d'attaque.</li>
-    </ul>
-  `
-  },
-  {
-    title: 'Repos', details: `
-    <p>Quand votre unité effectue cette action, utilisez autant des options suivantes</p>
-    <ul>
-        <li>Eliminer tout son stress.</li>
-        <li>Supprimer n'importe quel état de son profil.</li>
-        <li>Effectuer un mouvement en utilisant uniquement sa deuxième valeur de Mouvement.</li>
-    </ul>
-    <p>Même si elle a déjà été activée pendant ce round, l'unité n'est pas stressée en effectuant cette action.</p>
-  `
-  },
-  {
-    title: 'Utiliser une compétence longue', details: `
+    title: 'Assault',
+    details: `
       <ul>
-        <li>Choisissez votre compétence avec le symbole <span class="warcrow-font-LongAction" role="img" aria-label="Long Action" ></span> et vérifier que les conditions sont remplis.</li>
-        <li>Appliquez les effets de la capacité.</li>
-    </ul>
-  `
+        <li>Move until you engage in combat with the enemy, using your first and then your second MOV value.</li>
+        <li>Resolve a melee attack against it.</li>
+      </ul>
+    `
+  },
+  {
+    title: 'Charge',
+    details: `
+      <ul>
+        <li>Move in a straight line, using your charge movement, until you engage in combat with the enemy.</li>
+        <li>Resolve a melee attack against it. You may re-roll your attack roll.</li>
+      </ul>
+    `
+  },
+  {
+    title: 'Rest',
+    details: `
+      <p>When your unit performs this action, choose as many of the following options as you wish:</p>
+      <ul>
+        <li>Remove all its stress.</li>
+        <li>Remove any state from its profile.</li>
+        <li>Perform a move using only its second MOV value.</li>
+      </ul>
+      <p>Even if it has already been activated during this round, the unit does not become stressed when performing this action.</p>
+    `
+  },
+  {
+    title: 'Use a Long Skill',
+    details: `
+      <ul>
+        <li>Choose your skill with the <span class="warcrow-font-LongAction" role="img" aria-label="Long Action" ></span> symbol and verify that all conditions are met.</li>
+        <li>Apply the effects of the ability.</li>
+      </ul>
+    `
   }
 ];
 
@@ -789,6 +712,10 @@ export const LABEL = {
     decors: 'Terrain',
     scenarios: 'Scenario',
     teinte: 'Tinge'
+  },
+  actions: {
+    simple: 'Simple actions',
+    complexe: 'Complex actions'
   }
 }
 

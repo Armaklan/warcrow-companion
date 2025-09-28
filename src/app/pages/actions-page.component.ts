@@ -10,13 +10,13 @@ import { LanguageService } from '../shared/language.service';
   standalone: true,
   imports: [CommonModule, CollapsibleListComponent, MatDividerModule],
   template: `
-    <h1>Actions</h1>
+    <h1>{{ labels.menu.actions }}</h1>
     <section>
-      <h2>Actions simples</h2>
+      <h2>{{ labels.actions.simple }}</h2>
       <app-collapsible-list #simpleList [items]="actionsSimples"></app-collapsible-list>
     </section>
     <section>
-      <h2>Actions longues</h2>
+      <h2>{{ labels.actions.complexe }}</h2>
       <app-collapsible-list #complexList [items]="actionsComplexes"></app-collapsible-list>
     </section>
   `
@@ -25,6 +25,7 @@ export class ActionsPageComponent implements AfterViewInit {
   lang = inject(LanguageService);
   actionsSimples = this.lang.data.ACTIONS_SIMPLES;
   actionsComplexes = this.lang.data.ACTIONS_COMPLEXES;
+  labels = this.lang.data.LABEL;
 
   @ViewChild('simpleList') simpleList?: CollapsibleListComponent;
   @ViewChild('complexList') complexList?: CollapsibleListComponent;
