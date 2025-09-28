@@ -63,7 +63,7 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
 <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>. Si vous avez plusieurs dés, c’est votre adversaire qui choisit lequel.
 </p>
 <p>Vous devez appliquer cet effet après avoir effectué votre jet et toutes les relances possibles, mais avant l’étape des variations.</p>
-<p>Vous ne pouvez ajouter de variation lors de vos jets d'attaques.</p>
+<p>Vous ne pouvez ajouter de modificateurs lors de vos jets d'attaques.</p>
 <p>Retirez cet état à la fin de la résolution de l'action durant laquelle vous avez subi ses effets (si vous n’avez pu annuler aucun dé, l’état persiste).</p>`,
     icon: 'desarme.png'
   },
@@ -76,7 +76,7 @@ Votre unité doit annuler un dé de ses jets d’attaque dans lesquels elle a ob
     Vous devez appliquer cet effet après avoir effectué votre jet et toutes les relances possibles,
     mais avant l’étape des variations.
   </p>
-  <p>Vous ne pouvez ajouter de variation lors de vos jets de défense.</p>
+  <p>Vous ne pouvez ajouter de modificateurs lors de vos jets de défense.</p>
   <p>Retirez cet état à la fin de la résolution de l'action durant laquelle vous avez subi ses effets
     (si vous n’avez pu annuler aucun dé, l’état demeure actif).</p>`, icon: 'vulnerable.png'
   },
@@ -754,39 +754,43 @@ const SCENARIO: Scenario[] = [{
 const PERSONNAGE_UNITE = {
   title: 'Characters and Units',
   html: `
-    <h3>Join a Unit during Activation</h3>
-    <p>During its activation, your Character may join a unit that meets the conditions of its Join keyword, as long as:</p>
+    <h3>Rejoindre une unité durant l'activation</h3>
+    <p>Pendant son activation, votre Personnage peut intégrer
+    une unité qui remplit les conditions de son mot-clé
+    Rejoindre tant que :</p>
     <ul>
-      <li>There are no other Characters in the unit.</li>
-      <li>The unit is not Demoralized.</li>
+      <li>Il n’y a pas d’autres Personnages dans l’unité.</li>
+      <li>L’unité n’est pas démoralisée.</li>
     </ul>
 
-    <p>The only action your Character may perform is Move, up to twice, to reach the unit.
-      Token and damage handling:</p>
+    <p>La seule action que peut accomplir votre personnage est de se déplacer, jusqu'à 2 fois, pour rejoindre l'unité.
+      Concernant les jetons et dommages : </p>
     <ul>
-      <li><b>Damage:</b> The Character keeps its Damage tokens on its own profile. The unit does not account for the Character’s damage.</li>
-      <li><b>Stress:</b> Keep the higher Stress level between the unit and the Character.</li>
-      <li><b>States:</b> Transfer State tokens to the unit. Remove any duplicates.</li>
-      <li><b>Effects:</b> Transfer Effect tokens to the unit.</li>
-      <li><b>Activation:</b> Remove the Character’s Activation token.</li>
-      <li><b>Tinge:</b> Compare the Tinge of the Character and the unit. The unit keeps the highest value.</li>
+      <li><b>Déĝats :</b>Le personnage conserve ses jetons de dégâts sur son propre profil. L'unité ne prend pas en compte
+        les dégâts du personnages.
+      </li>
+      <li><b>Stress :</b>Conservez le niveau de stress le plus élevé entre l'unité et le personnage.</li>
+      <li><b>Etats : </b>Les jetons états sont transférés sur l'unité. Retirez les états éventuellement en double.</li>
+      <li><b>Effets : </b>Transférez les jetons effets à l'unités.</li>
+      <li><b>Activation : </b>Retirez le jeton d'activation du personnage.</li>
+      <li><b>Teinte : </b>Comparer la teinte du personnage et de l'unité. L'unité garde la valeur la plus elevée.</li>
     </ul>
-
-    <h3>Leave a Unit</h3>
-    <p>Declare to your opponent that your Character leaves the unit. At that moment, the Character is no longer part of the unit.
-      Then resolve token distribution:</p>
+    <h3>Quitter une unité</h3>
+    <p>Déclarer à votre adversaire que votre personnage quitte l'unité. A cet instant le personne ne fait plus partie de l'unité.
+      Occupez-vous de la répartition des jetons.</p>
     <ul>
-      <li><b>Damage:</b> The unit keeps all Damage tokens except those directly on the Character’s profile.</li>
-      <li><b>Stress:</b> The Character gains as many Stress tokens as the unit.</li>
-      <li><b>States:</b> The Character gains the same States as the unit.</li>
-      <li><b>Effects:</b> The Character keeps all Effect tokens.</li>
-      <li><b>Tinge:</b> The Character gains the same number of Tinge tokens as the unit.</li>
-      <li><b>Demoralized:</b> If the unit was Demoralized, the Character receives its own Demoralized token in the same position.</li>
+      <li><b>Déĝats :</b> L'unité conserve tous les jetons de dégâts, sauf ceux directement présent sur le profil du personnage.
+      </li>
+      <li><b>Stress :</b>Le personnage reçoit autant de jeton de stress que l'unité.</li>
+      <li><b>Etats : </b>Le personnage reçoit les mêmes états que l'unité.</li>
+      <li><b>Effets : </b>Le personnage conserve tous les jetons d'effet.</li>
+      <li><b>Teinte : </b>Le personnage reçoit le même nombre de jetons teinte que l'unité.</li>
+      <li><b>Démoralisé :</b>Si l'unité était démoralisé, le personnage reçoit son propre jeton démoralisé à la même position.</li>
     </ul>
-    <p>Then, activate your Character.</p>
-    <p>If the Character was an Officer, the unit’s leader takes the position the Character occupied at the start of the activation.</p>
-    <p>A Character cannot leave and rejoin a unit during the same activation.</p>
-    <p>A Character cannot leave a unit engaged in combat.</p>
+    <p>Activez ensuite votre personnage.</p>
+    <p>Si le personnage était un officier, le leader de l'unité prend la place que le personnage occupais au début de l'activation.</p>
+    <p>Un personnage ne peut quitter et rejoindre une unité au cours d'une même activation.</p>
+    <p>Un personnage ne peut quitter une unité occupé en combat.</p>
   `
 };
 
@@ -880,6 +884,24 @@ export const LABEL = {
     name: 'Décors',
     keywords: 'Mots-clef',
     size: 'Dimensions'
+  },
+  scenario: {
+    back: 'Retour',
+    material: 'Matériel requis',
+    duree: {
+      title: 'Durée d\'un round',
+      detail: 'Un round dure',
+      turn: 'tours.'
+    },
+    score: {
+      title: 'Score',
+      detail: 'A la fin de chaque round, chaque compagnie obtient : '
+    },
+    end: {
+      title: 'Fin de la partie',
+      details: 'La partie se termine au bout de  ',
+      rounds: 'rounds.'
+    }
   }
 }
 

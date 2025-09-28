@@ -587,90 +587,87 @@ const DECORS: Decor[] = [{
   dimensions: `Base with a surface equivalent to a square measuring between 7 and 10 strides a side`
 }];
 
-
 const SCENARIO: Scenario[] = [{
-  title: 'Prendre position',
+  title: 'Take Position',
   image: 'scenario/take-position.png',
   roundLength: 5,
   endRoundScoring: [
-    `1 PM pour chaque objectif adversaire controllé`,
-    `1 PM si aucun objectif amis n'est controllé par l'adversaire`
+    `1 VP for each enemy Objective you control.`,
+    `1 VP if no friendly Objective is controlled by the opponent.`
   ],
   endGame: 3,
   requiredMaterial: [
-    `2 marqueurs d'objectifs rouge`,
-    `2 marqueurs d'objectifs bleu`
+    `2 red Objective markers`,
+    `2 blue Objective markers`
   ]
 }, {
-  title: `Zone d'influence`,
+  title: `Zone of Influence`,
   image: 'scenario/influence-zone.png',
   roundLength: 5,
   endRoundScoring: [
-    `1 PM si vous contrôlez plus d'objectifs que l'adversaire.`,
-    `1 PM si vous contrôlez au moins un objectif adverse.`,
-    `1 PM si vous contrôlez au moins 2 objectifs.`
+    `1 VP if you control more Objectives than your opponent.`,
+    `1 VP if you control at least one enemy Objective.`,
+    `1 VP if you control at least two Objectives.`
   ],
   endGame: 3,
   requiredMaterial: [
-    `2 marqueurs d'objectifs rouge`,
-    `2 marqueurs d'objectifs bleu`,
-    `1 marqueur d'objectif marron`
+    `2 red Objective markers`,
+    `2 blue Objective markers`,
+    `1 brown Objective marker`
   ],
   additionnal: `
-    <h2>Domaine stratégique</h2>
+    <h2>Strategic Domain</h2>
     <ul>
-     <li>Toutes les unités qui ne sont pas démoralisées ont une valeur de conquête augmentée de 1.</li>
-     <li>Les modificateurs de conquêtes ne sont pas augmentés. </li>
+      <li>All units that are not Demoralized gain +1 to their Conquest value.</li>
+      <li>Conquest modifiers are not increased.</li>
     </ul>
-    <h2>Zone d'influence</h2>
-    <p>Les unités peuvent contester le contrôle d'un objectif à 7 pas au lieu de 3.</p>
+    <h2>Zone of Influence</h2>
+    <p>Units may contest control of an Objective within 7 strides instead of 3.</p>
   `
 }, {
   title: `Expansion`,
   image: 'scenario/expanse.png',
   roundLength: 5,
   endRoundScoring: [
-    `2 PM si vous contrôlez plus d'objectifs marron que l'adversaire.`,
-    `1 PM si vous contrôlez le même nombre d'objectif marron que l'adversaire.`,
-    `1 PM si vous contrôlez l'objectif bleu central.`
+    `2 VP if you control more brown Objectives than your opponent.`,
+    `1 VP if you control the same number of brown Objectives as your opponent.`,
+    `1 VP if you control the central blue Objective.`
   ],
   endGame: 3,
   requiredMaterial: [
-    `4 marqueurs d'objectifs marron`,
-    `1 marqueurs d'objectifs bleu`
+    `4 brown Objective markers`,
+    `1 blue Objective marker`
   ],
   additionnal: `
-    <h2>Préparation</h2>
-    <p>Les objectifs marrons commencent avec un marqueur de contrôle de la compagnie qui a sa zone de déploiement adjacente au marqueur.</p>
+    <h2>Setup</h2>
+    <p>The brown Objectives start with a control marker from the Company whose deployment zone is adjacent to them.</p>
   `
 }, {
-  title: `Butin`,
+  title: `Loot`,
   image: 'scenario/loot.png',
   roundLength: 5,
   endRoundScoring: [
-    `1 PM si vous possédez au moins 1 butin.`,
-    `1 PM si vous possédez plus de butins que l'adversaire  .`,
-    `1 PM si votre adversaire ne possède pas de butin.`
+    `1 VP if you have at least one piece of loot.`,
+    `1 VP if you have more loot than your opponent.`,
+    `1 VP if your opponent has no loot.`
   ],
   endGame: 3,
   requiredMaterial: [
-    `2 marqueurs d'objectifs rouge`,
-    `2 marqueurs d'objectifs bleu`,
-    `1 marqueur d'objectif marron`
+    `2 red Objective markers`,
+    `2 blue Objective markers`,
+    `1 brown Objective marker`
   ],
   additionnal: `
-    <h2>Butin</h2>
-    <p>Les marqueurs d'objectif servent à représenter le butin. Ils utilisent ces règles à la place de celle du livre de règles :</p>
+    <h2>Loot</h2>
+    <p>The Objective markers represent loot. They follow these rules instead of those in the core rulebook:</p>
     <ul>
-        <li>Un unité adjacente à un objectif peut se stressé pour le récupérer. Placez le sur votre fiche de profil.</li>
-        <li>Les unités peuvent traverser les marqueurs objectifs mais pas s'arrêter dessus.</li>
-        <li>Les unités ne peuvent saisir d'objectif de la couleur adverse.</li>
-        <li>Une unité ne peut pas porter plus d'un marqueur objectif à la fois.</li>
-        <li>Quand une unité portant un objectif doit quitter de la table, la compagnie
-        doit placer l'objectif à coté du leader de l'unité avant de le retirer de la table. Si une unité est détruite
-        mais contenait dans ces rangs un personnage officier, donnez-lui l'objectif. </li>
-        <li>Quand une unité portant un objectif est démoralisée, placez l'objectif au sol à coté du leader avant la fuite.</li>
-        <li>Si un personnage quitte une unité qui porte un objectif, il peut choisir de prendre ou de laisser l'objectif.</li>
+      <li>A unit adjacent to an Objective may become Stressed to pick it up. Place it on your Company sheet.</li>
+      <li>Units may move through Objective markers but cannot end their movement on top of them.</li>
+      <li>Units cannot pick up Objectives of the opposing color.</li>
+      <li>A unit may only carry one Objective marker at a time.</li>
+      <li>When a unit carrying an Objective leaves the battlefield, the Company must place the Objective next to the unit’s Leader before removing it. If the unit is destroyed but contained an Officer Character, give the Objective to them instead.</li>
+      <li>When a unit carrying an Objective becomes Demoralized, place the Objective on the ground next to the Leader before the retreat.</li>
+      <li>If a Character leaves a unit carrying an Objective, they may choose to take it or leave it behind.</li>
     </ul>
   `
 }];
@@ -781,7 +778,7 @@ const RESUME_OPPOSITION = {
 export const LABEL = {
   menu:  {
     actions: 'Actions',
-    capacites: 'Habilities',
+    capacites: 'Abilities',
     etats: 'State and Token',
     motsClefs: 'Keyword',
     motsClefsDecors: 'Terrain Keyword',
@@ -800,6 +797,24 @@ export const LABEL = {
     name: 'Terrain',
     keywords: 'Keywords',
     size: 'Size'
+  },
+  scenario: {
+    back: 'Back',
+    material: 'Required material',
+    duree: {
+      title: 'Rounds',
+      detail: 'Each round has a duration of ',
+      turn: 'turns.'
+    },
+    score: {
+      title: 'Scoring',
+      detail: 'At the end of each round, each compagny obtains : '
+    },
+    end: {
+      title: 'End of the game',
+      details: 'The game ends at then end of ',
+      rounds: 'rounds.'
+    }
   }
 }
 

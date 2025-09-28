@@ -1,18 +1,18 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterLink} from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
-import { FR } from '../shared/data.fr';
 import {Scenario} from '../shared/data.model';
+import { LanguageService } from '../shared/language.service';
 
 @Component({
   selector: 'app-scenarios-page',
   standalone: true,
   imports: [CommonModule, RouterLink, MatCardModule, MatGridListModule, MatIconModule],
   template: `
-    <h1>Scénarios</h1>
+    <h1>{{ labels.menu.scenarios }}</h1>
 
     @if (!scenarios || scenarios.length === 0) {
       <p>Aucun scénario disponible pour le moment.</p>
@@ -47,5 +47,14 @@ import {Scenario} from '../shared/data.model';
   `]
 })
 export class ScenariosPageComponent {
-  scenarios: Scenario[] = FR.SCENARIO;
+  lang = inject(LanguageService);
+  scenarios: Scenario[] = this.lang.data.SCENARIO;
+  labels = this.lang.data.LABEL;
+
+  constructor() {
+    this.lang.langChanges.subscribe(() => {
+      this.scenarios = this.lang.data.SCENARIO;
+      this.labels = this.lang.data.LABEL;
+    });
+  }
 }

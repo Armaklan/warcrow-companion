@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { LanguageService } from './language.service';
 
 export interface SearchEntry {
-  kind: 'action' | 'capacite' | 'etat' | 'mot-clef' | 'mot-clef-decor' | 'decor';
+  kind: 'action' | 'abilitie' | 'state' | 'keyword' | 'terrain-keyword' | 'terrain';
   title: string;
   route: string;
   openId: string; // slug used in query param "open"
@@ -43,31 +43,31 @@ export class SearchService {
 
     // Capacités
     for (const c of D.CAPACITES) {
-      entries.push({ kind: 'capacite', title: c.title, route: '/capacites', openId: this.slug(c.title) });
+      entries.push({ kind: 'abilitie', title: c.title, route: '/capacites', openId: this.slug(c.title) });
     }
 
     // États
     for (const e of D.ETATS) {
-      entries.push({ kind: 'etat', title: e.title, route: '/etats', openId: this.slug(e.title) });
+      entries.push({ kind: 'state', title: e.title, route: '/etats', openId: this.slug(e.title) });
     }
 
     // Mots-clefs généraux
     for (const k of D.MOTS_CLEFS) {
-      entries.push({ kind: 'mot-clef', title: k.title, route: '/mots-clefs', openId: this.slug(k.title) });
+      entries.push({ kind: 'keyword', title: k.title, route: '/mots-clefs', openId: this.slug(k.title) });
     }
 
     // Mots-clefs de décors
     for (const k of D.MOTS_CLEFS_DECORS) {
-      entries.push({ kind: 'mot-clef-decor', title: k.title, route: '/mots-clefs-decors', openId: this.slug(k.title) });
+      entries.push({ kind: 'terrain-keyword', title: k.title, route: '/mots-clefs-decors', openId: this.slug(k.title) });
     }
 
     // Décors
     for (const d of D.DECORS) {
-      entries.push({ kind: 'decor', title: d.title, route: '/decors', openId: this.slug(d.title) });
+      entries.push({ kind: 'terrain', title: d.title, route: '/decors', openId: this.slug(d.title) });
       // Also index decor keywords by name but route to mots-clefs-decors page
       for (const kw of d.keywords) {
         const kwTitle = kw.value ? `${kw.name}` : kw.name;
-        entries.push({ kind: 'mot-clef-decor', title: kwTitle, route: '/mots-clefs-decors', openId: this.slug(kw.name) });
+        entries.push({ kind: 'terrain-keyword', title: kwTitle, route: '/mots-clefs-decors', openId: this.slug(kw.name) });
       }
     }
 
