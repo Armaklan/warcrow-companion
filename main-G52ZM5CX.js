@@ -489,17 +489,22 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
       </li>
       <li>Avancez le jeton de fin de manche selon les conditions du sc\xE9nario.</li>
     </ol>
-  `},XR={title:"Opposed Roll Summary",html:`
+  `},XR={title:"R\xE9sum\xE9 d'un test en opposition",html:`
     <ol>
-      <li><b>Gather your respective dice.</b> In the case of a Ranged Attack, the defender cannot use Attack dice (red, orange, yellow).</li>
-      <li>If a rule or effect allows you to add or forces you to remove dice, do so now. This is also when States are applied.</li>
-      <li><b>Roll the dice</b> simultaneously.</li>
-      <li><b>Add any automatic symbols</b> to your rolls, if applicable.</li>
-      <li><b>Active Player Variations.</b> The player whose activation is in progress may spend as many obtained symbols as desired to apply any number of available Variations for this roll.</li>
-      <li><b>Second Player Variations.</b> Then, the opponent has the same opportunity.</li>
-      <li><b>Resolution.</b> Cancel as many of your opponent\u2019s <span class="warcrow-font-Success" role="img" aria-label="Success"></span> as you have <span class="warcrow-font-Block" role="img" aria-label="Block"></span> remaining. Likewise, your opponent cancels as many of your <span class="warcrow-font-Success" role="img" aria-label="Success"></span> as they have <span class="warcrow-font-Block" role="img" aria-label="Block"></span> left. Both players may then apply the effects derived from the remaining symbols on their rolls.</li>
-      <li>If it is a combat, the unit that suffered the most <span class="warcrow-font-Wound" role="img" aria-label="Wound"></span> is the defeated unit and becomes Stressed. It may be Forced to Retreat (see \u201CAttack\u201D action).</li>
-      <li>At the end of the activation only, any States that have taken effect are removed.</li>
+      <li><b>Rassemblez vos d\xE9s respectifs.</b> En cas d'attaque \xE0 distance, le d\xE9fenseur ne peut pas utiliser de d\xE9 d'attaque (rouge, orange, jaune).</li>
+      <li>Si une r\xE8gle ou un effet vous permet d\u2019ajouter des d\xE9s ou vous oblige \xE0 en retirer, faites-le maintenant. C'est le moment d'appliquer les \xE9tats.</li>
+      <li><b>Lancez les d\xE9s</b> en m\xEAme temps.</li>
+      <li><b>Ajoutez les symboles automatiques</b> \xE0 vos jets, s\u2019il y en a.</li>
+      <li><b>Variations du joueur actif.</b> Le joueur dont l\u2019activation est en cours peut d\xE9penser autant de symboles obtenus qu\u2019il souhaite pour appliquer
+        autant de ses variations disponibles pour ce jet.</li>
+      <li><b>Variation du second joueur. </b>Son adversaire a ensuite la m\xEAme opportunit\xE9.</li>
+      <li><b>R\xE9solution.</b> Annulez autant de <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> du jet de votre adversaire qu\u2019il
+        vous reste de <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>.
+        Et vice versa, votre adversaire annule autant de vos <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> qu\u2019il dispose de
+        <span class="warcrow-font-Block" role="img" aria-label="Block" ></span> restants. Vous et votre adversaire pouvez alors appliquer les
+        effets d\xE9coulant activ\xE9s par les symboles restants dans vos jets.</li>
+      <li>S'il s'agit d'un combat, l'unit\xE9 qui a subis le plus de <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> est l'unit\xE9 d\xE9faites et devient stress\xE9s. Elle peut \xEAtre forc\xE9 au repli (voir action "Attaquer").</li>
+      <li>En fin d'activation seulement, les \xE9tats qui ont fait effet sont retir\xE9.</li>
     </ol>
   `},JR={menu:{actions:"Actions",capacites:"Capacit\xE9s",etats:"\xC9tats et marqueurs",motsClefs:"Mots\u2011clefs",motsClefsDecors:"Mots clef de d\xE9cors",resumeTour:"R\xE9sum\xE9 du tour",resumeOpposition:"R\xE9sum\xE9 d'une opposition",personnageUnite:"Personnages et unit\xE9s",decors:"D\xE9cors",scenarios:"Sc\xE9narios",teinte:"Teinte"},actions:{simple:"Actions simple",complexe:"Actions complexe"},terrain:{name:"D\xE9cors",keywords:"Mots-clef",size:"Dimensions"},scenario:{back:"Retour",material:"Mat\xE9riel requis",duree:{title:"Dur\xE9e d'un round",detail:"Un round dure",turn:"tours."},score:{title:"Score",detail:"A la fin de chaque round, chaque compagnie obtient : "},end:{title:"Fin de la partie",details:"La partie se termine au bout de  ",rounds:"rounds."}}},ek={title:"Effet de la teinte",html:`
     <section>
