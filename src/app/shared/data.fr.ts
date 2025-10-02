@@ -844,18 +844,23 @@ const RESUME_TOUR = {
 };
 
 const RESUME_OPPOSITION = {
-    title: "Opposed Roll Summary",
+    title: "Résumé d'un test en opposition",
     html: `
     <ol>
-      <li><b>Gather your respective dice.</b> In the case of a Ranged Attack, the defender cannot use Attack dice (red, orange, yellow).</li>
-      <li>If a rule or effect allows you to add or forces you to remove dice, do so now. This is also when States are applied.</li>
-      <li><b>Roll the dice</b> simultaneously.</li>
-      <li><b>Add any automatic symbols</b> to your rolls, if applicable.</li>
-      <li><b>Active Player Variations.</b> The player whose activation is in progress may spend as many obtained symbols as desired to apply any number of available Variations for this roll.</li>
-      <li><b>Second Player Variations.</b> Then, the opponent has the same opportunity.</li>
-      <li><b>Resolution.</b> Cancel as many of your opponent’s <span class="warcrow-font-Success" role="img" aria-label="Success"></span> as you have <span class="warcrow-font-Block" role="img" aria-label="Block"></span> remaining. Likewise, your opponent cancels as many of your <span class="warcrow-font-Success" role="img" aria-label="Success"></span> as they have <span class="warcrow-font-Block" role="img" aria-label="Block"></span> left. Both players may then apply the effects derived from the remaining symbols on their rolls.</li>
-      <li>If it is a combat, the unit that suffered the most <span class="warcrow-font-Wound" role="img" aria-label="Wound"></span> is the defeated unit and becomes Stressed. It may be Forced to Retreat (see “Attack” action).</li>
-      <li>At the end of the activation only, any States that have taken effect are removed.</li>
+      <li><b>Rassemblez vos dés respectifs.</b> En cas d'attaque à distance, le défenseur ne peut pas utiliser de dé d'attaque (rouge, orange, jaune).</li>
+      <li>Si une règle ou un effet vous permet d’ajouter des dés ou vous oblige à en retirer, faites-le maintenant. C'est le moment d'appliquer les états.</li>
+      <li><b>Lancez les dés</b> en même temps.</li>
+      <li><b>Ajoutez les symboles automatiques</b> à vos jets, s’il y en a.</li>
+      <li><b>Variations du joueur actif.</b> Le joueur dont l’activation est en cours peut dépenser autant de symboles obtenus qu’il souhaite pour appliquer
+        autant de ses variations disponibles pour ce jet.</li>
+      <li><b>Variation du second joueur. </b>Son adversaire a ensuite la même opportunité.</li>
+      <li><b>Résolution.</b> Annulez autant de <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> du jet de votre adversaire qu’il
+        vous reste de <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>.
+        Et vice versa, votre adversaire annule autant de vos <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> qu’il dispose de
+        <span class="warcrow-font-Block" role="img" aria-label="Block" ></span> restants. Vous et votre adversaire pouvez alors appliquer les
+        effets découlant activés par les symboles restants dans vos jets.</li>
+      <li>S'il s'agit d'un combat, l'unité qui a subis le plus de <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> est l'unité défaites et devient stressés. Elle peut être forcé au repli (voir action "Attaquer").</li>
+      <li>En fin d'activation seulement, les états qui ont fait effet sont retiré.</li>
     </ol>
   `
   };
