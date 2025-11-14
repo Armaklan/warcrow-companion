@@ -14,7 +14,7 @@ Votre unit\xE9 ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements
 <p><em>Exemple :</em> Si votre unit\xE9 a un mouvement 3-2 (9), elle ne peut se d\xE9placer que de 3 pas et ne peut charger que jusqu\u2019\xE0 5 pas.</p>
 <p>Retirez cet \xE9tat \xE0 la fin de l\u2019activation durant laquelle votre unit\xE9 effectue un mouvement, un assaut ou une charge.</p>`,icon:"ralenti.png"},{title:"D\xE9moralis\xE9 / Demoralized",details:`<b>Etat</b></b><p>Si votre unit\xE9 est d\xE9moralis\xE9e :</p>
   <ul>
-    <li>Elle ne peut plus \xEAtre activ\xE9e d\u2019aucune fa\xE7on.</li>
+    <li>Elle ne peut plus \xEAtre activ\xE9e d\u2019aucune fa\xE7on, ni effectuer d'action.</li>
     <li>Elle ne peut se stresser d\u2019aucune fa\xE7on et ne peut pas r\xE9duire son stress.</li>
     <li>Elle ne peut pas contr\xF4ler d\u2019objectifs (sa valeur de conqu\xEAte est nulle).</li>
     <li>Si elle participe \xE0 un combat, elle fuira toujours apr\xE8s le r\xE9sultat (voir \u201CAttaque de m\xEAl\xE9e\u201D).</li>
@@ -119,7 +119,7 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
       <strong>Activez ensuite votre unit\xE9.</strong>
     </li>
   </ul>
-`},{title:"\xC9quipage / Manned",details:"<ul><li>L\u2019unit\xE9 ignore les effets d\u2019Intimidation.</li><li>L\u2019unit\xE9 n\u2019est stress\xE9e que si elle est activ\xE9e plusieurs fois au cours d\u2019un m\xEAme round.</li></ul>"},{title:"Fureur / Raging",details:'<p>Ajoute <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span> \xE0 ses jets d\u2019attaque lorsqu\u2019elle charge.</p>'},{title:"Golem / Golem",details:"<ul><li>Ignore l\u2019Intimidation.</li><li>Immunis\xE9 contre Effray\xE9.</li><li>Ne peut pas \xEAtre d\xE9moralis\xE9. Si le stress d\xE9passe la valeur de MOR, ignorez l\u2019exc\xE9dent.</li></ul>"},{title:"Inamovible / Immovable",details:"<p>Ne peut pas \xEAtre attir\xE9e, bouscul\xE9e, plac\xE9e, replac\xE9e ni forc\xE9e au repli, sauf si vous le souhaitez.</p>"},{title:"Intr\xE9pide / Fearless",details:"<p>Ignore Intimidation et immunis\xE9 contre Effray\xE9.</p>"},{title:"Intimidation (N) / Intimidating",details:`
+`},{title:"\xC9quipage / Manned",details:"<ul><li>L'unit\xE9 ignore les effets d\u2019Intimidation.</li><li>L'unit\xE9 ne subit pas de stress si elle perd un affrontement.</li></ul>"},{title:"Fureur / Raging",details:'<p>Ajoute <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span> \xE0 ses jets d\u2019attaque lorsqu\u2019elle charge.</p>'},{title:"Golem / Golem",details:"<ul><li>Ignore l\u2019Intimidation.</li><li>Immunis\xE9 contre Effray\xE9.</li><li>Ne peut pas \xEAtre d\xE9moralis\xE9. Si le stress d\xE9passe la valeur de MOR, ignorez l\u2019exc\xE9dent.</li></ul>"},{title:"Inamovible / Immovable",details:"<p>Ne peut pas \xEAtre attir\xE9e, bouscul\xE9e, plac\xE9e, replac\xE9e ni forc\xE9e au repli, sauf si vous le souhaitez.</p>"},{title:"Intr\xE9pide / Fearless",details:"<p>Ignore Intimidation et immunis\xE9 contre Effray\xE9.</p>"},{title:"Intimidation (N) / Intimidating",details:`
     <p>
     Lorsque cette unit\xE9 engage ou est engag\xE9 au combat, l\u2019unit\xE9 ennemie doit effectuer un test de VOL et obtenir
     au moins autant de
@@ -134,23 +134,19 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
   <p>Une unit\xE9 ne peut subir les effets de l'intimidation qu'une fois par activation.</p>`},{title:"Massive / Large",details:`<ul>
     <li>
       Les unit\xE9s Massives peuvent traverser les unit\xE9s qui ne le sont pas.
-      Les unit\xE9s travers\xE9es doivent r\xE9ussir un test de VOL pour \xE9viter le stress.
-      De plus, une unit\xE9 travers\xE9e doit faire un jet oppos\xE9 avec sa d\xE9fense contre autant de
-      <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span>
-      qu\u2019il y a de soldats dans ladite unit\xE9 (jusqu\u2019\xE0 un maximum de 3).
-      Elle subira autant de d\xE9g\xE2ts que de
-      <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span>
-      non annul\xE9s.
     </li>
     <li>
       M\xEAme engag\xE9e en combat, une unit\xE9 Massive peut charger une autre unit\xE9 si elle a une Ligne de Vue (LdV)
-      sur elle et peut se d\xE9placer pour l\u2019engager. Ce mouvement de charge provoque une attaque d\u2019opportunit\xE9.
+      sur elle et peut se d\xE9placer pour l\u2019engager. Ce mouvement de charge peut provoquer une attaque d\u2019opportunit\xE9.
     </li>
     <li>
       Seules les autres unit\xE9s Massives et les d\xE9cors avec le mot-cl\xE9 <em>Bloque la LdV</em> bloquent la LdV vers les unit\xE9s Massives.
     </li>
     <li>
       Les unit\xE9s Massives sont toujours consid\xE9r\xE9es comme <em>Inamovibles</em>.
+    </li>
+    <li>
+        Les unit\xE9s ignorent l'effet <em>Inamovible</em> des unit\xE9s non-massive.
     </li>
   </ul>`},{title:"Rage de berserker / Berseker rage",details:`<p>
     Votre unit\xE9 peut s\u2019infliger
@@ -172,11 +168,17 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
   </p>
   <p>
     Si l\u2019unit\xE9 engage en raison de sa Soif de sang, elle peut relancer tous ses jets d\u2019attaque durant les activations o\xF9 elle est engag\xE9e avec l\u2019unit\xE9 ennemie (et pas seulement lorsqu\u2019elle charge ou fait un assaut).
+    Cette relance est la m\xEAme que celle obtenue par la charge, et ne peut donc \xEAtre cumul\xE9. L'effet persiste si apr\xE8s les poursuites les deux unit\xE9s sont toujours engag\xE9es.
   </p>
   <p>
     Au d\xE9but de son activation, l\u2019unit\xE9 peut ignorer les effets de Soif de sang jusqu\u2019\xE0 la fin de son activation en r\xE9ussissant un test de VOL.
   </p>`},{title:"Terrain favori (E) / Preferred terrain",details:`
 <p>L'unit\xE9 peut ignorer les effets des d\xE9cors de type E, ce qui peut d\xE9signer un type de d\xE9cor, un mot-cl\xE9, ou plusieurs de ces \xE9lements (s\xE9par\xE9s dans ce cas par des trait | ).</p>
+    <ul>
+    <li>Si \u2018E\u2019 indique un mot-clef, votre unit\xE9 peut ignorer ce mots-clefs des terrains.</li>
+    <li>Si 'E' indique un \xE9lement de d\xE9cors, votre unit\xE9 peut ignorer tout les mots clefs de cet \xE9lement.</li>
+    <li>Si 'E' indique \xE0 la fois un mot-clef et un \xE9lement de d\xE9cors, vous n'ignorez que ce mot-clef de ce type d'\xE9lement pr\xE9cis.</li>
+    </ul>
 `},{title:"Teinte / Tinge",details:`
     <p>Votre unit\xE9 re\xE7oit <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/> au d\xE9but de chaque manche.</p>
     <b>Personnage rejoignant une unit\xE9</b>
@@ -242,9 +244,9 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         <b>Forcer au repli</b>
     </p>
     <ul>
-        <li>L'unit\xE9 forcer au repli peut se stresser pour l'emp\xEAcher.</li>
-        <li>Un unit\xE9 qui se replie doit se d\xE9placer de la premi\xE8re valeur de son mouvement. Elle doit mettre le plus de distance possible avec son adversaire.</li>
-        <li>L'unit\xE9 gagnante peut poursuivre l'unit\xE9 qui se replie en se d\xE9pla\xE7ant avec sa premi\xE8re valeur de mouvement. Si le leader entre en contact socle \xE0 socle avec l'adversaire, il peut l'engager (vous n\u2019\xEAtes pas consid\xE9r\xE9
+        <li>Le gagnant du combat peut repousser l'unit\xE9 perdante de la premi\xE8re valeur de mouvement de celle-ci. Si le mouvement ne peut \xEAtre effectuer totalement, le gagnant doit choisir une direction qui maximise la distance entre les deux unit\xE9s.</li>
+        <li>Le perdant du conflit peut stresser son unit\xE9 pour pr\xE9venir le repli.</li>
+        <li>L'unit\xE9 gagnante peut poursuivre l'unit\xE9 qui se replie en se d\xE9pla\xE7ant totalement de sa premi\xE8re valeur de mouvement. Si le leader entre en contact socle \xE0 socle avec l'adversaire, il peut l'engager (vous n\u2019\xEAtes pas consid\xE9r\xE9
             comme ayant charg\xE9).</li>
     </ul>
     <p><b>Elimination d'une unit\xE9</b></p>
@@ -580,11 +582,12 @@ when it charges
 <p>Remove this state at the end of the activation in which your unit performs the action move, charge
 or assault.</p>`,icon:"ralenti.png"},{title:"Demoralized",details:`<b>State</b></b><p>If your unit is demoralized: :</p>
   <ul>
-    <li>It cannot be activated in any way.</li>
+    <li>It cannot be activated in any way, or perform actions.</li>
     <li>It cannot stress itself in any way and cannot reduce its stress.</li>
     <li>It cannot control objectives (we consider its conquest value null).</li>
     <li>If it participates in combat, it will always flee after the result. (See \u201CMelee Attack\u201D).</li>
     <li>It cannot activate its command abilities.</li>
+    <li>It cannot perform actions</li>
   </ul>
 
   <h3>Demoralize a unit</h3>
@@ -681,26 +684,44 @@ have not been able to cancel any dice, the state is considered to remain active)
         </li>
         <li><strong>Then activate your unit.</strong></li>
       </ul>
-    `},{title:"Manned",details:"<ul><li>Ignores the effects of Intimidating.</li><li>Becomes stressed only if activated more than once during the same round.</li></ul>"},{title:"Raging",details:'<p>Adds <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> to its attack rolls when it charges.</p>'},{title:"Golem",details:"<ul><li>Ignores Intimidating.</li><li>Immune to the Frightened state.</li><li>Cannot be demoralized. If stress exceeds the unit\u2019s MOR value, ignore the excess.</li></ul>"},{title:"Immovable",details:"<p>Cannot be attracted, shoved, placed, displaced, or pushed back unless you want it to.</p>"},{title:"Fearless",details:"<p>Ignores Intimidating and is immune to the Frightened state.</p>"},{title:"Intimidating (N)",details:`
+    `},{title:"Manned",details:"<ul><li>Ignores the effects of Intimidating.</li><li>Your unit does not suffer stress if it loses a combat.</li></ul>"},{title:"Raging",details:'<p>Adds <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> to its attack rolls when it charges.</p>'},{title:"Golem",details:"<ul><li>Ignores Intimidating.</li><li>Immune to the Frightened state.</li><li>Cannot be demoralized. If stress exceeds the unit\u2019s MOR value, ignore the excess.</li></ul>"},{title:"Immovable",details:"<p>Cannot be attracted, shoved, placed, displaced, or pushed back unless you want it to.</p>"},{title:"Fearless",details:"<p>Ignores Intimidating and is immune to the Frightened state.</p>"},{title:"Intimidating (N)",details:`
       <p>When this unit engages or is engaged in combat, the enemy unit must perform a WP test and obtain at least as many <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> as the value <strong>N</strong> to avoid stress.</p>
       <p>For each missing <span class="warcrow-font-Success" role="img" aria-label="Success" ></span>, the enemy unit gains 1 stress point.</p>
       <p>A unit can only suffer the effects of Intimidating once per activation.</p>
     `},{title:"Large",details:`
       <ul>
-        <li>Large units can move through units that are not Large. Units moved through must pass a WP test to avoid stress. In addition, a unit moved through must make an opposed defense roll against as many <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> as there are troops in the unit (up to a maximum of 3). It suffers as much damage as the number of <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> not cancelled.</li>
-        <li>Even if engaged in combat, a Large unit can charge another unit if it has Line of Sight (LoS) and can move to engage it. This charge move provokes an opportunity attack.</li>
+        <li>Large units can move through units that are not Large.</li>
+        <li>Even if engaged in combat, a Large unit can charge another unit if it has Line of Sight (LoS) and can move to engage it. If it does so, the unit it is engaged with may suffer stress and make an opportunity attack.</li>
         <li>Only other Large units and terrain elements with the keyword <em>Blocks LoS</em> block Line of Sight to Large units.</li>
         <li>Large units are always considered <em>Immovable</em>.</li>
+        <li>Your unit ignores the <em>Immovable</em> effects of non-Large units.</li>
       </ul>
     `},{title:"Berserker Rage",details:`
       <p>Your unit can inflict <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> on itself to add one symbol of your choice to an attack, defense, or WP roll. You must do this after rolling the dice but before proceeding to the switches step.</p>
       <p>You cannot inflict this damage if it would eliminate the unit. This damage is not taken into account when resolving combat.</p>
     `},{title:"Bloodlust (X)",details:`
       <p>If the unit is not engaged in combat when activated, it must engage (Charge or Assault) <span class="warcrow-font-LongAction" role="img" aria-label="LongAction" ></span> an enemy unit <strong>X</strong> whenever possible. <em>X</em> can be the name of a unit, a keyword, or several elements separated by \u201C|\u201D. If no value is specified for <em>X</em>, the unit must charge <span class="warcrow-font-LongAction" role="img" aria-label="LongAction" ></span> the nearest enemy unit.</p>
-      <p>If the unit engages due to its Bloodlust, it may re-roll all of its attack rolls while engaged with that enemy unit (not just when charging or assaulting).</p>
+      <p>If your unit charges or assaults due to its Bloodlust, it
+        can re-roll all of its attack rolls against the enemy unit
+        while engaged with it (in case of a charge, that reroll is
+        the same one as the one gained by charging). This effect
+        persists if after a pushback and pursue both units are
+        still engaged.</p>
       <p>At the beginning of its activation, the unit can ignore the effects of Bloodlust until the end of its activation by passing a WP test.</p>
     `},{title:"Preferred Terrain (E)",details:`
-      <p>The unit can ignore the effects of terrain elements of type E, which can refer to a type of terrain, a keyword, or several such elements separated by \u201C|\u201D.</p>
+      <p>Your unit can ignore the effects of keywords on terrain
+elements depending on the value of \u2018E\u2019. \u2018E\u2019 can indicate
+one type of terrain element, one keyword, or several
+groups of them separated by lines (\u201C|\u201D).</p>
+    <ul>
+    <li>If \u2018E\u2019 indicates a keyword, your unit can ignore that
+keyword from terrain elements.</li>
+    <li>If \u2018E\u2019 indicates a type of terrain element, your unit can
+ignore any keyword on those elements.</li>
+    <li>If \u2018E\u2019 indicates both a keyword and a type of terrain,
+your unit can ignore that keyword from the indicated
+elements.</li>
+    </ul>
     `},{title:"Tinge",details:`
       <p>Your unit gains <img src="teint.png" alt="tinge" style="height: 1em; vertical-align: -0.2em;"/> at the start of each round.</p>
       <b>Character joining a unit</b>
@@ -746,8 +767,8 @@ have not been able to cancel any dice, the state is considered to remain active)
       <p><b>Force to Retreat</b></p>
       <ul>
         <li>The unit being forced to retreat may gain 1 Stress to prevent it.</li>
-        <li>A retreating unit must move using its first MOV value, putting as much distance as possible from its opponent.</li>
-        <li>The winning unit may pursue the retreating one by moving with its first MOV value. If the Leader ends in base contact with the enemy Leader, it may engage it (you are not considered to have charged).</li>
+        <li>The winning unit shoves the defeated unit at a distance equal to the defeated unit\u2019s first MOV value. If the move cannot be fully completed (due to the defeated unit colliding with or engaging an enemy unit), the winning unit must choose a new direction that maximizes the distance between the two units.</li>
+        <li>The winning unit may pursue the retreating one by moving your whole first MOV value. If the Leader ends in base contact with the enemy Leader, it may engage it (you are not considered to have charged).</li>
       </ul>
       <p><b>Elimination of a Unit</b></p>
       <ul>
@@ -903,7 +924,7 @@ have not been able to cancel any dice, the state is considered to remain active)
       <li><b>States:</b> The character gains the same states as the unit.</li>
       <li><b>Effects:</b> The character keeps all effect tokens.</li>
       <li><b>Tinge:</b> The character gains the same number of Tinge tokens as the unit.</li>
-      <li><b>Demoralized:</b> If the unit was demoralized, the character receives its own demoralized token in the same position.</li>
+      <li><b>Demoralized:</b> If the unit was demoralized, the character receives  their own demoralized token at the same position.</li>
     </ul>
     <p>Then, activate your character.</p>
     <p>If the character was an Officer, the unit\u2019s leader takes the position the character occupied at the start of the activation.</p>
