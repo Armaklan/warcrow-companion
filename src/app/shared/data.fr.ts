@@ -477,6 +477,42 @@ const ACTIONS_COMPLEXES: CollapsibleItem[] = [
   }
 ];
 
+const ACTIONS_REACTIONS: CollapsibleItem[] = [
+  {
+    title: 'Tenir et tirer', details: `
+    <p>Vous pouvez déclarer cette réaction quand : </p>
+    <ul>
+        <li>Vous êtes la cible d'une charge ou d'un assaut.</li>
+        <li>Vous n'avez pas été activé durant ce round (pas de marqueur d'activation sur le profile).</li>
+        <li>Vous avez une ligne de vue sur l'unité ennemis.</li>
+    </ul>
+    <p>Dans ce cas, suivez les étapes suivantes :</p>
+    <ul>
+      <li>Placez un marqueur d'activation sur le profil de l'unité.</li>
+      <li>Faites une attaque de tir contre l'adversaire avant son mouvement. Tout les pre-requis du tir doivent être remplis, sauf la portée. Le tir est considéré comme
+          ayant lieu à n'importe quel moment du trajet adverse. Les variations ne peuvent pas être utilisé durant ce tir.</li>
+      <li>Une fois le tir résolu, l'ennemis termine sa charge.</li>
+    </ul>
+  `
+  },
+  {
+    title: 'Contrer un sort', details: `
+      <p>Vous pouvez déclarer cette réaction quand : </p>
+      <ul>
+          <li>Votre unité est un lanceur de sort et se trouve à mois de 20 pas de l'ennemi qui lance le sort.</li>
+          <li>Vous possédez le mot clef dissipation et vous êtes la cible du sort.</li>
+      </ul>
+      <ol>
+        <li>Déclarer votre intention de bloquer le sort pendant l'état 2 du lancement. </li>
+        <li>Formez le test de blocage : prenez 3 <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, ou les dés indiqués par la compétence Dissipation, et lancez les. Le résultat sera opposé au test de lancement du sort durant l'étape 3./</li>
+        <li>Pour chaque <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> obtenu, l'unité qui bloque le sort reçoit <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/> </li>
+        <li>Si vous avez obtenu au moins un <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>, appliquez les effets de la teinte à la fin de l'activation. </li>
+      </ol>
+      <p>Vous ne pouvez pas tenter de bloquer un sort plus d'une fois ou avec plusieurs unités.</p>
+    `
+  }
+];
+
 // Nouvelles données: Capacités (compétence, passive, commandement, ...)
 const CAPACITES: CollapsibleItem[] = [
   {
@@ -885,7 +921,8 @@ export const LABEL = {
   },
   actions: {
     simple: 'Actions simple',
-    complexe: 'Actions complexe'
+    complexe: 'Actions complexe',
+    reactions: 'Réactions'
   },
   terrain: {
     name: 'Décors',
@@ -986,6 +1023,7 @@ export const FR = {
   MOTS_CLEFS,
   ACTIONS_SIMPLES,
   ACTIONS_COMPLEXES,
+  ACTIONS_REACTIONS,
   CAPACITES,
   MOTS_CLEFS_DECORS,
   DECORS,

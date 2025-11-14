@@ -442,6 +442,45 @@ const ACTIONS_COMPLEXES: CollapsibleItem[] = [
   }
 ];
 
+const ACTIONS_REACTIONS: CollapsibleItem[] = [
+  {
+    title: 'Hold and shoot', details: `
+    <p>You can declare this reactions when : </p>
+    <ul>
+        <li>You are the target of a charge or an assault.</li>
+        <li>Your unit has not been activated yet during the current round (it does not have an activation token on its profile).</li>
+        <li>Your unit has a LOS toward the ennemy units.</li>
+    </ul>
+    <p>In this case, you can follow this step :</p>
+    <ul>
+      <li>Place an activation token on the unit’s profile.</li>
+      <li>Make a ranged attack against the enemy unit before it moves. Your unit must meet all the requirements
+          to attack at range, except range, as the shot is considered to occur at any time during the chargers path.
+          (See “Attacking at Range”).</li>
+      <li>Once the ranged attack is resolved, the enemy unit continues with its charge action.</li>
+    </ul>
+  `
+  },
+  {
+    title: 'Counterspell', details: `
+      <p>You can declare this reactions when : </p>
+      <ul>
+          <li>Your unit is a mage within 20 strides of the enemy caster.</li>
+          <li>You are the target of the spell and has the Dispel keyword.</li>
+      </ul>
+      <p>Follow this steps :</p>
+      <ol>
+        <li>Declare your intention to block the spell during step 2 of casting.</li>
+        <li>A spell may be blocked either by its target if it has the Dispel keyword, or by a Mage within 20 strides of the enemy caster.</li>
+        <li>Form the blocking test: take 3 <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, or the dice indicated by the Dispel skill, and roll them. The result will be opposed to the casting roll during step 3.</li>
+        <li>For each <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> rolled, the unit blocking the spell gains one <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</li>
+        <li>If you rolled at least one <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>, apply the Tinge effects at the end of the activation.</li>
+      </ol>
+      <p>You cannot attempt to block a spell more than once or with more than one unit.</p>
+    `
+  },
+];
+
 // Nouvelles données: Capacités (compétence, passive, commandement, ...)
 const CAPACITES: CollapsibleItem[] = [
   {
@@ -810,7 +849,8 @@ export const LABEL = {
   },
   actions: {
     simple: 'Simple actions',
-    complexe: 'Complex actions'
+    complexe: 'Complex actions',
+    reactions: 'Réactions'
   },
   terrain: {
     name: 'Terrain',
@@ -911,6 +951,7 @@ export const EN = {
   MOTS_CLEFS,
   ACTIONS_SIMPLES,
   ACTIONS_COMPLEXES,
+  ACTIONS_REACTIONS,
   CAPACITES,
   MOTS_CLEFS_DECORS,
   DECORS,

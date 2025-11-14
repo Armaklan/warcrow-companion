@@ -40,6 +40,10 @@ export class SearchService {
     for (const a of D.ACTIONS_COMPLEXES) {
       entries.push({ kind: 'action', title: a.title, route: '/actions', openId: this.slug(a.title), subtitle: isFR ? 'Action longue' : 'Complex action' });
     }
+    // Réactions
+    for (const a of D.ACTIONS_REACTIONS) {
+      entries.push({ kind: 'action', title: a.title, route: '/actions', openId: this.slug(a.title), subtitle: isFR ? 'Réaction' : 'Reaction' });
+    }
 
     // Capacités
     for (const c of D.CAPACITES) {
