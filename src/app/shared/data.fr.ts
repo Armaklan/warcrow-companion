@@ -21,7 +21,7 @@ Votre unité ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (
     title: 'Démoralisé / Demoralized',
     details: `<b>Etat</b></b><p>Si votre unité est démoralisée :</p>
   <ul>
-    <li>Elle ne peut plus être activée d’aucune façon.</li>
+    <li>Elle ne peut plus être activée d’aucune façon, ni effectuer d'action.</li>
     <li>Elle ne peut se stresser d’aucune façon et ne peut pas réduire son stress.</li>
     <li>Elle ne peut pas contrôler d’objectifs (sa valeur de conquête est nulle).</li>
     <li>Si elle participe à un combat, elle fuira toujours après le résultat (voir “Attaque de mêlée”).</li>
@@ -176,7 +176,7 @@ const MOTS_CLEFS: CollapsibleItem[] = [
   },
   {
     title: 'Équipage / Manned',
-    details: '<ul><li>L’unité ignore les effets d’Intimidation.</li><li>L’unité n’est stressée que si elle est activée plusieurs fois au cours d’un même round.</li></ul>'
+    details: '<ul><li>L\'unité ignore les effets d’Intimidation.</li><li>L\'unité ne subit pas de stress si elle perd un affrontement.</li></ul>'
   },
   {
     title: 'Fureur / Raging',
@@ -215,23 +215,19 @@ const MOTS_CLEFS: CollapsibleItem[] = [
     details: `<ul>
     <li>
       Les unités Massives peuvent traverser les unités qui ne le sont pas.
-      Les unités traversées doivent réussir un test de VOL pour éviter le stress.
-      De plus, une unité traversée doit faire un jet opposé avec sa défense contre autant de
-      <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>
-      qu’il y a de soldats dans ladite unité (jusqu’à un maximum de 3).
-      Elle subira autant de dégâts que de
-      <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>
-      non annulés.
     </li>
     <li>
       Même engagée en combat, une unité Massive peut charger une autre unité si elle a une Ligne de Vue (LdV)
-      sur elle et peut se déplacer pour l’engager. Ce mouvement de charge provoque une attaque d’opportunité.
+      sur elle et peut se déplacer pour l’engager. Ce mouvement de charge peut provoquer une attaque d’opportunité.
     </li>
     <li>
       Seules les autres unités Massives et les décors avec le mot-clé <em>Bloque la LdV</em> bloquent la LdV vers les unités Massives.
     </li>
     <li>
       Les unités Massives sont toujours considérées comme <em>Inamovibles</em>.
+    </li>
+    <li>
+        Les unités ignorent l'effet <em>Inamovible</em> des unités non-massive.
     </li>
   </ul>`
   },
@@ -261,6 +257,7 @@ const MOTS_CLEFS: CollapsibleItem[] = [
   </p>
   <p>
     Si l’unité engage en raison de sa Soif de sang, elle peut relancer tous ses jets d’attaque durant les activations où elle est engagée avec l’unité ennemie (et pas seulement lorsqu’elle charge ou fait un assaut).
+    Cette relance est la même que celle obtenue par la charge, et ne peut donc être cumulé. L'effet persiste si après les poursuites les deux unités sont toujours engagées.
   </p>
   <p>
     Au début de son activation, l’unité peut ignorer les effets de Soif de sang jusqu’à la fin de son activation en réussissant un test de VOL.
@@ -270,6 +267,11 @@ const MOTS_CLEFS: CollapsibleItem[] = [
     title: 'Terrain favori (E) / Preferred terrain',
     details: `
 <p>L'unité peut ignorer les effets des décors de type E, ce qui peut désigner un type de décor, un mot-clé, ou plusieurs de ces élements (séparés dans ce cas par des trait | ).</p>
+    <ul>
+    <li>Si ‘E’ indique un mot-clef, votre unité peut ignorer ce mots-clefs des terrains.</li>
+    <li>Si 'E' indique un élement de décors, votre unité peut ignorer tout les mots clefs de cet élement.</li>
+    <li>Si 'E' indique à la fois un mot-clef et un élement de décors, vous n'ignorez que ce mot-clef de ce type d'élement précis.</li>
+    </ul>
 `
   },
   {
@@ -372,9 +374,9 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <b>Forcer au repli</b>
     </p>
     <ul>
-        <li>L'unité forcer au repli peut se stresser pour l'empêcher.</li>
-        <li>Un unité qui se replie doit se déplacer de la première valeur de son mouvement. Elle doit mettre le plus de distance possible avec son adversaire.</li>
-        <li>L'unité gagnante peut poursuivre l'unité qui se replie en se déplaçant avec sa première valeur de mouvement. Si le leader entre en contact socle à socle avec l'adversaire, il peut l'engager (vous n’êtes pas considéré
+        <li>Le gagnant du combat peut repousser l'unité perdante de la première valeur de mouvement de celle-ci. Si le mouvement ne peut être effectuer totalement, le gagnant doit choisir une direction qui maximise la distance entre les deux unités.</li>
+        <li>Le perdant du conflit peut stresser son unité pour prévenir le repli.</li>
+        <li>L'unité gagnante peut poursuivre l'unité qui se replie en se déplaçant totalement de sa première valeur de mouvement. Si le leader entre en contact socle à socle avec l'adversaire, il peut l'engager (vous n’êtes pas considéré
             comme ayant chargé).</li>
     </ul>
     <p><b>Elimination d'une unité</b></p>

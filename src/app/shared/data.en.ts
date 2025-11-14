@@ -23,11 +23,12 @@ or assault.</p>`,
     title: 'Demoralized',
     details: `<b>State</b></b><p>If your unit is demoralized: :</p>
   <ul>
-    <li>It cannot be activated in any way.</li>
+    <li>It cannot be activated in any way, or perform actions.</li>
     <li>It cannot stress itself in any way and cannot reduce its stress.</li>
     <li>It cannot control objectives (we consider its conquest value null).</li>
     <li>If it participates in combat, it will always flee after the result. (See “Melee Attack”).</li>
     <li>It cannot activate its command abilities.</li>
+    <li>It cannot perform actions</li>
   </ul>
 
   <h3>Demoralize a unit</h3>
@@ -174,7 +175,7 @@ const MOTS_CLEFS: CollapsibleItem[] = [
   },
   {
     title: 'Manned',
-    details: '<ul><li>Ignores the effects of Intimidating.</li><li>Becomes stressed only if activated more than once during the same round.</li></ul>'
+    details: '<ul><li>Ignores the effects of Intimidating.</li><li>Your unit does not suffer stress if it loses a combat.</li></ul>'
   },
   {
     title: 'Raging',
@@ -204,10 +205,11 @@ const MOTS_CLEFS: CollapsibleItem[] = [
     title: 'Large',
     details: `
       <ul>
-        <li>Large units can move through units that are not Large. Units moved through must pass a WP test to avoid stress. In addition, a unit moved through must make an opposed defense roll against as many <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> as there are troops in the unit (up to a maximum of 3). It suffers as much damage as the number of <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> not cancelled.</li>
-        <li>Even if engaged in combat, a Large unit can charge another unit if it has Line of Sight (LoS) and can move to engage it. This charge move provokes an opportunity attack.</li>
+        <li>Large units can move through units that are not Large.</li>
+        <li>Even if engaged in combat, a Large unit can charge another unit if it has Line of Sight (LoS) and can move to engage it. If it does so, the unit it is engaged with may suffer stress and make an opportunity attack.</li>
         <li>Only other Large units and terrain elements with the keyword <em>Blocks LoS</em> block Line of Sight to Large units.</li>
         <li>Large units are always considered <em>Immovable</em>.</li>
+        <li>Your unit ignores the <em>Immovable</em> effects of non-Large units.</li>
       </ul>
     `
   },
@@ -222,14 +224,31 @@ const MOTS_CLEFS: CollapsibleItem[] = [
     title: 'Bloodlust (X)',
     details: `
       <p>If the unit is not engaged in combat when activated, it must engage (Charge or Assault) <span class="warcrow-font-LongAction" role="img" aria-label="LongAction" ></span> an enemy unit <strong>X</strong> whenever possible. <em>X</em> can be the name of a unit, a keyword, or several elements separated by “|”. If no value is specified for <em>X</em>, the unit must charge <span class="warcrow-font-LongAction" role="img" aria-label="LongAction" ></span> the nearest enemy unit.</p>
-      <p>If the unit engages due to its Bloodlust, it may re-roll all of its attack rolls while engaged with that enemy unit (not just when charging or assaulting).</p>
+      <p>If your unit charges or assaults due to its Bloodlust, it
+        can re-roll all of its attack rolls against the enemy unit
+        while engaged with it (in case of a charge, that reroll is
+        the same one as the one gained by charging). This effect
+        persists if after a pushback and pursue both units are
+        still engaged.</p>
       <p>At the beginning of its activation, the unit can ignore the effects of Bloodlust until the end of its activation by passing a WP test.</p>
     `
   },
   {
     title: 'Preferred Terrain (E)',
     details: `
-      <p>The unit can ignore the effects of terrain elements of type E, which can refer to a type of terrain, a keyword, or several such elements separated by “|”.</p>
+      <p>Your unit can ignore the effects of keywords on terrain
+elements depending on the value of ‘E’. ‘E’ can indicate
+one type of terrain element, one keyword, or several
+groups of them separated by lines (“|”).</p>
+    <ul>
+    <li>If ‘E’ indicates a keyword, your unit can ignore that
+keyword from terrain elements.</li>
+    <li>If ‘E’ indicates a type of terrain element, your unit can
+ignore any keyword on those elements.</li>
+    <li>If ‘E’ indicates both a keyword and a type of terrain,
+your unit can ignore that keyword from the indicated
+elements.</li>
+    </ul>
     `
   },
   {
@@ -314,8 +333,8 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
       <p><b>Force to Retreat</b></p>
       <ul>
         <li>The unit being forced to retreat may gain 1 Stress to prevent it.</li>
-        <li>A retreating unit must move using its first MOV value, putting as much distance as possible from its opponent.</li>
-        <li>The winning unit may pursue the retreating one by moving with its first MOV value. If the Leader ends in base contact with the enemy Leader, it may engage it (you are not considered to have charged).</li>
+        <li>The winning unit shoves the defeated unit at a distance equal to the defeated unit’s first MOV value. If the move cannot be fully completed (due to the defeated unit colliding with or engaging an enemy unit), the winning unit must choose a new direction that maximizes the distance between the two units.</li>
+        <li>The winning unit may pursue the retreating one by moving your whole first MOV value. If the Leader ends in base contact with the enemy Leader, it may engage it (you are not considered to have charged).</li>
       </ul>
       <p><b>Elimination of a Unit</b></p>
       <ul>
@@ -700,7 +719,7 @@ const PERSONNAGE_UNITE = {
       <li><b>States:</b> The character gains the same states as the unit.</li>
       <li><b>Effects:</b> The character keeps all effect tokens.</li>
       <li><b>Tinge:</b> The character gains the same number of Tinge tokens as the unit.</li>
-      <li><b>Demoralized:</b> If the unit was demoralized, the character receives its own demoralized token in the same position.</li>
+      <li><b>Demoralized:</b> If the unit was demoralized, the character receives  their own demoralized token at the same position.</li>
     </ul>
     <p>Then, activate your character.</p>
     <p>If the character was an Officer, the unit’s leader takes the position the character occupied at the start of the activation.</p>
