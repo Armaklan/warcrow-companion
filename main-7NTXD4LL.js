@@ -734,7 +734,9 @@ counter than their rival\u2019s</li>
   `},nR={title:"R\xE9sum\xE9 d'un test en opposition",html:`
     <ol>
       <li><b>Rassemblez vos d\xE9s respectifs.</b> En cas d'attaque \xE0 distance, le d\xE9fenseur ne peut pas utiliser de d\xE9 d'attaque (rouge, orange, jaune).</li>
-      <li>Si une r\xE8gle ou un effet vous permet d\u2019ajouter des d\xE9s ou vous oblige \xE0 en retirer, faites-le maintenant. C'est le moment d'appliquer les \xE9tats.</li>
+      <li>Si une r\xE8gle ou un effet vous permet d\u2019ajouter des d\xE9s ou vous oblige \xE0 en retirer, faites-le maintenant. </li>
+      <li>Le joueur d\xE9fenseur d\xE9clare s'il stress son unit\xE9 pour activer des modificateurs en d\xE9fense.</li>
+      <li>Le joueur actif d\xE9clare s'il stress son unit pour activer des modificateurs en attaque.</li>
       <li><b>Lancez les d\xE9s</b> en m\xEAme temps.</li>
       <li><b>Ajoutez les symboles automatiques</b> \xE0 vos jets, s\u2019il y en a.</li>
       <li><b>Variations du joueur actif.</b> Le joueur dont l\u2019activation est en cours peut d\xE9penser autant de symboles obtenus qu\u2019il souhaite pour appliquer
