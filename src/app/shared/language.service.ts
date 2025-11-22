@@ -15,6 +15,7 @@ export interface IData {
   MOTS_CLEFS_DECORS: typeof FR.MOTS_CLEFS_DECORS;
   DECORS: typeof FR.DECORS;
   SCENARIO: typeof FR.SCENARIO;
+  FEAT: typeof FR.FEAT;
   LABEL: typeof FR.LABEL;
   PERSONNAGE_UNITE: typeof FR.PERSONNAGE_UNITE;
   RESUME_TOUR: typeof FR.RESUME_TOUR;

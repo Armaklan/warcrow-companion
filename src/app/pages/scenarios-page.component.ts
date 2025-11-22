@@ -1,18 +1,26 @@
 import {Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
-import {Scenario} from '../shared/data.model';
+import {MatButtonModule} from '@angular/material/button';
+import {Feat, Scenario} from '../shared/data.model';
 import { LanguageService } from '../shared/language.service';
 
 @Component({
   selector: 'app-scenarios-page',
   standalone: true,
-  imports: [CommonModule, RouterLink, MatCardModule, MatGridListModule, MatIconModule],
+  imports: [CommonModule, RouterLink, MatCardModule, MatGridListModule, MatIconModule, MatButtonModule],
   template: `
     <h1>{{ labels.menu.scenarios }}</h1>
+
+    <p>
+      <button mat-raised-button color="primary" (click)="goRandom()">
+        <mat-icon>shuffle</mat-icon>
+        {{ labels.scenario.random || 'Aléatoire' }}
+      </button>
+    </p>
 
     @if (!scenarios || scenarios.length === 0) {
       <p>Aucun scénario disponible pour le moment.</p>
@@ -28,6 +36,22 @@ import { LanguageService } from '../shared/language.service';
               }
             </div>
             <div class="title">{{ s.title }}</div>
+          </mat-card>
+        </a>
+      </div>
+    }
+
+    <h1>{{ labels.menu.feats }}</h1>
+    @if (!feats || feats.length === 0) {
+      <p>Aucun exploit disponible pour le moment.</p>
+    } @else {
+      <div class="grid">
+        <a class="card-link" *ngFor="let f of feats; let i = index" [routerLink]="['/feats', i]">
+          <mat-card class="scenario-card" appearance="outlined">
+            <div class="thumb" aria-hidden="true">
+              <mat-icon>emoji_events</mat-icon>
+            </div>
+            <div class="title">{{ f.title }}</div>
           </mat-card>
         </a>
       </div>
@@ -49,12 +73,24 @@ import { LanguageService } from '../shared/language.service';
 export class ScenariosPageComponent {
   lang = inject(LanguageService);
   scenarios: Scenario[] = this.lang.data.SCENARIO;
+  feats: Feat[] = this.lang.data.FEAT;
   labels = this.lang.data.LABEL;
+  private router = inject(Router);
 
   constructor() {
     this.lang.langChanges.subscribe(() => {
       this.scenarios = this.lang.data.SCENARIO;
+      this.feats = this.lang.data.FEAT;
       this.labels = this.lang.data.LABEL;
     });
+  }
+
+  goRandom() {
+    const scenarios = this.lang.data.SCENARIO;
+    const feats = this.lang.data.FEAT;
+    if (!scenarios?.length || !feats?.length) { return; }
+    const sid = Math.floor(Math.random() * scenarios.length);
+    const fid = Math.floor(Math.random() * feats.length);
+    this.router.navigate(['/scenarios', 'random', sid, fid]);
   }
 }

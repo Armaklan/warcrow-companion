@@ -1,4 +1,4 @@
-import { CollapsibleItem, Decor, Scenario } from './data.model';
+import {CollapsibleItem, Decor, Feat, Scenario} from './data.model';
 
 // Toutes les constantes sont regroupées dans l'objet EN
 
@@ -777,6 +777,243 @@ controls it.</i></p>
   `
 }];
 
+
+const FEAT: Feat[] = [{
+  title: 'Traque',
+  requiredMaterial: [],
+  scoring: `
+  <p>When a company advances their track meter to
+position “4” of the turn counter it obtains 4 AP and the
+rival company obtains as many AP as its current position
+on the track meter minus 1. From this moment on,
+units can no longer track vestiges.</p>
+  <p>At the end of the game, if neither company got their
+track meter to position “4”:</p>
+  <ul>Each company obtains as many AP as the current
+position of their track meter.</ul>
+  `,
+  additionnal: `
+  <h2>Préparation</h2>
+  <p>The company that wins the initiative receives event
+tokens 1 and 3, the rival company receives event tokens
+2 and 4.</p>
+  <p>Each company places one of their event tokens on the
+“1” position of the turn counter (track meter).</p>
+  <p>After deploying all units in the game preparation phase
+(including Scouts), each company, in deployment order,
+places their remaining event token on any point of
+the battlefield farther than 10 strides away from their
+deployment zone (vestige).</p>
+  <h2>Tracking and Vestiges</h2>
+  <ul>
+  <li>Event tokens on the turn counter represent each
+company’s track meter.</li>
+<li>Event tokens on the battlefield represent vestiges.</li>
+<li>Units may move through vestiges, but cannot finish
+their movement or be placed on them.</li>
+<li>Each company has their own track meter and own
+vestiges.</li>
+<li>Companies cannot interact with the rival’s vestiges.</li>
+</ul>
+<h3>Tracking a vestige</h3>
+<p>Character units and units with a joined Character that
+finish their activation adjacent to their company’s vestige
+can track it:</p>
+<ul>
+<li>The unit makes a WP test.</li>
+<li>Scout and Ambusher units add <span class="warcrow-font-Orange" role="img" aria-label="Orange Dice" ></span> to their roll.</li>
+<li>During the switches step of the roll, units may suffer
+1 stress to add 1<span class="warcrow-font-Success" role="img" aria-label="Success" ></span>  to their roll.</li>
+<li>When a unit passes the test with 2 <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> , the company
+advances the track meter by 1 position on the
+turn counter. Then, the rival company must place
+the vestige at 15 strides of its current position (it
+cannot be placed on <em>Impassable</em> terrain).</li>
+</ul>
+  `
+}, {
+  title: 'Decapitation',
+  requiredMaterial: [
+    '2 event token'
+  ],
+  scoring: `
+    <p>At the end of the game, each company obtains :
+    <ul>
+    <li>2 AP if they eliminated the rival’s commander.</li>
+    <li>1 AP if their commander hasn’t been eliminated.</li>
+    <li>1 AP if they eliminated their contract.</li>
+    </ul>
+  `,
+  additionnal: `
+  <h2>Commander</h2>
+  <ul>
+  <li>Companies must deploy their commander during
+the deployment phase (they cannot use Scout or
+Ambusher).</li>
+  <li>If the commander is removed from the battlefield by
+any effect it will be considered eliminated (for scoring
+purposes)</li>
+  <li>The commander cannot join any unit.</li>
+  </ul>
+  <h2>Contract</h2>
+  <p>After deploying all units in the game preparation
+phase (including Scouts), each company, in deployment
+order, chooses a unit from the rival company as their
+contract (place an event token on their profile card).</p>
+  <ul>
+  <li>The contract cannot be the commander</li>
+  <li>If the contract is removed from the battlefield by
+any effect it will be considered eliminated (for scoring
+purposes).</li>
+  <li>If the unit with the contract has a joined Character,
+the contract will be considered eliminated once the
+unit is destroyed, even if the Character survives.</li>
+  <li>A company that couldn’t choose its contract
+(because there were no deployed enemy units) will
+do so at the end of the round. A demoralized unit
+cannot be chosen as a contract. If a company still
+can’t choose its contract at the end of a round, it will
+do so at the end of the next one.</li>
+  </ul>
+  `
+}, {
+  title: 'The rift',
+  requiredMaterial: [
+    '2 fog markers.',
+    '2 event tokens.'
+  ],
+  scoring: `
+  <p>At the end of the game, each company gets 2 AP for
+each fog marker it obtained.</p>
+  `,
+  additionnal: `
+  <h2>Fog</h2>
+  <p>After deploying all units in the preparation phase
+(including Scouts), each company, in deployment order,
+must place a fog marker further than 20 strides from
+their deployment zone.</p>
+  <p>These fog markers apply the fog rules (terrain element)
+and are Immovable.</p>
+  <p>Character units and units with a joined Character that
+finish their activation adjacent to one of the event fog
+markers may begin sealing the rift.</p>
+  <h2>Sealing the Rift</h2>
+  <p>The unit performs a WP test, using the Character’s WP.
+The company places an event token on the turn counter,
+6 positions ahead of the current turn, and then moves it
+back 1 position for each <span class="warcrow-font-Success" role="img" aria-label="Success" ></span>  they got in the test.</p>
+  <ul>
+  <li>Spellcaster Characters add <span class="warcrow-font-Orange" role="img" aria-label="Orange Dice" ></span> to their roll.</li>
+  </ul>
+  <p>Remove the event token if:</p>
+  <ul>
+  <li>The unit is no longer adjacent to the fog marker.</li>
+  <li>The unit activates.</li>
+  <li>The Character is taken out of combat.</li>
+  <li>The Character leaves the unit.</li>
+  </ul>
+  <p>A unit cannot begin sealing a rift that is already being
+sealed by another unit.</p>
+  <p>When the event token is activated, the company sealing
+the rift obtains the fog marker (and removes it from the
+battlefield).</p>
+  `
+}, {
+  title: 'Banner',
+  requiredMaterial: [
+    '4 event tokens, numbered from 1 to 4.'
+  ],
+  scoring: `
+  <p>At the end of the game, each company gets:</p>
+  <ul>
+  <li>1 AP if their rival lost its banner at any point.</li>
+  <li>1 AP if they didn’t lose their own banner</li>
+  <li>1 AP if their glory meter is on the same position as
+their rivals.</li>
+  <li>2 AP if their glory meter is higher on the turn
+counter than their rivals.</li>
+  </ul>
+  `,
+  additionnal: `
+  <h2>Préparation</h2>
+  <p>The company that wins the initiative receives event
+tokens 1 and 3, the rival company receives event tokens
+2 and 4.</p>
+  <p>Each company places one of their event tokens on the
+“1” position of the turn counter (glory meter).</p>
+  <p>After deploying all units in the game preparation phase
+(including Scouts), each company, in deployment order,
+chooses one of their deployed units to carry the
+banner, placing an event token on their profile card.</p>
+  <ul>
+  <li>Characters carrying the banner cannot join a unit</li>
+  <li>A unit carrying the banner cannot have a joined
+Character.</li>
+  </ul>
+  <h2>Banner</h2>
+  <p>For each L inflicted by the unit carrying the banner,
+its company advances their glory meter 1 position
+on the turn counter. If the glory meter is on position
+“10”, move the rival company’s glory meter back (to a
+minimum of 1).</p>
+<h3>Lost banner</h3>
+<p>If the unit carrying the banner flees, is destroyed or
+leaves the battlefield, the company controlling it places
+the banner on the battlefield, adjacent to its leader,
+before removing the unit from the battlefield or fleeing.</p>
+<h3>Pick up the banner</h3>
+<p>If a company’s banner is on the battlefield, any adjacent
+allied unit may pick it up performing the Pick up banner
+simple action.</p>
+  `
+}, {
+  title: 'Resources',
+  requiredMaterial: [
+    '2 event tokens.'
+  ],
+  additionnal: `
+  <h2>Preparation</h2>
+  <p>The company that wins the initiative receives event
+token 1, the rival company receives event token 2.</p>
+  <p>Each company places their event token on position “1”
+of the turn counter (resource meter).</p>
+  <h2>Resources</h2>
+  <p>Units further than 12 strides from their deployment
+zone that are not engaged in combat may suffer 1 stress
+at the end of their activation to obtain resources.</p>
+  <h3>Obtain resources</h3>
+  <p>The unit performs a simple roll, the dice of which will
+depend on the amount of troops in the unit (Support
+counts when calculating the number of troops for this
+action). The unit’s company advances their resource
+meter 1 position for each <span class="warcrow-font-Success" role="img" aria-label="Success" ></span>
+ they got. If the resource
+meter is on position “10”, instead of advancing the
+resource meter, move the rival company’s resource
+meter back (to a minimum of 1).</p>
+  <p>A company cannot obtain resources more than once
+per turn.</p>
+  <p>Dice rolled:</p>
+  <ul>
+  <li>1 Troop: <span class="warcrow-font-Yellow" role="img" aria-label="Yellow dice" ></span></li>
+  <li>2-3 Troops: <span class="warcrow-font-Yellow" role="img" aria-label="Yellow dice" ></span><span class="warcrow-font-Orange" role="img" aria-label="Orange dice" ></span></li>
+  <li>4+ Troops: <span class="warcrow-font-Yellow" role="img" aria-label="Yellow dice" ></span><span class="warcrow-font-Orange" role="img" aria-label="Orange dice" ></span><span class="warcrow-font-Red" role="img" aria-label="Red dice" ></span></li>
+</ul>
+`,
+  scoring: `
+  <p>At the end of the game, each company obtains:</p>
+  <ul>
+  <li>1 AP if their resource meter is on position 4 or
+higher.</li>
+  <li>1 AP if their resource meter is on position 7 or
+higher.</li>
+  <li>1 AP if their resource meter is on position 10.</li>
+  <li>1 AP if their resource meter is higher on the turn
+counter than their rival’s</li>
+</ul>
+`
+}];
+
 const PERSONNAGE_UNITE = {
   title: 'Characters and Units',
   html: `
@@ -892,6 +1129,7 @@ export const LABEL = {
     personnageUnite: 'Characters and unit',
     decors: 'Terrain',
     scenarios: 'Scenario',
+    feats: 'Feat',
     teinte: 'Tinge'
   },
   actions: {
@@ -906,6 +1144,7 @@ export const LABEL = {
   },
   scenario: {
     back: 'Back',
+    random: 'Random',
     material: 'Required material',
     duree: {
       title: 'Rounds',
@@ -1003,6 +1242,7 @@ export const EN = {
   MOTS_CLEFS_DECORS,
   DECORS,
   SCENARIO,
+  FEAT,
   LABEL,
   PERSONNAGE_UNITE,
   RESUME_TOUR,
