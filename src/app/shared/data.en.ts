@@ -650,8 +650,8 @@ const SCENARIO: Scenario[] = [{
   image: 'scenario/take-position.png',
   roundLength: 5,
   endRoundScoring: [
-    `1 VP for each enemy Objective you control.`,
-    `1 VP if no friendly Objective is controlled by the opponent.`
+    `1 MP for each enemy Objective you control.`,
+    `1 MP if no friendly Objective is controlled by the opponent.`
   ],
   endGame: 3,
   requiredMaterial: [
@@ -659,13 +659,13 @@ const SCENARIO: Scenario[] = [{
     `2 blue Objective markers`
   ]
 }, {
-  title: `Zone of Influence`,
+  title: `Influence zones`,
   image: 'scenario/influence-zone.png',
   roundLength: 5,
   endRoundScoring: [
-    `1 VP if you control more Objectives than your opponent.`,
-    `1 VP if you control at least one enemy Objective.`,
-    `1 VP if you control at least two Objectives.`
+    `1 MP if you control more Objectives than your opponent.`,
+    `1 MP if you control at least one enemy Objective.`,
+    `1 MP if you control at least two Objectives.`
   ],
   endGame: 3,
   requiredMaterial: [
@@ -683,13 +683,13 @@ const SCENARIO: Scenario[] = [{
     <p>Units may contest control of an Objective within 7 strides instead of 3.</p>
   `
 }, {
-  title: `Expansion`,
+  title: `Expanse`,
   image: 'scenario/expanse.png',
   roundLength: 5,
   endRoundScoring: [
-    `2 VP if you control more brown Objectives than your opponent.`,
-    `1 VP if you control the same number of brown Objectives as your opponent.`,
-    `1 VP if you control the central blue Objective.`
+    `2 MP if you control more brown Objectives than your opponent.`,
+    `1 MP if you control the same number of brown Objectives as your opponent.`,
+    `1 MP if you control the central blue Objective.`
   ],
   endGame: 3,
   requiredMaterial: [
@@ -705,9 +705,9 @@ const SCENARIO: Scenario[] = [{
   image: 'scenario/loot.png',
   roundLength: 5,
   endRoundScoring: [
-    `1 VP if you have at least one piece of loot.`,
-    `1 VP if you have more loot than your opponent.`,
-    `1 VP if your opponent has no loot.`
+    `1 MP if you have at least one piece of loot.`,
+    `1 MP if you have more loot than your opponent.`,
+    `1 MP if your opponent has no loot.`
   ],
   endGame: 3,
   requiredMaterial: [
@@ -727,6 +727,53 @@ const SCENARIO: Scenario[] = [{
       <li>When a unit carrying an Objective becomes Demoralized, place the Objective on the ground next to the Leader before the retreat.</li>
       <li>If a Character leaves a unit carrying an Objective, they may choose to take it or leave it behind.</li>
     </ul>
+  `
+}, {
+  title: `Consolidated Progress`,
+  image: 'scenario/consolidate-progress.png',
+  roundLength: 5,
+  endRoundScoring: [
+    `1 MP if they control the central objective.`,
+    `1 MP if they control objectif 2 of their rival's color.`,
+    `1 MP if no objective of their color (1 and 2) are controlled by their rival.`
+  ],
+  endGame: 3,
+  requiredMaterial: [
+    `2 red Objective markers`,
+    `2 blue Objective markers`,
+    `1 brown Objective marker`
+  ],
+  additionnal: ``
+}, {
+  title: `Quadrants`,
+  image: 'scenario/quadrant.png',
+  roundLength: 5,
+  endRoundScoring: [
+    `2 MP if they control more quadrants than their rival.`,
+    `1 MP if they control the same amount of quadrants as their rival.`,
+    `1 MP if they control at least 1 quadrant adjacent of their rival's deployment zone.`
+  ],
+  endGame: 3,
+  requiredMaterial: [],
+  additionnal: `
+  <h2>Strategic domain</h2>
+  <ul>
+    <li>All units that are not demoralized have their conquest
+value increased by 1.</li>
+    <li>Conquest value modifiers (from skills and effects) are not increased.</li>
+</ul>
+  <h2>Quadrants</h2>
+  <p>The battlefield (not including deployment zones) is
+divided into four quadrants, which can be controlled as if
+they were objectives although no objective markers are
+used.</p>
+  <p>Units can contest control of a quadrant if their leader is
+within the quadrant (a leader whose base is in contact
+with more than one quadrant is not within any quadrant,
+so their unit cannot control or contest any quadrant).</p>
+  <p><i>Although no objective markers are used, a conquest marker
+is placed in each quadrant to indicate which company
+controls it.</i></p>
   `
 }];
 

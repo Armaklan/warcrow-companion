@@ -787,6 +787,47 @@ const SCENARIO: Scenario[] = [{
         <li>Si un personnage quitte une unité qui porte un objectif, il peut choisir de prendre ou de laisser l'objectif.</li>
     </ul>
   `
+}, {
+  title: `Consolider la progression`,
+  image: 'scenario/consolidate-progress.png',
+  roundLength: 5,
+  endRoundScoring: [
+    `1 PM si vous contrôlez l'objectif central.`,
+    `1 PM si vous contrôlez l'objectif n°2 de l'adversaire.`,
+    `1 PM si aucun objectif de votre couleur n'est contrôlé par l'adversaire.`
+  ],
+  endGame: 3,
+  requiredMaterial: [
+    `2 marqueurs d'objectifs rouge`,
+    `2 marqueurs d'objectifs bleu`,
+    `1 marqueur d'objectif marron`
+  ],
+  additionnal: ``
+}, {
+  title: `Cadrant`,
+  image: 'scenario/quadrant.png',
+  roundLength: 5,
+  endRoundScoring: [
+    `2 PM si vous contrôlez plus de cadrants que l'adversaire.`,
+    `1 PM si vous contrôlez le même nombre de cadrants que l'adversaire.`,
+    `1 PM si vous contrôlez au moins 1 cadrant adjacent à la zone de déploiement de votre adversaire.`
+  ],
+  endGame: 3,
+  requiredMaterial: [],
+  additionnal: `
+  <h2>Domaine stratégique</h2>
+  <ul>
+    <li>Toutes les unités non-démoralisés ont une valeur de conquête augmentée de 1.</li>
+    <li>Les modificateurs de valeur de conquête (provenant des compétences et des effets) ne sont pas augmentés.</li>
+</ul>
+  <h2>Cadrant</h2>
+  <p>Le champs de bataille, à l'exclusion des zones de déploiement, est divisé en 4 cadrants qui peuvent être contrôler
+  comme s'ils étaient des objectifs, malgré l'absence de marqueur objectif.</p>
+  <p>Les unités peuvent contester le contrôle d'un cadrant si leur capitaine se trouve
+  dans le cadre. Un capitaine se trouvant dans plusieurs cadrant ne peut contester aucun d'entre eux.</p>
+  <p><i>Même si aucun marqueur objectif n'est utilisé, un marqueur de conquête est placé dans chaque cadrant pour indiquer
+ quelle compagnie le contrôle.</i></p>
+  `
 }];
 
 const PERSONNAGE_UNITE = {
