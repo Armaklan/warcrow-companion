@@ -436,6 +436,19 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         <li>Quand une unit\xE9 portant un objectif est d\xE9moralis\xE9e, placez l'objectif au sol \xE0 cot\xE9 du leader avant la fuite.</li>
         <li>Si un personnage quitte une unit\xE9 qui porte un objectif, il peut choisir de prendre ou de laisser l'objectif.</li>
     </ul>
+  `},{title:"Consolider la progression",image:"scenario/consolidate-progress.png",roundLength:5,endRoundScoring:["1 PM si vous contr\xF4lez l'objectif central.","1 PM si vous contr\xF4lez l'objectif n\xB02 de l'adversaire.","1 PM si aucun objectif de votre couleur n'est contr\xF4l\xE9 par l'adversaire."],endGame:3,requiredMaterial:["2 marqueurs d'objectifs rouge","2 marqueurs d'objectifs bleu","1 marqueur d'objectif marron"],additionnal:""},{title:"Cadrant",image:"scenario/quadrant.png",roundLength:5,endRoundScoring:["2 PM si vous contr\xF4lez plus de cadrants que l'adversaire.","1 PM si vous contr\xF4lez le m\xEAme nombre de cadrants que l'adversaire.","1 PM si vous contr\xF4lez au moins 1 cadrant adjacent \xE0 la zone de d\xE9ploiement de votre adversaire."],endGame:3,requiredMaterial:[],additionnal:`
+  <h2>Domaine strat\xE9gique</h2>
+  <ul>
+    <li>Toutes les unit\xE9s non-d\xE9moralis\xE9s ont une valeur de conqu\xEAte augment\xE9e de 1.</li>
+    <li>Les modificateurs de valeur de conqu\xEAte (provenant des comp\xE9tences et des effets) ne sont pas augment\xE9s.</li>
+</ul>
+  <h2>Cadrant</h2>
+  <p>Le champs de bataille, \xE0 l'exclusion des zones de d\xE9ploiement, est divis\xE9 en 4 cadrants qui peuvent \xEAtre contr\xF4ler
+  comme s'ils \xE9taient des objectifs, malgr\xE9 l'absence de marqueur objectif.</p>
+  <p>Les unit\xE9s peuvent contester le contr\xF4le d'un cadrant si leur capitaine se trouve
+  dans le cadre. Un capitaine se trouvant dans plusieurs cadrant ne peut contester aucun d'entre eux.</p>
+  <p><i>M\xEAme si aucun marqueur objectif n'est utilis\xE9, un marqueur de conqu\xEAte est plac\xE9 dans chaque cadrant pour indiquer
+ quelle compagnie le contr\xF4le.</i></p>
   `}],KR={title:"Characters and Units",html:`
     <h3>Rejoindre une unit\xE9 durant l'activation</h3>
     <p>Pendant son activation, votre Personnage peut int\xE9grer
@@ -932,7 +945,7 @@ elements.</li>
       <p>Fog is represented by markers.</p>
       <p>A unit that ends its activation within 4 strides of a Fog marker gains 1 <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</p>
       <p>Fog does not block Line of Sight and does not interrupt movement. A unit cannot place a Fog marker within 10 strides of another Fog marker.</p>
-    `}],ck=[{title:"Fence / Barricade",keywords:[{name:"Cover",value:'<span class="warcrow-font-Black" role="img" aria-label="Black dice"></span>'}],dimensions:"Base between 4 and 13 strides long and no more than 1 stride wide"},{title:"Wall",keywords:[{name:"Cover",value:'<span class="warcrow-font-Blue" role="img" aria-label="Blue dice"></span>'}],dimensions:"Base between 4 and 13 strides long and no more than 1 stride wide"},{title:"Small Structure",keywords:[{name:"Block LoS"},{name:"Cover",value:'<span class="warcrow-font-Black" role="img" aria-label="Black dice"></span>'},{name:"Impassable"}],dimensions:"Base with a surface equivalent to a square measuring between 4 and 7 strides a side"},{title:"Building",keywords:[{name:"Block LoS"},{name:"Cover",value:'<span class="warcrow-font-Blue" role="img" aria-label="Blue dice"></span>'},{name:"Impassable"}],dimensions:"Base with a surface equivalent to a square measuring between 7 and 10 strides a side"},{title:"Light Forest",keywords:[{name:"Block LoS"},{name:"Cover",value:'<span class="warcrow-font-Black" role="img" aria-label="Black dice"></span>'}],dimensions:"Base with a surface equivalent to a square measuring between 7 and 10 strides a side"},{title:"Dense Forest",keywords:[{name:"Rugged",value:"Cavalry, Golem"},{name:"Block LoS"},{name:"Cover",value:'<span class="warcrow-font-Blue" role="img" aria-label="Blue dice"></span>'}],dimensions:"Base with a surface equivalent to a square measuring between 7 and 10 strides a side"},{title:"River",keywords:[{name:"Rugged"}],dimensions:"Base between 4 and 13 strides long and no more than 7 strides wide"},{title:"Lake",keywords:[{name:"Impassable"}],dimensions:"Base with a surface equivalent to a square measuring between 7 and 10 strides a side"},{title:"Ruins",keywords:[{name:"Rugged"},{name:"Cover",value:'<span class="warcrow-font-Black" role="img" aria-label="Black dice"></span>'}],dimensions:"Base with a surface equivalent to a square measuring between 7 and 10 strides a side"},{title:"Rugged Terrain",keywords:[{name:"Rugged"}],dimensions:"Base with a surface equivalent to a square measuring between 7 and 10 strides a side"}],dk=[{title:"Take Position",image:"scenario/take-position.png",roundLength:5,endRoundScoring:["1 VP for each enemy Objective you control.","1 VP if no friendly Objective is controlled by the opponent."],endGame:3,requiredMaterial:["2 red Objective markers","2 blue Objective markers"]},{title:"Zone of Influence",image:"scenario/influence-zone.png",roundLength:5,endRoundScoring:["1 VP if you control more Objectives than your opponent.","1 VP if you control at least one enemy Objective.","1 VP if you control at least two Objectives."],endGame:3,requiredMaterial:["2 red Objective markers","2 blue Objective markers","1 brown Objective marker"],additionnal:`
+    `}],ck=[{title:"Fence / Barricade",keywords:[{name:"Cover",value:'<span class="warcrow-font-Black" role="img" aria-label="Black dice"></span>'}],dimensions:"Base between 4 and 13 strides long and no more than 1 stride wide"},{title:"Wall",keywords:[{name:"Cover",value:'<span class="warcrow-font-Blue" role="img" aria-label="Blue dice"></span>'}],dimensions:"Base between 4 and 13 strides long and no more than 1 stride wide"},{title:"Small Structure",keywords:[{name:"Block LoS"},{name:"Cover",value:'<span class="warcrow-font-Black" role="img" aria-label="Black dice"></span>'},{name:"Impassable"}],dimensions:"Base with a surface equivalent to a square measuring between 4 and 7 strides a side"},{title:"Building",keywords:[{name:"Block LoS"},{name:"Cover",value:'<span class="warcrow-font-Blue" role="img" aria-label="Blue dice"></span>'},{name:"Impassable"}],dimensions:"Base with a surface equivalent to a square measuring between 7 and 10 strides a side"},{title:"Light Forest",keywords:[{name:"Block LoS"},{name:"Cover",value:'<span class="warcrow-font-Black" role="img" aria-label="Black dice"></span>'}],dimensions:"Base with a surface equivalent to a square measuring between 7 and 10 strides a side"},{title:"Dense Forest",keywords:[{name:"Rugged",value:"Cavalry, Golem"},{name:"Block LoS"},{name:"Cover",value:'<span class="warcrow-font-Blue" role="img" aria-label="Blue dice"></span>'}],dimensions:"Base with a surface equivalent to a square measuring between 7 and 10 strides a side"},{title:"River",keywords:[{name:"Rugged"}],dimensions:"Base between 4 and 13 strides long and no more than 7 strides wide"},{title:"Lake",keywords:[{name:"Impassable"}],dimensions:"Base with a surface equivalent to a square measuring between 7 and 10 strides a side"},{title:"Ruins",keywords:[{name:"Rugged"},{name:"Cover",value:'<span class="warcrow-font-Black" role="img" aria-label="Black dice"></span>'}],dimensions:"Base with a surface equivalent to a square measuring between 7 and 10 strides a side"},{title:"Rugged Terrain",keywords:[{name:"Rugged"}],dimensions:"Base with a surface equivalent to a square measuring between 7 and 10 strides a side"}],dk=[{title:"Take Position",image:"scenario/take-position.png",roundLength:5,endRoundScoring:["1 MP for each enemy Objective you control.","1 MP if no friendly Objective is controlled by the opponent."],endGame:3,requiredMaterial:["2 red Objective markers","2 blue Objective markers"]},{title:"Influence zones",image:"scenario/influence-zone.png",roundLength:5,endRoundScoring:["1 MP if you control more Objectives than your opponent.","1 MP if you control at least one enemy Objective.","1 MP if you control at least two Objectives."],endGame:3,requiredMaterial:["2 red Objective markers","2 blue Objective markers","1 brown Objective marker"],additionnal:`
     <h2>Strategic Domain</h2>
     <ul>
       <li>All units that are not Demoralized gain +1 to their Conquest value.</li>
@@ -940,10 +953,10 @@ elements.</li>
     </ul>
     <h2>Zone of Influence</h2>
     <p>Units may contest control of an Objective within 7 strides instead of 3.</p>
-  `},{title:"Expansion",image:"scenario/expanse.png",roundLength:5,endRoundScoring:["2 VP if you control more brown Objectives than your opponent.","1 VP if you control the same number of brown Objectives as your opponent.","1 VP if you control the central blue Objective."],endGame:3,requiredMaterial:["4 brown Objective markers","1 blue Objective marker"],additionnal:`
+  `},{title:"Expanse",image:"scenario/expanse.png",roundLength:5,endRoundScoring:["2 MP if you control more brown Objectives than your opponent.","1 MP if you control the same number of brown Objectives as your opponent.","1 MP if you control the central blue Objective."],endGame:3,requiredMaterial:["4 brown Objective markers","1 blue Objective marker"],additionnal:`
     <h2>Setup</h2>
     <p>The brown Objectives start with a control marker from the Company whose deployment zone is adjacent to them.</p>
-  `},{title:"Loot",image:"scenario/loot.png",roundLength:5,endRoundScoring:["1 VP if you have at least one piece of loot.","1 VP if you have more loot than your opponent.","1 VP if your opponent has no loot."],endGame:3,requiredMaterial:["2 red Objective markers","2 blue Objective markers","1 brown Objective marker"],additionnal:`
+  `},{title:"Loot",image:"scenario/loot.png",roundLength:5,endRoundScoring:["1 MP if you have at least one piece of loot.","1 MP if you have more loot than your opponent.","1 MP if your opponent has no loot."],endGame:3,requiredMaterial:["2 red Objective markers","2 blue Objective markers","1 brown Objective marker"],additionnal:`
     <h2>Loot</h2>
     <p>The Objective markers represent loot. They follow these rules instead of those in the core rulebook:</p>
     <ul>
@@ -955,6 +968,25 @@ elements.</li>
       <li>When a unit carrying an Objective becomes Demoralized, place the Objective on the ground next to the Leader before the retreat.</li>
       <li>If a Character leaves a unit carrying an Objective, they may choose to take it or leave it behind.</li>
     </ul>
+  `},{title:"Consolidated Progress",image:"scenario/consolidate-progress.png",roundLength:5,endRoundScoring:["1 MP if they control the central objective.","1 MP if they control objectif 2 of their rival's color.","1 MP if no objective of their color (1 and 2) are controlled by their rival."],endGame:3,requiredMaterial:["2 red Objective markers","2 blue Objective markers","1 brown Objective marker"],additionnal:""},{title:"Quadrants",image:"scenario/quadrant.png",roundLength:5,endRoundScoring:["2 MP if they control more quadrants than their rival.","1 MP if they control the same amount of quadrants as their rival.","1 MP if they control at least 1 quadrant adjacent of their rival's deployment zone."],endGame:3,requiredMaterial:[],additionnal:`
+  <h2>Strategic domain</h2>
+  <ul>
+    <li>All units that are not demoralized have their conquest
+value increased by 1.</li>
+    <li>Conquest value modifiers (from skills and effects) are not increased.</li>
+</ul>
+  <h2>Quadrants</h2>
+  <p>The battlefield (not including deployment zones) is
+divided into four quadrants, which can be controlled as if
+they were objectives although no objective markers are
+used.</p>
+  <p>Units can contest control of a quadrant if their leader is
+within the quadrant (a leader whose base is in contact
+with more than one quadrant is not within any quadrant,
+so their unit cannot control or contest any quadrant).</p>
+  <p><i>Although no objective markers are used, a conquest marker
+is placed in each quadrant to indicate which company
+controls it.</i></p>
   `}],uk={title:"Characters and Units",html:`
     <h3>Join a Unit during Activation</h3>
     <p>During its activation, your Character may join a unit that meets the conditions of its Join keyword as long as:</p>
