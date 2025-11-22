@@ -4,7 +4,7 @@ import {RouterLink} from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
-import {Scenario} from '../shared/data.model';
+import {Feat, Scenario} from '../shared/data.model';
 import { LanguageService } from '../shared/language.service';
 
 @Component({
@@ -32,6 +32,22 @@ import { LanguageService } from '../shared/language.service';
         </a>
       </div>
     }
+
+    <h1>{{ labels.menu.feats }}</h1>
+    @if (!feats || feats.length === 0) {
+      <p>Aucun exploit disponible pour le moment.</p>
+    } @else {
+      <div class="grid">
+        <a class="card-link" *ngFor="let f of feats; let i = index" [routerLink]="['/feats', i]">
+          <mat-card class="scenario-card" appearance="outlined">
+            <div class="thumb" aria-hidden="true">
+              <mat-icon>emoji_events</mat-icon>
+            </div>
+            <div class="title">{{ f.title }}</div>
+          </mat-card>
+        </a>
+      </div>
+    }
   `,
   styles: [`
     .grid {
@@ -49,11 +65,13 @@ import { LanguageService } from '../shared/language.service';
 export class ScenariosPageComponent {
   lang = inject(LanguageService);
   scenarios: Scenario[] = this.lang.data.SCENARIO;
+  feats: Feat[] = this.lang.data.FEAT;
   labels = this.lang.data.LABEL;
 
   constructor() {
     this.lang.langChanges.subscribe(() => {
       this.scenarios = this.lang.data.SCENARIO;
+      this.feats = this.lang.data.FEAT;
       this.labels = this.lang.data.LABEL;
     });
   }

@@ -23,3 +23,11 @@ export interface Scenario {
   // Additional notes/details; can contain HTML
   additionnal?: string;
 }
+
+export interface Feat {
+  title: string
+  requiredMaterial?: string[];
+  scoring?: string;
+  // Additional notes/details; can contain HTML
+  additionnal?: string;
+}

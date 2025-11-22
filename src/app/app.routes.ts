@@ -11,6 +11,7 @@ import { ResumeOppositionPageComponent } from './pages/resume-opposition-page.co
 import { PersonnageEtUnitePageComponent } from './pages/personnage-et-unite-page.component';
 import { ScenariosPageComponent } from './pages/scenarios-page.component';
 import { ScenarioDetailPageComponent } from './pages/scenario-detail-page.component';
+import { FeatDetailPageComponent } from './pages/feat-detail-page.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'actions' },
@@ -26,5 +27,6 @@ export const routes: Routes = [
   { path: 'personnage-unite', component: PersonnageEtUnitePageComponent, title: 'Personnage et unité' },
   { path: 'scenarios', component: ScenariosPageComponent, title: 'Scénarios' },
   { path: 'scenarios/:id', component: ScenarioDetailPageComponent, title: 'Détail du scénario' },
+  { path: 'feats/:id', component: FeatDetailPageComponent, title: "Détail de l'exploit" },
   { path: '**', redirectTo: 'actions' }
 ];

@@ -1,4 +1,4 @@
-import {CollapsibleItem, Decor, Scenario} from './data.model';
+import {CollapsibleItem, Decor, Feat, Scenario} from './data.model';
 
 // Toutes les constantes sont regroupées dans l'objet FR
 
@@ -830,6 +830,50 @@ const SCENARIO: Scenario[] = [{
   `
 }];
 
+const FEAT: Feat[] = [{
+  title: 'Traque',
+  requiredMaterial: [],
+  scoring: `
+  <p>When a company advances their track meter to
+position “4” of the turn counter it obtains 4 AP and the
+rival company obtains as many AP as its current position
+on the track meter minus 1. From this moment on,
+units can no longer track vestiges.</p>
+  <p>At the end of the game, if neither company got their
+track meter to position “4”:</p>
+  <ul>Each company obtains as many AP as the current
+position of their track meter.</ul>
+  `,
+  additionnal: `
+  <h2>Tracking and Vestiges</h2>
+  <ul>
+  <li>Event tokens on the turn counter represent each
+company’s track meter.</li>
+<li>Event tokens on the battlefield represent vestiges.</li>
+<li>Units may move through vestiges, but cannot finish
+their movement or be placed on them.</li>
+<li>Each company has their own track meter and own
+vestiges.</li>
+<li>Companies cannot interact with the rival’s vestiges.</li>
+</ul>
+<h3>Tracking a vestige</h3>
+<p>Character units and units with a joined Character that
+finish their activation adjacent to their company’s vestige
+can track it:</p>
+<ul>
+<li>The unit makes a WP test.</li>
+<li>Scout and Ambusher units add <span class="warcrow-font-Orange" role="img" aria-label="Orange Dice" ></span> to their roll.</li>
+<li>During the switches step of the roll, units may suffer
+1 stress to add 1<span class="warcrow-font-Success" role="img" aria-label="Success" ></span>  to their roll.</li>
+<li>When a unit passes the test with 2 <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> , the company
+advances the track meter by 1 position on the
+turn counter. Then, the rival company must place
+the vestige at 15 strides of its current position (it
+cannot be placed on <em>Impassable</em> terrain).</li>
+</ul>
+  `
+}];
+
 const PERSONNAGE_UNITE = {
   title: 'Characters and Units',
   html: `
@@ -958,6 +1002,7 @@ export const LABEL = {
     personnageUnite: 'Personnages et unités',
     decors: 'Décors',
     scenarios: 'Scénarios',
+    feats: 'Exploit',
     teinte: 'Teinte'
   },
   actions: {
@@ -1069,6 +1114,7 @@ export const FR = {
   MOTS_CLEFS_DECORS,
   DECORS,
   SCENARIO,
+  FEAT,
   LABEL,
   PERSONNAGE_UNITE,
   RESUME_TOUR,
