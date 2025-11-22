@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { LanguageService } from './language.service';
 
 export interface SearchEntry {
-  kind: 'action' | 'abilitie' | 'state' | 'keyword' | 'terrain-keyword' | 'terrain';
+  kind: 'action' | 'abilitie' | 'state' | 'keyword' | 'terrain-keyword' | 'terrain' | 'feat';
   title: string;
   route: string;
   openId: string; // slug used in query param "open"
@@ -73,6 +73,12 @@ export class SearchService {
         const kwTitle = kw.value ? `${kw.name}` : kw.name;
         entries.push({ kind: 'terrain-keyword', title: kwTitle, route: '/mots-clefs-decors', openId: this.slug(kw.name) });
       }
+    }
+
+    // Exploits (Feats)
+    for (let i = 0; i < D.FEAT.length; i++) {
+      const f = D.FEAT[i];
+      entries.push({ kind: 'feat', title: f.title, route: `/feats/${i}`, openId: this.slug(f.title), subtitle: isFR ? 'Exploit' : 'Feat' });
     }
 
     this.index = entries;
