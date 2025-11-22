@@ -1163,7 +1163,9 @@ const RESUME_OPPOSITION = {
     html: `
     <ol>
       <li><b>Rassemblez vos dés respectifs.</b> En cas d'attaque à distance, le défenseur ne peut pas utiliser de dé d'attaque (rouge, orange, jaune).</li>
-      <li>Si une règle ou un effet vous permet d’ajouter des dés ou vous oblige à en retirer, faites-le maintenant. C'est le moment d'appliquer les états.</li>
+      <li>Si une règle ou un effet vous permet d’ajouter des dés ou vous oblige à en retirer, faites-le maintenant. </li>
+      <li>Le joueur défenseur déclare s'il stress son unité pour activer des modificateurs en défense.</li>
+      <li>Le joueur actif déclare s'il stress son unit pour activer des modificateurs en attaque.</li>
       <li><b>Lancez les dés</b> en même temps.</li>
       <li><b>Ajoutez les symboles automatiques</b> à vos jets, s’il y en a.</li>
       <li><b>Variations du joueur actif.</b> Le joueur dont l’activation est en cours peut dépenser autant de symboles obtenus qu’il souhaite pour appliquer
