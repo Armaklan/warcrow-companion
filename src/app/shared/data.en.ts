@@ -351,6 +351,17 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>The defender can only use <span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>, <span class="warcrow-font-Green" role="img" aria-label="Green dice" ></span>, <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, <span class="warcrow-font-Block" role="img" aria-label="Block" ></span> and <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> in their defense roll.</li>
         <li>Resolve a Face to Face roll between the attack roll and the defense roll. Each unblocked <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> inflicts a <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> on the enemy unit. The defender cannot apply switches.</li>
       </ul>
+      <h3>Ranged attack on a combat</h3>
+      <p>
+You can make a ranged attack against an
+enemy unit that is engaged in combat
+with a friendly unit. In this case, you must
+consider your own unit to be a game
+element that provides Cover <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, only in
+this case, following the LoS and Cover
+rules. Additionally, the friendly unit will
+become stressed at the end of the
+activation.</p>
     `
   },
   {

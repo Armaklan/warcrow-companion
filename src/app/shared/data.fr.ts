@@ -391,6 +391,11 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>Le défenseur ne peut utiliser que <span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>  <span class="warcrow-font-Green" role="img" aria-label="Green dice" ></span> <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> <span class="warcrow-font-Block" role="img" aria-label="Block" ></span> et <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> dans son jet de défense.</li>
         <li>Résolvez un jet face à face entre le jet d'attaque et le jet de défense. Chaque <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> non annulé inflige <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> à l'unité ennemie. Le défenseur ne peut pas agir sur les variations.</li>
     </ul>
+    <p>Cette action est interdite si vous êtes au corps à corps.</p>
+    <h3>Attaque à distance en mêlée</h3>
+    <p>Vous pouvez ciblez une unité ennemi engagé au combat contre une unité ami. Dans ce cas, vous devez considérez votre propre
+    unité comme étant un élement de jeu qui offre un Couvert <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>
+    L'unité ami subira un stress à la fin de l'activation.</p>
   `
   },
   {
@@ -403,6 +408,7 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>Le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succès" ></span></li>
         <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> sur le jet, appliquez les effets du sort. </li>
       </ol>
+      <p>Si vous êtes au corps à corps, cette action ne peut cibler que votre unité ou une unité ennemis avec laquelle vous êtes engagée.</p>
       <p>Jet de teinte</p>
       <ol>
         <li>Créez le jet de teinte : prenez <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> comme indiqué dans les altérations choisis du sort.</li>
@@ -418,6 +424,7 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>Dépensez <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>
         <li>Appliquez les effets de la capacité.</li>
     </ul>
+    <p>Si vous êtes au corps à corps, cette action ne peut cibler que votre unité ou une unité ennemis avec laquelle vous êtes engagée.</p>
   `
   },
   {
@@ -426,6 +433,7 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>Choisissez votre compétence et vérifier que les conditions sont remplis.</li>
         <li>Appliquez les effets de la capacité.</li>
     </ul>
+    <p>Si vous êtes au corps à corps, cette action ne peut cibler que votre unité ou une unité ennemis avec laquelle vous êtes engagée.</p>
   `
   }
 ];
@@ -456,6 +464,7 @@ const ACTIONS_COMPLEXES: CollapsibleItem[] = [
         <li>Effectuer un mouvement en utilisant uniquement sa deuxième valeur de Mouvement.</li>
     </ul>
     <p>Même si elle a déjà été activée pendant ce round, l'unité n'est pas stressée en effectuant cette action.</p>
+    <p>Une unité ne peut déclarer cette action au corps à corps.</p>
   `
   },
   {
@@ -464,6 +473,7 @@ const ACTIONS_COMPLEXES: CollapsibleItem[] = [
         <li>Choisissez votre compétence avec le symbole <span class="warcrow-font-LongAction" role="img" aria-label="Long Action" ></span> et vérifier que les conditions sont remplis.</li>
         <li>Appliquez les effets de la capacité.</li>
     </ul>
+    <p>Si vous êtes au corps à corps, cette action ne peut cibler que votre unité ou une unité ennemis avec laquelle vous êtes engagée.</p>
   `
   }
 ];
