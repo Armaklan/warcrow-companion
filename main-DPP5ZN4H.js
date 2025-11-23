@@ -726,7 +726,7 @@ counter than their rival\u2019s</li>
     <ol>
       <li><b>Rassemblez vos d\xE9s respectifs.</b> En cas d'attaque \xE0 distance, le d\xE9fenseur ne peut pas utiliser de d\xE9 d'attaque (rouge, orange, jaune).</li>
       <li>Si une r\xE8gle ou un effet vous permet d\u2019ajouter des d\xE9s ou vous oblige \xE0 en retirer, faites-le maintenant. </li>
-      <li>Si plusieurs unit\xE9s sont en combat contre vous, vous devez retirez 1 d\xE9 ou symbole automatique par unit\xE9 au d\xE9l\xE0 de la premi\xE8re.</li>
+      <li>Si plusieurs unit\xE9s sont en combat contre vous, vous devez retirez 1 d\xE9 ou symbole automatique.</li>
       <li>Le joueur d\xE9fenseur d\xE9clare s'il stress son unit\xE9 pour activer des modificateurs en d\xE9fense.</li>
       <li>Le joueur actif d\xE9clare s'il stress son unit pour activer des modificateurs en attaque.</li>
       <li><b>Lancez les d\xE9s</b> en m\xEAme temps.</li>
@@ -1454,7 +1454,7 @@ counter than their rival\u2019s</li>
     <ol>
       <li><b>Gather your respective dice.</b> In a ranged attack, the defender cannot use attack dice (red, orange, yellow).</li>
       <li>If any rule or effect allows you to add dice or forces you to remove them, do it now. This is when states are applied.</li>
-      <li>If your unit is engaged with more than one enemy unit, you must cancel one die or automatic symbol for each enemy unit engaged with you above the first.</li>
+      <li>If your unit is engaged with more than one enemy unit, you must cancel one die or automatic symbol.</li>
       <li><b>Roll the dice</b> simultaneously.</li>
       <li><b>Add automatic symbols</b> to your rolls, if any.</li>
       <li><b>Active player switches.</b> The player whose activation is in progress may spend as many symbols as they wish to apply any of their available switches for this roll.</li>
