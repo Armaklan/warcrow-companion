@@ -1099,7 +1099,7 @@ const RESUME_OPPOSITION = {
     <ol>
       <li><b>Gather your respective dice.</b> In a ranged attack, the defender cannot use attack dice (red, orange, yellow).</li>
       <li>If any rule or effect allows you to add dice or forces you to remove them, do it now. This is when states are applied.</li>
-      <li>If your unit is engaged with more than one enemy unit, you must cancel one die or automatic symbol for each enemy unit engaged with you above the first.</li>
+      <li>If your unit is engaged with more than one enemy unit, you must cancel one die or automatic symbol.</li>
       <li><b>Roll the dice</b> simultaneously.</li>
       <li><b>Add automatic symbols</b> to your rolls, if any.</li>
       <li><b>Active player switches.</b> The player whose activation is in progress may spend as many symbols as they wish to apply any of their available switches for this roll.</li>

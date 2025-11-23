@@ -1155,7 +1155,7 @@ const RESUME_OPPOSITION = {
     <ol>
       <li><b>Rassemblez vos dés respectifs.</b> En cas d'attaque à distance, le défenseur ne peut pas utiliser de dé d'attaque (rouge, orange, jaune).</li>
       <li>Si une règle ou un effet vous permet d’ajouter des dés ou vous oblige à en retirer, faites-le maintenant. </li>
-      <li>Si plusieurs unités sont en combat contre vous, vous devez retirez 1 dé ou symbole automatique par unité au délà de la première.</li>
+      <li>Si plusieurs unités sont en combat contre vous, vous devez retirez 1 dé ou symbole automatique.</li>
       <li>Le joueur défenseur déclare s'il stress son unité pour activer des modificateurs en défense.</li>
       <li>Le joueur actif déclare s'il stress son unit pour activer des modificateurs en attaque.</li>
       <li><b>Lancez les dés</b> en même temps.</li>
