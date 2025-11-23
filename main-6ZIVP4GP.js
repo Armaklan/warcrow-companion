@@ -72,23 +72,23 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
       <p>Placez ce marqueur sur votre unit\xE9 apr\xE8s son activation. Si elle est activ\xE9e une nouvelle fois dans la manche, stressez-le.</p>
       <p>A la fin de la manche, retirez ce marqueur.</p>
     `,icon:"activation.png"}],qk=[{title:"Couvert (D) / Cover",details:"<p>Les unit\xE9s adjacentes \xE0 cette unit\xE9 (alli\xE9es ou non) b\xE9n\xE9ficient d\u2019un couvert contre les attaques \xE0 distance. La valeur D indique les d\xE9s ou symboles automatiques que les unit\xE9s adjacentes ajoutent \xE0 leur jet de d\xE9fense.</p>"},{title:"Dissipation (D) / Dispel",details:'<p>Lorsque cette unit\xE9 est cibl\xE9e par un sort, elle peut tenter de le bloquer. La valeur D indique le d\xE9 ou les symboles automatiques \xE0 lancer pour bloquer le sort. Cette unit\xE9 ne gagne pas de Teinte sur un <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>. On ne peut pas bloquer un sort plus d\u2019une fois ni avec plus d\u2019une unit\xE9.</p>'},{title:"\xC9claireur / Scout",details:`
+
       <p>
       Les unit\xE9s d\u2019\xC9claireurs peuvent se d\xE9ployer juste apr\xE8s que toutes les autres unit\xE9s des deux camps ont fini de se d\xE9ployer. Ils repr\xE9sentent des avant-gardes qui ont reconnu le terrain et qui choisissent la meilleure position.
       </p>
       <p>Si votre aversaire poss\xE8de aussi des \xE9claieurs, celui qui a l'initiative d\xE9cide qui d\xE9ploie 1 de ses unit\xE9s d'Eclaireurs en premier. Vous et votre adversaire devez alterner jusqu'\xE0 ce que vous ayez d\xE9ploy\xE9 tous vos Eclaireurs.
       </p>
+      <p>Les unit\xE9s \xE9claireur doivent toujours se d\xE9ployer selon ces r\xE8gles</p>
+      <ul>
+        <li>
+          Vous pouvez d\xE9ployer votre unit\xE9 d\u2019\xC9claireurs n\u2019importe o\xF9 dans votre zone de d\xE9ploiement (mais pas engag\xE9e en combat).
+        </li>
+        <li>
+          Vous pouvez d\xE9ployer votre unit\xE9 d\u2019\xC9claireurs adjacente \xE0 un des bords du champ de bataille, tant que vous \xEAtes hors de la  zone de d\xE9ploiement de votre adversaire et qu\u2019aucune unit\xE9 ennemie \xE0 12 pas ou moins n\u2019a de LdV sur votre unit\xE9.
+        </li>
+      </ul>
       <p>
-      Vous pouvez aussi garder vos unit\xE9s d\u2019\xC9claireurs secr\xE8tes et les d\xE9ployer une fois la partie commenc\xE9e, en respectant les contraintes
-        suivantes :</p>
-    <ul>
-      <li>
-        Vous pouvez d\xE9ployer votre unit\xE9 d\u2019\xC9claireurs n\u2019importe o\xF9 dans votre zone de d\xE9ploiement (mais pas engag\xE9e en combat).
-      </li>
-      <li>
-        Vous pouvez d\xE9ployer votre unit\xE9 d\u2019\xC9claireurs adjacente \xE0 un des bords du champ de bataille, tant que vous \xEAtes hors de la  zone de d\xE9ploiement de votre adversaire et qu\u2019aucune unit\xE9 ennemie \xE0 12 pas ou moins n\u2019a de LdV sur votre unit\xE9.
-      </li>
-    </ul>
-
+      Vous pouvez aussi garder vos unit\xE9s d\u2019\xC9claireurs secr\xE8tes et les d\xE9ployer une fois la partie commenc\xE9e, en respectant ces m\xEAmes contraintes.</p>
     <p>
       Si vous d\xE9ployez une unit\xE9 d\u2019\xC9claireur apr\xE8s le d\xE9but de la partie, vous devez l\u2019activer imm\xE9diatement et consommer une de vos deux actions pour son activation. Ainsi, elle ne pourra r\xE9aliser qu\u2019une seule action, qui ne peut pas \xEAtre une action complexe.
     </p>
@@ -273,15 +273,6 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         <li>Pour chaque <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
         <li>Si le lanceur poss\xE8de des <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, appliquez les effets de la teinte.</li>
       </ol>
-      <p>Bloquer un sort</p>
-      <ol>
-        <li>D\xE9clarer votre intention de bloquer le sort pendant l'\xE9tat 2 du lancement. </li>
-        <li>Le sort peut \xEAtre bloqu\xE9 par la cible si elle a le mot-clef Dissipation, ou par un mage situ\xE9 \xE0 moins de 20 pas de l'ennemi qui lance le sort.</li>
-        <li>Formez le test de blocage : prenez 3 <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, ou les d\xE9s indiqu\xE9s par la comp\xE9tence Dissipation, et lancez les. Le r\xE9sultat sera oppos\xE9 au test de lancement du sort durant l'\xE9tape 3./</li>
-        <li>Pour chaque <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> obtenu, l'unit\xE9 qui bloque le sort re\xE7oit <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/> </li>
-        <li>Si vous avez obtenu au moins un <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>, appliquez les effets de la teinte \xE0 la fin de l'activation. </li>
-      </ol>
-      <p>Vous ne pouvez pas tenter de bloquer un sort plus d'une fois ou avec plusieurs unit\xE9s.</p>
   `},{title:"Capacit\xE9 de teinte",details:`
       <ul>
         <li>Choisissez votre capacit\xE9 de teinte.</li>
@@ -333,7 +324,7 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
   `},{title:"Contrer un sort",details:`
       <p>Vous pouvez d\xE9clarer cette r\xE9action quand : </p>
       <ul>
-          <li>Votre unit\xE9 est un lanceur de sort et se trouve \xE0 mois de 20 pas de l'ennemi qui lance le sort.</li>
+          <li>Vous avez un lanceur de sort sur le champs de bataille.</li>
           <li>Vous poss\xE9dez le mot clef dissipation et vous \xEAtes la cible du sort.</li>
       </ul>
       <ol>
@@ -735,6 +726,7 @@ counter than their rival\u2019s</li>
     <ol>
       <li><b>Rassemblez vos d\xE9s respectifs.</b> En cas d'attaque \xE0 distance, le d\xE9fenseur ne peut pas utiliser de d\xE9 d'attaque (rouge, orange, jaune).</li>
       <li>Si une r\xE8gle ou un effet vous permet d\u2019ajouter des d\xE9s ou vous oblige \xE0 en retirer, faites-le maintenant. </li>
+      <li>Si plusieurs unit\xE9s sont en combat contre vous, vous devez retirez 1 d\xE9 ou symbole automatique par unit\xE9 au d\xE9l\xE0 de la premi\xE8re.</li>
       <li>Le joueur d\xE9fenseur d\xE9clare s'il stress son unit\xE9 pour activer des modificateurs en d\xE9fense.</li>
       <li>Le joueur actif d\xE9clare s'il stress son unit pour activer des modificateurs en attaque.</li>
       <li><b>Lancez les d\xE9s</b> en m\xEAme temps.</li>
@@ -905,13 +897,15 @@ have not been able to cancel any dice, the state is considered to remain active)
       <p>Place this marker on your unit after it activates. If it activates again this round, stress it..</p>
       <p>At the end of the round, remove this marker.</p>
     `,icon:"activation.png"}],sR=[{title:"Cover (D)",details:"<p>Units adjacent to this unit (allied or not) can benefit from cover against ranged attacks. The value D indicates the automatic dice or symbols that adjacent units add to their defense roll.</p>"},{title:"Dispel (D)",details:'<p>When this unit is targeted by a spell, it can attempt to block it. The D value indicates the dice or automatic symbols rolled to block the spell. This unit does not gain Tinge from a <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>. You cannot attempt to block a spell more than once or with more than one unit.</p>'},{title:"Scout",details:`
+
       <p>Scout units can deploy right after all other units on both sides have finished deploying. They represent advance guards that have recognized the terrain or the enemy and choose the best position.</p>
       <p>If your opponent also has Scout units, whoever has the initiative decides who deploys one of their Scout units first. You and your opponent must alternate until you have deployed all of them.</p>
-      <p>You can also keep your Scout unit secret and deploy it once the game has started, under the following restrictions:</p>
+      <p>Your Scout units must always follow these rules: </p>
       <ul>
         <li>You may deploy it unit anywhere in your deployment zone (it cannot be deployed engaged in combat).</li>
         <li>You may deploy it unit adjacent to one of the battlefield edges, as long as you do not enter your opponent\u2019s deployment zone and no enemy units within 12 strides have Line of Sight (LoS) to it.</li>
       </ul>
+      <p>You can also keep your Scout unit secret and deploy it once the game has started, under this restriction.</p>
       <p>If you deploy it once the game has started, you must activate it immediately and spend one of your two actions for its activation. Thus, it can only perform one action that cannot be long.</p>
     `},{title:"Elite",details:'<p>Once the dice have been rolled (rerolls included) and before the switches step, this unit may replace any <span class="warcrow-font-HollowSuccess" role="img" aria-label="Hollow Success" ></span> with <span class="warcrow-font-Success" role="img" aria-label="Success" ></span>, any <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> with <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>, and any <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow Special" ></span> with <span class="warcrow-font-Special" role="img" aria-label="Special" ></span>. This effect applies to all rolls made by this unit.</p>'},{title:"Ambusher",details:`
       <p>Ambusher units wait in hiding, ready to strike once the battle has already started. You can keep your Ambusher units secret and not deploy them until after the game has started.</p>
@@ -1036,15 +1030,6 @@ elements.</li>
         <li>For each <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> rolled in the Tinge roll, gain one <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</li>
         <li>If the caster has any <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>, apply the Tinge effects.</li>
       </ol>
-      <p><b>Blocking a Spell</b></p>
-      <ol>
-        <li>Declare your intention to block the spell during step 2 of casting.</li>
-        <li>A spell may be blocked either by its target if it has the Dispel keyword, or by a Mage within 20 strides of the enemy caster.</li>
-        <li>Form the blocking test: take 3 <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, or the dice indicated by the Dispel skill, and roll them. The result will be opposed to the casting roll during step 3.</li>
-        <li>For each <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> rolled, the unit blocking the spell gains one <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</li>
-        <li>If you rolled at least one <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>, apply the Tinge effects at the end of the activation.</li>
-      </ol>
-      <p>You cannot attempt to block a spell more than once or with more than one unit.</p>
     `},{title:"Tinge Ability",details:`
       <ul>
         <li>Choose your Tinge ability.</li>
@@ -1097,7 +1082,7 @@ elements.</li>
   `},{title:"Counterspell",details:`
       <p>You can declare this reactions when : </p>
       <ul>
-          <li>Your unit is a mage within 20 strides of the enemy caster.</li>
+          <li>Your unit is a mage in the battlefield.</li>
           <li>You are the target of the spell and has the Dispel keyword.</li>
       </ul>
       <p>Follow this steps :</p>
@@ -1469,6 +1454,7 @@ counter than their rival\u2019s</li>
     <ol>
       <li><b>Gather your respective dice.</b> In a ranged attack, the defender cannot use attack dice (red, orange, yellow).</li>
       <li>If any rule or effect allows you to add dice or forces you to remove them, do it now. This is when states are applied.</li>
+      <li>If your unit is engaged with more than one enemy unit, you must cancel one die or automatic symbol for each enemy unit engaged with you above the first.</li>
       <li><b>Roll the dice</b> simultaneously.</li>
       <li><b>Add automatic symbols</b> to your rolls, if any.</li>
       <li><b>Active player switches.</b> The player whose activation is in progress may spend as many symbols as they wish to apply any of their available switches for this roll.</li>
