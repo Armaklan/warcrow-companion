@@ -113,23 +113,23 @@ const MOTS_CLEFS: CollapsibleItem[] = [
   {
     title: 'Éclaireur / Scout',
     details: `
+
       <p>
       Les unités d’Éclaireurs peuvent se déployer juste après que toutes les autres unités des deux camps ont fini de se déployer. Ils représentent des avant-gardes qui ont reconnu le terrain et qui choisissent la meilleure position.
       </p>
       <p>Si votre aversaire possède aussi des éclaieurs, celui qui a l'initiative décide qui déploie 1 de ses unités d'Eclaireurs en premier. Vous et votre adversaire devez alterner jusqu'à ce que vous ayez déployé tous vos Eclaireurs.
       </p>
+      <p>Les unités éclaireur doivent toujours se déployer selon ces règles</p>
+      <ul>
+        <li>
+          Vous pouvez déployer votre unité d’Éclaireurs n’importe où dans votre zone de déploiement (mais pas engagée en combat).
+        </li>
+        <li>
+          Vous pouvez déployer votre unité d’Éclaireurs adjacente à un des bords du champ de bataille, tant que vous êtes hors de la  zone de déploiement de votre adversaire et qu’aucune unité ennemie à 12 pas ou moins n’a de LdV sur votre unité.
+        </li>
+      </ul>
       <p>
-      Vous pouvez aussi garder vos unités d’Éclaireurs secrètes et les déployer une fois la partie commencée, en respectant les contraintes
-        suivantes :</p>
-    <ul>
-      <li>
-        Vous pouvez déployer votre unité d’Éclaireurs n’importe où dans votre zone de déploiement (mais pas engagée en combat).
-      </li>
-      <li>
-        Vous pouvez déployer votre unité d’Éclaireurs adjacente à un des bords du champ de bataille, tant que vous êtes hors de la  zone de déploiement de votre adversaire et qu’aucune unité ennemie à 12 pas ou moins n’a de LdV sur votre unité.
-      </li>
-    </ul>
-
+      Vous pouvez aussi garder vos unités d’Éclaireurs secrètes et les déployer une fois la partie commencée, en respectant ces mêmes contraintes.</p>
     <p>
       Si vous déployez une unité d’Éclaireur après le début de la partie, vous devez l’activer immédiatement et consommer une de vos deux actions pour son activation. Ainsi, elle ne pourra réaliser qu’une seule action, qui ne peut pas être une action complexe.
     </p>
@@ -409,15 +409,6 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>Pour chaque <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
         <li>Si le lanceur possède des <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, appliquez les effets de la teinte.</li>
       </ol>
-      <p>Bloquer un sort</p>
-      <ol>
-        <li>Déclarer votre intention de bloquer le sort pendant l'état 2 du lancement. </li>
-        <li>Le sort peut être bloqué par la cible si elle a le mot-clef Dissipation, ou par un mage situé à moins de 20 pas de l'ennemi qui lance le sort.</li>
-        <li>Formez le test de blocage : prenez 3 <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, ou les dés indiqués par la compétence Dissipation, et lancez les. Le résultat sera opposé au test de lancement du sort durant l'étape 3./</li>
-        <li>Pour chaque <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> obtenu, l'unité qui bloque le sort reçoit <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/> </li>
-        <li>Si vous avez obtenu au moins un <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>, appliquez les effets de la teinte à la fin de l'activation. </li>
-      </ol>
-      <p>Vous ne pouvez pas tenter de bloquer un sort plus d'une fois ou avec plusieurs unités.</p>
   `
   },
   {
@@ -499,7 +490,7 @@ const ACTIONS_REACTIONS: CollapsibleItem[] = [
     title: 'Contrer un sort', details: `
       <p>Vous pouvez déclarer cette réaction quand : </p>
       <ul>
-          <li>Votre unité est un lanceur de sort et se trouve à mois de 20 pas de l'ennemi qui lance le sort.</li>
+          <li>Vous avez un lanceur de sort sur le champs de bataille.</li>
           <li>Vous possédez le mot clef dissipation et vous êtes la cible du sort.</li>
       </ul>
       <ol>

@@ -139,13 +139,15 @@ const MOTS_CLEFS: CollapsibleItem[] = [
   {
     title: 'Scout',
     details: `
+
       <p>Scout units can deploy right after all other units on both sides have finished deploying. They represent advance guards that have recognized the terrain or the enemy and choose the best position.</p>
       <p>If your opponent also has Scout units, whoever has the initiative decides who deploys one of their Scout units first. You and your opponent must alternate until you have deployed all of them.</p>
-      <p>You can also keep your Scout unit secret and deploy it once the game has started, under the following restrictions:</p>
+      <p>Your Scout units must always follow these rules: </p>
       <ul>
         <li>You may deploy it unit anywhere in your deployment zone (it cannot be deployed engaged in combat).</li>
         <li>You may deploy it unit adjacent to one of the battlefield edges, as long as you do not enter your opponent’s deployment zone and no enemy units within 12 strides have Line of Sight (LoS) to it.</li>
       </ul>
+      <p>You can also keep your Scout unit secret and deploy it once the game has started, under this restriction.</p>
       <p>If you deploy it once the game has started, you must activate it immediately and spend one of your two actions for its activation. Thus, it can only perform one action that cannot be long.</p>
     `
   },
@@ -368,15 +370,6 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>For each <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> rolled in the Tinge roll, gain one <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</li>
         <li>If the caster has any <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>, apply the Tinge effects.</li>
       </ol>
-      <p><b>Blocking a Spell</b></p>
-      <ol>
-        <li>Declare your intention to block the spell during step 2 of casting.</li>
-        <li>A spell may be blocked either by its target if it has the Dispel keyword, or by a Mage within 20 strides of the enemy caster.</li>
-        <li>Form the blocking test: take 3 <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, or the dice indicated by the Dispel skill, and roll them. The result will be opposed to the casting roll during step 3.</li>
-        <li>For each <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> rolled, the unit blocking the spell gains one <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</li>
-        <li>If you rolled at least one <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>, apply the Tinge effects at the end of the activation.</li>
-      </ol>
-      <p>You cannot attempt to block a spell more than once or with more than one unit.</p>
     `
   },
   {
@@ -465,7 +458,7 @@ const ACTIONS_REACTIONS: CollapsibleItem[] = [
     title: 'Counterspell', details: `
       <p>You can declare this reactions when : </p>
       <ul>
-          <li>Your unit is a mage within 20 strides of the enemy caster.</li>
+          <li>Your unit is a mage in the battlefield.</li>
           <li>You are the target of the spell and has the Dispel keyword.</li>
       </ul>
       <p>Follow this steps :</p>
