@@ -258,6 +258,11 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         <li>Le d\xE9fenseur ne peut utiliser que <span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>  <span class="warcrow-font-Green" role="img" aria-label="Green dice" ></span> <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> <span class="warcrow-font-Block" role="img" aria-label="Block" ></span> et <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> dans son jet de d\xE9fense.</li>
         <li>R\xE9solvez un jet face \xE0 face entre le jet d'attaque et le jet de d\xE9fense. Chaque <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span> non annul\xE9 inflige <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> \xE0 l'unit\xE9 ennemie. Le d\xE9fenseur ne peut pas agir sur les variations.</li>
     </ul>
+    <p>Cette action est interdite si vous \xEAtes au corps \xE0 corps.</p>
+    <h3>Attaque \xE0 distance en m\xEAl\xE9e</h3>
+    <p>Vous pouvez ciblez une unit\xE9 ennemi engag\xE9 au combat contre une unit\xE9 ami. Dans ce cas, vous devez consid\xE9rez votre propre
+    unit\xE9 comme \xE9tant un \xE9lement de jeu qui offre un Couvert <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>
+    L'unit\xE9 ami subira un stress \xE0 la fin de l'activation.</p>
   `},{title:"Lancer un sort",details:`
       <ol>
         <li>Choisissez votre sort et d\xE9clarez si vous appliquez des alt\xE9rations, puis v\xE9rifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
@@ -267,6 +272,7 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         <li>Le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span></li>
         <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span> sur le jet, appliquez les effets du sort. </li>
       </ol>
+      <p>Si vous \xEAtes au corps \xE0 corps, cette action ne peut cibler que votre unit\xE9 ou une unit\xE9 ennemis avec laquelle vous \xEAtes engag\xE9e.</p>
       <p>Jet de teinte</p>
       <ol>
         <li>Cr\xE9ez le jet de teinte : prenez <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> comme indiqu\xE9 dans les alt\xE9rations choisis du sort.</li>
@@ -279,11 +285,13 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         <li>D\xE9pensez <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>
         <li>Appliquez les effets de la capacit\xE9.</li>
     </ul>
+    <p>Si vous \xEAtes au corps \xE0 corps, cette action ne peut cibler que votre unit\xE9 ou une unit\xE9 ennemis avec laquelle vous \xEAtes engag\xE9e.</p>
   `},{title:"Utiliser une comp\xE9tence",details:`
       <ul>
         <li>Choisissez votre comp\xE9tence et v\xE9rifier que les conditions sont remplis.</li>
         <li>Appliquez les effets de la capacit\xE9.</li>
     </ul>
+    <p>Si vous \xEAtes au corps \xE0 corps, cette action ne peut cibler que votre unit\xE9 ou une unit\xE9 ennemis avec laquelle vous \xEAtes engag\xE9e.</p>
   `}],Wk=[{title:"Assaut",details:`
     <ul>
         <li>D\xE9placez-vous jusqu'\xE0 engager le combat avec l'ennemi, en utilisant votre premi\xE8re puis votre seconde valeur de mouvement.</li>
@@ -302,11 +310,13 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         <li>Effectuer un mouvement en utilisant uniquement sa deuxi\xE8me valeur de Mouvement.</li>
     </ul>
     <p>M\xEAme si elle a d\xE9j\xE0 \xE9t\xE9 activ\xE9e pendant ce round, l'unit\xE9 n'est pas stress\xE9e en effectuant cette action.</p>
+    <p>Une unit\xE9 ne peut d\xE9clarer cette action au corps \xE0 corps.</p>
   `},{title:"Utiliser une comp\xE9tence longue",details:`
       <ul>
         <li>Choisissez votre comp\xE9tence avec le symbole <span class="warcrow-font-LongAction" role="img" aria-label="Long Action" ></span> et v\xE9rifier que les conditions sont remplis.</li>
         <li>Appliquez les effets de la capacit\xE9.</li>
     </ul>
+    <p>Si vous \xEAtes au corps \xE0 corps, cette action ne peut cibler que votre unit\xE9 ou une unit\xE9 ennemis avec laquelle vous \xEAtes engag\xE9e.</p>
   `}],Zk=[{title:"Tenir et tirer",details:`
     <p>Vous pouvez d\xE9clarer cette r\xE9action quand : </p>
     <ul>
@@ -1015,6 +1025,17 @@ elements.</li>
         <li>The defender can only use <span class="warcrow-font-Blue" role="img" aria-label="Blue dice" ></span>, <span class="warcrow-font-Green" role="img" aria-label="Green dice" ></span>, <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, <span class="warcrow-font-Block" role="img" aria-label="Block" ></span> and <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> in their defense roll.</li>
         <li>Resolve a Face to Face roll between the attack roll and the defense roll. Each unblocked <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> inflicts a <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> on the enemy unit. The defender cannot apply switches.</li>
       </ul>
+      <h3>Ranged attack on a combat</h3>
+      <p>
+You can make a ranged attack against an
+enemy unit that is engaged in combat
+with a friendly unit. In this case, you must
+consider your own unit to be a game
+element that provides Cover <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, only in
+this case, following the LoS and Cover
+rules. Additionally, the friendly unit will
+become stressed at the end of the
+activation.</p>
     `},{title:"Cast a Spell",details:`
       <ol>
         <li>Choose your spell and declare any alterations, then check the casting requirements. If they are not met, you cannot cast the spell.</li>
