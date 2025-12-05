@@ -955,7 +955,7 @@ banner, placing an event token on their profile card.</p>
 Character.</li>
   </ul>
   <h2>Banner</h2>
-  <p>For each L inflicted by the unit carrying the banner,
+  <p>For each <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> inflicted by the unit carrying the banner,
 its company advances their glory meter 1 position
 on the turn counter. If the glory meter is on position
 “10”, move the rival company’s glory meter back (to a

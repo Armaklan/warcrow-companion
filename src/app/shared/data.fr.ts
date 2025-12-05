@@ -830,245 +830,225 @@ const SCENARIO: Scenario[] = [{
  quelle compagnie le contrôle.</i></p>
   `
 }];
-
 const FEAT: Feat[] = [{
   title: 'Traque',
   requiredMaterial: [],
   scoring: `
-  <p>When a company advances their track meter to
-position “4” of the turn counter it obtains 4 AP and the
-rival company obtains as many AP as its current position
-on the track meter minus 1. From this moment on,
-units can no longer track vestiges.</p>
-  <p>At the end of the game, if neither company got their
-track meter to position “4”:</p>
-  <ul>Each company obtains as many AP as the current
-position of their track meter.</ul>
-  `,
-  additionnal: `
-  <h2>Préparation</h2>
-  <p>The company that wins the initiative receives event
-tokens 1 and 3, the rival company receives event tokens
-2 and 4.</p>
-  <p>Each company places one of their event tokens on the
-“1” position of the turn counter (track meter).</p>
-  <p>After deploying all units in the game preparation phase
-(including Scouts), each company, in deployment order,
-places their remaining event token on any point of
-the battlefield farther than 10 strides away from their
-deployment zone (vestige).</p>
-  <h2>Tracking and Vestiges</h2>
+  <p>Lorsqu’une compagnie fait progresser son indicateur de traque
+jusqu’à la position « 4 » du compteur de tours, elle obtient 4 PA
+et la compagnie rivale obtient un nombre de PA égal à la position
+actuelle de son propre indicateur de traque moins 1.
+À partir de ce moment, les unités ne peuvent plus traquer de vestiges.</p>
+
+  <p>À la fin de la partie, si aucune compagnie n’a atteint la position « 4 » :</p>
   <ul>
-  <li>Event tokens on the turn counter represent each
-company’s track meter.</li>
-<li>Event tokens on the battlefield represent vestiges.</li>
-<li>Units may move through vestiges, but cannot finish
-their movement or be placed on them.</li>
-<li>Each company has their own track meter and own
-vestiges.</li>
-<li>Companies cannot interact with the rival’s vestiges.</li>
-</ul>
-<h3>Tracking a vestige</h3>
-<p>Character units and units with a joined Character that
-finish their activation adjacent to their company’s vestige
-can track it:</p>
-<ul>
-<li>The unit makes a WP test.</li>
-<li>Scout and Ambusher units add <span class="warcrow-font-Orange" role="img" aria-label="Orange Dice" ></span> to their roll.</li>
-<li>During the switches step of the roll, units may suffer
-1 stress to add 1<span class="warcrow-font-Success" role="img" aria-label="Success" ></span>  to their roll.</li>
-<li>When a unit passes the test with 2 <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> , the company
-advances the track meter by 1 position on the
-turn counter. Then, the rival company must place
-the vestige at 15 strides of its current position (it
-cannot be placed on <em>Impassable</em> terrain).</li>
-</ul>
-  `
-}, {
-  title: 'Decapitation',
-  requiredMaterial: [
-    '2 event token'
-  ],
-  scoring: `
-    <p>At the end of the game, each company obtains :
-    <ul>
-    <li>2 AP if they eliminated the rival’s commander.</li>
-    <li>1 AP if their commander hasn’t been eliminated.</li>
-    <li>1 AP if they eliminated their contract.</li>
-    </ul>
-  `,
-  additionnal: `
-  <h2>Commander</h2>
-  <ul>
-  <li>Companies must deploy their commander during
-the deployment phase (they cannot use Scout or
-Ambusher).</li>
-  <li>If the commander is removed from the battlefield by
-any effect it will be considered eliminated (for scoring
-purposes)</li>
-  <li>The commander cannot join any unit.</li>
-  </ul>
-  <h2>Contract</h2>
-  <p>After deploying all units in the game preparation
-phase (including Scouts), each company, in deployment
-order, chooses a unit from the rival company as their
-contract (place an event token on their profile card).</p>
-  <ul>
-  <li>The contract cannot be the commander</li>
-  <li>If the contract is removed from the battlefield by
-any effect it will be considered eliminated (for scoring
-purposes).</li>
-  <li>If the unit with the contract has a joined Character,
-the contract will be considered eliminated once the
-unit is destroyed, even if the Character survives.</li>
-  <li>A company that couldn’t choose its contract
-(because there were no deployed enemy units) will
-do so at the end of the round. A demoralized unit
-cannot be chosen as a contract. If a company still
-can’t choose its contract at the end of a round, it will
-do so at the end of the next one.</li>
-  </ul>
-  `
-}, {
-  title: 'The rift',
-  requiredMaterial: [
-    '2 fog markers.',
-    '2 event tokens.'
-  ],
-  scoring: `
-  <p>At the end of the game, each company gets 2 AP for
-each fog marker it obtained.</p>
-  `,
-  additionnal: `
-  <h2>Fog</h2>
-  <p>After deploying all units in the preparation phase
-(including Scouts), each company, in deployment order,
-must place a fog marker further than 20 strides from
-their deployment zone.</p>
-  <p>These fog markers apply the fog rules (terrain element)
-and are Immovable.</p>
-  <p>Character units and units with a joined Character that
-finish their activation adjacent to one of the event fog
-markers may begin sealing the rift.</p>
-  <h2>Sealing the Rift</h2>
-  <p>The unit performs a WP test, using the Character’s WP.
-The company places an event token on the turn counter,
-6 positions ahead of the current turn, and then moves it
-back 1 position for each <span class="warcrow-font-Success" role="img" aria-label="Success" ></span>  they got in the test.</p>
-  <ul>
-  <li>Spellcaster Characters add <span class="warcrow-font-Orange" role="img" aria-label="Orange Dice" ></span> to their roll.</li>
-  </ul>
-  <p>Remove the event token if:</p>
-  <ul>
-  <li>The unit is no longer adjacent to the fog marker.</li>
-  <li>The unit activates.</li>
-  <li>The Character is taken out of combat.</li>
-  <li>The Character leaves the unit.</li>
-  </ul>
-  <p>A unit cannot begin sealing a rift that is already being
-sealed by another unit.</p>
-  <p>When the event token is activated, the company sealing
-the rift obtains the fog marker (and removes it from the
-battlefield).</p>
-  `
-}, {
-  title: 'Banner',
-  requiredMaterial: [
-    '4 event tokens, numbered from 1 to 4.'
-  ],
-  scoring: `
-  <p>At the end of the game, each company gets:</p>
-  <ul>
-  <li>1 AP if their rival lost its banner at any point.</li>
-  <li>1 AP if they didn’t lose their own banner</li>
-  <li>1 AP if their glory meter is on the same position as
-their rivals.</li>
-  <li>2 AP if their glory meter is higher on the turn
-counter than their rivals.</li>
+    <li>Chaque compagnie obtient un nombre de PA égal à la position
+    actuelle de son indicateur de traque.</li>
   </ul>
   `,
   additionnal: `
   <h2>Préparation</h2>
-  <p>The company that wins the initiative receives event
-tokens 1 and 3, the rival company receives event tokens
-2 and 4.</p>
-  <p>Each company places one of their event tokens on the
-“1” position of the turn counter (glory meter).</p>
-  <p>After deploying all units in the game preparation phase
-(including Scouts), each company, in deployment order,
-chooses one of their deployed units to carry the
-banner, placing an event token on their profile card.</p>
+  <p>La compagnie qui gagne l’initiative reçoit les marqueurs d’événement 1 et 3,
+la compagnie rivale reçoit les marqueurs 2 et 4.</p>
+  <p>Chaque compagnie place l’un de ses marqueurs d’événement sur la
+position « 1 » du compteur de tours (indicateur de traque).</p>
+  <p>Après avoir déployé toutes les unités lors du déploiement, éclaireur compris, chaque compagnie,
+place dans l’ordre de d'initiative son marqueur d’événement restant sur n’importe quel point du champ de bataille
+situé à plus de 10 pas de sa zone de déploiement (vestige).</p>
+
+  <h2>Traque et Vestiges</h2>
   <ul>
-  <li>Characters carrying the banner cannot join a unit</li>
-  <li>A unit carrying the banner cannot have a joined
-Character.</li>
+    <li>Les marqueurs sur le compteur de tours représentent l’indicateur de traque de chaque compagnie.</li>
+    <li>Les marqueurs sur le champ de bataille représentent les vestiges.</li>
+    <li>Les unités peuvent traverser un vestige mais ne peuvent pas terminer leur mouvement dessus ni y être placées.</li>
+    <li>Chaque compagnie a son propre indicateur de traque et ses propres vestiges.</li>
+    <li>Les compagnies ne peuvent pas interagir avec les vestiges adverses.</li>
   </ul>
-  <h2>Banner</h2>
-  <p>For each L inflicted by the unit carrying the banner,
-its company advances their glory meter 1 position
-on the turn counter. If the glory meter is on position
-“10”, move the rival company’s glory meter back (to a
-minimum of 1).</p>
-<h3>Lost banner</h3>
-<p>If the unit carrying the banner flees, is destroyed or
-leaves the battlefield, the company controlling it places
-the banner on the battlefield, adjacent to its leader,
-before removing the unit from the battlefield or fleeing.</p>
-<h3>Pick up the banner</h3>
-<p>If a company’s banner is on the battlefield, any adjacent
-allied unit may pick it up performing the Pick up banner
-simple action.</p>
+
+  <h3>Traquer un vestige</h3>
+  <p>Une unité de type Personnage, ou une unité accompagnée d’un Personnage,
+qui termine son activation adjacente à un vestige de sa compagnie peut tenter de l'explorer :</p>
+  <ul>
+    <li>L’unité effectue un test de VOL.</li>
+    <li>Les unités Éclaireurs et Embusquées ajoutent un <span class="warcrow-font-Orange"></span> à leur jet.</li>
+    <li>Lors de l’étape des conversions, l’unité peut subir 1 stress pour
+    ajouter 1<span class="warcrow-font-Success"></span> au résultat.</li>
+    <li>Si l’unité réussit le test avec 2 <span class="warcrow-font-Success"></span>,
+    la compagnie avance son indicateur de traque d’une position.
+    La compagnie rivale doit alors replacer le vestige à 15 pas de sa position actuelle
+    (sans le placer sur du terrain <em>Infranchissable</em>).</li>
+  </ul>
   `
 }, {
-  title: 'Resources',
+  title: 'Décapitation',
   requiredMaterial: [
-    '2 event tokens.'
+    '2 marqueurs d’événement'
+  ],
+  scoring: `
+  <p>À la fin de la partie, chaque compagnie obtient :</p>
+  <ul>
+    <li>2 PA si elle a éliminé le commandant adverse.</li>
+    <li>1 PA si son propre commandant n’a pas été éliminé.</li>
+    <li>1 PA si elle a éliminé la cible de son contrat.</li>
+  </ul>
+  `,
+  additionnal: `
+  <h2>Commandant</h2>
+  <ul>
+    <li>Les compagnies doivent déployer leur commandant lors de la phase de déploiement
+    (il ne peut pas utiliser Eclaireur ou Embusqué).</li>
+    <li>Si le commandant est retiré du champ de bataille par n’importe quel effet,
+    il est considéré comme éliminé pour le décompte du score.</li>
+    <li>Le commandant ne peut rejoindre aucune unité.</li>
+  </ul>
+
+  <h2>Contrat</h2>
+  <p>Après le déploiement, chaque compagnie, dans l’ordre d'initiative, choisit une unité ennemie
+comme cible de contrat (placez un marqueur sur sa carte de profil).</p>
+  <ul>
+    <li>La cible de contrat ne peut pas être le commandant.</li>
+    <li>Si la cible quitte le champ de bataille, elle est considérée éliminée.</li>
+    <li>Si une unité cible est rejointe par un Personnage, le contrat est rempli lorsque l’unité est détruite,
+    même si le Personnage survit.</li>
+    <li>Si une compagnie ne peut pas choisir de contrat (ex. aucune unité ennemi déployée),
+    elle le choisira à la fin du round suivant.</li>
+  </ul>
+  `
+}, {
+  title: 'La Faille',
+  requiredMaterial: [
+    '2 marqueurs de brouillard',
+    '2 marqueurs d’événement'
+  ],
+  scoring: `
+  <p>À la fin de la partie, chaque compagnie gagne 2 PA
+pour chaque marqueur de brouillard qu’elle a obtenu.</p>
+  `,
+  additionnal: `
+  <h2>Brouillard</h2>
+  <p>Après le déploiement des unités (y compris les éclaireurs),
+chaque compagnie, dans l’ordre de déploiement,
+place un marqueur de brouillard à plus de 20 pas
+de sa zone de déploiement.</p>
+  <p>Ces marqueurs appliquent les règles de Brouillard (terrain)
+et sont Inamovibles.</p>
+
+  <p>Les unités Personnages, ou unités rejointe par un Personnage,
+qui terminent leur activation adjacentes à un marqueur
+peuvent commencer à sceller la faille.</p>
+
+  <h2>Sceller la Faille</h2>
+  <p>L’unité effectue un test de VOL en utilisant la VOL du Personnage.
+La compagnie place un marqueur d’événement sur le compteur de tours,
+6 positions après celle actuelle, puis recule ce marqueur d’une position
+par <span class="warcrow-font-Success"></span> obtenu.</p>
+  <ul>
+    <li>Les Personnages Lanceurs de sorts ajoutent un <span class="warcrow-font-Orange"></span>.</li>
+  </ul>
+
+  <p>Retirez le marqueur si :</p>
+  <ul>
+    <li>L’unité n’est plus adjacente au brouillard.</li>
+    <li>L’unité s’active.</li>
+    <li>Le Personnage est mis hors combat.</li>
+    <li>Le Personnage quitte l’unité.</li>
+  </ul>
+
+  <p>Une unité ne peut pas sceller une faille déjà en cours de scellement.</p>
+
+  <p>Lorsque le marqueur d'évènement est résolu, la compagnie obtient le marqueur de brouillard
+(et le retire du champ de bataille).</p>
+  `
+}, {
+  title: 'Bannière',
+  requiredMaterial: [
+    '4 marqueurs d’événement numérotés de 1 à 4'
+  ],
+  scoring: `
+  <p>À la fin de la partie, chaque compagnie gagne :</p>
+  <ul>
+    <li>1 PA si la bannière adverse a été perdue au moins une fois.</li>
+    <li>1 PA si elle n’a pas perdu sa propre bannière.</li>
+    <li>1 PA si les deux compteurs de gloire sont sur la même position.</li>
+    <li>2 PA si son compteur de gloire est plus élevé que celui de l’adversaire.</li>
+  </ul>
+  `,
+  additionnal: `
+  <h2>Préparation</h2>
+  <p>La compagnie ayant l’initiative reçoit les marqueurs 1 et 3,
+la rivale reçoit les marqueurs 2 et 4.</p>
+
+  <p>Chaque compagnie place un marqueur sur la position « 1 »
+du compteur (le niveau de gloire).</p>
+
+  <p>Après le déploiement, chaque compagnie choisit une unité
+déployée qui portera la bannière et place un marqueur sur sa carte.</p>
+
+  <ul>
+    <li>Les Personnages portant la bannière ne peuvent pas rejoindre une unité.</li>
+    <li>Une unité portant la bannière ne peut avoir de Personnage joint.</li>
+  </ul>
+
+  <h2>Bannière</h2>
+  <p>Pour chaque <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> infligé par l’unité portant la bannière,
+sa compagnie avance son niveau de gloire d’une position.
+Si elle atteint la position « 10 », le niveau adverse recule d’une position (jusqu'à un minimum de 1).</p>
+
+  <h3>Bannière perdue</h3>
+  <p>Si l’unité portant la bannière fuit, est détruite ou quitte le champ de bataille,
+la compagnie place la bannière au sol adjacente à la position de son chef avant de retirer l’unité.</p>
+
+  <h3>Ramasser la bannière</h3>
+  <p>Toute unité alliée adjacente peut la ramasser en effectuant l’action simple
+« Ramasser la bannière ».</p>
+  `
+}, {
+  title: 'Ressources',
+  requiredMaterial: [
+    '2 marqueurs d’événement'
   ],
   additionnal: `
-  <h2>Preparation</h2>
-  <p>The company that wins the initiative receives event
-token 1, the rival company receives event token 2.</p>
-  <p>Each company places their event token on position “1”
-of the turn counter (resource meter).</p>
-  <h2>Resources</h2>
-  <p>Units further than 12 strides from their deployment
-zone that are not engaged in combat may suffer 1 stress
-at the end of their activation to obtain resources.</p>
-  <h3>Obtain resources</h3>
-  <p>The unit performs a simple roll, the dice of which will
-depend on the amount of troops in the unit (Support
-counts when calculating the number of troops for this
-action). The unit’s company advances their resource
-meter 1 position for each <span class="warcrow-font-Success" role="img" aria-label="Success" ></span>
- they got. If the resource
-meter is on position “10”, instead of advancing the
-resource meter, move the rival company’s resource
-meter back (to a minimum of 1).</p>
-  <p>A company cannot obtain resources more than once
-per turn.</p>
-  <p>Dice rolled:</p>
+  <h2>Préparation</h2>
+  <p>La compagnie ayant l’initiative reçoit le marqueur 1,
+la rivale reçoit le marqueur 2.</p>
+
+  <p>Chaque compagnie place son marqueur sur la position « 1 »
+du compteur de tours (niveau de ressources).</p>
+
+  <h2>Ressources</h2>
+  <p>Les unités à plus de 12 pas de leur zone de déploiement,
+et non engagées, peuvent subir 1 stress à la fin de leur activation
+pour obtenir des ressources.</p>
+
+  <h3>Obtenir des ressources</h3>
+  <p>L’unité effectue un jet simple dont le nombre de dés dépend du nombre de troupes
+dans l’unité (Support inclus). La compagnie avance son compteur
+d’une position par <span class="warcrow-font-Success"></span> obtenu.
+Si le compteur est déjà à « 10 », la compagnie fait reculer celui
+de l’adversaire (min. 1) au lieu d’avancer le sien.</p>
+
+  <p>Une compagnie ne peut obtenir des ressources qu’une fois par tour.</p>
+
+  <p>Dés lancés :</p>
   <ul>
-  <li>1 Troop: <span class="warcrow-font-Yellow" role="img" aria-label="Yellow dice" ></span></li>
-  <li>2-3 Troops: <span class="warcrow-font-Yellow" role="img" aria-label="Yellow dice" ></span><span class="warcrow-font-Orange" role="img" aria-label="Orange dice" ></span></li>
-  <li>4+ Troops: <span class="warcrow-font-Yellow" role="img" aria-label="Yellow dice" ></span><span class="warcrow-font-Orange" role="img" aria-label="Orange dice" ></span><span class="warcrow-font-Red" role="img" aria-label="Red dice" ></span></li>
-</ul>
+    <li>1 troupe : <span class="warcrow-font-Yellow"></span></li>
+    <li>2–3 troupes : <span class="warcrow-font-Yellow"></span><span class="warcrow-font-Orange"></span></li>
+    <li>4+ troupes : <span class="warcrow-font-Yellow"></span><span class="warcrow-font-Orange"></span><span class="warcrow-font-Red"></span></li>
+  </ul>
 `,
   scoring: `
-  <p>At the end of the game, each company obtains:</p>
+  <p>À la fin de la partie, chaque compagnie obtient :</p>
   <ul>
-  <li>1 AP if their resource meter is on position 4 or
-higher.</li>
-  <li>1 AP if their resource meter is on position 7 or
-higher.</li>
-  <li>1 AP if their resource meter is on position 10.</li>
-  <li>1 AP if their resource meter is higher on the turn
-counter than their rival’s</li>
-</ul>
+    <li>1 PA si son compteur est à 4 ou plus.</li>
+    <li>1 PA s’il est à 7 ou plus.</li>
+    <li>1 PA s’il est à 10.</li>
+    <li>1 PA si son compteur est plus haut que celui de l’adversaire.</li>
+  </ul>
 `
 }];
 
 const PERSONNAGE_UNITE = {
-  title: 'Characters and Units',
+  title: 'Personnages et unités',
   html: `
     <h3>Rejoindre une unité durant l'activation</h3>
     <p>Pendant son activation, votre Personnage peut intégrer
