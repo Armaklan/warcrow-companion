@@ -1194,6 +1194,7 @@ export const LABEL = {
   scenario: {
     back: 'Retour',
     random: 'Aléatoire',
+    startEncounter: 'Créer la rencontre',
     material: 'Matériel requis',
     duree: {
       title: 'Durée d\'un round',

@@ -1150,6 +1150,7 @@ export const LABEL = {
   scenario: {
     back: 'Back',
     random: 'Random',
+    startEncounter: 'Start encounter',
     material: 'Required material',
     duree: {
       title: 'Rounds',

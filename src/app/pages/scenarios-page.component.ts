@@ -20,6 +20,12 @@ import { LanguageService } from '../shared/language.service';
         <mat-icon>shuffle</mat-icon>
         {{ labels.scenario.random || 'Aléatoire' }}
       </button>
+      @if (selectedScenarioIndex !== null && selectedFeatIndex !== null) {
+        <button class="create-btn" mat-raised-button color="accent" (click)="createEncounter()">
+          <mat-icon>play_arrow</mat-icon>
+          {{ labels.scenario.startEncounter }}
+        </button>
+      }
       @if (lastRandom && lastScenarioTitle && lastFeatTitle) {
         <a class="last-random-link" mat-stroked-button [routerLink]="['/scenarios','random', lastRandom.sid, lastRandom.fid]">
           <mat-icon>history</mat-icon>
@@ -33,7 +39,10 @@ import { LanguageService } from '../shared/language.service';
     } @else {
       <div class="grid">
         <a class="card-link" *ngFor="let s of scenarios; let i = index" [routerLink]="['/scenarios', i]">
-          <mat-card class="scenario-card" appearance="outlined">
+          <mat-card class="scenario-card" appearance="outlined" [class.selected]="selectedScenarioIndex === i">
+            <button mat-icon-button class="select-btn" (click)="selectScenario(i); $event.preventDefault(); $event.stopPropagation();" [attr.aria-label]="'Sélectionner le scénario ' + s.title">
+              <mat-icon>{{ selectedScenarioIndex === i ? 'check_circle' : 'radio_button_unchecked' }}</mat-icon>
+            </button>
             <div class="thumb" aria-hidden="true">
               @if (s.image) {
                 <img [src]="s.image" alt="{{s.title}}" />
@@ -53,7 +62,10 @@ import { LanguageService } from '../shared/language.service';
     } @else {
       <div class="grid">
         <a class="card-link" *ngFor="let f of feats; let i = index" [routerLink]="['/feats', i]">
-          <mat-card class="scenario-card" appearance="outlined">
+          <mat-card class="scenario-card" appearance="outlined" [class.selected]="selectedFeatIndex === i">
+            <button mat-icon-button class="select-btn" (click)="selectFeat(i); $event.preventDefault(); $event.stopPropagation();" [attr.aria-label]="'Sélectionner exploit ' + f.title">
+              <mat-icon>{{ selectedFeatIndex === i ? 'check_circle' : 'radio_button_unchecked' }}</mat-icon>
+            </button>
             <div class="thumb" aria-hidden="true">
               <mat-icon>emoji_events</mat-icon>
             </div>
@@ -70,10 +82,13 @@ import { LanguageService } from '../shared/language.service';
       gap: 12px;
     }
     .card-link { text-decoration: none; color: inherit; }
-    .scenario-card { display: flex; align-items: center; gap: 12px; padding: 8px; }
+    .scenario-card { position: relative; display: flex; align-items: center; gap: 12px; padding: 8px; }
     .thumb { width: 256px; height: 256px; display: grid; place-items: center; overflow: hidden; border-radius: 4px; background: #f5f5f5; }
     .thumb img { width: 100%; height: 100%; object-fit: cover; }
     .title { font-weight: 600; }
+    .select-btn { position: absolute; top: 4px; right: 4px; }
+    .scenario-card.selected { outline: 2px solid #3f51b5; }
+    .create-btn { margin-left: 8px; }
   `]
 })
 export class ScenariosPageComponent {
@@ -86,6 +101,8 @@ export class ScenariosPageComponent {
   lastRandom: { sid: number; fid: number } | null = null;
   lastScenarioTitle = '';
   lastFeatTitle = '';
+  selectedScenarioIndex: number | null = null;
+  selectedFeatIndex: number | null = null;
 
   constructor() {
     this.lang.langChanges.subscribe(() => {
@@ -107,6 +124,34 @@ export class ScenariosPageComponent {
     const sid = Math.floor(Math.random() * scenarios.length);
     const fid = Math.floor(Math.random() * feats.length);
     // Mémorise le tirage en localStorage
+    try {
+      const payload = JSON.stringify({ sid, fid });
+      localStorage.setItem(ScenariosPageComponent.LAST_RANDOM_KEY, payload);
+      this.lastRandom = { sid, fid };
+      this.refreshLastRandomTitles();
+    } catch {
+      // ignore storage errors
+    }
+    this.router.navigate(['/scenarios', 'random', sid, fid]);
+  }
+
+  selectScenario(i: number) {
+    this.selectedScenarioIndex = this.selectedScenarioIndex === i ? null : i;
+  }
+
+  selectFeat(i: number) {
+    this.selectedFeatIndex = this.selectedFeatIndex === i ? null : i;
+  }
+
+  createEncounter() {
+    const sid = this.selectedScenarioIndex;
+    const fid = this.selectedFeatIndex;
+    if (sid === null || fid === null) { return; }
+    const sList = this.lang.data.SCENARIO;
+    const fList = this.lang.data.FEAT;
+    const validS = Number.isInteger(sid) && sid >= 0 && sid < sList.length;
+    const validF = Number.isInteger(fid) && fid >= 0 && fid < fList.length;
+    if (!validS || !validF) { return; }
     try {
       const payload = JSON.stringify({ sid, fid });
       localStorage.setItem(ScenariosPageComponent.LAST_RANDOM_KEY, payload);
