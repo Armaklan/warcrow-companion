@@ -20,6 +20,12 @@ import { LanguageService } from '../shared/language.service';
         <mat-icon>shuffle</mat-icon>
         {{ labels.scenario.random || 'Aléatoire' }}
       </button>
+      @if (lastRandom && lastScenarioTitle && lastFeatTitle) {
+        <a class="last-random-link" mat-stroked-button [routerLink]="['/scenarios','random', lastRandom.sid, lastRandom.fid]">
+          <mat-icon>history</mat-icon>
+          {{ lastScenarioTitle }} + {{ lastFeatTitle }}
+        </a>
+      }
     </p>
 
     @if (!scenarios || scenarios.length === 0) {
@@ -76,13 +82,22 @@ export class ScenariosPageComponent {
   feats: Feat[] = this.lang.data.FEAT;
   labels = this.lang.data.LABEL;
   private router = inject(Router);
+  private static readonly LAST_RANDOM_KEY = 'wc:lastRandom';
+  lastRandom: { sid: number; fid: number } | null = null;
+  lastScenarioTitle = '';
+  lastFeatTitle = '';
 
   constructor() {
     this.lang.langChanges.subscribe(() => {
       this.scenarios = this.lang.data.SCENARIO;
       this.feats = this.lang.data.FEAT;
       this.labels = this.lang.data.LABEL;
+      // Recalcule les titres pour le dernier tirage si présent
+      this.refreshLastRandomTitles();
     });
+    // Chargement initial du dernier tirage
+    this.loadLastRandomFromStorage();
+    this.refreshLastRandomTitles();
   }
 
   goRandom() {
@@ -91,6 +106,41 @@ export class ScenariosPageComponent {
     if (!scenarios?.length || !feats?.length) { return; }
     const sid = Math.floor(Math.random() * scenarios.length);
     const fid = Math.floor(Math.random() * feats.length);
+    // Mémorise le tirage en localStorage
+    try {
+      const payload = JSON.stringify({ sid, fid });
+      localStorage.setItem(ScenariosPageComponent.LAST_RANDOM_KEY, payload);
+      this.lastRandom = { sid, fid };
+      this.refreshLastRandomTitles();
+    } catch {
+      // ignore storage errors
+    }
     this.router.navigate(['/scenarios', 'random', sid, fid]);
+  }
+
+  private loadLastRandomFromStorage() {
+    try {
+      const raw = localStorage.getItem(ScenariosPageComponent.LAST_RANDOM_KEY);
+      if (!raw) { this.lastRandom = null; return; }
+      const parsed = JSON.parse(raw) as { sid?: number; fid?: number } | null;
+      if (!parsed || typeof parsed.sid !== 'number' || typeof parsed.fid !== 'number') {
+        this.lastRandom = null; return;
+      }
+      this.lastRandom = { sid: parsed.sid, fid: parsed.fid };
+    } catch {
+      this.lastRandom = null;
+    }
+  }
+
+  private refreshLastRandomTitles() {
+    if (!this.lastRandom) { this.lastScenarioTitle = ''; this.lastFeatTitle = ''; return; }
+    const { sid, fid } = this.lastRandom;
+    const sList = this.lang.data.SCENARIO;
+    const fList = this.lang.data.FEAT;
+    const validS = Number.isInteger(sid) && sid >= 0 && sid < sList.length;
+    const validF = Number.isInteger(fid) && fid >= 0 && fid < fList.length;
+    if (!validS || !validF) { this.lastScenarioTitle = ''; this.lastFeatTitle = ''; return; }
+    this.lastScenarioTitle = sList[sid]?.title || '';
+    this.lastFeatTitle = fList[fid]?.title || '';
   }
 }

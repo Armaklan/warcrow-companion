@@ -3,13 +3,14 @@ import {CommonModule} from '@angular/common';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTabsModule} from '@angular/material/tabs';
 import {Feat, Scenario} from '../shared/data.model';
 import { LanguageService } from '../shared/language.service';
 
 @Component({
   selector: 'app-scenario-feat-detail-page',
   standalone: true,
-  imports: [CommonModule, RouterLink, MatButtonModule, MatIconModule],
+  imports: [CommonModule, RouterLink, MatButtonModule, MatIconModule, MatTabsModule],
   template: `
     <a mat-button color="primary" routerLink="/scenarios">
       <mat-icon>arrow_back</mat-icon>
@@ -18,65 +19,69 @@ import { LanguageService } from '../shared/language.service';
     @if (!scenario || !feat) {
       <h1>Not found</h1>
     } @else {
-      <h1>{{ scenario.title }}</h1>
-      @if (scenario.image) {
-        <div class="image-wrapper">
-          <img [src]="scenario.image" alt="{{scenario.title}}"/>
-        </div>
-      }
+      <mat-tab-group>
+        <mat-tab [label]="labels.menu.scenarios || 'Scénario'">
+          <h1>{{ scenario.title }}</h1>
+          @if (scenario.image) {
+            <div class="image-wrapper">
+              <img [src]="scenario.image" alt="{{scenario.title}}"/>
+            </div>
+          }
 
-      <section class="block" *ngIf="scenario.requiredMaterial?.length">
-        <h2>{{ labels.scenario.material }}</h2>
-        <ul>
-          <li *ngFor="let item of scenario.requiredMaterial">{{ item }}</li>
-        </ul>
-      </section>
+          <section class="block" *ngIf="scenario.requiredMaterial?.length">
+            <h2>{{ labels.scenario.material }}</h2>
+            <ul>
+              <li *ngFor="let item of scenario.requiredMaterial">{{ item }}</li>
+            </ul>
+          </section>
 
-      <section class="block">
-        <h2>{{ labels.scenario.duree.title }}</h2>
-        <p>{{ labels.scenario.duree.detail }} {{ scenario.roundLength }} {{ labels.scenario.duree.turn }}</p>
-      </section>
+          <section class="block">
+            <h2>{{ labels.scenario.duree.title }}</h2>
+            <p>{{ labels.scenario.duree.detail }} {{ scenario.roundLength }} {{ labels.scenario.duree.turn }}</p>
+          </section>
 
-      <section class="block" *ngIf="scenario.endRoundScoring?.length">
-        <h2>{{ labels.scenario.score.title }}</h2>
-        <p>{{ labels.scenario.score.detail }}</p>
-        <ul>
-          <li *ngFor="let s of scenario.endRoundScoring">{{ s }}</li>
-        </ul>
-      </section>
+          <section class="block" *ngIf="scenario.endRoundScoring?.length">
+            <h2>{{ labels.scenario.score.title }}</h2>
+            <p>{{ labels.scenario.score.detail }}</p>
+            <ul>
+              <li *ngFor="let s of scenario.endRoundScoring">{{ s }}</li>
+            </ul>
+          </section>
 
-      <section class="block">
-        <h2>{{ labels.scenario.end.title }}</h2>
-        <p>{{ labels.scenario.end.details }} {{ scenario.endGame }} {{ labels.scenario.end.rounds }}</p>
-      </section>
+          <section class="block">
+            <h2>{{ labels.scenario.end.title }}</h2>
+            <p>{{ labels.scenario.end.details }} {{ scenario.endGame }} {{ labels.scenario.end.rounds }}</p>
+          </section>
 
-      @if (scenario.additionnal) {
-        <section class="block">
-          <div class="additionnal" [innerHTML]="scenario.additionnal"></div>
-        </section>
-      }
+          @if (scenario.additionnal) {
+            <section class="block">
+              <div class="additionnal" [innerHTML]="scenario.additionnal"></div>
+            </section>
+          }
+        </mat-tab>
 
-      <hr />
+        <mat-tab [label]="labels.menu.feats || 'Exploit'">
+          <h1>{{ feat.title }}</h1>
 
-      <h1>{{ feat.title }}</h1>
+          <section class="block" *ngIf="feat.requiredMaterial?.length">
+            <h2>{{ labels.scenario.material }}</h2>
+            <ul>
+              <li *ngFor="let item of feat.requiredMaterial">{{ item }}</li>
+            </ul>
+          </section>
 
-      <section class="block" *ngIf="feat.requiredMaterial?.length">
-        <h2>{{ labels.scenario.material }}</h2>
-        <ul>
-          <li *ngFor="let item of feat.requiredMaterial">{{ item }}</li>
-        </ul>
-      </section>
+          <section class="block" *ngIf="feat.scoring">
+            <h2>{{ labels.scenario.score.title }}</h2>
+            <div class="additionnal" [innerHTML]="feat.scoring"></div>
+          </section>
 
-      <section class="block" *ngIf="feat.scoring">
-        <h2>{{ labels.scenario.score.title }}</h2>
-        <div class="additionnal" [innerHTML]="feat.scoring"></div>
-      </section>
-
-      @if (feat.additionnal) {
-        <section class="block">
-          <div class="additionnal" [innerHTML]="feat.additionnal"></div>
-        </section>
-      }
+          @if (feat.additionnal) {
+            <section class="block">
+              <div class="additionnal" [innerHTML]="feat.additionnal"></div>
+            </section>
+          }
+        </mat-tab>
+      </mat-tab-group>
     }
   `,
   styles: [`
