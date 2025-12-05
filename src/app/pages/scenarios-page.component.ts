@@ -27,7 +27,7 @@ import { LanguageService } from '../shared/language.service';
         </button>
       }
       @if (lastRandom && lastScenarioTitle && lastFeatTitle) {
-        <a class="last-random-link" mat-stroked-button [routerLink]="['/scenarios','random', lastRandom.sid, lastRandom.fid]">
+        <a class="last-random-link" mat-stroked-button [routerLink]="['/scenarios','encounter', lastRandom.sid, lastRandom.fid]">
           <mat-icon>history</mat-icon>
           {{ lastScenarioTitle }} + {{ lastFeatTitle }}
         </a>
@@ -132,7 +132,7 @@ export class ScenariosPageComponent {
     } catch {
       // ignore storage errors
     }
-    this.router.navigate(['/scenarios', 'random', sid, fid]);
+    this.router.navigate(['/scenarios', 'encounter', sid, fid]);
   }
 
   selectScenario(i: number) {
@@ -160,7 +160,7 @@ export class ScenariosPageComponent {
     } catch {
       // ignore storage errors
     }
-    this.router.navigate(['/scenarios', 'random', sid, fid]);
+    this.router.navigate(['/scenarios', 'encounter', sid, fid]);
   }
 
   private loadLastRandomFromStorage() {

@@ -28,7 +28,10 @@ export const routes: Routes = [
   { path: 'personnage-unite', component: PersonnageEtUnitePageComponent, title: 'Personnage et unité' },
   { path: 'scenarios', component: ScenariosPageComponent, title: 'Scénarios' },
   { path: 'scenarios/:id', component: ScenarioDetailPageComponent, title: 'Détail du scénario' },
-  { path: 'scenarios/random/:sid/:fid', component: ScenarioFeatDetailPageComponent, title: 'Scénario & Exploit' },
+  // Nouvelle URL pour la rencontre
+  { path: 'scenarios/encounter/:sid/:fid', component: ScenarioFeatDetailPageComponent, title: 'Scénario & Exploit' },
+  // Redirection rétrocompatibilité depuis l'ancienne URL
+  { path: 'scenarios/random/:sid/:fid', pathMatch: 'full', redirectTo: 'scenarios/encounter/:sid/:fid' },
   { path: 'feats/:id', component: FeatDetailPageComponent, title: "Détail de l'exploit" },
   { path: '**', redirectTo: 'actions' }
 ];
