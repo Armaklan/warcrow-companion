@@ -19,7 +19,6 @@ import { LanguageService } from '../shared/language.service';
             <div class="dice-row">
               <div class="dice-type">
                 <span class="warcrow-font-Red" aria-hidden="true"></span>
-                <span class="dice-name">Rouge</span>
               </div>
               <div class="spacer"></div>
               <div class="actions">
@@ -36,7 +35,6 @@ import { LanguageService } from '../shared/language.service';
             <div class="dice-row">
               <div class="dice-type">
                 <span class="warcrow-font-Orange" aria-hidden="true"></span>
-                <span class="dice-name">Orange</span>
               </div>
               <div class="spacer"></div>
               <div class="actions">
@@ -53,7 +51,6 @@ import { LanguageService } from '../shared/language.service';
             <div class="dice-row">
               <div class="dice-type">
                 <span class="warcrow-font-Yellow" aria-hidden="true"></span>
-                <span class="dice-name">Jaune</span>
               </div>
               <div class="spacer"></div>
               <div class="actions">
@@ -72,7 +69,6 @@ import { LanguageService } from '../shared/language.service';
             <div class="dice-row">
               <div class="dice-type">
                 <span class="warcrow-font-Green" aria-hidden="true"></span>
-                <span class="dice-name">Vert</span>
               </div>
               <div class="spacer"></div>
               <div class="actions">
@@ -89,7 +85,6 @@ import { LanguageService } from '../shared/language.service';
             <div class="dice-row">
               <div class="dice-type">
                 <span class="warcrow-font-Blue" aria-hidden="true"></span>
-                <span class="dice-name">Bleu</span>
               </div>
               <div class="spacer"></div>
               <div class="actions">
@@ -106,7 +101,6 @@ import { LanguageService } from '../shared/language.service';
             <div class="dice-row">
               <div class="dice-type">
                 <span class="warcrow-font-Black" aria-hidden="true"></span>
-                <span class="dice-name">Noir</span>
               </div>
               <div class="spacer"></div>
               <div class="actions">
@@ -115,6 +109,105 @@ import { LanguageService } from '../shared/language.service';
                 </button>
                 <span class="count">{{ black }}</span>
                 <button mat-mini-fab color="primary" (click)="inc('black')" aria-label="Ajouter un dé noir">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Success" aria-hidden="true"></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="decSym('Success')" aria-label="Retirer un succès">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ sSuccess }}</span>
+                <button mat-mini-fab color="primary" (click)="incSym('Success')" aria-label="Ajouter un succès">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Special" aria-hidden="true"></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="decSym('Special')" aria-label="Retirer un spécial">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ sSpecial }}</span>
+                <button mat-mini-fab color="primary" (click)="incSym('Special')" aria-label="Ajouter un spécial">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Block" aria-hidden="true"></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="decSym('Block')" aria-label="Retirer un bloc">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ sBlock }}</span>
+                <button mat-mini-fab color="primary" (click)="incSym('Block')" aria-label="Ajouter un bloc">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-HollowSuccess" aria-hidden="true"></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="decSym('HollowSuccess')" aria-label="Retirer un succès creux">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ sHollowSuccess }}</span>
+                <button mat-mini-fab color="primary" (click)="incSym('HollowSuccess')" aria-label="Ajouter un succès creux">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Hollow-Special" aria-hidden="true"></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="decSym('HollowSpecial')" aria-label="Retirer un spécial creux">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ sHollowSpecial }}</span>
+                <button mat-mini-fab color="primary" (click)="incSym('HollowSpecial')" aria-label="Ajouter un spécial creux">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Hollow-Block" aria-hidden="true"></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="decSym('HollowBlock')" aria-label="Retirer un bloc creux">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ sHollowBlock }}</span>
+                <button mat-mini-fab color="primary" (click)="incSym('HollowBlock')" aria-label="Ajouter un bloc creux">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -142,7 +235,26 @@ import { LanguageService } from '../shared/language.service';
           <ng-container *ngFor="let i of countArray(black)">
             <span class="die warcrow-font-Black" role="img" aria-label="Dé noir"></span>
           </ng-container>
-          <span class="empty" *ngIf="red + orange + yellow + green + blue + black === 0">Aucun dé sélectionné</span>
+          <!-- Symboles fixes - Mon profil -->
+          <ng-container *ngFor="let i of countArray(sSuccess)">
+            <span class="die warcrow-font-Success" role="img" aria-label="Symbole succès"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(sSpecial)">
+            <span class="die warcrow-font-Special" role="img" aria-label="Symbole spécial"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(sBlock)">
+            <span class="die warcrow-font-Block" role="img" aria-label="Symbole bloc"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(sHollowSuccess)">
+            <span class="die warcrow-font-HollowSuccess" role="img" aria-label="Symbole succès creux"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(sHollowSpecial)">
+            <span class="die warcrow-font-Hollow-Special" role="img" aria-label="Symbole spécial creux"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(sHollowBlock)">
+            <span class="die warcrow-font-Hollow-Block" role="img" aria-label="Symbole bloc creux"></span>
+          </ng-container>
+          <span class="empty" *ngIf="red + orange + yellow + green + blue + black + sSuccess + sSpecial + sBlock + sHollowSuccess + sHollowSpecial + sHollowBlock === 0">Aucune sélection</span>
         </div>
       </mat-tab>
 
@@ -152,7 +264,6 @@ import { LanguageService } from '../shared/language.service';
             <div class="dice-row">
               <div class="dice-type">
                 <span class="warcrow-font-Red" aria-hidden="true"></span>
-                <span class="dice-name">Rouge</span>
               </div>
               <div class="spacer"></div>
               <div class="actions">
@@ -169,7 +280,6 @@ import { LanguageService } from '../shared/language.service';
             <div class="dice-row">
               <div class="dice-type">
                 <span class="warcrow-font-Orange" aria-hidden="true"></span>
-                <span class="dice-name">Orange</span>
               </div>
               <div class="spacer"></div>
               <div class="actions">
@@ -186,7 +296,6 @@ import { LanguageService } from '../shared/language.service';
             <div class="dice-row">
               <div class="dice-type">
                 <span class="warcrow-font-Yellow" aria-hidden="true"></span>
-                <span class="dice-name">Jaune</span>
               </div>
               <div class="spacer"></div>
               <div class="actions">
@@ -205,7 +314,6 @@ import { LanguageService } from '../shared/language.service';
             <div class="dice-row">
               <div class="dice-type">
                 <span class="warcrow-font-Green" aria-hidden="true"></span>
-                <span class="dice-name">Vert</span>
               </div>
               <div class="spacer"></div>
               <div class="actions">
@@ -222,7 +330,6 @@ import { LanguageService } from '../shared/language.service';
             <div class="dice-row">
               <div class="dice-type">
                 <span class="warcrow-font-Blue" aria-hidden="true"></span>
-                <span class="dice-name">Bleu</span>
               </div>
               <div class="spacer"></div>
               <div class="actions">
@@ -239,7 +346,6 @@ import { LanguageService } from '../shared/language.service';
             <div class="dice-row">
               <div class="dice-type">
                 <span class="warcrow-font-Black" aria-hidden="true"></span>
-                <span class="dice-name">Noir</span>
               </div>
               <div class="spacer"></div>
               <div class="actions">
@@ -248,6 +354,105 @@ import { LanguageService } from '../shared/language.service';
                 </button>
                 <span class="count">{{ oBlack }}</span>
                 <button mat-mini-fab color="primary" (click)="oppInc('black')" aria-label="Ajouter un dé noir (adversaire)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Success" aria-hidden="true"></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="oppDecSym('Success')" aria-label="Retirer un succès (adversaire)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ oSuccess }}</span>
+                <button mat-mini-fab color="primary" (click)="oppIncSym('Success')" aria-label="Ajouter un succès (adversaire)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Special" aria-hidden="true"></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="oppDecSym('Special')" aria-label="Retirer un spécial (adversaire)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ oSpecial }}</span>
+                <button mat-mini-fab color="primary" (click)="oppIncSym('Special')" aria-label="Ajouter un spécial (adversaire)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Block" aria-hidden="true"></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="oppDecSym('Block')" aria-label="Retirer un bloc (adversaire)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ oBlock }}</span>
+                <button mat-mini-fab color="primary" (click)="oppIncSym('Block')" aria-label="Ajouter un bloc (adversaire)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-HollowSuccess" aria-hidden="true"></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="oppDecSym('HollowSuccess')" aria-label="Retirer un succès creux (adversaire)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ oHollowSuccess }}</span>
+                <button mat-mini-fab color="primary" (click)="oppIncSym('HollowSuccess')" aria-label="Ajouter un succès creux (adversaire)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Hollow-Special" aria-hidden="true"></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="oppDecSym('HollowSpecial')" aria-label="Retirer un spécial creux (adversaire)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ oHollowSpecial }}</span>
+                <button mat-mini-fab color="primary" (click)="oppIncSym('HollowSpecial')" aria-label="Ajouter un spécial creux (adversaire)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Hollow-Block" aria-hidden="true"></span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="oppDecSym('HollowBlock')" aria-label="Retirer un bloc creux (adversaire)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ oHollowBlock }}</span>
+                <button mat-mini-fab color="primary" (click)="oppIncSym('HollowBlock')" aria-label="Ajouter un bloc creux (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -275,7 +480,26 @@ import { LanguageService } from '../shared/language.service';
           <ng-container *ngFor="let i of countArray(oBlack)">
             <span class="die warcrow-font-Black" role="img" aria-label="Dé noir"></span>
           </ng-container>
-          <span class="empty" *ngIf="oRed + oOrange + oYellow + oGreen + oBlue + oBlack === 0">Aucun dé sélectionné</span>
+          <!-- Symboles fixes - Adversaire -->
+          <ng-container *ngFor="let i of countArray(oSuccess)">
+            <span class="die warcrow-font-Success" role="img" aria-label="Symbole succès (adversaire)"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(oSpecial)">
+            <span class="die warcrow-font-Special" role="img" aria-label="Symbole spécial (adversaire)"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(oBlock)">
+            <span class="die warcrow-font-Block" role="img" aria-label="Symbole bloc (adversaire)"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(oHollowSuccess)">
+            <span class="die warcrow-font-HollowSuccess" role="img" aria-label="Symbole succès creux (adversaire)"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(oHollowSpecial)">
+            <span class="die warcrow-font-Hollow-Special" role="img" aria-label="Symbole spécial creux (adversaire)"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(oHollowBlock)">
+            <span class="die warcrow-font-Hollow-Block" role="img" aria-label="Symbole bloc creux (adversaire)"></span>
+          </ng-container>
+          <span class="empty" *ngIf="oRed + oOrange + oYellow + oGreen + oBlue + oBlack + oSuccess + oSpecial + oBlock + oHollowSuccess + oHollowSpecial + oHollowBlock === 0">Aucune sélection</span>
         </div>
       </mat-tab>
     </mat-tab-group>
@@ -307,7 +531,6 @@ import { LanguageService } from '../shared/language.service';
           <tr *ngFor="let s of symbols">
             <td class="sym">
               <span class="sym-ico" [ngClass]="symbolClass[s]" aria-hidden="true"></span>
-              <span class="sym-name">{{ symbolLabel[s] }}</span>
             </td>
             <td class="num strong">{{ formatNum(totalAvg[s]) }}</td>
             <td class="num strong">{{ formatInt(totalMax[s]) }}</td>
@@ -320,9 +543,9 @@ import { LanguageService } from '../shared/language.service';
   `,
   styles: [`
     .dice-controls { display: grid; gap: 12px; max-width: 1120px; margin-top: 1em; }
-    .dice-controls.two-cols { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start; }
+    .dice-controls.two-cols { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); align-items: start; }
     .dice-controls .col { display: grid; gap: 12px; }
-    .dice-row { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border: 1px solid var(--wc-border); border-radius: 8px; background: var(--wc-surface); }
+    .dice-row { display: flex; align-items: center; padding: 8px 12px; border: 1px solid var(--wc-border); border-radius: 8px; background: var(--wc-surface); }
     .dice-type { display: flex; align-items: center; gap: 8px; font-size: 20px; }
     .dice-type .warcrow-font-Red,
     .dice-type .warcrow-font-Orange,
@@ -330,7 +553,6 @@ import { LanguageService } from '../shared/language.service';
     .dice-type .warcrow-font-Green,
     .dice-type .warcrow-font-Blue,
     .dice-type .warcrow-font-Black { font-size: 28px; line-height: 1; }
-    .dice-name { font-weight: 600; }
     .spacer { flex: 1; }
     .actions { display: flex; align-items: center; gap: 8px; }
     .count { min-width: 24px; text-align: center; font-weight: 600; }
@@ -371,7 +593,7 @@ export class StatisticsPageComponent {
   oBlack = 0;
 
   // --- Symbols model ---
-  symbols = ['Success','Special','HollowSuccess','HollowSpecial','Block','HollowBlock'] as const;
+  symbols = ['Success','HollowSuccess', 'Special','HollowSpecial','Block','HollowBlock'] as const;
   symbolClass: Record<(typeof this.symbols)[number], string> = {
     Success: 'warcrow-font-Success',
     Special: 'warcrow-font-Special',
@@ -388,6 +610,43 @@ export class StatisticsPageComponent {
     Block: 'Block',
     HollowBlock: 'HollowBlock'
   } as const;
+
+  // --- Manual symbol selections (each counts as +1 in stats) ---
+  sSuccess = 0;
+  sSpecial = 0;
+  sBlock = 0;
+  sHollowSuccess = 0;
+  sHollowSpecial = 0;
+  sHollowBlock = 0;
+
+  // --- Opponent manual symbol selections ---
+  oSuccess = 0;
+  oSpecial = 0;
+  oBlock = 0;
+  oHollowSuccess = 0;
+  oHollowSpecial = 0;
+  oHollowBlock = 0;
+
+  incSym(sym: (typeof this.symbols)[number]) {
+    switch (sym) {
+      case 'Success': this.sSuccess++; break;
+      case 'Special': this.sSpecial++; break;
+      case 'Block': this.sBlock++; break;
+      case 'HollowSuccess': this.sHollowSuccess++; break;
+      case 'HollowSpecial': this.sHollowSpecial++; break;
+      case 'HollowBlock': this.sHollowBlock++; break;
+    }
+  }
+  decSym(sym: (typeof this.symbols)[number]) {
+    switch (sym) {
+      case 'Success': this.sSuccess = Math.max(0, this.sSuccess - 1); break;
+      case 'Special': this.sSpecial = Math.max(0, this.sSpecial - 1); break;
+      case 'Block': this.sBlock = Math.max(0, this.sBlock - 1); break;
+      case 'HollowSuccess': this.sHollowSuccess = Math.max(0, this.sHollowSuccess - 1); break;
+      case 'HollowSpecial': this.sHollowSpecial = Math.max(0, this.sHollowSpecial - 1); break;
+      case 'HollowBlock': this.sHollowBlock = Math.max(0, this.sHollowBlock - 1); break;
+    }
+  }
 
   // --- Dice faces definition (equally likely) ---
   private facesRed: Array<Record<(typeof this.symbols)[number], number>> = [
@@ -521,18 +780,34 @@ export class StatisticsPageComponent {
 
   // Total averages (depend on selection)
   get totalAvg(): Record<(typeof this.symbols)[number], number> {
-    return this.computeTotalsAvg({
+    const base = this.computeTotalsAvg({
       red: this.red, orange: this.orange, yellow: this.yellow,
       green: this.green, blue: this.blue, black: this.black
     });
+    // Add manual fixed symbols (each selection contributes +1 deterministically)
+    base.Success += this.sSuccess;
+    base.Special += this.sSpecial;
+    base.Block += this.sBlock;
+    base.HollowSuccess += this.sHollowSuccess;
+    base.HollowSpecial += this.sHollowSpecial;
+    base.HollowBlock += this.sHollowBlock;
+    return base;
   }
 
   // Total maximums (sum of per-die maxima across selected dice)
   get totalMax(): Record<(typeof this.symbols)[number], number> {
-    return this.computeTotalsMax({
+    const base = this.computeTotalsMax({
       red: this.red, orange: this.orange, yellow: this.yellow,
       green: this.green, blue: this.blue, black: this.black
     });
+    // Manual fixed symbols also increase maxima by their count
+    base.Success += this.sSuccess;
+    base.Special += this.sSpecial;
+    base.Block += this.sBlock;
+    base.HollowSuccess += this.sHollowSuccess;
+    base.HollowSpecial += this.sHollowSpecial;
+    base.HollowBlock += this.sHollowBlock;
+    return base;
   }
 
   countArray(n: number) { return Array.from({ length: Math.max(0, Math.floor(n)) }); }
@@ -545,7 +820,14 @@ export class StatisticsPageComponent {
     this[color] = Math.max(0, this[color] - 1);
   }
 
-  reset() { this.red = this.orange = this.yellow = this.green = this.blue = this.black = 0; this.oRed = this.oOrange = this.oYellow = this.oGreen = this.oBlue = this.oBlack = 0; }
+  reset() {
+    this.red = this.orange = this.yellow = this.green = this.blue = this.black = 0;
+    this.oRed = this.oOrange = this.oYellow = this.oGreen = this.oBlue = this.oBlack = 0;
+    this.sSuccess = this.sSpecial = this.sBlock = 0;
+    this.sHollowSuccess = this.sHollowSpecial = this.sHollowBlock = 0;
+    this.oSuccess = this.oSpecial = this.oBlock = 0;
+    this.oHollowSuccess = this.oHollowSpecial = this.oHollowBlock = 0;
+  }
 
   // Opponent controls
   oppInc(color: 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'black') {
@@ -558,22 +840,61 @@ export class StatisticsPageComponent {
     this[map[color]] = Math.max(0, v - 1);
   }
 
+  // Opponent fixed symbol controls
+  oppIncSym(sym: (typeof this.symbols)[number]) {
+    switch (sym) {
+      case 'Success': this.oSuccess++; break;
+      case 'Special': this.oSpecial++; break;
+      case 'Block': this.oBlock++; break;
+      case 'HollowSuccess': this.oHollowSuccess++; break;
+      case 'HollowSpecial': this.oHollowSpecial++; break;
+      case 'HollowBlock': this.oHollowBlock++; break;
+    }
+  }
+  oppDecSym(sym: (typeof this.symbols)[number]) {
+    switch (sym) {
+      case 'Success': this.oSuccess = Math.max(0, this.oSuccess - 1); break;
+      case 'Special': this.oSpecial = Math.max(0, this.oSpecial - 1); break;
+      case 'Block': this.oBlock = Math.max(0, this.oBlock - 1); break;
+      case 'HollowSuccess': this.oHollowSuccess = Math.max(0, this.oHollowSuccess - 1); break;
+      case 'HollowSpecial': this.oHollowSpecial = Math.max(0, this.oHollowSpecial - 1); break;
+      case 'HollowBlock': this.oHollowBlock = Math.max(0, this.oHollowBlock - 1); break;
+    }
+  }
+
   get opponentHasSelection(): boolean {
-    return (this.oRed + this.oOrange + this.oYellow + this.oGreen + this.oBlue + this.oBlack) > 0;
+    return (
+      this.oRed + this.oOrange + this.oYellow + this.oGreen + this.oBlue + this.oBlack +
+      this.oSuccess + this.oSpecial + this.oBlock + this.oHollowSuccess + this.oHollowSpecial + this.oHollowBlock
+    ) > 0;
   }
 
   get opponentAvg(): Record<(typeof this.symbols)[number], number> {
-    return this.computeTotalsAvg({
+    const base = this.computeTotalsAvg({
       red: this.oRed, orange: this.oOrange, yellow: this.oYellow,
       green: this.oGreen, blue: this.oBlue, black: this.oBlack
     });
+    base.Success += this.oSuccess;
+    base.Special += this.oSpecial;
+    base.Block += this.oBlock;
+    base.HollowSuccess += this.oHollowSuccess;
+    base.HollowSpecial += this.oHollowSpecial;
+    base.HollowBlock += this.oHollowBlock;
+    return base;
   }
 
   get opponentMax(): Record<(typeof this.symbols)[number], number> {
-    return this.computeTotalsMax({
+    const base = this.computeTotalsMax({
       red: this.oRed, orange: this.oOrange, yellow: this.oYellow,
       green: this.oGreen, blue: this.oBlue, black: this.oBlack
     });
+    base.Success += this.oSuccess;
+    base.Special += this.oSpecial;
+    base.Block += this.oBlock;
+    base.HollowSuccess += this.oHollowSuccess;
+    base.HollowSpecial += this.oHollowSpecial;
+    base.HollowBlock += this.oHollowBlock;
+    return base;
   }
 
   private computeAverages(faces: Array<Record<(typeof this.symbols)[number], number>>): Record<(typeof this.symbols)[number], number> {
