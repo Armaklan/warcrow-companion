@@ -2,145 +2,283 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
 import { LanguageService } from '../shared/language.service';
 
 @Component({
   selector: 'app-statistics-page',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule, MatTabsModule],
   template: `
     <h1>{{ labels.menu.statistique }}</h1>
 
-    <div class="dice-controls two-cols">
-      <div class="col">
-        <div class="dice-row">
-          <div class="dice-type">
-            <span class="warcrow-font-Red" aria-hidden="true"></span>
-            <span class="dice-name">Rouge</span>
+    <mat-tab-group>
+      <mat-tab label="Mon profil" aria-label="Onglet Mon profil">
+        <div class="dice-controls two-cols">
+          <div class="col">
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Red" aria-hidden="true"></span>
+                <span class="dice-name">Rouge</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="dec('red')" aria-label="Retirer un dé rouge">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ red }}</span>
+                <button mat-mini-fab color="primary" (click)="inc('red')" aria-label="Ajouter un dé rouge">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Orange" aria-hidden="true"></span>
+                <span class="dice-name">Orange</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="dec('orange')" aria-label="Retirer un dé orange">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ orange }}</span>
+                <button mat-mini-fab color="primary" (click)="inc('orange')" aria-label="Ajouter un dé orange">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Yellow" aria-hidden="true"></span>
+                <span class="dice-name">Jaune</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="dec('yellow')" aria-label="Retirer un dé jaune">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ yellow }}</span>
+                <button mat-mini-fab color="primary" (click)="inc('yellow')" aria-label="Ajouter un dé jaune">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="spacer"></div>
-          <div class="actions">
-            <button mat-mini-fab color="primary" (click)="dec('red')" aria-label="Retirer un dé rouge">
-              <mat-icon>remove</mat-icon>
-            </button>
-            <span class="count">{{ red }}</span>
-            <button mat-mini-fab color="primary" (click)="inc('red')" aria-label="Ajouter un dé rouge">
-              <mat-icon>add</mat-icon>
-            </button>
+
+          <div class="col">
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Green" aria-hidden="true"></span>
+                <span class="dice-name">Vert</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="dec('green')" aria-label="Retirer un dé vert">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ green }}</span>
+                <button mat-mini-fab color="primary" (click)="inc('green')" aria-label="Ajouter un dé vert">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Blue" aria-hidden="true"></span>
+                <span class="dice-name">Bleu</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="dec('blue')" aria-label="Retirer un dé bleu">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ blue }}</span>
+                <button mat-mini-fab color="primary" (click)="inc('blue')" aria-label="Ajouter un dé bleu">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Black" aria-hidden="true"></span>
+                <span class="dice-name">Noir</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="dec('black')" aria-label="Retirer un dé noir">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ black }}</span>
+                <button mat-mini-fab color="primary" (click)="inc('black')" aria-label="Ajouter un dé noir">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="dice-row">
-          <div class="dice-type">
-            <span class="warcrow-font-Orange" aria-hidden="true"></span>
-            <span class="dice-name">Orange</span>
+        <h2>Aperçu</h2>
+        <div class="preview" aria-label="Dés sélectionnés - Mon profil">
+          <ng-container *ngFor="let i of countArray(red)">
+            <span class="die warcrow-font-Red" role="img" aria-label="Dé rouge"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(orange)">
+            <span class="die warcrow-font-Orange" role="img" aria-label="Dé orange"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(yellow)">
+            <span class="die warcrow-font-Yellow" role="img" aria-label="Dé jaune"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(green)">
+            <span class="die warcrow-font-Green" role="img" aria-label="Dé vert"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(blue)">
+            <span class="die warcrow-font-Blue" role="img" aria-label="Dé bleu"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(black)">
+            <span class="die warcrow-font-Black" role="img" aria-label="Dé noir"></span>
+          </ng-container>
+          <span class="empty" *ngIf="red + orange + yellow + green + blue + black === 0">Aucun dé sélectionné</span>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Mon adversaire" aria-label="Onglet Mon adversaire">
+        <div class="dice-controls two-cols">
+          <div class="col">
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Red" aria-hidden="true"></span>
+                <span class="dice-name">Rouge</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="oppDec('red')" aria-label="Retirer un dé rouge (adversaire)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ oRed }}</span>
+                <button mat-mini-fab color="primary" (click)="oppInc('red')" aria-label="Ajouter un dé rouge (adversaire)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Orange" aria-hidden="true"></span>
+                <span class="dice-name">Orange</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="oppDec('orange')" aria-label="Retirer un dé orange (adversaire)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ oOrange }}</span>
+                <button mat-mini-fab color="primary" (click)="oppInc('orange')" aria-label="Ajouter un dé orange (adversaire)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Yellow" aria-hidden="true"></span>
+                <span class="dice-name">Jaune</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="oppDec('yellow')" aria-label="Retirer un dé jaune (adversaire)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ oYellow }}</span>
+                <button mat-mini-fab color="primary" (click)="oppInc('yellow')" aria-label="Ajouter un dé jaune (adversaire)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="spacer"></div>
-          <div class="actions">
-            <button mat-mini-fab color="primary" (click)="dec('orange')" aria-label="Retirer un dé orange">
-              <mat-icon>remove</mat-icon>
-            </button>
-            <span class="count">{{ orange }}</span>
-            <button mat-mini-fab color="primary" (click)="inc('orange')" aria-label="Ajouter un dé orange">
-              <mat-icon>add</mat-icon>
-            </button>
+
+          <div class="col">
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Green" aria-hidden="true"></span>
+                <span class="dice-name">Vert</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="oppDec('green')" aria-label="Retirer un dé vert (adversaire)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ oGreen }}</span>
+                <button mat-mini-fab color="primary" (click)="oppInc('green')" aria-label="Ajouter un dé vert (adversaire)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Blue" aria-hidden="true"></span>
+                <span class="dice-name">Bleu</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="oppDec('blue')" aria-label="Retirer un dé bleu (adversaire)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ oBlue }}</span>
+                <button mat-mini-fab color="primary" (click)="oppInc('blue')" aria-label="Ajouter un dé bleu (adversaire)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="dice-row">
+              <div class="dice-type">
+                <span class="warcrow-font-Black" aria-hidden="true"></span>
+                <span class="dice-name">Noir</span>
+              </div>
+              <div class="spacer"></div>
+              <div class="actions">
+                <button mat-mini-fab color="primary" (click)="oppDec('black')" aria-label="Retirer un dé noir (adversaire)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span class="count">{{ oBlack }}</span>
+                <button mat-mini-fab color="primary" (click)="oppInc('black')" aria-label="Ajouter un dé noir (adversaire)">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="dice-row">
-          <div class="dice-type">
-            <span class="warcrow-font-Yellow" aria-hidden="true"></span>
-            <span class="dice-name">Jaune</span>
-          </div>
-          <div class="spacer"></div>
-          <div class="actions">
-            <button mat-mini-fab color="primary" (click)="dec('yellow')" aria-label="Retirer un dé jaune">
-              <mat-icon>remove</mat-icon>
-            </button>
-            <span class="count">{{ yellow }}</span>
-            <button mat-mini-fab color="primary" (click)="inc('yellow')" aria-label="Ajouter un dé jaune">
-              <mat-icon>add</mat-icon>
-            </button>
-          </div>
+        <h2>Aperçu</h2>
+        <div class="preview" aria-label="Dés sélectionnés - Mon adversaire">
+          <ng-container *ngFor="let i of countArray(oRed)">
+            <span class="die warcrow-font-Red" role="img" aria-label="Dé rouge"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(oOrange)">
+            <span class="die warcrow-font-Orange" role="img" aria-label="Dé orange"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(oYellow)">
+            <span class="die warcrow-font-Yellow" role="img" aria-label="Dé jaune"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(oGreen)">
+            <span class="die warcrow-font-Green" role="img" aria-label="Dé vert"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(oBlue)">
+            <span class="die warcrow-font-Blue" role="img" aria-label="Dé bleu"></span>
+          </ng-container>
+          <ng-container *ngFor="let i of countArray(oBlack)">
+            <span class="die warcrow-font-Black" role="img" aria-label="Dé noir"></span>
+          </ng-container>
+          <span class="empty" *ngIf="oRed + oOrange + oYellow + oGreen + oBlue + oBlack === 0">Aucun dé sélectionné</span>
         </div>
-      </div>
-
-      <div class="col">
-        <div class="dice-row">
-          <div class="dice-type">
-            <span class="warcrow-font-Green" aria-hidden="true"></span>
-            <span class="dice-name">Vert</span>
-          </div>
-          <div class="spacer"></div>
-          <div class="actions">
-            <button mat-mini-fab color="primary" (click)="dec('green')" aria-label="Retirer un dé vert">
-              <mat-icon>remove</mat-icon>
-            </button>
-            <span class="count">{{ green }}</span>
-            <button mat-mini-fab color="primary" (click)="inc('green')" aria-label="Ajouter un dé vert">
-              <mat-icon>add</mat-icon>
-            </button>
-          </div>
-        </div>
-
-        <div class="dice-row">
-          <div class="dice-type">
-            <span class="warcrow-font-Blue" aria-hidden="true"></span>
-            <span class="dice-name">Bleu</span>
-          </div>
-          <div class="spacer"></div>
-          <div class="actions">
-            <button mat-mini-fab color="primary" (click)="dec('blue')" aria-label="Retirer un dé bleu">
-              <mat-icon>remove</mat-icon>
-            </button>
-            <span class="count">{{ blue }}</span>
-            <button mat-mini-fab color="primary" (click)="inc('blue')" aria-label="Ajouter un dé bleu">
-              <mat-icon>add</mat-icon>
-            </button>
-          </div>
-        </div>
-
-        <div class="dice-row">
-          <div class="dice-type">
-            <span class="warcrow-font-Black" aria-hidden="true"></span>
-            <span class="dice-name">Noir</span>
-          </div>
-          <div class="spacer"></div>
-          <div class="actions">
-            <button mat-mini-fab color="primary" (click)="dec('black')" aria-label="Retirer un dé noir">
-              <mat-icon>remove</mat-icon>
-            </button>
-            <span class="count">{{ black }}</span>
-            <button mat-mini-fab color="primary" (click)="inc('black')" aria-label="Ajouter un dé noir">
-              <mat-icon>add</mat-icon>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h2>Aperçu</h2>
-    <div class="preview" aria-label="Dés sélectionnés">
-      <ng-container *ngFor="let i of countArray(red)">
-        <span class="die warcrow-font-Red" role="img" aria-label="Dé rouge"></span>
-      </ng-container>
-      <ng-container *ngFor="let i of countArray(orange)">
-        <span class="die warcrow-font-Orange" role="img" aria-label="Dé orange"></span>
-      </ng-container>
-      <ng-container *ngFor="let i of countArray(yellow)">
-        <span class="die warcrow-font-Yellow" role="img" aria-label="Dé jaune"></span>
-      </ng-container>
-      <ng-container *ngFor="let i of countArray(green)">
-        <span class="die warcrow-font-Green" role="img" aria-label="Dé vert"></span>
-      </ng-container>
-      <ng-container *ngFor="let i of countArray(blue)">
-        <span class="die warcrow-font-Blue" role="img" aria-label="Dé bleu"></span>
-      </ng-container>
-      <ng-container *ngFor="let i of countArray(black)">
-        <span class="die warcrow-font-Black" role="img" aria-label="Dé noir"></span>
-      </ng-container>
-      <span class="empty" *ngIf="red + orange + yellow + green + blue + black === 0">Aucun dé sélectionné</span>
-    </div>
+      </mat-tab>
+    </mat-tab-group>
 
     <h2>Statistique</h2>
     <div class="stats-actions">
@@ -154,9 +292,15 @@ import { LanguageService } from '../shared/language.service';
       <table class="stats-table" aria-label="Tableau du nombre moyen et maximum par symbole">
         <thead>
           <tr>
-            <th>Symbole</th>
-            <th title="Nombre moyen pour la sélection">Nombre moyen</th>
-            <th title="Valeur maximale possible pour la sélection">Maximum</th>
+            <th rowspan="2">Symbole</th>
+            <th class="group" colspan="2">Mon profil</th>
+            <th class="group" colspan="2" *ngIf="opponentHasSelection">Mon adversaire</th>
+          </tr>
+          <tr>
+            <th title="Nombre moyen pour ma sélection">Moy</th>
+            <th title="Valeur maximale possible pour ma sélection">Max</th>
+            <th *ngIf="opponentHasSelection" title="Nombre moyen pour la sélection de l'adversaire">Moy</th>
+            <th *ngIf="opponentHasSelection" title="Valeur maximale possible pour la sélection de l'adversaire">Max</th>
           </tr>
         </thead>
         <tbody>
@@ -167,13 +311,15 @@ import { LanguageService } from '../shared/language.service';
             </td>
             <td class="num strong">{{ formatNum(totalAvg[s]) }}</td>
             <td class="num strong">{{ formatInt(totalMax[s]) }}</td>
+            <td class="num strong" *ngIf="opponentHasSelection">{{ formatNum(opponentAvg[s]) }}</td>
+            <td class="num strong" *ngIf="opponentHasSelection">{{ formatInt(opponentMax[s]) }}</td>
           </tr>
         </tbody>
       </table>
     </div>
   `,
   styles: [`
-    .dice-controls { display: grid; gap: 12px; max-width: 1120px; }
+    .dice-controls { display: grid; gap: 12px; max-width: 1120px; margin-top: 1em; }
     .dice-controls.two-cols { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start; }
     .dice-controls .col { display: grid; gap: 12px; }
     .dice-row { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border: 1px solid var(--wc-border); border-radius: 8px; background: var(--wc-surface); }
@@ -198,6 +344,7 @@ import { LanguageService } from '../shared/language.service';
     .stats-table th, .stats-table td { border: 1px solid var(--wc-border); padding: 6px 8px; text-align: right; background: var(--wc-surface); }
     .stats-table th:first-child, .stats-table td:first-child { text-align: left; }
     .stats-table thead th { background: #f5f5f5; position: sticky; top: 0; }
+    .stats-table thead .group { text-align: center; }
     .sym { display: flex; align-items: center; gap: 8px; }
     .sym-ico { font-size: 18px; }
     .num { font-variant-numeric: tabular-nums; }
@@ -214,6 +361,14 @@ export class StatisticsPageComponent {
   green = 0;
   blue = 0;
   black = 0;
+
+  // Opponent selection
+  oRed = 0;
+  oOrange = 0;
+  oYellow = 0;
+  oGreen = 0;
+  oBlue = 0;
+  oBlack = 0;
 
   // --- Symbols model ---
   symbols = ['Success','Special','HollowSuccess','HollowSpecial','Block','HollowBlock'] as const;
@@ -366,34 +521,18 @@ export class StatisticsPageComponent {
 
   // Total averages (depend on selection)
   get totalAvg(): Record<(typeof this.symbols)[number], number> {
-    const out: Record<(typeof this.symbols)[number], number> = {
-      Success: 0, Special: 0, HollowSuccess: 0, HollowSpecial: 0, Block: 0, HollowBlock: 0
-    };
-    for (const s of this.symbols) {
-      out[s] = this.red * this.avgPerDie.red[s]
-             + this.orange * this.avgPerDie.orange[s]
-             + this.yellow * this.avgPerDie.yellow[s]
-             + this.green * this.avgPerDie.green[s]
-             + this.blue * this.avgPerDie.blue[s]
-             + this.black * this.avgPerDie.black[s];
-    }
-    return out;
+    return this.computeTotalsAvg({
+      red: this.red, orange: this.orange, yellow: this.yellow,
+      green: this.green, blue: this.blue, black: this.black
+    });
   }
 
   // Total maximums (sum of per-die maxima across selected dice)
   get totalMax(): Record<(typeof this.symbols)[number], number> {
-    const out: Record<(typeof this.symbols)[number], number> = {
-      Success: 0, Special: 0, HollowSuccess: 0, HollowSpecial: 0, Block: 0, HollowBlock: 0
-    };
-    for (const s of this.symbols) {
-      out[s] = this.red * this.maxPerDie.red[s]
-             + this.orange * this.maxPerDie.orange[s]
-             + this.yellow * this.maxPerDie.yellow[s]
-             + this.green * this.maxPerDie.green[s]
-             + this.blue * this.maxPerDie.blue[s]
-             + this.black * this.maxPerDie.black[s];
-    }
-    return out;
+    return this.computeTotalsMax({
+      red: this.red, orange: this.orange, yellow: this.yellow,
+      green: this.green, blue: this.blue, black: this.black
+    });
   }
 
   countArray(n: number) { return Array.from({ length: Math.max(0, Math.floor(n)) }); }
@@ -406,7 +545,36 @@ export class StatisticsPageComponent {
     this[color] = Math.max(0, this[color] - 1);
   }
 
-  reset() { this.red = this.orange = this.yellow = this.green = this.blue = this.black = 0; }
+  reset() { this.red = this.orange = this.yellow = this.green = this.blue = this.black = 0; this.oRed = this.oOrange = this.oYellow = this.oGreen = this.oBlue = this.oBlack = 0; }
+
+  // Opponent controls
+  oppInc(color: 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'black') {
+    const map = { red: 'oRed', orange: 'oOrange', yellow: 'oYellow', green: 'oGreen', blue: 'oBlue', black: 'oBlack' } as const;
+    this[map[color]] = (this[map[color]] as number) + 1;
+  }
+  oppDec(color: 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'black') {
+    const map = { red: 'oRed', orange: 'oOrange', yellow: 'oYellow', green: 'oGreen', blue: 'oBlue', black: 'oBlack' } as const;
+    const v = this[map[color]] as number;
+    this[map[color]] = Math.max(0, v - 1);
+  }
+
+  get opponentHasSelection(): boolean {
+    return (this.oRed + this.oOrange + this.oYellow + this.oGreen + this.oBlue + this.oBlack) > 0;
+  }
+
+  get opponentAvg(): Record<(typeof this.symbols)[number], number> {
+    return this.computeTotalsAvg({
+      red: this.oRed, orange: this.oOrange, yellow: this.oYellow,
+      green: this.oGreen, blue: this.oBlue, black: this.oBlack
+    });
+  }
+
+  get opponentMax(): Record<(typeof this.symbols)[number], number> {
+    return this.computeTotalsMax({
+      red: this.oRed, orange: this.oOrange, yellow: this.oYellow,
+      green: this.oGreen, blue: this.oBlue, black: this.oBlack
+    });
+  }
 
   private computeAverages(faces: Array<Record<(typeof this.symbols)[number], number>>): Record<(typeof this.symbols)[number], number> {
     const sum: Record<(typeof this.symbols)[number], number> = {
@@ -430,6 +598,36 @@ export class StatisticsPageComponent {
       max[s] = m;
     }
     return max;
+  }
+
+  private computeTotalsAvg(counts: { red: number, orange: number, yellow: number, green: number, blue: number, black: number }): Record<(typeof this.symbols)[number], number> {
+    const out: Record<(typeof this.symbols)[number], number> = {
+      Success: 0, Special: 0, HollowSuccess: 0, HollowSpecial: 0, Block: 0, HollowBlock: 0
+    };
+    for (const s of this.symbols) {
+      out[s] = counts.red * this.avgPerDie.red[s]
+             + counts.orange * this.avgPerDie.orange[s]
+             + counts.yellow * this.avgPerDie.yellow[s]
+             + counts.green * this.avgPerDie.green[s]
+             + counts.blue * this.avgPerDie.blue[s]
+             + counts.black * this.avgPerDie.black[s];
+    }
+    return out;
+  }
+
+  private computeTotalsMax(counts: { red: number, orange: number, yellow: number, green: number, blue: number, black: number }): Record<(typeof this.symbols)[number], number> {
+    const out: Record<(typeof this.symbols)[number], number> = {
+      Success: 0, Special: 0, HollowSuccess: 0, HollowSpecial: 0, Block: 0, HollowBlock: 0
+    };
+    for (const s of this.symbols) {
+      out[s] = counts.red * this.maxPerDie.red[s]
+             + counts.orange * this.maxPerDie.orange[s]
+             + counts.yellow * this.maxPerDie.yellow[s]
+             + counts.green * this.maxPerDie.green[s]
+             + counts.blue * this.maxPerDie.blue[s]
+             + counts.black * this.maxPerDie.black[s];
+    }
+    return out;
   }
 
   formatNum(v: number): string { return (v ?? 0).toFixed(2); }
