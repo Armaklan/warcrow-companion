@@ -13,6 +13,7 @@ import { ScenariosPageComponent } from './pages/scenarios-page.component';
 import { ScenarioDetailPageComponent } from './pages/scenario-detail-page.component';
 import { FeatDetailPageComponent } from './pages/feat-detail-page.component';
 import { ScenarioFeatDetailPageComponent } from './pages/scenario-feat-detail-page.component';
+import { StatisticsPageComponent } from './pages/statistics-page.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'actions' },
@@ -32,6 +33,7 @@ export const routes: Routes = [
   { path: 'scenarios/encounter/:sid/:fid', component: ScenarioFeatDetailPageComponent, title: 'Scénario & Exploit' },
   // Redirection rétrocompatibilité depuis l'ancienne URL
   { path: 'scenarios/random/:sid/:fid', pathMatch: 'full', redirectTo: 'scenarios/encounter/:sid/:fid' },
+  { path: 'statistique', component: StatisticsPageComponent, title: 'Statistique' },
   { path: 'feats/:id', component: FeatDetailPageComponent, title: "Détail de l'exploit" },
   { path: '**', redirectTo: 'actions' }
 ];

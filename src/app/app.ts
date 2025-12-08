@@ -106,6 +106,12 @@ import { LanguageService } from './shared/language.service';
               <span>{{ LABEL.menu.scenarios }}</span>
             </div>
           </a>
+          <a mat-list-item routerLink="/statistique" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>bar_chart</mat-icon>
+              <span>{{ LABEL.menu.statistique }}</span>
+            </div>
+          </a>
           <a mat-list-item routerLink="/teinte" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>palette</mat-icon>
