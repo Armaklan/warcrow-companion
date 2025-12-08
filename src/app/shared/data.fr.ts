@@ -1082,6 +1082,7 @@ const PERSONNAGE_UNITE = {
       <li><b>Effets : </b>Le personnage conserve tous les jetons d'effet.</li>
       <li><b>Teinte : </b>Le personnage reçoit le même nombre de jetons teinte que l'unité.</li>
       <li><b>Démoralisé :</b>Si l'unité était démoralisé, le personnage reçoit son propre jeton démoralisé à la même position.</li>
+      <li><b>Activation : </b>Le personnage n'hérite pas de l'activation de l'unité. Il n'a donc pas besoin de se stresser pour s'activer.</li>
     </ul>
     <p>Activez ensuite votre personnage.</p>
     <p>Si le personnage était un officier, le leader de l'unité prend la place que le personnage occupais au début de l'activation.</p>

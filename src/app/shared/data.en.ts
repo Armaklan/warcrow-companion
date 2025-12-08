@@ -1047,6 +1047,7 @@ const PERSONNAGE_UNITE = {
       <li><b>Effects:</b> The character keeps all effect tokens.</li>
       <li><b>Tinge:</b> The character gains the same number of Tinge tokens as the unit.</li>
       <li><b>Demoralized:</b> If the unit was demoralized, the character receives  their own demoralized token at the same position.</li>
+      <li><b>Activation :</b> The character dont gain the unit activation. It can be activated without gain stress.</li>
     </ul>
     <p>Then, activate your character.</p>
     <p>If the character was an Officer, the unit’s leader takes the position the character occupied at the start of the activation.</p>
