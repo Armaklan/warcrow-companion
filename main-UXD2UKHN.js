@@ -664,6 +664,7 @@ de l\u2019adversaire (min. 1) au lieu d\u2019avancer le sien.</p>
       <li><b>Effets : </b>Le personnage conserve tous les jetons d'effet.</li>
       <li><b>Teinte : </b>Le personnage re\xE7oit le m\xEAme nombre de jetons teinte que l'unit\xE9.</li>
       <li><b>D\xE9moralis\xE9 :</b>Si l'unit\xE9 \xE9tait d\xE9moralis\xE9, le personnage re\xE7oit son propre jeton d\xE9moralis\xE9 \xE0 la m\xEAme position.</li>
+      <li><b>Activation : </b>Le personnage n'h\xE9rite pas de l'activation de l'unit\xE9. Il n'a donc pas besoin de se stresser pour s'activer.</li>
     </ul>
     <p>Activez ensuite votre personnage.</p>
     <p>Si le personnage \xE9tait un officier, le leader de l'unit\xE9 prend la place que le personnage occupais au d\xE9but de l'activation.</p>
@@ -1403,6 +1404,7 @@ counter than their rival\u2019s</li>
       <li><b>Effects:</b> The character keeps all effect tokens.</li>
       <li><b>Tinge:</b> The character gains the same number of Tinge tokens as the unit.</li>
       <li><b>Demoralized:</b> If the unit was demoralized, the character receives  their own demoralized token at the same position.</li>
+      <li><b>Activation :</b> The character dont gain the unit activation. It can be activated without gain stress.</li>
     </ul>
     <p>Then, activate your character.</p>
     <p>If the character was an Officer, the unit\u2019s leader takes the position the character occupied at the start of the activation.</p>
