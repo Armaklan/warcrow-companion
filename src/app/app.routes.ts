@@ -14,6 +14,7 @@ import { ScenarioDetailPageComponent } from './pages/scenario-detail-page.compon
 import { FeatDetailPageComponent } from './pages/feat-detail-page.component';
 import { ScenarioFeatDetailPageComponent } from './pages/scenario-feat-detail-page.component';
 import { StatisticsPageComponent } from './pages/statistics-page.component';
+import { AboutPageComponent } from './pages/about-page.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'actions' },
@@ -34,6 +35,7 @@ export const routes: Routes = [
   // Redirection rétrocompatibilité depuis l'ancienne URL
   { path: 'scenarios/random/:sid/:fid', pathMatch: 'full', redirectTo: 'scenarios/encounter/:sid/:fid' },
   { path: 'statistique', component: StatisticsPageComponent, title: 'Statistique' },
+  { path: 'about', component: AboutPageComponent, title: 'About' },
   { path: 'feats/:id', component: FeatDetailPageComponent, title: "Détail de l'exploit" },
   { path: '**', redirectTo: 'actions' }
 ];

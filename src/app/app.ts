@@ -118,6 +118,12 @@ import { LanguageService } from './shared/language.service';
               <span>{{ LABEL.menu.teinte }}</span>
             </div>
           </a>
+          <a mat-list-item routerLink="/about" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>help</mat-icon>
+              <span>{{ LABEL.menu.about }}</span>
+            </div>
+          </a>
         </mat-nav-list>
       </mat-sidenav>
 

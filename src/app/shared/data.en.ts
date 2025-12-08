@@ -1136,7 +1136,8 @@ export const LABEL = {
     scenarios: 'Scenario',
     feats: 'Feat',
     teinte: 'Tinge',
-    statistique: 'Statistics'
+    statistique: 'Statistics',
+    about: 'About'
   },
   actions: {
     simple: 'Simple actions',
