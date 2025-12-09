@@ -92,6 +92,9 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
     <p>
       Si vous d\xE9ployez une unit\xE9 d\u2019\xC9claireur apr\xE8s le d\xE9but de la partie, vous devez l\u2019activer imm\xE9diatement et consommer une de vos deux actions pour son activation. Ainsi, elle ne pourra r\xE9aliser qu\u2019une seule action, qui ne peut pas \xEAtre une action complexe.
     </p>
+    <h3>Personnage rejoingnant une unit\xE9 d'\xE9claireur</h3>
+    <p>Quand un personnage veut rejoindre une unit\xE9 ayant le mot-clef \xE9claireur, laissez la figurine en dehors du champs de bataille et placez-l\xE0 sous l'unit\xE9. Quand l'unit\xE9 est d\xE9ploy\xE9, deployez le personnage avec elle.</p>
+    <p>Dans le cas o\xF9 le personnage \xE0 le mot-clef \xE9claireur et le donne \xE0 sun unit\xE9, placez \xE9galement les deux cartes de cot\xE9s et d\xE9ployez les en m\xEAme temps.</p>
     `},{title:"\xC9lite / Elite",details:`<p>Apr\xE8s les jets de d\xE9s (relances incluses) et avant les variations, cette unit\xE9 peut remplacer tout <span class="warcrow-font-HollowSuccess" role="img" aria-label="Succ\xE8s Hollow" ></span> par <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span>, tout <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> par <span class="warcrow-font-Block" role="img" aria-label="Blockl" ></span>, et tout <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow Special" ></span> par <span class="warcrow-font-Special" role="img" aria-label="Special" ></span>. Cet effet s\u2019applique \xE0 tous ses jets.</p><p>Cette r\xE8gle s'applique aux tests de VOL, d'attaque, d\xE9fense, ainsi qu'aux effets de comp\xE9tences ou sort de l'unit\xE9. Cela ne s'applique pas aux autres tests comme le blocage de sort, la dissipation, ou les tests de teintes.</p>`},{title:"Embusqu\xE9 / Ambusher",details:`
     <p>
     Les unit\xE9s Embusqu\xE9es se cachent, pr\xEAtes \xE0 entrer en action apr\xE8s le d\xE9but de la bataille en frappant par surprise.
@@ -119,6 +122,9 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
       <strong>Activez ensuite votre unit\xE9.</strong>
     </li>
   </ul>
+  <h3>Personnage rejoingnant une unit\xE9 d'embusqu\xE9</h3>
+    <p>Quand un personnage veut rejoindre une unit\xE9 ayant le mot-clef Embusqu\xE9, laissez la figurine en dehors du champs de bataille et placez-l\xE0 sous l'unit\xE9. Quand l'unit\xE9 est d\xE9ploy\xE9, deployez le personnage avec elle.</p>
+    <p>Dans le cas o\xF9 le personnage \xE0 le mot-clef Embusqu\xE9 et le donne \xE0 sun unit\xE9, placez \xE9galement les deux cartes de cot\xE9s et d\xE9ployez les en m\xEAme temps.</p>
 `},{title:"\xC9quipage / Manned",details:"<ul><li>L'unit\xE9 ignore les effets d\u2019Intimidation.</li><li>L'unit\xE9 ne subit pas de stress si elle perd un affrontement.</li></ul>"},{title:"Fureur / Raging",details:'<p>Ajoute <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span> \xE0 ses jets d\u2019attaque lorsqu\u2019elle charge.</p>'},{title:"Golem / Golem",details:"<ul><li>Ignore l\u2019Intimidation.</li><li>Immunis\xE9 contre Effray\xE9.</li><li>Ne peut pas \xEAtre d\xE9moralis\xE9. Si le stress d\xE9passe la valeur de MOR, ignorez l\u2019exc\xE9dent.</li></ul>"},{title:"Inamovible / Immovable",details:"<p>Ne peut pas \xEAtre attir\xE9e, bouscul\xE9e, plac\xE9e, replac\xE9e ni forc\xE9e au repli, sauf si vous le souhaitez.</p>"},{title:"Intr\xE9pide / Fearless",details:"<p>Ignore Intimidation et immunis\xE9 contre Effray\xE9.</p>"},{title:"Intimidation (N) / Intimidating",details:`
     <p>
     Lorsque cette unit\xE9 engage ou est engag\xE9 au combat, l\u2019unit\xE9 ennemie doit effectuer un test de VOL et obtenir
@@ -266,7 +272,7 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
   `},{title:"Lancer un sort",details:`
       <ol>
         <li>Choisissez votre sort et d\xE9clarez si vous appliquez des alt\xE9rations (d\xE9s noirs ou teinte), puis v\xE9rifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
-        <li>Vous adversaire d\xE9clare s'il dissipe ou tente de contrer le sort.</li>
+        <li>Votre adversaire d\xE9clare s'il dissipe ou tente de contrer le sort.</li>
         <li>R\xE9solvez un jet face \xE0 face entre la VOL du lanceur de sort et le test de dissipation.</li>
         <li>Le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span></li>
         <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span> sur le jet, appliquez les effets du sort. </li>
