@@ -133,6 +133,9 @@ const MOTS_CLEFS: CollapsibleItem[] = [
     <p>
       Si vous déployez une unité d’Éclaireur après le début de la partie, vous devez l’activer immédiatement et consommer une de vos deux actions pour son activation. Ainsi, elle ne pourra réaliser qu’une seule action, qui ne peut pas être une action complexe.
     </p>
+    <h3>Personnage rejoingnant une unité d'éclaireur</h3>
+    <p>Quand un personnage veut rejoindre une unité ayant le mot-clef éclaireur, laissez la figurine en dehors du champs de bataille et placez-là sous l'unité. Quand l'unité est déployé, deployez le personnage avec elle.</p>
+    <p>Dans le cas où le personnage à le mot-clef éclaireur et le donne à sun unité, placez également les deux cartes de cotés et déployez les en même temps.</p>
     `
   },
   {
@@ -172,6 +175,9 @@ const MOTS_CLEFS: CollapsibleItem[] = [
       <strong>Activez ensuite votre unité.</strong>
     </li>
   </ul>
+  <h3>Personnage rejoingnant une unité d'embusqué</h3>
+    <p>Quand un personnage veut rejoindre une unité ayant le mot-clef Embusqué, laissez la figurine en dehors du champs de bataille et placez-là sous l'unité. Quand l'unité est déployé, deployez le personnage avec elle.</p>
+    <p>Dans le cas où le personnage à le mot-clef Embusqué et le donne à sun unité, placez également les deux cartes de cotés et déployez les en même temps.</p>
 `
   },
   {
@@ -402,7 +408,7 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
     title: 'Lancer un sort', details: `
       <ol>
         <li>Choisissez votre sort et déclarez si vous appliquez des altérations (dés noirs ou teinte), puis vérifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
-        <li>Vous adversaire déclare s'il dissipe ou tente de contrer le sort.</li>
+        <li>Votre adversaire déclare s'il dissipe ou tente de contrer le sort.</li>
         <li>Résolvez un jet face à face entre la VOL du lanceur de sort et le test de dissipation.</li>
         <li>Le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succès" ></span></li>
         <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> sur le jet, appliquez les effets du sort. </li>
