@@ -271,7 +271,7 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         <li>Le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span></li>
         <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span> sur le jet, appliquez les effets du sort. </li>
         <li>Si le sort est une r\xE9ussite et que vous avez d\xE9clarez des alt\xE9rations de teintes, d\xE9pensez la.</li>
-        <li>Si le lanceur de sort a d\xE9clarer des alt\xE9rations <span class="warcrow-font-Black" role="img" aria-label="succ\xE8s" > faire un test de teinte. Si le lanceur a utilisez de la teinte pour obtenir une r\xE9ussite, il subit un effet de teinte.</li>
+        <li>Si le lanceur de sort a d\xE9clar\xE9 des alt\xE9rations <span class="warcrow-font-Black" role="img" aria-label="succ\xE8s" >, faite un test de teinte et subissez les effets de la teinte. Si le lanceur a utilis\xE9 de la teinte pour obtenir une r\xE9ussite, il subit les effets de la teinte.</li>
       </ol>
       <p>Si vous \xEAtes au corps \xE0 corps, cette action ne peut cibler que votre unit\xE9 ou une unit\xE9 ennemis avec laquelle vous \xEAtes engag\xE9e.</p>
       <p>Jet de teinte</p>
