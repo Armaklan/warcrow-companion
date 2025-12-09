@@ -401,19 +401,20 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
   {
     title: 'Lancer un sort', details: `
       <ol>
-        <li>Choisissez votre sort et déclarez si vous appliquez des altérations, puis vérifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
-        <li>Si vous adversaire à une unité qui peut tenter de bloquer le sort, faite le test.</li>
+        <li>Choisissez votre sort et déclarez si vous appliquez des altérations (dés noirs ou teinte), puis vérifier les conditions de lancement du sort. Si les conditions ne sont pas remplis, vous ne pouvez lancer le sort.</li>
+        <li>Vous adversaire déclare s'il dissipe ou tente de contrer le sort.</li>
         <li>Résolvez un jet face à face entre la VOL du lanceur de sort et le test de dissipation.</li>
-        <li>Déclarez les altérations utilisant de la <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/> et dépensez-là..</li>
         <li>Le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succès" ></span></li>
         <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> sur le jet, appliquez les effets du sort. </li>
+        <li>Si le sort est une réussite et que vous avez déclarez des altérations de teintes, dépensez la.</li>
+        <li>Si le lanceur de sort a déclarer des altérations <span class="warcrow-font-Black" role="img" aria-label="succès" > faire un test de teinte. Si le lanceur a utilisez de la teinte pour obtenir une réussite, il subit un effet de teinte.</li>
       </ol>
       <p>Si vous êtes au corps à corps, cette action ne peut cibler que votre unité ou une unité ennemis avec laquelle vous êtes engagée.</p>
       <p>Jet de teinte</p>
       <ol>
         <li>Créez le jet de teinte : prenez <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> comme indiqué dans les altérations choisis du sort.</li>
         <li>Pour chaque <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
-        <li>Si le lanceur possède des <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>, appliquez les effets de la teinte.</li>
+        <li>Appliquez les effets de la teinte.</li>
       </ol>
   `
   },
