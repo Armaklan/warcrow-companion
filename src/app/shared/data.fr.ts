@@ -407,7 +407,7 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>Le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succès" ></span></li>
         <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> sur le jet, appliquez les effets du sort. </li>
         <li>Si le sort est une réussite et que vous avez déclarez des altérations de teintes, dépensez la.</li>
-        <li>Si le lanceur de sort a déclaré des altérations <span class="warcrow-font-Black" role="img" aria-label="succès" >, faite un test de teinte et subissez les effets de la teinte. Si le lanceur a utilisé de la teinte pour obtenir une réussite, il subit les effets de la teinte.</li>
+        <li>Si le lanceur de sort a déclaré des altérations <span class="warcrow-font-Black" role="img" aria-label="succès" ></span>, faite un test de teinte et subissez les effets de la teinte. Si le lanceur a utilisé de la teinte pour obtenir une réussite, il subit les effets de la teinte.</li>
       </ol>
       <p>Si vous êtes au corps à corps, cette action ne peut cibler que votre unité ou une unité ennemis avec laquelle vous êtes engagée.</p>
       <p>Jet de teinte</p>
