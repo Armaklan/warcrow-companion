@@ -565,7 +565,7 @@ const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
   {
     title: 'Bloque la LdV / Block LoS',
     details: `
-      Ce décor bloque tous les LdV tracées à travers lui, ainsi que celles tracées depuis son intérieur et vers son intérieur. A moins qu'un décor ne possède ce mot-clé, il n'est jamais considéré comme bloquant les LdV.
+      Ce décor bloque tous les LdV tracées à travers lui, ainsi que celles tracées depuis son intérieur ou se tracer vers son intérieur. A moins qu'un décor ne possède ce mot-clé, il n'est jamais considéré comme bloquant les LdV.
     `
   },
   {
