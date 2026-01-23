@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1765323418773,
+  "timestamp": 1769153887446,
   "index": "/warcrow-companion/index.html",
   "assetGroups": [
     {
@@ -162,7 +162,7 @@
     "/warcrow-companion/scenario/expanse.png": "9e9b03f7c7ba2c756ab9213ee5d0f0fbf4007fda",
     "/warcrow-companion/scenario/fog-death.png": "ef4a1b1b4b3bf3079472a4ae3be6bacd65968847",
     "/warcrow-companion/scenario/influence-zone.png": "8395ee67bf839f38f90cd1330fa7e501b0a75a99",
-    "/warcrow-companion/scenario/loot.png": "17baed58bb8c289f1e6604a7b54c02f04a943197",
+    "/warcrow-companion/scenario/loot.png": "37d9c4f090f51e3b1ef9bc3d3b1c7b5fae01f54b",
     "/warcrow-companion/scenario/quadrant.png": "00399a1c65ad1b733a2990748303376d477cbc9b",
     "/warcrow-companion/scenario/take-position.png": "186c31a53b92b355717f30930d03c393754ebc1f",
     "/warcrow-companion/sort.png": "85fd7308ae3798e8a458d714589d82ac5dba5830",
