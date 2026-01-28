@@ -13,7 +13,7 @@ import { LanguageService } from '../shared/language.service';
     <h1>{{ labels.menu.statistique }}</h1>
 
     <mat-tab-group>
-      <mat-tab label="Mon profil" aria-label="Onglet Mon profil">
+      <mat-tab [label]="labels.menu.statistiqueTab.profil" [attr.aria-label]="'Onglet ' + labels.menu.statistiqueTab.profil">
         <div class="dice-controls two-cols">
           <div class="col">
             <div class="dice-row">
@@ -258,7 +258,7 @@ import { LanguageService } from '../shared/language.service';
         </div>
       </mat-tab>
 
-      <mat-tab label="Mon adversaire" aria-label="Onglet Mon adversaire">
+      <mat-tab [label]="labels.menu.statistiqueTab.adversaire" [attr.aria-label]="'Onglet ' + labels.menu.statistiqueTab.adversaire">
         <div class="dice-controls two-cols">
           <div class="col">
             <div class="dice-row">

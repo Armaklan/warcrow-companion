@@ -1189,6 +1189,11 @@ export const LABEL = {
     feats: 'Exploit',
     teinte: 'Teinte',
     statistique: 'Statistique',
+    statistiqueTab: {
+      profil: 'Mon profil',
+      adversaire: 'Mon adversaire',
+      apercu: 'Aperçu'
+    },
     about: 'À propos'
   },
   actions: {

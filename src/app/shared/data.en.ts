@@ -1137,6 +1137,11 @@ export const LABEL = {
     feats: 'Feat',
     teinte: 'Tinge',
     statistique: 'Statistics',
+    statistiqueTab: {
+      profil: 'My profile',
+      adversaire: 'My opponent',
+      apercu: 'Overview'
+    },
     about: 'About'
   },
   actions: {
