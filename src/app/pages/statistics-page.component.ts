@@ -22,11 +22,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="dec('red')" aria-label="Retirer un dé rouge">
+                <button mat-icon-button color="primary" (click)="dec('red')" aria-label="Retirer un dé rouge">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ red }}</span>
-                <button mat-mini-fab color="primary" (click)="inc('red')" aria-label="Ajouter un dé rouge">
+                <button mat-icon-button color="primary" (click)="inc('red')" aria-label="Ajouter un dé rouge">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -38,11 +38,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="dec('orange')" aria-label="Retirer un dé orange">
+                <button mat-icon-button color="primary" (click)="dec('orange')" aria-label="Retirer un dé orange">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ orange }}</span>
-                <button mat-mini-fab color="primary" (click)="inc('orange')" aria-label="Ajouter un dé orange">
+                <button mat-icon-button color="primary" (click)="inc('orange')" aria-label="Ajouter un dé orange">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -54,11 +54,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="dec('yellow')" aria-label="Retirer un dé jaune">
+                <button mat-icon-button color="primary" (click)="dec('yellow')" aria-label="Retirer un dé jaune">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ yellow }}</span>
-                <button mat-mini-fab color="primary" (click)="inc('yellow')" aria-label="Ajouter un dé jaune">
+                <button mat-icon-button color="primary" (click)="inc('yellow')" aria-label="Ajouter un dé jaune">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -72,11 +72,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="dec('green')" aria-label="Retirer un dé vert">
+                <button mat-icon-button color="primary" (click)="dec('green')" aria-label="Retirer un dé vert">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ green }}</span>
-                <button mat-mini-fab color="primary" (click)="inc('green')" aria-label="Ajouter un dé vert">
+                <button mat-icon-button color="primary" (click)="inc('green')" aria-label="Ajouter un dé vert">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -88,11 +88,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="dec('blue')" aria-label="Retirer un dé bleu">
+                <button mat-icon-button color="primary" (click)="dec('blue')" aria-label="Retirer un dé bleu">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ blue }}</span>
-                <button mat-mini-fab color="primary" (click)="inc('blue')" aria-label="Ajouter un dé bleu">
+                <button mat-icon-button color="primary" (click)="inc('blue')" aria-label="Ajouter un dé bleu">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -104,11 +104,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="dec('black')" aria-label="Retirer un dé noir">
+                <button mat-icon-button color="primary" (click)="dec('black')" aria-label="Retirer un dé noir">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ black }}</span>
-                <button mat-mini-fab color="primary" (click)="inc('black')" aria-label="Ajouter un dé noir">
+                <button mat-icon-button color="primary" (click)="inc('black')" aria-label="Ajouter un dé noir">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -121,11 +121,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="decSym('Success')" aria-label="Retirer un succès">
+                <button mat-icon-button color="primary" (click)="decSym('Success')" aria-label="Retirer un succès">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ sSuccess }}</span>
-                <button mat-mini-fab color="primary" (click)="incSym('Success')" aria-label="Ajouter un succès">
+                <button mat-icon-button color="primary" (click)="incSym('Success')" aria-label="Ajouter un succès">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -137,11 +137,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="decSym('Special')" aria-label="Retirer un spécial">
+                <button mat-icon-button color="primary" (click)="decSym('Special')" aria-label="Retirer un spécial">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ sSpecial }}</span>
-                <button mat-mini-fab color="primary" (click)="incSym('Special')" aria-label="Ajouter un spécial">
+                <button mat-icon-button color="primary" (click)="incSym('Special')" aria-label="Ajouter un spécial">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -153,11 +153,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="decSym('Block')" aria-label="Retirer un bloc">
+                <button mat-icon-button color="primary" (click)="decSym('Block')" aria-label="Retirer un bloc">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ sBlock }}</span>
-                <button mat-mini-fab color="primary" (click)="incSym('Block')" aria-label="Ajouter un bloc">
+                <button mat-icon-button color="primary" (click)="incSym('Block')" aria-label="Ajouter un bloc">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -171,11 +171,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="decSym('HollowSuccess')" aria-label="Retirer un succès creux">
+                <button mat-icon-button color="primary" (click)="decSym('HollowSuccess')" aria-label="Retirer un succès creux">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ sHollowSuccess }}</span>
-                <button mat-mini-fab color="primary" (click)="incSym('HollowSuccess')" aria-label="Ajouter un succès creux">
+                <button mat-icon-button color="primary" (click)="incSym('HollowSuccess')" aria-label="Ajouter un succès creux">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -187,11 +187,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="decSym('HollowSpecial')" aria-label="Retirer un spécial creux">
+                <button mat-icon-button color="primary" (click)="decSym('HollowSpecial')" aria-label="Retirer un spécial creux">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ sHollowSpecial }}</span>
-                <button mat-mini-fab color="primary" (click)="incSym('HollowSpecial')" aria-label="Ajouter un spécial creux">
+                <button mat-icon-button color="primary" (click)="incSym('HollowSpecial')" aria-label="Ajouter un spécial creux">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -203,11 +203,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="decSym('HollowBlock')" aria-label="Retirer un bloc creux">
+                <button mat-icon-button color="primary" (click)="decSym('HollowBlock')" aria-label="Retirer un bloc creux">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ sHollowBlock }}</span>
-                <button mat-mini-fab color="primary" (click)="incSym('HollowBlock')" aria-label="Ajouter un bloc creux">
+                <button mat-icon-button color="primary" (click)="incSym('HollowBlock')" aria-label="Ajouter un bloc creux">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -267,11 +267,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="oppDec('red')" aria-label="Retirer un dé rouge (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppDec('red')" aria-label="Retirer un dé rouge (adversaire)">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ oRed }}</span>
-                <button mat-mini-fab color="primary" (click)="oppInc('red')" aria-label="Ajouter un dé rouge (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppInc('red')" aria-label="Ajouter un dé rouge (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -283,11 +283,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="oppDec('orange')" aria-label="Retirer un dé orange (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppDec('orange')" aria-label="Retirer un dé orange (adversaire)">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ oOrange }}</span>
-                <button mat-mini-fab color="primary" (click)="oppInc('orange')" aria-label="Ajouter un dé orange (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppInc('orange')" aria-label="Ajouter un dé orange (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -299,11 +299,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="oppDec('yellow')" aria-label="Retirer un dé jaune (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppDec('yellow')" aria-label="Retirer un dé jaune (adversaire)">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ oYellow }}</span>
-                <button mat-mini-fab color="primary" (click)="oppInc('yellow')" aria-label="Ajouter un dé jaune (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppInc('yellow')" aria-label="Ajouter un dé jaune (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -317,11 +317,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="oppDec('green')" aria-label="Retirer un dé vert (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppDec('green')" aria-label="Retirer un dé vert (adversaire)">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ oGreen }}</span>
-                <button mat-mini-fab color="primary" (click)="oppInc('green')" aria-label="Ajouter un dé vert (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppInc('green')" aria-label="Ajouter un dé vert (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -333,11 +333,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="oppDec('blue')" aria-label="Retirer un dé bleu (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppDec('blue')" aria-label="Retirer un dé bleu (adversaire)">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ oBlue }}</span>
-                <button mat-mini-fab color="primary" (click)="oppInc('blue')" aria-label="Ajouter un dé bleu (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppInc('blue')" aria-label="Ajouter un dé bleu (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -349,11 +349,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="oppDec('black')" aria-label="Retirer un dé noir (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppDec('black')" aria-label="Retirer un dé noir (adversaire)">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ oBlack }}</span>
-                <button mat-mini-fab color="primary" (click)="oppInc('black')" aria-label="Ajouter un dé noir (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppInc('black')" aria-label="Ajouter un dé noir (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -366,11 +366,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="oppDecSym('Success')" aria-label="Retirer un succès (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppDecSym('Success')" aria-label="Retirer un succès (adversaire)">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ oSuccess }}</span>
-                <button mat-mini-fab color="primary" (click)="oppIncSym('Success')" aria-label="Ajouter un succès (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppIncSym('Success')" aria-label="Ajouter un succès (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -382,11 +382,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="oppDecSym('Special')" aria-label="Retirer un spécial (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppDecSym('Special')" aria-label="Retirer un spécial (adversaire)">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ oSpecial }}</span>
-                <button mat-mini-fab color="primary" (click)="oppIncSym('Special')" aria-label="Ajouter un spécial (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppIncSym('Special')" aria-label="Ajouter un spécial (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -398,11 +398,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="oppDecSym('Block')" aria-label="Retirer un bloc (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppDecSym('Block')" aria-label="Retirer un bloc (adversaire)">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ oBlock }}</span>
-                <button mat-mini-fab color="primary" (click)="oppIncSym('Block')" aria-label="Ajouter un bloc (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppIncSym('Block')" aria-label="Ajouter un bloc (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -416,11 +416,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="oppDecSym('HollowSuccess')" aria-label="Retirer un succès creux (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppDecSym('HollowSuccess')" aria-label="Retirer un succès creux (adversaire)">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ oHollowSuccess }}</span>
-                <button mat-mini-fab color="primary" (click)="oppIncSym('HollowSuccess')" aria-label="Ajouter un succès creux (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppIncSym('HollowSuccess')" aria-label="Ajouter un succès creux (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -432,11 +432,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="oppDecSym('HollowSpecial')" aria-label="Retirer un spécial creux (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppDecSym('HollowSpecial')" aria-label="Retirer un spécial creux (adversaire)">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ oHollowSpecial }}</span>
-                <button mat-mini-fab color="primary" (click)="oppIncSym('HollowSpecial')" aria-label="Ajouter un spécial creux (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppIncSym('HollowSpecial')" aria-label="Ajouter un spécial creux (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -448,11 +448,11 @@ import { LanguageService } from '../shared/language.service';
               </div>
               <div class="spacer"></div>
               <div class="actions">
-                <button mat-mini-fab color="primary" (click)="oppDecSym('HollowBlock')" aria-label="Retirer un bloc creux (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppDecSym('HollowBlock')" aria-label="Retirer un bloc creux (adversaire)">
                   <mat-icon>remove</mat-icon>
                 </button>
                 <span class="count">{{ oHollowBlock }}</span>
-                <button mat-mini-fab color="primary" (click)="oppIncSym('HollowBlock')" aria-label="Ajouter un bloc creux (adversaire)">
+                <button mat-icon-button color="primary" (click)="oppIncSym('HollowBlock')" aria-label="Ajouter un bloc creux (adversaire)">
                   <mat-icon>add</mat-icon>
                 </button>
               </div>
@@ -542,20 +542,20 @@ import { LanguageService } from '../shared/language.service';
     </div>
   `,
   styles: [`
-    .dice-controls { display: grid; gap: 12px; max-width: 1120px; margin-top: 1em; }
-    .dice-controls.two-cols { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); align-items: start; }
-    .dice-controls .col { display: grid; gap: 12px; }
-    .dice-row { display: flex; align-items: center; padding: 8px 12px; border: 1px solid var(--wc-border); border-radius: 8px; background: var(--wc-surface); }
-    .dice-type { display: flex; align-items: center; gap: 8px; font-size: 20px; }
+    .dice-controls { display: grid; gap: 8px; max-width: 1120px; margin-top: 1em; }
+    .dice-controls.two-cols { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); align-items: start; }
+    .dice-controls .col { display: grid; gap: 8px; }
+    .dice-row { display: flex; align-items: center; padding: 4px 8px; border: 1px solid var(--wc-border); border-radius: 8px; background: var(--wc-surface); }
+    .dice-type { display: flex; align-items: center; gap: 4px; font-size: 18px; }
     .dice-type .warcrow-font-Red,
     .dice-type .warcrow-font-Orange,
     .dice-type .warcrow-font-Yellow,
     .dice-type .warcrow-font-Green,
     .dice-type .warcrow-font-Blue,
-    .dice-type .warcrow-font-Black { font-size: 28px; line-height: 1; }
+    .dice-type .warcrow-font-Black { font-size: 24px; line-height: 1; }
     .spacer { flex: 1; }
-    .actions { display: flex; align-items: center; gap: 8px; }
-    .count { min-width: 24px; text-align: center; font-weight: 600; }
+    .actions { display: flex; align-items: center; gap: 4px; }
+    .count { min-width: 20px; text-align: center; font-weight: 600; }
     .preview { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; border: 2px dashed var(--wc-border); border-radius: 8px; min-height: 64px; }
     .preview .die { font-size: 36px; line-height: 1; }
     .empty { color: #777; font-style: italic; }

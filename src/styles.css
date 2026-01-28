@@ -8,13 +8,26 @@
   --wc-hover: rgba(23, 59, 21, 0.06);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--wc-surface); color: #1f1f1f; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--wc-surface);
+  color: #1f1f1f;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
 
 .app-container { height: 100vh; }
 /* Sidenav width remains the same; background set in app component override */
 .mat-sidenav { width: 280px; }
-.content { padding: 16px; }
+.content {
+  padding: 16px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .toolbar-title { font-weight: 600; }
 .spacer { flex: 1 1 auto; }
 
