@@ -76,8 +76,7 @@ token two positions on the turn counter. Your unit flees.</li>
     title: 'Disarmed',
     details: `<b>State</b><p>
 Your unit must cancel one die from its attack rolls in which it has obtained at least one
-1. In the case of multiple dice, your opponent will choose which one. You must apply this effect after
-<span class="warcrow-font-Success" role="img" aria-label="succès" ></span>. In the case of multiple dice, your opponent will choose which one.
+1 <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>. In the case of multiple dice, your opponent will choose which one.
 You must apply this effect after rolling the dice (with all possible repetitions), but just before starting the Switches step.
 </p>
 <p>You cannot add modifiers to your attack rolls.</p>
@@ -93,7 +92,7 @@ have not been able to cancel any dice, the state is considered to remain active)
 rolling the dice (with all possible repetitions), but just before starting the Switches step.
   </p>
   <p>
-    You cannot add modifiers to your attack rolls.
+    You cannot add modifiers to your defense rolls.
   </p>
   <p>Remove this state at the end of the resolution of a roll in which you have applied its effects (if you
 have not been able to cancel any dice, the state is considered to remain active).</p>`,
