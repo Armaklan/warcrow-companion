@@ -215,7 +215,7 @@ import { LanguageService } from '../shared/language.service';
           </div>
         </div>
 
-        <h2>Aperçu</h2>
+        <h2>{{ labels.menu.statistiqueTab.apercu }}</h2>
         <div class="preview" aria-label="Dés sélectionnés - Mon profil">
           <ng-container *ngFor="let i of countArray(red)">
             <span class="die warcrow-font-Red" role="img" aria-label="Dé rouge"></span>
@@ -460,7 +460,7 @@ import { LanguageService } from '../shared/language.service';
           </div>
         </div>
 
-        <h2>Aperçu</h2>
+        <h2>{{ labels.menu.statistiqueTab.apercu }}</h2>
         <div class="preview" aria-label="Dés sélectionnés - Mon adversaire">
           <ng-container *ngFor="let i of countArray(oRed)">
             <span class="die warcrow-font-Red" role="img" aria-label="Dé rouge"></span>
@@ -517,8 +517,8 @@ import { LanguageService } from '../shared/language.service';
         <thead>
           <tr>
             <th rowspan="2">Symbole</th>
-            <th class="group" colspan="2">Mon profil</th>
-            <th class="group" colspan="2" *ngIf="opponentHasSelection">Mon adversaire</th>
+            <th class="group" colspan="2">{{ labels.menu.statistiqueTab.profil }}</th>
+            <th class="group" colspan="2" *ngIf="opponentHasSelection">{{ labels.menu.statistiqueTab.adversaire }}</th>
           </tr>
           <tr>
             <th title="Nombre moyen pour ma sélection">Moy</th>
