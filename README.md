@@ -1,6 +1,10 @@
 # WarcrowCompanion
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+Warcrow Companion is a web application about Corvus Belli Warcrow Miniature Games.
+
+The application is host in github page :
+[https://armaklan.github.io/warcrow-companion/](https://armaklan.github.io/warcrow-companion/)
+
 
 ## Development server
 
