@@ -1142,7 +1142,8 @@ export const LABEL = {
       adversaire: 'My opponent',
       apercu: 'Overview'
     },
-    about: 'About'
+    about: 'About',
+    privacy: 'Privacy Policy'
   },
   actions: {
     simple: 'Simple actions',

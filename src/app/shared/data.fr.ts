@@ -1194,7 +1194,8 @@ export const LABEL = {
       adversaire: 'Mon adversaire',
       apercu: 'Aperçu'
     },
-    about: 'À propos'
+    about: 'À propos',
+    privacy: 'Règles de confidentialité'
   },
   actions: {
     simple: 'Actions simple',

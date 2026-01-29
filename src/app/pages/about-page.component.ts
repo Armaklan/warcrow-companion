@@ -17,7 +17,10 @@ import { LanguageService } from '../shared/language.service';
         (<a href="https://github.com/Armaklan/warcrow-companion/" target="_blank" rel="noopener noreferrer">link</a>).
       </p>
       <p>
-        Feel free to comment and suggest ideas for improvements!
+        Feel free to comment and suggest ideas!
+      </p>
+      <p>
+        <a href="privacy-policy.html" target="_blank">{{ labels.menu.privacy }}</a>
       </p>
     </section>
   `,
