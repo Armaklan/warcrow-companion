@@ -45,6 +45,14 @@ import { LanguageService } from './shared/language.service';
           <button mat-stroked-button color="primary" (click)="setLang('FR')" [disabled]="currentLang==='FR'" aria-label="Français">🇫🇷 FR</button>
           <button mat-stroked-button color="primary" (click)="setLang('EN')" [disabled]="currentLang==='EN'" aria-label="English">🇬🇧 EN</button>
         </div>
+        @if (lastEncounter) {
+          <div class="current-game-wrapper">
+            <a mat-flat-button color="accent" [routerLink]="['/scenarios', 'encounter', lastEncounter.sid, lastEncounter.fid]" (click)="closeOnMobile()">
+              <mat-icon>play_circle</mat-icon>
+              {{ LABEL.menu.currentGame }}
+            </a>
+          </div>
+        }
         <mat-nav-list>
           <a mat-list-item routerLink="/actions" (click)="closeOnMobile()">
             <div class="menu-item">
@@ -162,6 +170,7 @@ import { LanguageService } from './shared/language.service';
     .search-results .result:hover { background: var(--wc-hover); }
     .search-results .title { font-weight: 600; }
     .search-results .meta { font-size: 12px; color: #666; }
+    .current-game-wrapper { padding: 8px 12px; border-bottom: 1px solid var(--wc-border); display: grid; }
   `]
 })
 export class App {
@@ -179,6 +188,16 @@ export class App {
   searchQuery = '';
   searchResults: SearchEntry[] = [];
   showResults = false;
+
+  get lastEncounter(): { sid: number, fid: number } | null {
+    try {
+      const raw = localStorage.getItem('wc:lastRandom');
+      if (!raw) return null;
+      return JSON.parse(raw);
+    } catch {
+      return null;
+    }
+  }
 
   constructor(private router: Router, private searchService: SearchService, public lang: LanguageService) {
     const mq = window.matchMedia('(min-width: 960px)');

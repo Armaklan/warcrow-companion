@@ -27,19 +27,19 @@ import { LanguageService } from '../shared/language.service';
             <div class="player-title">Joueur 1</div>
             <div class="stats-row">
               <div class="stat-tile">
-                <div class="stat-label">PA</div>
-                <div class="stat-value">{{ score.p1.pa }}</div>
-                <div class="stat-actions">
-                  <button mat-fab color="primary" aria-label="Réduire PA Joueur 1" (click)="dec('p1','pa')"><mat-icon>remove</mat-icon></button>
-                  <button mat-fab color="primary" aria-label="Augmenter PA Joueur 1" (click)="inc('p1','pa')"><mat-icon>add</mat-icon></button>
-                </div>
-              </div>
-              <div class="stat-tile">
                 <div class="stat-label">PM</div>
                 <div class="stat-value">{{ score.p1.pm }}</div>
                 <div class="stat-actions">
                   <button mat-fab color="primary" aria-label="Réduire PM Joueur 1" (click)="dec('p1','pm')"><mat-icon>remove</mat-icon></button>
                   <button mat-fab color="primary" aria-label="Augmenter PM Joueur 1" (click)="inc('p1','pm')"><mat-icon>add</mat-icon></button>
+                </div>
+              </div>
+              <div class="stat-tile">
+                <div class="stat-label">PA</div>
+                <div class="stat-value">{{ score.p1.pa }}</div>
+                <div class="stat-actions">
+                  <button mat-fab color="primary" aria-label="Réduire PA Joueur 1" (click)="dec('p1','pa')"><mat-icon>remove</mat-icon></button>
+                  <button mat-fab color="primary" aria-label="Augmenter PA Joueur 1" (click)="inc('p1','pa')"><mat-icon>add</mat-icon></button>
                 </div>
               </div>
             </div>
@@ -48,19 +48,19 @@ import { LanguageService } from '../shared/language.service';
             <div class="player-title">Joueur 2</div>
             <div class="stats-row">
               <div class="stat-tile">
-                <div class="stat-label">PA</div>
-                <div class="stat-value">{{ score.p2.pa }}</div>
-                <div class="stat-actions">
-                  <button mat-fab color="warn" aria-label="Réduire PA Joueur 2" (click)="dec('p2','pa')"><mat-icon>remove</mat-icon></button>
-                  <button mat-fab color="warn" aria-label="Augmenter PA Joueur 2" (click)="inc('p2','pa')"><mat-icon>add</mat-icon></button>
-                </div>
-              </div>
-              <div class="stat-tile">
                 <div class="stat-label">PM</div>
                 <div class="stat-value">{{ score.p2.pm }}</div>
                 <div class="stat-actions">
                   <button mat-fab color="warn" aria-label="Réduire PM Joueur 2" (click)="dec('p2','pm')"><mat-icon>remove</mat-icon></button>
                   <button mat-fab color="warn" aria-label="Augmenter PM Joueur 2" (click)="inc('p2','pm')"><mat-icon>add</mat-icon></button>
+                </div>
+              </div>
+              <div class="stat-tile">
+                <div class="stat-label">PA</div>
+                <div class="stat-value">{{ score.p2.pa }}</div>
+                <div class="stat-actions">
+                  <button mat-fab color="warn" aria-label="Réduire PA Joueur 2" (click)="dec('p2','pa')"><mat-icon>remove</mat-icon></button>
+                  <button mat-fab color="warn" aria-label="Augmenter PA Joueur 2" (click)="inc('p2','pa')"><mat-icon>add</mat-icon></button>
                 </div>
               </div>
             </div>

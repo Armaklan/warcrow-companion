@@ -1170,7 +1170,8 @@ export const LABEL = {
       apercu: 'Overview'
     },
     about: 'About',
-    privacy: 'Privacy Policy'
+    privacy: 'Privacy Policy',
+    currentGame: 'Current game'
   },
   actions: {
     simple: 'Simple actions',

@@ -1200,7 +1200,8 @@ export const LABEL = {
       apercu: 'Aperçu'
     },
     about: 'À propos',
-    privacy: 'Règles de confidentialité'
+    privacy: 'Règles de confidentialité',
+    currentGame: 'Partie en cours'
   },
   actions: {
     simple: 'Actions simple',
