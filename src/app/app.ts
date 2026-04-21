@@ -78,34 +78,16 @@ import { LanguageService } from './shared/language.service';
               <span>{{ LABEL.menu.motsClefs }}</span>
             </div>
           </a>
-          <a mat-list-item routerLink="/mots-clefs-decors" (click)="closeOnMobile()">
-            <div class="menu-item">
-              <mat-icon>terrain</mat-icon>
-              <span>{{ LABEL.menu.motsClefsDecors }}</span>
-            </div>
-          </a>
-          <a mat-list-item routerLink="/resume-du-tour" (click)="closeOnMobile()">
-            <div class="menu-item">
-              <mat-icon>summarize</mat-icon>
-              <span>{{ LABEL.menu.resumeTour }}</span>
-            </div>
-          </a>
-          <a mat-list-item routerLink="/resume-opposition" (click)="closeOnMobile()">
-            <div class="menu-item">
-              <mat-icon>groups</mat-icon>
-              <span>{{ LABEL.menu.resumeOpposition }}</span>
-            </div>
-          </a>
-          <a mat-list-item routerLink="/personnage-unite" (click)="closeOnMobile()">
-            <div class="menu-item">
-              <mat-icon>person</mat-icon>
-              <span>{{ LABEL.menu.personnageUnite }}</span>
-            </div>
-          </a>
-          <a mat-list-item routerLink="/decors" (click)="closeOnMobile()">
+          <a mat-list-item routerLink="/decors-actuel" (click)="closeOnMobile()">
             <div class="menu-item">
               <mat-icon>landscape</mat-icon>
-              <span>{{ LABEL.menu.decors }}</span>
+              <span>{{ LABEL.menu.currentDecors }}</span>
+            </div>
+          </a>
+          <a mat-list-item routerLink="/rule-summary" (click)="closeOnMobile()">
+            <div class="menu-item">
+              <mat-icon>summarize</mat-icon>
+              <span>{{ LABEL.menu.ruleSummary }}</span>
             </div>
           </a>
           <a mat-list-item routerLink="/scenarios" (click)="closeOnMobile()">

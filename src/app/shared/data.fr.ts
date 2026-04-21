@@ -1189,7 +1189,8 @@ export const LABEL = {
     resumeTour: 'Résumé du tour',
     resumeOpposition: "Résumé d'une opposition",
     personnageUnite: 'Personnages et unités',
-    decors: 'Décors',
+    ruleSummary: 'Résumé de règle',
+    decors: 'Exemple de décors',
     scenarios: 'Scénarios',
     feats: 'Exploit',
     teinte: 'Teinte',
@@ -1201,7 +1202,8 @@ export const LABEL = {
     },
     about: 'À propos',
     privacy: 'Règles de confidentialité',
-    currentGame: 'Partie en cours'
+    currentGame: 'Partie en cours',
+    currentDecors: 'Décors'
   },
   actions: {
     simple: 'Actions simple',

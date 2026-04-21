@@ -1159,7 +1159,8 @@ export const LABEL = {
     resumeTour: 'Turn Summary',
     resumeOpposition: "Test Summary",
     personnageUnite: 'Characters and unit',
-    decors: 'Terrain',
+    ruleSummary: 'Rule summary',
+    decors: 'Terrain example',
     scenarios: 'Scenario',
     feats: 'Feat',
     teinte: 'Tinge',
@@ -1171,7 +1172,8 @@ export const LABEL = {
     },
     about: 'About',
     privacy: 'Privacy Policy',
-    currentGame: 'Current game'
+    currentGame: 'Current game',
+    currentDecors: 'Terrain'
   },
   actions: {
     simple: 'Simple actions',
