@@ -1,0 +1,4 @@
+#Wed Jan 28 22:31:15 CET 2026
+base.0=/home/armaklan/Bureau/code/warcrow-companion/android/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

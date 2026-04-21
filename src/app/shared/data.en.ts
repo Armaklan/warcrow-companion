@@ -155,7 +155,8 @@ const MOTS_CLEFS: CollapsibleItem[] = [
     details: '<p>Once the dice have been rolled (rerolls included) and before the switches step, this unit may replace any ' +
       '<span class="warcrow-font-HollowSuccess" role="img" aria-label="Hollow Success" ></span> with <span class="warcrow-font-Success" role="img" aria-label="Success" ></span>, ' +
       'any <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> with <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>, ' +
-      'and any <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow Special" ></span> with <span class="warcrow-font-Special" role="img" aria-label="Special" ></span>. This effect applies to all rolls made by this unit.</p>'
+      'and any <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow Special" ></span> with <span class="warcrow-font-Special" role="img" aria-label="Special" ></span>. </p>' +
+      '<p>These rules apply to WP rolls, attack (melee and ranged), defense, and the effects of skills and spells of the unit. They do not apply to other rolls (such as tinge or spell-blocking rolls, including Dispel).</p>'
   },
   {
     title: 'Ambusher',
@@ -476,8 +477,8 @@ const ACTIONS_REACTIONS: CollapsibleItem[] = [
         <li>Declare your intention to block the spell during step 2 of casting.</li>
         <li>A spell may be blocked either by its target if it has the Dispel keyword, or by a Mage within 20 strides of the enemy caster.</li>
         <li>Form the blocking test: take 3 <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span>, or the dice indicated by the Dispel skill, and roll them. The result will be opposed to the casting roll during step 3.</li>
-        <li>For each <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> rolled, the unit blocking the spell gains one <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</li>
-        <li>If you rolled at least one <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>, apply the Tinge effects at the end of the activation.</li>
+        <li>For each <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> rolled, the unit blocking the spell gains one <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>. Unit who used Dispel keyword dices doesn't gain tinge.</li>
+        <li>If you rolled at least one <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span>, apply the Tinge effects at the end of the activation, exclude dispell keyword.</li>
       </ol>
       <p>You cannot attempt to block a spell more than once or with more than one unit.</p>
     `
