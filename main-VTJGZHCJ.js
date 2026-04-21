@@ -8,11 +8,9 @@ ${e.map((i,r)=>`${r+1}) ${i.toString()}`).join(`
 `],encapsulation:2,changeDetection:0})}return t})();var mg=(()=>{class t{panel=u(Ds,{host:!0});_element=u(G);_focusMonitor=u(vi);_changeDetectorRef=u(nt);_parentChangeSubscription=de.EMPTY;constructor(){u(Tt).load(qi);let e=this.panel,i=u(sC,{optional:!0}),r=u(new di("tabindex"),{optional:!0}),o=e.accordion?e.accordion._stateChanges.pipe(ue(a=>!!(a.hideToggle||a.togglePosition))):We;this.tabIndex=parseInt(r||"")||0,this._parentChangeSubscription=Ft(e.opened,e.closed,o,e._inputChanges.pipe(ue(a=>!!(a.hideToggle||a.disabled||a.togglePosition)))).subscribe(()=>this._changeDetectorRef.markForCheck()),e.closed.pipe(ue(()=>e._containsFocus())).subscribe(()=>this._focusMonitor.focusVia(this._element,"program")),i&&(this.expandedHeight=i.expandedHeight,this.collapsedHeight=i.collapsedHeight)}expandedHeight;collapsedHeight;tabIndex=0;get disabled(){return this.panel.disabled}_toggle(){this.disabled||this.panel.toggle()}_isExpanded(){return this.panel.expanded}_getExpandedState(){return this.panel._getExpandedState()}_getPanelId(){return this.panel.id}_getTogglePosition(){return this.panel.togglePosition}_showToggle(){return!this.panel.hideToggle&&!this.panel.disabled}_getHeaderHeight(){let e=this._isExpanded();return e&&this.expandedHeight?this.expandedHeight:!e&&this.collapsedHeight?this.collapsedHeight:null}_keydown(e){switch(e.keyCode){case 32:case 13:$i(e)||(e.preventDefault(),this._toggle());break;default:this.panel.accordion&&this.panel.accordion._handleHeaderKeydown(e);return}}focus(e,i){e?this._focusMonitor.focusVia(this._element,e,i):this._element.nativeElement.focus(i)}ngAfterViewInit(){this._focusMonitor.monitor(this._element).subscribe(e=>{e&&this.panel.accordion&&this.panel.accordion._handleHeaderFocus(this)})}ngOnDestroy(){this._parentChangeSubscription.unsubscribe(),this._focusMonitor.stopMonitoring(this._element)}static \u0275fac=function(i){return new(i||t)};static \u0275cmp=M({type:t,selectors:[["mat-expansion-panel-header"]],hostAttrs:["role","button",1,"mat-expansion-panel-header","mat-focus-indicator"],hostVars:13,hostBindings:function(i,r){i&1&&C("click",function(){return r._toggle()})("keydown",function(a){return r._keydown(a)}),i&2&&(ne("id",r.panel._headerId)("tabindex",r.disabled?-1:r.tabIndex)("aria-controls",r._getPanelId())("aria-expanded",r._isExpanded())("aria-disabled",r.panel.disabled),yn("height",r._getHeaderHeight()),z("mat-expanded",r._isExpanded())("mat-expansion-toggle-indicator-after",r._getTogglePosition()==="after")("mat-expansion-toggle-indicator-before",r._getTogglePosition()==="before"))},inputs:{expandedHeight:"expandedHeight",collapsedHeight:"collapsedHeight",tabIndex:[2,"tabIndex","tabIndex",e=>e==null?0:Bi(e)]},ngContentSelectors:VR,decls:5,vars:3,consts:[[1,"mat-content"],[1,"mat-expansion-indicator"],["xmlns","http://www.w3.org/2000/svg","viewBox","0 -960 960 960","aria-hidden","true","focusable","false"],["d","M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"]],template:function(i,r){i&1&&(we(BR),Me(0,"span",0),V(1),V(2,1),V(3,2),Ne(),K(4,HR,3,0,"span",1)),i&2&&(z("mat-content-hide-toggle",!r._showToggle()),p(4),X(r._showToggle()?4:-1))},styles:[`.mat-expansion-panel-header{display:flex;flex-direction:row;align-items:center;padding:0 24px;border-radius:inherit;height:var(--mat-expansion-header-collapsed-state-height, 48px);font-family:var(--mat-expansion-header-text-font, var(--mat-sys-title-medium-font));font-size:var(--mat-expansion-header-text-size, var(--mat-sys-title-medium-size));font-weight:var(--mat-expansion-header-text-weight, var(--mat-sys-title-medium-weight));line-height:var(--mat-expansion-header-text-line-height, var(--mat-sys-title-medium-line-height));letter-spacing:var(--mat-expansion-header-text-tracking, var(--mat-sys-title-medium-tracking))}.mat-expansion-panel-animations-enabled .mat-expansion-panel-header{transition:height 225ms cubic-bezier(0.4, 0, 0.2, 1)}.mat-expansion-panel-header::before{border-radius:inherit}.mat-expansion-panel-header.mat-expanded{height:var(--mat-expansion-header-expanded-state-height, 64px)}.mat-expansion-panel-header[aria-disabled=true]{color:var(--mat-expansion-header-disabled-state-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-expansion-panel-header:not([aria-disabled=true]){cursor:pointer}.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover{background:var(--mat-expansion-header-hover-state-layer-color, color-mix(in srgb, var(--mat-sys-on-surface) calc(var(--mat-sys-hover-state-layer-opacity) * 100%), transparent))}@media(hover: none){.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover{background:var(--mat-expansion-container-background-color, var(--mat-sys-surface))}}.mat-expansion-panel .mat-expansion-panel-header:not([aria-disabled=true]).cdk-keyboard-focused,.mat-expansion-panel .mat-expansion-panel-header:not([aria-disabled=true]).cdk-program-focused{background:var(--mat-expansion-header-focus-state-layer-color, color-mix(in srgb, var(--mat-sys-on-surface) calc(var(--mat-sys-focus-state-layer-opacity) * 100%), transparent))}.mat-expansion-panel-header._mat-animation-noopable{transition:none}.mat-expansion-panel-header:focus,.mat-expansion-panel-header:hover{outline:none}.mat-expansion-panel-header.mat-expanded:focus,.mat-expansion-panel-header.mat-expanded:hover{background:inherit}.mat-expansion-panel-header.mat-expansion-toggle-indicator-before{flex-direction:row-reverse}.mat-expansion-panel-header.mat-expansion-toggle-indicator-before .mat-expansion-indicator{margin:0 16px 0 0}[dir=rtl] .mat-expansion-panel-header.mat-expansion-toggle-indicator-before .mat-expansion-indicator{margin:0 0 0 16px}.mat-content{display:flex;flex:1;flex-direction:row;overflow:hidden}.mat-content.mat-content-hide-toggle{margin-right:8px}[dir=rtl] .mat-content.mat-content-hide-toggle{margin-right:0;margin-left:8px}.mat-expansion-toggle-indicator-before .mat-content.mat-content-hide-toggle{margin-left:24px;margin-right:0}[dir=rtl] .mat-expansion-toggle-indicator-before .mat-content.mat-content-hide-toggle{margin-right:24px;margin-left:0}.mat-expansion-panel-header-title{color:var(--mat-expansion-header-text-color, var(--mat-sys-on-surface))}.mat-expansion-panel-header-title,.mat-expansion-panel-header-description{display:flex;flex-grow:1;flex-basis:0;margin-right:16px;align-items:center}[dir=rtl] .mat-expansion-panel-header-title,[dir=rtl] .mat-expansion-panel-header-description{margin-right:0;margin-left:16px}.mat-expansion-panel-header[aria-disabled=true] .mat-expansion-panel-header-title,.mat-expansion-panel-header[aria-disabled=true] .mat-expansion-panel-header-description{color:inherit}.mat-expansion-panel-header-description{flex-grow:2;color:var(--mat-expansion-header-description-color, var(--mat-sys-on-surface-variant))}.mat-expansion-panel-animations-enabled .mat-expansion-indicator{transition:transform 225ms cubic-bezier(0.4, 0, 0.2, 1)}.mat-expansion-panel-header.mat-expanded .mat-expansion-indicator{transform:rotate(180deg)}.mat-expansion-indicator::after{border-style:solid;border-width:0 2px 2px 0;content:"";padding:3px;transform:rotate(45deg);vertical-align:middle;color:var(--mat-expansion-header-indicator-color, var(--mat-sys-on-surface-variant));display:var(--mat-expansion-legacy-header-indicator-display, none)}.mat-expansion-indicator svg{width:24px;height:24px;margin:0 -8px;vertical-align:middle;fill:var(--mat-expansion-header-indicator-color, var(--mat-sys-on-surface-variant));display:var(--mat-expansion-header-indicator-display, inline-block)}@media(forced-colors: active){.mat-expansion-panel-content{border-top:1px solid;border-top-left-radius:0;border-top-right-radius:0}}
 `],encapsulation:2,changeDetection:0})}return t})();var lC=(()=>{class t extends Lw{_keyManager;_ownHeaders=new Vt;_headers;hideToggle=!1;displayMode="default";togglePosition="after";ngAfterContentInit(){this._headers.changes.pipe(lt(this._headers)).subscribe(e=>{this._ownHeaders.reset(e.filter(i=>i.panel.accordion===this)),this._ownHeaders.notifyOnChanges()}),this._keyManager=new Fr(this._ownHeaders).withWrap().withHomeAndEnd()}_handleHeaderKeydown(e){this._keyManager.onKeydown(e)}_handleHeaderFocus(e){this._keyManager.updateActiveItem(e)}ngOnDestroy(){super.ngOnDestroy(),this._keyManager?.destroy(),this._ownHeaders.destroy()}static \u0275fac=(()=>{let e;return function(r){return(e||(e=tt(t)))(r||t)}})();static \u0275dir=P({type:t,selectors:[["mat-accordion"]],contentQueries:function(i,r,o){if(i&1&&Te(o,mg,5),i&2){let a;F(a=L())&&(r._headers=a)}},hostAttrs:[1,"mat-accordion"],hostVars:2,hostBindings:function(i,r){i&2&&z("mat-accordion-multi",r.multi)},inputs:{hideToggle:[2,"hideToggle","hideToggle",ge],displayMode:"displayMode",togglePosition:"togglePosition"},exportAs:["matAccordion"],features:[xe([{provide:cg,useExisting:t}]),Ee]})}return t})(),cC=(()=>{class t{static \u0275fac=function(i){return new(i||t)};static \u0275mod=W({type:t});static \u0275inj=q({imports:[me,Bw,Hw]})}return t})();function $R(t,n){if(t&1&&y(0,"img",2),t&2){let e=T().$implicit;w("src",e.icon,Ln)}}function qR(t,n){if(t&1&&(d(0,"mat-expansion-panel",null,0)(2,"mat-expansion-panel-header")(3,"span",1),K(4,$R,1,1,"img",2),d(5,"span"),h(6),m()()(),y(7,"p",3),m()),t&2){let e=n.$implicit,i=T();ne("id",i.slug(e.title)),p(4),X(e.icon?4:-1),p(2),_(e.title),p(),w("innerHTML",e.details,Xe)}}var nn=class t{_items=[];selectedId=null;panels;set items(n){let e=Array.isArray(n)?[...n]:[];this._items=e.sort((i,r)=>i.title.localeCompare(r.title,"fr",{sensitivity:"base"}))}get items(){return this._items}ngAfterViewInit(){this.selectedId&&setTimeout(()=>this.expandAndScrollTo(this.selectedId),0)}ngOnChanges(n){if(n.selectedId&&!n.selectedId.firstChange){let e=n.selectedId.currentValue;e&&setTimeout(()=>this.expandAndScrollTo(e),0)}}slug(n){return n.toLowerCase().normalize("NFD").replace(new RegExp("\\p{Diacritic}+","gu"),"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"")}expandAndScrollTo(n){let e=this.items.findIndex(o=>this.slug(o.title)===n);if(e===-1)return!1;let i=this.panels.get(e);if(!i)return!1;i.open();let r=document.getElementById(n);return r&&r.scrollIntoView({behavior:"smooth",block:"center"}),!0}static \u0275fac=function(e){return new(e||t)};static \u0275cmp=M({type:t,selectors:[["app-collapsible-list"]],viewQuery:function(e,i){if(e&1&&he(Ds,5),e&2){let r;F(r=L())&&(i.panels=r)}},inputs:{selectedId:"selectedId",items:"items"},features:[Ke],decls:3,vars:0,consts:[["panel",""],[1,"header-content"],["alt","",1,"item-icon",3,"src"],[3,"innerHTML"]],template:function(e,i){e&1&&(d(0,"mat-accordion"),vn(1,qR,8,4,"mat-expansion-panel",null,Sr),m()),e&2&&(p(),_n(i.items))},dependencies:[be,cC,lC,Ds,mg],styles:[".header-content[_ngcontent-%COMP%]{display:inline-flex;align-items:center;gap:16px}",".item-icon[_ngcontent-%COMP%]{width:40px;height:40px;object-fit:contain}"]})};function st(t){return t!=null&&`${t}`!="false"}var Bo=(()=>{class t{static \u0275fac=function(i){return new(i||t)};static \u0275mod=W({type:t});static \u0275inj=q({imports:[me,me]})}return t})();var GR=[{title:"Effray\xE9 / D\xE9courag\xE9 / Frightened",details:`<b>Etat</b><p>Quand il effectue un test de volont\xE9, l'unit\xE9 doit relancer une fois tous les d\xE9s indiquant au moins <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span>.</p>
 <p>Retirez cet \xE9tat apr\xE8s avoir effectu\xE9 un test de Volont\xE9.</p>`,icon:"effraye.png"},{title:"Ralenti / Slowed",details:`<b>Etat</b><p>
-Votre unit\xE9 ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (MOV) lors des actions de mouvement et d\u2019assaut.
-  De plus, vous devez soustraire 4 pas \xE0 votre mouvement de charge (min. 0).
+La seconde valeur de mouvement de l'unit\xE9 est "0". Sa valeur de charge est r\xE9duite de 4 (min. 0).
 </p>
-<p><em>Exemple :</em> Si votre unit\xE9 a un mouvement 3-2 (9), elle ne peut se d\xE9placer que de 3 pas et ne peut charger que jusqu\u2019\xE0 5 pas.</p>
-<p>Retirez cet \xE9tat \xE0 la fin de l\u2019activation durant laquelle votre unit\xE9 effectue un mouvement, un assaut ou une charge.</p>`,icon:"ralenti.png"},{title:"D\xE9moralis\xE9 / Demoralized",details:`<b>Etat</b></b><p>Si votre unit\xE9 est d\xE9moralis\xE9e :</p>
+<p>Retirez cet \xE9tat apr\xE8s avoir effectu\xE9 une action de mouvement (se qui inclue les mouvements dans le cadre d'une charge ou d'un assaut.</p>`,icon:"ralenti.png"},{title:"D\xE9moralis\xE9 / Demoralized",details:`<b>Etat</b></b><p>Si votre unit\xE9 est d\xE9moralis\xE9e :</p>
   <ul>
     <li>Elle ne peut plus \xEAtre activ\xE9e d\u2019aucune fa\xE7on, ni effectuer d'action.</li>
     <li>Elle ne peut se stresser d\u2019aucune fa\xE7on et ne peut pas r\xE9duire son stress.</li>
@@ -92,10 +90,10 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
     <p>
       Si vous d\xE9ployez une unit\xE9 d\u2019\xC9claireur apr\xE8s le d\xE9but de la partie, vous devez l\u2019activer imm\xE9diatement et consommer une de vos deux actions pour son activation. Ainsi, elle ne pourra r\xE9aliser qu\u2019une seule action, qui ne peut pas \xEAtre une action complexe.
     </p>
-    <h3>Personnage rejoingnant une unit\xE9 d'\xE9claireur</h3>
+    <h3>Personnage rejoignant une unit\xE9 d'\xE9claireur</h3>
     <p>Quand un personnage veut rejoindre une unit\xE9 ayant le mot-clef \xE9claireur, laissez la figurine en dehors du champs de bataille et placez-l\xE0 sous l'unit\xE9. Quand l'unit\xE9 est d\xE9ploy\xE9, deployez le personnage avec elle.</p>
     <p>Dans le cas o\xF9 le personnage \xE0 le mot-clef \xE9claireur et le donne \xE0 sun unit\xE9, placez \xE9galement les deux cartes de cot\xE9s et d\xE9ployez les en m\xEAme temps.</p>
-    `},{title:"\xC9lite / Elite",details:`<p>Apr\xE8s les jets de d\xE9s (relances incluses) et avant les variations, cette unit\xE9 peut remplacer tout <span class="warcrow-font-HollowSuccess" role="img" aria-label="Succ\xE8s Hollow" ></span> par <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span>, tout <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> par <span class="warcrow-font-Block" role="img" aria-label="Blockl" ></span>, et tout <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow Special" ></span> par <span class="warcrow-font-Special" role="img" aria-label="Special" ></span>. Cet effet s\u2019applique \xE0 tous ses jets.</p><p>Cette r\xE8gle s'applique aux tests de VOL, d'attaque, d\xE9fense, ainsi qu'aux effets de comp\xE9tences ou sort de l'unit\xE9. Cela ne s'applique pas aux autres tests comme le blocage de sort, la dissipation, ou les tests de teintes.</p>`},{title:"Embusqu\xE9 / Ambusher",details:`
+    `},{title:"\xC9lite / Elite",details:`<p>Apr\xE8s les jets de d\xE9s (relances incluses) et avant les variations, cette unit\xE9 peut remplacer tout <span class="warcrow-font-HollowSuccess" role="img" aria-label="Succ\xE8s Hollow" ></span> par <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span>, tout <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> par <span class="warcrow-font-Block" role="img" aria-label="Blockl" ></span>, et tout <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow Special" ></span> par <span class="warcrow-font-Special" role="img" aria-label="Special" ></span>. Cet effet s\u2019applique \xE0 tous ses jets.</p><p>Cette r\xE8gle s'applique aux tests de VOL, d'attaque, d\xE9fense, ainsi qu'aux effets de comp\xE9tences ou sort de l'unit\xE9. Cela ne s'applique pas aux autres tests comme le blocage de sort, la dissipation, ou les tests de teintes.</p><p>La comp\xE9tence s\`applique avant la prise en compte des \xE9tats.</p>`},{title:"Embusqu\xE9 / Ambusher",details:`
     <p>
     Les unit\xE9s Embusqu\xE9es se cachent, pr\xEAtes \xE0 entrer en action apr\xE8s le d\xE9but de la bataille en frappant par surprise.
     Vous pouvez garder vos unit\xE9s Embusqu\xE9es secr\xE8tes et ne les d\xE9ployer qu\u2019apr\xE8s avoir commenc\xE9 la partie.
@@ -110,16 +108,15 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
       <ul>
         <li>
           \xC0 n\u2019importe quel endroit de votre zone de d\xE9ploiement. Vous pouvez la d\xE9ployer engag\xE9e en combat avec une unit\xE9 ennemie.
-          Elle est consid\xE9r\xE9e comme ayant charg\xE9, mais l\u2019unit\xE9 ennemie ne peut pas tenir bon et tirer.
         </li>
         <li>
           N\u2019importe o\xF9 sur le champ de bataille, sauf dans la zone de d\xE9ploiement ennemie, et aucune unit\xE9 ennemie
-          \xE0 10 pas ou moins ne doit avoir de Ligne de Vue (LdV) sur elle.
+          \xE0 12 pas ou moins ne doit avoir de Ligne de Vue (LdV) sur elle.
         </li>
       </ul>
     </li>
     <li>
-      <strong>Activez ensuite votre unit\xE9.</strong>
+      <strong>Activez ensuite votre unit\xE9.</strong> Durant cette activation, l'unit\xE9 doit subir un stress si le joueur souhaite effectuer une action longue.
     </li>
   </ul>
   <h3>Personnage rejoingnant une unit\xE9 d'embusqu\xE9</h3>
@@ -140,10 +137,6 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
   <p>Une unit\xE9 ne peut subir les effets de l'intimidation qu'une fois par activation.</p>`},{title:"Massive / Large",details:`<ul>
     <li>
       Les unit\xE9s Massives peuvent traverser les unit\xE9s qui ne le sont pas.
-    </li>
-    <li>
-      M\xEAme engag\xE9e en combat, une unit\xE9 Massive peut charger une autre unit\xE9 si elle a une Ligne de Vue (LdV)
-      sur elle et peut se d\xE9placer pour l\u2019engager. Ce mouvement de charge peut provoquer une attaque d\u2019opportunit\xE9.
     </li>
     <li>
       Seules les autres unit\xE9s Massives et les d\xE9cors avec le mot-cl\xE9 <em>Bloque la LdV</em> bloquent la LdV vers les unit\xE9s Massives.
@@ -204,12 +197,14 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         Si l\u2019unit\xE9 cibl\xE9e entre en contact avec une unit\xE9 ou un d\xE9cor Infranchissable durant ce mouvement,
         celui-ci s\u2019interrompt imm\xE9diatement \xE0 cet endroit pr\xE9cis.
       </p>
+      <p>La valeur de Bousculer doit \xEAtre appliqu\xE9 en entier.</p>
     `},{title:"Attirer (X) / Attract",details:`
       <p>L\u2019unit\xE9 cibl\xE9e doit s\u2019approcher de votre unit\xE9 de X pas en suivant la trajectoire indiqu\xE9e en tra\xE7ant
         une ligne reliant les centres des socles des leaders de votre unit\xE9 et de l\u2019unit\xE9 cibl\xE9e. Ce mouvement
         ne provoque pas d\u2019attaque d\u2019opportunit\xE9.</p>
       <p>Si l\u2019unit\xE9 cibl\xE9e entre en contact avec une unit\xE9 ou un d\xE9cor Infranchissable durant ce mouvement,
         celui-ci s\u2019interrompt imm\xE9diatement \xE0 cet endroit pr\xE9cis.</p>
+        <p>La valeur d'Attirer doit \xEAtre appliqu\xE9 en entier.</p>
     `},{title:"Placer (X) / Place",details:`
       <p>Indiquez un point sur le champ de bataille \xE0 X pas du leader de votre unit\xE9. Celui qui contr\xF4le l\u2019unit\xE9
       cibl\xE9e doit prendre son leader et le placer sur le point indiqu\xE9. Vous devez ensuite placer le reste des
@@ -277,25 +272,25 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         <li>Le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span></li>
         <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" ></span> sur le jet, appliquez les effets du sort. </li>
         <li>Si le sort est une r\xE9ussite et que vous avez d\xE9clarez des alt\xE9rations de teintes, d\xE9pensez la.</li>
-        <li>Si le lanceur de sort a d\xE9clar\xE9 des alt\xE9rations <span class="warcrow-font-Black" role="img" aria-label="succ\xE8s" ></span>, faite un test de teinte et subissez les effets de la teinte. Si le lanceur a utilis\xE9 de la teinte pour obtenir une r\xE9ussite, il subit les effets de la teinte.</li>
+        <li>Si le lanceur de sort a d\xE9clar\xE9 des alt\xE9rations <span class="warcrow-font-Black" role="img" aria-label="succ\xE8s" ></span>, faite un test de teinte et subissez les effets de la teinte. </li>
+        <li>Si le lanceur a pris de la teinte durant le lancement ou pendant le test de teinte, appliquez les effets de la teinte.</li>
       </ol>
       <p>Si vous \xEAtes au corps \xE0 corps, cette action ne peut cibler que votre unit\xE9 ou une unit\xE9 ennemis avec laquelle vous \xEAtes engag\xE9e.</p>
       <p>Jet de teinte</p>
       <ol>
         <li>Cr\xE9ez le jet de teinte : prenez <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> comme indiqu\xE9 dans les alt\xE9rations choisis du sort.</li>
         <li>Pour chaque <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
-        <li>Appliquez les effets de la teinte.</li>
       </ol>
-  `},{title:"Capacit\xE9 de teinte",details:`
+  `},{title:"Utiliser une comp\xE9tence de teinte",details:`
       <ul>
         <li>Choisissez votre capacit\xE9 de teinte.</li>
         <li>D\xE9pensez <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>
         <li>Appliquez les effets de la capacit\xE9.</li>
     </ul>
     <p>Si vous \xEAtes au corps \xE0 corps, cette action ne peut cibler que votre unit\xE9 ou une unit\xE9 ennemis avec laquelle vous \xEAtes engag\xE9e.</p>
-  `},{title:"Utiliser une comp\xE9tence",details:`
+  `},{title:"Utiliser une comp\xE9tence de combat",details:`
       <ul>
-        <li>Choisissez votre comp\xE9tence et v\xE9rifier que les conditions sont remplis.</li>
+        <li>Choisissez votre comp\xE9tence de combat et v\xE9rifier que les conditions sont remplis.</li>
         <li>Appliquez les effets de la capacit\xE9.</li>
     </ul>
     <p>Si vous \xEAtes au corps \xE0 corps, cette action ne peut cibler que votre unit\xE9 ou une unit\xE9 ennemis avec laquelle vous \xEAtes engag\xE9e.</p>
@@ -314,7 +309,8 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
     <ul>
         <li>Eliminer tout son stress.</li>
         <li>Supprimer n'importe quel \xE9tat de son profil.</li>
-        <li>Effectuer un mouvement en utilisant uniquement sa deuxi\xE8me valeur de Mouvement.</li>
+        <li>Retirer une <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>
+        <li>Effectuer un mouvement en utilisant uniquement sa premi\xE8re valeur de Mouvement.</li>
     </ul>
     <p>M\xEAme si elle a d\xE9j\xE0 \xE9t\xE9 activ\xE9e pendant ce round, l'unit\xE9 n'est pas stress\xE9e en effectuant cette action.</p>
     <p>Une unit\xE9 ne peut d\xE9clarer cette action au corps \xE0 corps.</p>
@@ -328,15 +324,28 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
     <p>Vous pouvez d\xE9clarer cette r\xE9action quand : </p>
     <ul>
         <li>Vous \xEAtes la cible d'une charge ou d'un assaut.</li>
-        <li>Vous n'avez pas \xE9t\xE9 activ\xE9 durant ce round (pas de marqueur d'activation sur le profile).</li>
         <li>Vous avez une ligne de vue sur l'unit\xE9 ennemis.</li>
+        <li>Vous \xEAtes en capacit\xE9 de vous stresser.</li>
     </ul>
     <p>Dans ce cas, suivez les \xE9tapes suivantes :</p>
     <ul>
-      <li>Placez un marqueur d'activation sur le profil de l'unit\xE9.</li>
+      <li>Prenez un stress.</li>
       <li>Faites une attaque de tir contre l'adversaire avant son mouvement. Tout les pre-requis du tir doivent \xEAtre remplis, sauf la port\xE9e. Le tir est consid\xE9r\xE9 comme
           ayant lieu \xE0 n'importe quel moment du trajet adverse. Les variations ne peuvent pas \xEAtre utilis\xE9 durant ce tir.</li>
       <li>Une fois le tir r\xE9solu, l'ennemis termine sa charge.</li>
+    </ul>
+  `},{title:"Attaque d'opportunit\xE9",details:`
+    <p>Vous pouvez d\xE9clarer cette r\xE9action quand : </p>
+    <ul>
+        <li>Vous \xEAtes au contact d'une unit\xE9 \xE9nnemis.</li>
+        <li>Cette unit\xE9 d\xE9clare une action de mouvement.</li>
+        <li>Vous \xEAtes en capacit\xE9 de vous stress.</li>
+    </ul>
+    <p>Dans ce cas, suivez les \xE9tapes suivantes :</p>
+    <ul>
+      <li>Prenez un stress.</li>
+      <li>Effectuez un test en opposition. Les joueurs ne peuvent appliquer ni modificiateurs, ni variations.</li>
+      <li>L'unit\xE9 peut ensuite effectuer son mouvement.</li>
     </ul>
   `},{title:"Contrer un sort",details:`
       <p>Vous pouvez d\xE9clarer cette r\xE9action quand : </p>
@@ -381,23 +390,7 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
       une unit\xE9\u201D pour des exemples de
       X). Si aucune valeur n\u2019est sp\xE9cifi\xE9e
       pour X, l\u2019effet s\u2019applique \xE0 toutes
-      les unit\xE9s.</p>`},{title:"Pi\xE8ge / Trap",details:`
-      <p>Ce d\xE9cor a \xE9t\xE9 cr\xE9\xE9 par une unit\xE9 utilisant une comp\xE9tence ou un
-        sort. Les unit\xE9s capables de supprimer les pi\xE8ges peuvent retirer
-        ce d\xE9cor du champ de bataille.
-      </p>
-      <p>
-        Placer un pi\xE8ge
-      </p>
-      <p>Toutes les unit\xE9s qui placent un pi\xE8ge doivent suivre les r\xE8gles suivantes :</p>
-      <ul>
-        <li>A moins que ce soit sp\xE9cifi\xE9e, l'\xE9lement de pi\xE8ge doit avoir un diam\xE8tre de 6 pas.</li>
-        <li>Vous ne pouvez le placer par dessus un \xE9lement impassable.</li>
-        <li>Les unit\xE9s ne sont pas des \xE9lements de terrain, vous pouvez donc placer un pi\xE8ge sous l'une d'entre elle.
-        Prenez leur position actuelle comme point de r\xE9f\xE9rence, soulevez les unit\xE9s, et placez le pi\xE8ge en dessous avant
-         de reposer les figurines aussi pr\xE8s que possible de leurs positions initiale.</li>
-      </ul>
-    `},{title:"Sinistre (X) / Sinister",details:`<p>
+      les unit\xE9s.</p>`},{title:"Sinistre (X) / Sinister",details:`<p>
         Les unit\xE9s d\xE9finies par X qui se
         trouvent jusqu\u2019\xE0 4 pas de ce d\xE9cor au d\xE9but de leur activation
         doivent r\xE9ussir un test de VOL ou
@@ -413,7 +406,7 @@ Votre unit\xE9 doit annuler un d\xE9 de ses jets d\u2019attaque dans lesquels el
         X). Si aucune valeur n\u2019est sp\xE9cifi\xE9e
         pour X, l\u2019effet s\u2019applique \xE0 toutes
         les unit\xE9s.
-        </p>`},{title:"Brouillard",details:`
+        </p>`},{title:"Instable",details:"<p>Les unit\xE9s peuvent traverser se terrain mais ne peuvent pas terminer leur mouvement, ou \xEAtre plac\xE9, dessus.</p>"},{title:"Brouillard",details:`
     <p>
         Le brouillard est repr\xE9sent\xE9 sous forme de marqueurs.
     </p>
@@ -617,7 +610,7 @@ pour obtenir des ressources.</p>
 
   <h3>Obtenir des ressources</h3>
   <p>L\u2019unit\xE9 effectue un jet simple dont le nombre de d\xE9s d\xE9pend du nombre de troupes
-dans l\u2019unit\xE9 (Support inclus). La compagnie avance son compteur
+dans l\u2019unit\xE9 (Support et officier inclus). La compagnie avance son compteur
 d\u2019une position par <span class="warcrow-font-Success"></span> obtenu.
 Si le compteur est d\xE9j\xE0 \xE0 \xAB 10 \xBB, la compagnie fait reculer celui
 de l\u2019adversaire (min. 1) au lieu d\u2019avancer le sien.</p>
@@ -689,7 +682,14 @@ de l\u2019adversaire (min. 1) au lieu d\u2019avancer le sien.</p>
         <ul>
           <li>L'unit\xE9 peut effectuer 2 actions simples diff\xE9rentes, ou une action longue. L'action de mouvement est une exception et peut \xEAtre s\xE9lectionn\xE9e 2 fois.</li>
           <li>Si l'unit\xE9 a d\xE9j\xE0 \xE9t\xE9 activ\xE9e durant le tour, elle est stress\xE9e.</li>
-          <li>\xC0 la fin de l'activation, v\xE9rifiez le contr\xF4le des objectifs.</li>
+          <li>\xC0 la fin de l'activation :
+            <ul>
+                <li>Appliquer les effets et comp\xE9tences "A la fin de l'activation". </li>
+                <li>Tester votre volont\xE9 si le stress d\xE9passe votre valeur de Moral.</li>
+                <li>V\xE9rifier le contr\xF4le des objectifs \xE0 3 pas (sauf pr\xE9cision contraire du sc\xE9nario)</li>
+                <li>Si des effets permettent d'activer une autre unit\xE9, un seul de ces effets peut \xEAtre utilis\xE9 (avec priorit\xE9 au joueur actif).</li>
+            </ul>
+          </li>
         </ul>
       </li>
       <li>
@@ -723,13 +723,14 @@ de l\u2019adversaire (min. 1) au lieu d\u2019avancer le sien.</p>
     </ol>
   `},r1={title:"R\xE9sum\xE9 d'un test en opposition",html:`
     <ol>
-      <li><b>Rassemblez vos d\xE9s respectifs.</b> En cas d'attaque \xE0 distance, le d\xE9fenseur ne peut pas utiliser de d\xE9 d'attaque (rouge, orange, jaune).</li>
-      <li>Si une r\xE8gle ou un effet vous permet d\u2019ajouter des d\xE9s ou vous oblige \xE0 en retirer, faites-le maintenant. </li>
+      <li><b>Rassemblez vos d\xE9s respectifs.</b> Appliquez toutes les r\xE8gles qui ajoutent ou retirent des d\xE9s lors de cet \xE9tape. Les bonus apport\xE9s par les personnages et attachements s'appliquent \xE0 cette \xE9tape.
+      En cas d'attaque \xE0 distance, le d\xE9fenseur ne peut pas utiliser de d\xE9 d'attaque (rouge, orange, jaune).</li>
       <li>Si plusieurs unit\xE9s sont en combat contre vous, vous devez retirez 1 d\xE9 ou symbole automatique.</li>
       <li>Le joueur d\xE9fenseur d\xE9clare s'il stress son unit\xE9 pour activer des modificateurs en d\xE9fense.</li>
       <li>Le joueur actif d\xE9clare s'il stress son unit pour activer des modificateurs en attaque.</li>
-      <li><b>Lancez les d\xE9s</b> en m\xEAme temps.</li>
+      <li><b>Lancez les d\xE9s</b> en m\xEAme temps. Si des effets permettent de relancer les d\xE9s, faites-le maintenant.</li>
       <li><b>Ajoutez les symboles automatiques</b> \xE0 vos jets, s\u2019il y en a.</li>
+      <li><b>Annulez les d\xE9s et symboles</b>, selon les effets qui s'appliquent.</li>
       <li><b>Variations du joueur actif.</b> Le joueur dont l\u2019activation est en cours peut d\xE9penser autant de symboles obtenus qu\u2019il souhaite pour appliquer
         autant de ses variations disponibles pour ce jet.</li>
       <li><b>Variation du second joueur. </b>Son adversaire a ensuite la m\xEAme opportunit\xE9.</li>
@@ -739,7 +740,7 @@ de l\u2019adversaire (min. 1) au lieu d\u2019avancer le sien.</p>
         <span class="warcrow-font-Block" role="img" aria-label="Block" ></span> restants. Vous et votre adversaire pouvez alors appliquer les
         effets d\xE9coulant activ\xE9s par les symboles restants dans vos jets.</li>
       <li>S'il s'agit d'un combat, l'unit\xE9 qui a subis le plus de <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> est l'unit\xE9 d\xE9faites et devient stress\xE9s. Elle peut \xEAtre forc\xE9 au repli (voir action "Attaquer").</li>
-      <li>En fin d'activation seulement, les \xE9tats qui ont fait effet sont retir\xE9.</li>
+      <li>En fin de r\xE9solution seulement, les \xE9tats qui ont fait effet sont retir\xE9.</li>
     </ol>
   `},o1={menu:{actions:"Actions",capacites:"Capacit\xE9s",etats:"\xC9tats et marqueurs",motsClefs:"Mots\u2011clefs",motsClefsDecors:"Mots clef de d\xE9cors",resumeTour:"R\xE9sum\xE9 du tour",resumeOpposition:"R\xE9sum\xE9 d'une opposition",personnageUnite:"Personnages et unit\xE9s",decors:"D\xE9cors",scenarios:"Sc\xE9narios",feats:"Exploit",teinte:"Teinte",statistique:"Statistique",statistiqueTab:{profil:"Mon profil",adversaire:"Mon adversaire",apercu:"Aper\xE7u"},about:"\xC0 propos",privacy:"R\xE8gles de confidentialit\xE9"},actions:{simple:"Actions simple",complexe:"Actions complexe",reactions:"R\xE9actions"},terrain:{name:"D\xE9cors",keywords:"Mots-clef",size:"Dimensions"},scenario:{back:"Retour",random:"Al\xE9atoire",startEncounter:"Cr\xE9er la rencontre",material:"Mat\xE9riel requis",duree:{title:"Dur\xE9e d'un round",detail:"Un round dure",turn:"tours."},score:{title:"Score",detail:"A la fin de chaque round, chaque compagnie obtient : "},end:{title:"Fin de la partie",details:"La partie se termine au bout de  ",rounds:"rounds."}}},a1={title:"Effet de la teinte",html:`
     <section>
@@ -807,13 +808,15 @@ de l\u2019adversaire (min. 1) au lieu d\u2019avancer le sien.</p>
     </section>
   `},dC={ETATS:GR,MOTS_CLEFS:WR,ACTIONS_SIMPLES:QR,ACTIONS_COMPLEXES:YR,ACTIONS_REACTIONS:ZR,CAPACITES:KR,MOTS_CLEFS_DECORS:XR,DECORS:JR,SCENARIO:e1,FEAT:t1,LABEL:o1,PERSONNAGE_UNITE:n1,RESUME_TOUR:i1,RESUME_OPPOSITION:r1,TEINTE_PAGE:a1};var s1=[{title:"Frightened",details:`<b>State</b><p>When making a WP test, your unit must reroll the dice on which it rolls at least one <span class="warcrow-font-Success" role="img" aria-label="succ\xE8s" >.
 Remove this state after making a willpower test.</p>`,icon:"effraye.png"},{title:"Slowed",details:`<b>State</b><p>
-Your unit can only use one of the two MOV values when performing the move and assault
-actions. Additionally, you must subtract 4 strides from your charge movement (up to a minimum
-value of 0). For example, if your unit has movement 3-2 (9), it can only move 3 and can only move 5
-when it charges
+Unit reduces its second
+movement value to \u201C0\u201D and reduces
+its charge movement by \u201C4\u201D (to a
+minimum of \u201C0\u201D).
 </p>
-<p>Remove this state at the end of the activation in which your unit performs the action move, charge
-or assault.</p>`,icon:"ralenti.png"},{title:"Demoralized",details:`<b>State</b></b><p>If your unit is demoralized: :</p>
+<p>Remove this state after performing
+the move action (including the move
+action that is part of Charge or
+Assault).</p>`,icon:"ralenti.png"},{title:"Demoralized",details:`<b>State</b></b><p>If your unit is demoralized: :</p>
   <ul>
     <li>It cannot be activated in any way, or perform actions.</li>
     <li>It cannot stress itself in any way and cannot reduce its stress.</li>
@@ -939,7 +942,7 @@ have not been able to cancel any dice, the state is considered to remain active)
         can re-roll all of its attack rolls against the enemy unit
         while engaged with it (in case of a charge, that reroll is
         the same one as the one gained by charging). This effect
-        persists if after a pushback and pursue both units are
+        is retained if, after a pushback and pursue, both units are
         still engaged.</p>
       <p>At the beginning of its activation, the unit can ignore the effects of Bloodlust until the end of its activation by passing a WP test.</p>
     `},{title:"Preferred Terrain (E)",details:`
@@ -968,9 +971,11 @@ elements.</li>
     `},{title:"Shove (X)",details:`
       <p>The target unit must move away from your unit by X strides along a line connecting the centers of both units\u2019 leaders\u2019 bases. This movement does not provoke an opportunity attack.</p>
       <p>If the target unit comes into contact with another unit or an Impassable terrain element during this movement, it stops immediately at that point.</p>
+      <p>Shove value cannot be reduce and must be applied entirely.</p>
     `},{title:"Attract (X)",details:`
       <p>The target unit must move toward your unit by X strides along a line connecting the centers of both units\u2019 leaders\u2019 bases. This movement does not provoke an opportunity attack.</p>
       <p>If the target unit comes into contact with another unit or an Impassable terrain element during this movement, it stops immediately at that point.</p>
+      <p>Attrack value cannot be reduce and must be applied entirely.</p>
     `},{title:"Place (X)",details:`
       <p>Indicate a point on the battlefield X strides from your unit\u2019s leader. The controller of the target unit must take their unit leader and place it on that point. Then, place the rest of the target unit\u2019s models in formation.</p>
       <p>This movement does not provoke opportunity attacks. You cannot place models on top of others or on an Impassable terrain feature.</p>
@@ -1024,7 +1029,7 @@ this case, following the LoS and Cover
 rules. Additionally, the friendly unit will
 become stressed at the end of the
 activation.</p>
-    `},{title:"Cast a Spell",details:`
+    `},{title:"Use a magicial skill",details:`
       <ol>
         <li>Choose your spell and declare any alterations, then check the casting requirements. If they are not met, you cannot cast the spell.</li>
         <li>If your opponent has a unit that can attempt to block the spell, perform the test.</li>
@@ -1032,20 +1037,20 @@ activation.</p>
         <li>Declare any alterations that use <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/> and spend it.</li>
         <li>The spellcaster may gain <img src="teint.png" alt="1 Tinge" style="height: 1em; vertical-align: -0.2em;"/> to add one <span class="warcrow-font-Success" role="img" aria-label="Success" ></span>.</li>
         <li>If you roll at least one <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> on the check, apply the spell effects.</li>
+        <li>If the spellcaster has taken Tinge during the casting or the Tinge roll, apply the Tinge effects.</li>
       </ol>
       <p><b>Tinge Roll</b></p>
       <ol>
         <li>Create the Tinge roll: take the number of <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> indicated in the spell\u2019s chosen alterations.</li>
         <li>For each <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> rolled in the Tinge roll, gain one <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</li>
-        <li>If the caster has any <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>, apply the Tinge effects.</li>
       </ol>
-    `},{title:"Tinge Ability",details:`
+    `},{title:"Use a Tinge Skill",details:`
       <ul>
         <li>Choose your Tinge ability.</li>
         <li>Spend <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</li>
         <li>Apply the effects of the ability.</li>
       </ul>
-    `},{title:"Use a Skill",details:`
+    `},{title:"Use a Combat Skill",details:`
       <ul>
         <li>Choose your skill and verify that its requirements are met.</li>
         <li>Apply the effects of the ability.</li>
@@ -1065,7 +1070,8 @@ activation.</p>
       <ul>
         <li>Remove all its stress.</li>
         <li>Remove any state from its profile.</li>
-        <li>Perform a move using only its second MOV value.</li>
+        <li>Remove 1 <img src="teint.png" alt="tinge" style="height: 1em; vertical-align: -0.2em;"/></li>
+        <li>Perform a move using only its first MOV value.</li>
       </ul>
       <p>Even if it has already been activated during this round, the unit does not become stressed when performing this action.</p>
     `},{title:"Use a Long Skill",details:`
@@ -1077,18 +1083,30 @@ activation.</p>
     <p>You can declare this reactions when : </p>
     <ul>
         <li>You are the target of a charge or an assault.</li>
-        <li>Your unit has not been activated yet during the current round (it does not have an activation token on its profile).</li>
         <li>Your unit has a LOS toward the ennemy units.</li>
+        <li>You are able to stress.</li>
     </ul>
     <p>In this case, you can follow this step :</p>
     <ul>
-      <li>Place an activation token on the unit\u2019s profile.</li>
+      <li>Stress your unit.</li>
       <li>Make a ranged attack against the enemy unit before it moves. Your unit must meet all the requirements
           to attack at range, except range, as the shot is considered to occur at any time during the chargers path.
           (See \u201CAttacking at Range\u201D).</li>
       <li>Once the ranged attack is resolved, the enemy unit continues with its charge action.</li>
     </ul>
-  `},{title:"Counterspell",details:`
+  `},{title:"Opportunity attack",details:`
+      <p>You can declare this reactions when : </p>
+      <ul>
+          <li>You are engaged with a unit who declare a move action.</li>
+          <li>You are able to stress.</li>
+      </ul>
+      <p>Follow this steps :</p>
+      <ol>
+        <li>Declare your intention and take a stress.</li>
+        <li>Resolve a face to face roll, without apply modifiers and swtich.</li>
+        <li>Then resolve the triggering move action.</li>
+      </ol>
+    `},{title:"Counterspell",details:`
       <p>You can declare this reactions when : </p>
       <ul>
           <li>Your unit is a mage in the battlefield.</li>
@@ -1125,19 +1143,11 @@ activation.</p>
     `},{title:"Lethal (X:D)",details:`
       <p>Units defined by X that come into contact with this terrain suffer a melee attack resolved with a D roll. The terrain cannot suffer damage and does not force units to retreat.</p>
       <p>X can be the name of a unit, a characteristic, a keyword, or several of these elements (in this case separated by \u201C|\u201D) (see \u201CCharacters. Join a Unit\u201D for examples of X). If no value is specified for X, the effect applies to all units.</p>
-    `},{title:"Trap",details:`
-      <p>This terrain element has been created by a unit using a skill or spell. Units capable of removing traps can remove this terrain element from the battlefield.</p>
-      <p><b>Placing a Trap</b></p>
-      <p>All units that place a trap must follow these rules:</p>
-      <ul>
-        <li>Unless otherwise specified, a trap element must have a diameter of 6 strides.</li>
-        <li>You cannot place it on top of an Impassable element.</li>
-        <li>Units are not considered terrain elements, so you may place a trap beneath one. Use their current position as reference, lift the units, place the trap underneath, then return the models as close as possible to their original positions.</li>
-      </ul>
     `},{title:"Sinister (X)",details:`
       <p>Units defined by X that are within 4 strides of this terrain element at the start of their activation must pass a WP test or become Stressed.</p>
       <p>X can be the name of a unit, a characteristic, a keyword, or several of these elements (in this case separated by \u201C|\u201D) (see \u201CCharacters. Join a Unit\u201D for examples of X). If no value for X is specified, the effect applies to all units.</p>
-    `},{title:"Fog",details:`
+    `},{title:"Unstable",details:`<p>Units can move through this terrain element, but they cannot end their movement or be
+        placed on it.</p>`},{title:"Fog",details:`
       <p>Fog is represented by markers.</p>
       <p>A unit that ends its activation within 4 strides of a Fog marker gains 1 <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</p>
       <p>Fog does not block Line of Sight and does not interrupt movement. A unit cannot place a Fog marker within 10 strides of another Fog marker.</p>
@@ -1428,7 +1438,19 @@ counter than their rival\u2019s</li>
         <ul>
           <li>The unit may perform two different Simple Actions or one Complex Action. The Move action is an exception and may be chosen twice.</li>
           <li>If the unit has already been activated during the round, it becomes Stressed.</li>
-          <li>At the end of the activation, check Objective control.</li>
+          <li>At the end of the activation :
+            <ul>
+                <li>Apply effect and skil trigger "at the end of activation". </li>
+                <li>Test Willpower of all unite whose stress exceeds their Moral value.</li>
+                <li>Check objective control at 3 stride.</li>
+                <li>Some \u201Cat the end of the activation\u201D skills allow
+                other units to activate. Only one of those skills
+                may be used per activation (having priority the
+                player currently activating a unit). It\u2019s effects
+                will be applied after contesting the control of
+                objectives.</li>
+            </ul>
+          </li>
         </ul>
       </li>
       <li>
@@ -1462,16 +1484,18 @@ counter than their rival\u2019s</li>
     </ol>
   `},_1={title:"Test Summary",html:`
     <ol>
-      <li><b>Gather your respective dice.</b> In a ranged attack, the defender cannot use attack dice (red, orange, yellow).</li>
-      <li>If any rule or effect allows you to add dice or forces you to remove them, do it now. This is when states are applied.</li>
+      <li><b>Gather your respective dice.</b> If any rule or effect allows you to add dice or forces you to remove them, do it now. Add character bonus now. In a ranged attack, the defender cannot use attack dice (red, orange, yellow).</li>
+      <li></li>
       <li>If your unit is engaged with more than one enemy unit, you must cancel one die or automatic symbol.</li>
-      <li><b>Roll the dice</b> simultaneously.</li>
+      <li>Second player declare modifiers. Then, first player declare modifiers. </li>
+      <li><b>Roll the dice</b> simultaneously. Apply reroll effect at this step.</li>
       <li><b>Add automatic symbols</b> to your rolls, if any.</li>
+      <li><b>Cancel dice</b> to you rolls, if any.</li>
       <li><b>Active player switches.</b> The player whose activation is in progress may spend as many symbols as they wish to apply any of their available switches for this roll.</li>
       <li><b>Second player switches.</b> Their opponent then has the same opportunity.</li>
       <li><b>Resolution.</b> Cancel as many of your opponent\u2019s <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> as you have remaining <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>. Conversely, your opponent cancels as many of your <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> as they have remaining <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>. Then both players may apply any effects triggered by remaining symbols on their rolls.</li>
       <li>If it is a combat, the unit that suffered the most <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> is the defeated unit and becomes Stressed. It may be forced to retreat (see the "Attack" action).</li>
-      <li>Only at the end of the activation, remove states that have taken effect.</li>
+      <li>Only at the end of the resolution, remove states that have taken effect.</li>
     </ol>
   `},y1={menu:{actions:"Actions",capacites:"Abilities",etats:"State and Token",motsClefs:"Keyword",motsClefsDecors:"Terrain Keyword",resumeTour:"Turn Summary",resumeOpposition:"Test Summary",personnageUnite:"Characters and unit",decors:"Terrain",scenarios:"Scenario",feats:"Feat",teinte:"Tinge",statistique:"Statistics",statistiqueTab:{profil:"My profile",adversaire:"My opponent",apercu:"Overview"},about:"About",privacy:"Privacy Policy"},actions:{simple:"Simple actions",complexe:"Complex actions",reactions:"R\xE9actions"},terrain:{name:"Terrain",keywords:"Keywords",size:"Size"},scenario:{back:"Back",random:"Random",startEncounter:"Start encounter",material:"Required material",duree:{title:"Rounds",detail:"Each round has a duration of ",turn:"turns."},score:{title:"Scoring",detail:"At the end of each round, each compagny obtains : "},end:{title:"End of the game",details:"The game ends at then end of ",rounds:"rounds."}}},w1={title:"Tinge Effects",html:`
     <section>

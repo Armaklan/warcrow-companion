@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1776794807333,
+  "timestamp": 1776799545714,
   "index": "/warcrow-companion/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/warcrow-companion/favicon.ico",
         "/warcrow-companion/index.html",
-        "/warcrow-companion/main-66IYX3PW.js",
+        "/warcrow-companion/main-VTJGZHCJ.js",
         "/warcrow-companion/manifest.webmanifest",
         "/warcrow-companion/styles-YTQJSSAV.css",
         "/warcrow-companion/sw.js"
@@ -138,8 +138,8 @@
     "/warcrow-companion/font/warcrow-font.woff": "ac5f5216953617a262fad13f5f93f991d1040404",
     "/warcrow-companion/font/warcrow-font.woff2": "25430ab82b14d1f39348e2d432d89ee8a471a61c",
     "/warcrow-companion/icon512x512.png": "2263bc54b40060dc98e7429b355b11948a2f84e7",
-    "/warcrow-companion/index.html": "588e36ba7ef5165713e2f654810be50c39481cad",
-    "/warcrow-companion/main-66IYX3PW.js": "018080ab312dcccbed853b74e4ebbcfa172093c6",
+    "/warcrow-companion/index.html": "1e73f0dcea317571edd6471367e908657a0dc952",
+    "/warcrow-companion/main-VTJGZHCJ.js": "1145fc3fe3861998bcbcccd7015c1c4951dcf874",
     "/warcrow-companion/manifest.webmanifest": "6b40a2b30834349c8e789456cee82cac08ed2527",
     "/warcrow-companion/passive.png": "71234049ab49371e33bbc3d69e73875bc056dd34",
     "/warcrow-companion/ralenti.png": "1fc4ea11dd6e53ceb90aadbfbbef19810a6b8ecf",
