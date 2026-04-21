@@ -1,0 +1,4 @@
+import React from 'react';
+export const Black = props => (
+  <svg viewBox="0 0 20 20" width="12px" height="12px" {...props} className={`warcrow-font ${props.className ? props.className : ''}`}><path d="M5.102,-7.594C5.102,-7.594 6.63,-6.062 9.689,-3C9.689,-3 8.158,-1.468 5.1,1.594L0.513,-3C1.024,-3.507 1.785,-4.272 2.801,-5.297C3.815,-6.32 4.582,-7.084 5.102,-7.594ZM0.817,-3.094L5.202,-0.117L9.372,-3.012L5.198,-0.598L0.817,-3.094Z" fillRule="evenodd" /></svg>
+);

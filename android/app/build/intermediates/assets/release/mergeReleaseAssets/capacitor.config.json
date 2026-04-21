@@ -1,0 +1,5 @@
+{
+	"appId": "org.armaklan.companion",
+	"appName": "warcrow-companion",
+	"webDir": "dist/warcrow-companion/browser"
+}

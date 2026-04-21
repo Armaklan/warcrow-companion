@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">warcrow-companion</string>
+    <string name="title_activity_main">warcrow-companion</string>
+    <string name="package_name">org.armaklan.companion</string>
+    <string name="custom_url_scheme">org.armaklan.companion</string>
+</resources>

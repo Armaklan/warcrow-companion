@@ -1,0 +1,2 @@
+org.armaklan.companion.test:style/WhiteBackgroundTheme = 0x7f010001
+org.armaklan.companion.test:style/WhiteBackgroundDialogTheme = 0x7f010000
