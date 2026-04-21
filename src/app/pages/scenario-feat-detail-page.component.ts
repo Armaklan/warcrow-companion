@@ -21,7 +21,7 @@ import { LanguageService } from '../shared/language.service';
     } @else {
       <!-- Bandeau de score au-dessus des onglets -->
       <section class="score-board">
-        <h2>Score</h2>
+        <h2 class="centered-title">{{ scenario.title }} - {{ feat.title }}</h2>
         <div class="players">
           <div class="player p1">
             <div class="player-title">Joueur 1</div>
@@ -69,7 +69,22 @@ import { LanguageService } from '../shared/language.service';
       </section>
 
       <mat-tab-group>
-        <mat-tab [label]="scenario.title">
+        <mat-tab [label]="labels.scenario.tabs.score">
+          <section class="block" *ngIf="scenario.endRoundScoring?.length">
+            <h2>{{ labels.scenario.tabs.scenario }}</h2>
+            <p>{{ labels.scenario.score.detail }}</p>
+            <ul>
+              <li *ngFor="let s of scenario.endRoundScoring">{{ s }}</li>
+            </ul>
+          </section>
+
+          <section class="block" *ngIf="feat.scoring">
+            <h2>{{ labels.scenario.tabs.feat }}</h2>
+            <div class="additionnal" [innerHTML]="feat.scoring"></div>
+          </section>
+        </mat-tab>
+
+        <mat-tab [label]="labels.scenario.tabs.scenario">
           @if (scenario.image) {
             <div class="image-wrapper">
               <img [src]="scenario.image" alt="{{scenario.title}}"/>
@@ -108,7 +123,7 @@ import { LanguageService } from '../shared/language.service';
           }
         </mat-tab>
 
-        <mat-tab [label]="feat.title">
+        <mat-tab [label]="labels.scenario.tabs.feat">
           <section class="block" *ngIf="feat.requiredMaterial?.length">
             <h2>{{ labels.scenario.material }}</h2>
             <ul>
@@ -136,6 +151,7 @@ import { LanguageService } from '../shared/language.service';
     .description :where(p, ul, ol) { line-height: 1.6; }
     .score-board { margin: 8px 0 16px; padding: 12px; border: 1px solid #ddd; border-radius: 12px; }
     .score-board h2 { margin: 0 0 12px; font-size: 20px; }
+    .centered-title { text-align: center; }
     .players { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
     .player { border-radius: 10px; padding: 12px; color: #0d1b2a; }
     .player.p1 { background: #e3f2fd; /* bleu clair */ }

@@ -1229,6 +1229,11 @@ export const LABEL = {
       title: 'Score',
       detail: 'A la fin de chaque round, chaque compagnie obtient : '
     },
+    tabs: {
+      score: 'Score',
+      scenario: 'Scenario',
+      feat: 'Feat'
+    },
     end: {
       title: 'Fin de la partie',
       details: 'La partie se termine au bout de  ',

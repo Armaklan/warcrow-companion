@@ -1196,8 +1196,13 @@ export const LABEL = {
       turn: 'turns.'
     },
     score: {
-      title: 'Scoring',
+      title: 'Score',
       detail: 'At the end of each round, each compagny obtains : '
+    },
+    tabs: {
+      score: 'Score',
+      scenario: 'Scenario',
+      feat: 'Feat'
     },
     end: {
       title: 'End of the game',
