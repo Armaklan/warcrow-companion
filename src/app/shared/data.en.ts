@@ -10,13 +10,15 @@ Remove this state after making a willpower test.</p>`, icon: 'effraye.png'
   {
     title: 'Slowed',
     details: `<b>State</b><p>
-Your unit can only use one of the two MOV values when performing the move and assault
-actions. Additionally, you must subtract 4 strides from your charge movement (up to a minimum
-value of 0). For example, if your unit has movement 3-2 (9), it can only move 3 and can only move 5
-when it charges
+Unit reduces its second
+movement value to “0” and reduces
+its charge movement by “4” (to a
+minimum of “0”).
 </p>
-<p>Remove this state at the end of the activation in which your unit performs the action move, charge
-or assault.</p>`,
+<p>Remove this state after performing
+the move action (including the move
+action that is part of Charge or
+Assault).</p>`,
     icon: 'ralenti.png'
   },
   {
@@ -230,7 +232,7 @@ const MOTS_CLEFS: CollapsibleItem[] = [
         can re-roll all of its attack rolls against the enemy unit
         while engaged with it (in case of a charge, that reroll is
         the same one as the one gained by charging). This effect
-        persists if after a pushback and pursue both units are
+        is retained if, after a pushback and pursue, both units are
         still engaged.</p>
       <p>At the beginning of its activation, the unit can ignore the effects of Bloodlust until the end of its activation by passing a WP test.</p>
     `
@@ -279,6 +281,7 @@ elements.</li>
     details: `
       <p>The target unit must move away from your unit by X strides along a line connecting the centers of both units’ leaders’ bases. This movement does not provoke an opportunity attack.</p>
       <p>If the target unit comes into contact with another unit or an Impassable terrain element during this movement, it stops immediately at that point.</p>
+      <p>Shove value cannot be reduce and must be applied entirely.</p>
     `
   },
   {
@@ -286,6 +289,7 @@ elements.</li>
     details: `
       <p>The target unit must move toward your unit by X strides along a line connecting the centers of both units’ leaders’ bases. This movement does not provoke an opportunity attack.</p>
       <p>If the target unit comes into contact with another unit or an Impassable terrain element during this movement, it stops immediately at that point.</p>
+      <p>Attrack value cannot be reduce and must be applied entirely.</p>
     `
   },
   {
@@ -365,7 +369,7 @@ activation.</p>
     `
   },
   {
-    title: 'Cast a Spell',
+    title: 'Use a magicial skill',
     details: `
       <ol>
         <li>Choose your spell and declare any alterations, then check the casting requirements. If they are not met, you cannot cast the spell.</li>
@@ -374,17 +378,17 @@ activation.</p>
         <li>Declare any alterations that use <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/> and spend it.</li>
         <li>The spellcaster may gain <img src="teint.png" alt="1 Tinge" style="height: 1em; vertical-align: -0.2em;"/> to add one <span class="warcrow-font-Success" role="img" aria-label="Success" ></span>.</li>
         <li>If you roll at least one <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> on the check, apply the spell effects.</li>
+        <li>If the spellcaster has taken Tinge during the casting or the Tinge roll, apply the Tinge effects.</li>
       </ol>
       <p><b>Tinge Roll</b></p>
       <ol>
         <li>Create the Tinge roll: take the number of <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> indicated in the spell’s chosen alterations.</li>
         <li>For each <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> rolled in the Tinge roll, gain one <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>.</li>
-        <li>If the caster has any <img src="teint.png" alt="Tinge" style="height: 1em; vertical-align: -0.2em;"/>, apply the Tinge effects.</li>
       </ol>
     `
   },
   {
-    title: 'Tinge Ability',
+    title: 'Use a Tinge Skill',
     details: `
       <ul>
         <li>Choose your Tinge ability.</li>
@@ -394,7 +398,7 @@ activation.</p>
     `
   },
   {
-    title: 'Use a Skill',
+    title: 'Use a Combat Skill',
     details: `
       <ul>
         <li>Choose your skill and verify that its requirements are met.</li>
@@ -430,7 +434,8 @@ const ACTIONS_COMPLEXES: CollapsibleItem[] = [
       <ul>
         <li>Remove all its stress.</li>
         <li>Remove any state from its profile.</li>
-        <li>Perform a move using only its second MOV value.</li>
+        <li>Remove 1 <img src="teint.png" alt="tinge" style="height: 1em; vertical-align: -0.2em;"/></li>
+        <li>Perform a move using only its first MOV value.</li>
       </ul>
       <p>Even if it has already been activated during this round, the unit does not become stressed when performing this action.</p>
     `
@@ -452,18 +457,33 @@ const ACTIONS_REACTIONS: CollapsibleItem[] = [
     <p>You can declare this reactions when : </p>
     <ul>
         <li>You are the target of a charge or an assault.</li>
-        <li>Your unit has not been activated yet during the current round (it does not have an activation token on its profile).</li>
         <li>Your unit has a LOS toward the ennemy units.</li>
+        <li>You are able to stress.</li>
     </ul>
     <p>In this case, you can follow this step :</p>
     <ul>
-      <li>Place an activation token on the unit’s profile.</li>
+      <li>Stress your unit.</li>
       <li>Make a ranged attack against the enemy unit before it moves. Your unit must meet all the requirements
           to attack at range, except range, as the shot is considered to occur at any time during the chargers path.
           (See “Attacking at Range”).</li>
       <li>Once the ranged attack is resolved, the enemy unit continues with its charge action.</li>
     </ul>
   `
+  },
+  {
+    title: 'Opportunity attack', details: `
+      <p>You can declare this reactions when : </p>
+      <ul>
+          <li>You are engaged with a unit who declare a move action.</li>
+          <li>You are able to stress.</li>
+      </ul>
+      <p>Follow this steps :</p>
+      <ol>
+        <li>Declare your intention and take a stress.</li>
+        <li>Resolve a face to face roll, without apply modifiers and swtich.</li>
+        <li>Then resolve the triggering move action.</li>
+      </ol>
+    `
   },
   {
     title: 'Counterspell', details: `
@@ -559,24 +579,16 @@ const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
     `
   },
   {
-    title: 'Trap',
-    details: `
-      <p>This terrain element has been created by a unit using a skill or spell. Units capable of removing traps can remove this terrain element from the battlefield.</p>
-      <p><b>Placing a Trap</b></p>
-      <p>All units that place a trap must follow these rules:</p>
-      <ul>
-        <li>Unless otherwise specified, a trap element must have a diameter of 6 strides.</li>
-        <li>You cannot place it on top of an Impassable element.</li>
-        <li>Units are not considered terrain elements, so you may place a trap beneath one. Use their current position as reference, lift the units, place the trap underneath, then return the models as close as possible to their original positions.</li>
-      </ul>
-    `
-  },
-  {
     title: 'Sinister (X)',
     details: `
       <p>Units defined by X that are within 4 strides of this terrain element at the start of their activation must pass a WP test or become Stressed.</p>
       <p>X can be the name of a unit, a characteristic, a keyword, or several of these elements (in this case separated by “|”) (see “Characters. Join a Unit” for examples of X). If no value for X is specified, the effect applies to all units.</p>
     `
+  },
+  {
+    title: 'Unstable',
+    details: `<p>Units can move through this terrain element, but they cannot end their movement or be
+        placed on it.</p>`
   },
   {
     title: 'Fog',
@@ -1070,7 +1082,19 @@ const RESUME_TOUR = {
         <ul>
           <li>The unit may perform two different Simple Actions or one Complex Action. The Move action is an exception and may be chosen twice.</li>
           <li>If the unit has already been activated during the round, it becomes Stressed.</li>
-          <li>At the end of the activation, check Objective control.</li>
+          <li>At the end of the activation :
+            <ul>
+                <li>Apply effect and skil trigger "at the end of activation". </li>
+                <li>Test Willpower of all unite whose stress exceeds their Moral value.</li>
+                <li>Check objective control at 3 stride.</li>
+                <li>Some “at the end of the activation” skills allow
+                other units to activate. Only one of those skills
+                may be used per activation (having priority the
+                player currently activating a unit). It’s effects
+                will be applied after contesting the control of
+                objectives.</li>
+            </ul>
+          </li>
         </ul>
       </li>
       <li>
@@ -1109,16 +1133,18 @@ const RESUME_OPPOSITION = {
   title: 'Test Summary',
   html: `
     <ol>
-      <li><b>Gather your respective dice.</b> In a ranged attack, the defender cannot use attack dice (red, orange, yellow).</li>
-      <li>If any rule or effect allows you to add dice or forces you to remove them, do it now. This is when states are applied.</li>
+      <li><b>Gather your respective dice.</b> If any rule or effect allows you to add dice or forces you to remove them, do it now. Add character bonus now. In a ranged attack, the defender cannot use attack dice (red, orange, yellow).</li>
+      <li></li>
       <li>If your unit is engaged with more than one enemy unit, you must cancel one die or automatic symbol.</li>
-      <li><b>Roll the dice</b> simultaneously.</li>
+      <li>Second player declare modifiers. Then, first player declare modifiers. </li>
+      <li><b>Roll the dice</b> simultaneously. Apply reroll effect at this step.</li>
       <li><b>Add automatic symbols</b> to your rolls, if any.</li>
+      <li><b>Cancel dice</b> to you rolls, if any.</li>
       <li><b>Active player switches.</b> The player whose activation is in progress may spend as many symbols as they wish to apply any of their available switches for this roll.</li>
       <li><b>Second player switches.</b> Their opponent then has the same opportunity.</li>
       <li><b>Resolution.</b> Cancel as many of your opponent’s <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> as you have remaining <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>. Conversely, your opponent cancels as many of your <span class="warcrow-font-Success" role="img" aria-label="Success" ></span> as they have remaining <span class="warcrow-font-Block" role="img" aria-label="Block" ></span>. Then both players may apply any effects triggered by remaining symbols on their rolls.</li>
       <li>If it is a combat, the unit that suffered the most <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> is the defeated unit and becomes Stressed. It may be forced to retreat (see the "Attack" action).</li>
-      <li>Only at the end of the activation, remove states that have taken effect.</li>
+      <li>Only at the end of the resolution, remove states that have taken effect.</li>
     </ol>
   `
 };

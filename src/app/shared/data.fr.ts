@@ -10,11 +10,9 @@ const ETATS: CollapsibleItem[] = [
   {
     title: 'Ralenti / Slowed',
     details: `<b>Etat</b><p>
-Votre unité ne peut utiliser que l'un ou l'autre de ses valeurs de mouvements (MOV) lors des actions de mouvement et d’assaut.
-  De plus, vous devez soustraire 4 pas à votre mouvement de charge (min. 0).
+La seconde valeur de mouvement de l'unité est "0". Sa valeur de charge est réduite de 4 (min. 0).
 </p>
-<p><em>Exemple :</em> Si votre unité a un mouvement 3-2 (9), elle ne peut se déplacer que de 3 pas et ne peut charger que jusqu’à 5 pas.</p>
-<p>Retirez cet état à la fin de l’activation durant laquelle votre unité effectue un mouvement, un assaut ou une charge.</p>`,
+<p>Retirez cet état après avoir effectué une action de mouvement (se qui inclue les mouvements dans le cadre d'une charge ou d'un assaut.</p>`,
     icon: 'ralenti.png'
   },
   {
@@ -133,7 +131,7 @@ const MOTS_CLEFS: CollapsibleItem[] = [
     <p>
       Si vous déployez une unité d’Éclaireur après le début de la partie, vous devez l’activer immédiatement et consommer une de vos deux actions pour son activation. Ainsi, elle ne pourra réaliser qu’une seule action, qui ne peut pas être une action complexe.
     </p>
-    <h3>Personnage rejoingnant une unité d'éclaireur</h3>
+    <h3>Personnage rejoignant une unité d'éclaireur</h3>
     <p>Quand un personnage veut rejoindre une unité ayant le mot-clef éclaireur, laissez la figurine en dehors du champs de bataille et placez-là sous l'unité. Quand l'unité est déployé, deployez le personnage avec elle.</p>
     <p>Dans le cas où le personnage à le mot-clef éclaireur et le donne à sun unité, placez également les deux cartes de cotés et déployez les en même temps.</p>
     `
@@ -144,7 +142,8 @@ const MOTS_CLEFS: CollapsibleItem[] = [
       '<span class="warcrow-font-HollowSuccess" role="img" aria-label="Succès Hollow" ></span> par <span class="warcrow-font-Success" role="img" aria-label="succès" ></span>, ' +
       'tout <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> par <span class="warcrow-font-Block" role="img" aria-label="Blockl" ></span>,' +
       ' et tout <span class="warcrow-font-Hollow-Special" role="img" aria-label="Hollow Special" ></span> par <span class="warcrow-font-Special" role="img" aria-label="Special" ></span>. Cet effet s’applique à tous ses jets.</p>' +
-      '<p>Cette règle s\'applique aux tests de VOL, d\'attaque, défense, ainsi qu\'aux effets de compétences ou sort de l\'unité. Cela ne s\'applique pas aux autres tests comme le blocage de sort, la dissipation, ou les tests de teintes.</p>'
+      '<p>Cette règle s\'applique aux tests de VOL, d\'attaque, défense, ainsi qu\'aux effets de compétences ou sort de l\'unité. Cela ne s\'applique pas aux autres tests comme le blocage de sort, la dissipation, ou les tests de teintes.</p>' +
+      '<p>La compétence s`applique avant la prise en compte des états.</p>'
   },
   {
     title: 'Embusqué / Ambusher',
@@ -163,16 +162,15 @@ const MOTS_CLEFS: CollapsibleItem[] = [
       <ul>
         <li>
           À n’importe quel endroit de votre zone de déploiement. Vous pouvez la déployer engagée en combat avec une unité ennemie.
-          Elle est considérée comme ayant chargé, mais l’unité ennemie ne peut pas tenir bon et tirer.
         </li>
         <li>
           N’importe où sur le champ de bataille, sauf dans la zone de déploiement ennemie, et aucune unité ennemie
-          à 10 pas ou moins ne doit avoir de Ligne de Vue (LdV) sur elle.
+          à 12 pas ou moins ne doit avoir de Ligne de Vue (LdV) sur elle.
         </li>
       </ul>
     </li>
     <li>
-      <strong>Activez ensuite votre unité.</strong>
+      <strong>Activez ensuite votre unité.</strong> Durant cette activation, l'unité doit subir un stress si le joueur souhaite effectuer une action longue.
     </li>
   </ul>
   <h3>Personnage rejoingnant une unité d'embusqué</h3>
@@ -221,10 +219,6 @@ const MOTS_CLEFS: CollapsibleItem[] = [
     details: `<ul>
     <li>
       Les unités Massives peuvent traverser les unités qui ne le sont pas.
-    </li>
-    <li>
-      Même engagée en combat, une unité Massive peut charger une autre unité si elle a une Ligne de Vue (LdV)
-      sur elle et peut se déplacer pour l’engager. Ce mouvement de charge peut provoquer une attaque d’opportunité.
     </li>
     <li>
       Seules les autres unités Massives et les décors avec le mot-clé <em>Bloque la LdV</em> bloquent la LdV vers les unités Massives.
@@ -313,6 +307,7 @@ const MOTS_CLEFS: CollapsibleItem[] = [
         Si l’unité ciblée entre en contact avec une unité ou un décor Infranchissable durant ce mouvement,
         celui-ci s’interrompt immédiatement à cet endroit précis.
       </p>
+      <p>La valeur de Bousculer doit être appliqué en entier.</p>
     `
   },
   {
@@ -323,6 +318,7 @@ const MOTS_CLEFS: CollapsibleItem[] = [
         ne provoque pas d’attaque d’opportunité.</p>
       <p>Si l’unité ciblée entre en contact avec une unité ou un décor Infranchissable durant ce mouvement,
         celui-ci s’interrompt immédiatement à cet endroit précis.</p>
+        <p>La valeur d'Attirer doit être appliqué en entier.</p>
     `
   },
   {
@@ -413,19 +409,19 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
         <li>Le lanceur de sort peut recevoir <img src="teint.png" alt="1 teinte" style="height: 1em; vertical-align: -0.2em;"/> pour ajouter un <span class="warcrow-font-Success" role="img" aria-label="succès" ></span></li>
         <li>Si vous obtenez au moins <span class="warcrow-font-Success" role="img" aria-label="succès" ></span> sur le jet, appliquez les effets du sort. </li>
         <li>Si le sort est une réussite et que vous avez déclarez des altérations de teintes, dépensez la.</li>
-        <li>Si le lanceur de sort a déclaré des altérations <span class="warcrow-font-Black" role="img" aria-label="succès" ></span>, faite un test de teinte et subissez les effets de la teinte. Si le lanceur a utilisé de la teinte pour obtenir une réussite, il subit les effets de la teinte.</li>
+        <li>Si le lanceur de sort a déclaré des altérations <span class="warcrow-font-Black" role="img" aria-label="succès" ></span>, faite un test de teinte et subissez les effets de la teinte. </li>
+        <li>Si le lanceur a pris de la teinte durant le lancement ou pendant le test de teinte, appliquez les effets de la teinte.</li>
       </ol>
       <p>Si vous êtes au corps à corps, cette action ne peut cibler que votre unité ou une unité ennemis avec laquelle vous êtes engagée.</p>
       <p>Jet de teinte</p>
       <ol>
         <li>Créez le jet de teinte : prenez <span class="warcrow-font-Black" role="img" aria-label="Black dice" ></span> comme indiqué dans les altérations choisis du sort.</li>
         <li>Pour chaque <span class="warcrow-font-Hollow-Block" role="img" aria-label="Hollow Block" ></span> obtenu au jet de teinte, vous recevez un <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/></li>
-        <li>Appliquez les effets de la teinte.</li>
       </ol>
   `
   },
   {
-    title: 'Capacité de teinte', details: `
+    title: 'Utiliser une compétence de teinte', details: `
       <ul>
         <li>Choisissez votre capacité de teinte.</li>
         <li>Dépensez <img src="teint.png" alt="Teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>
@@ -435,9 +431,9 @@ const ACTIONS_SIMPLES: CollapsibleItem[] = [
   `
   },
   {
-    title: 'Utiliser une compétence', details: `
+    title: 'Utiliser une compétence de combat', details: `
       <ul>
-        <li>Choisissez votre compétence et vérifier que les conditions sont remplis.</li>
+        <li>Choisissez votre compétence de combat et vérifier que les conditions sont remplis.</li>
         <li>Appliquez les effets de la capacité.</li>
     </ul>
     <p>Si vous êtes au corps à corps, cette action ne peut cibler que votre unité ou une unité ennemis avec laquelle vous êtes engagée.</p>
@@ -468,7 +464,8 @@ const ACTIONS_COMPLEXES: CollapsibleItem[] = [
     <ul>
         <li>Eliminer tout son stress.</li>
         <li>Supprimer n'importe quel état de son profil.</li>
-        <li>Effectuer un mouvement en utilisant uniquement sa deuxième valeur de Mouvement.</li>
+        <li>Retirer une <img src="teint.png" alt="teinte" style="height: 1em; vertical-align: -0.2em;"/>.</li>
+        <li>Effectuer un mouvement en utilisant uniquement sa première valeur de Mouvement.</li>
     </ul>
     <p>Même si elle a déjà été activée pendant ce round, l'unité n'est pas stressée en effectuant cette action.</p>
     <p>Une unité ne peut déclarer cette action au corps à corps.</p>
@@ -491,15 +488,31 @@ const ACTIONS_REACTIONS: CollapsibleItem[] = [
     <p>Vous pouvez déclarer cette réaction quand : </p>
     <ul>
         <li>Vous êtes la cible d'une charge ou d'un assaut.</li>
-        <li>Vous n'avez pas été activé durant ce round (pas de marqueur d'activation sur le profile).</li>
         <li>Vous avez une ligne de vue sur l'unité ennemis.</li>
+        <li>Vous êtes en capacité de vous stresser.</li>
     </ul>
     <p>Dans ce cas, suivez les étapes suivantes :</p>
     <ul>
-      <li>Placez un marqueur d'activation sur le profil de l'unité.</li>
+      <li>Prenez un stress.</li>
       <li>Faites une attaque de tir contre l'adversaire avant son mouvement. Tout les pre-requis du tir doivent être remplis, sauf la portée. Le tir est considéré comme
           ayant lieu à n'importe quel moment du trajet adverse. Les variations ne peuvent pas être utilisé durant ce tir.</li>
       <li>Une fois le tir résolu, l'ennemis termine sa charge.</li>
+    </ul>
+  `
+  },
+  {
+    title: 'Attaque d\'opportunité', details: `
+    <p>Vous pouvez déclarer cette réaction quand : </p>
+    <ul>
+        <li>Vous êtes au contact d'une unité énnemis.</li>
+        <li>Cette unité déclare une action de mouvement.</li>
+        <li>Vous êtes en capacité de vous stress.</li>
+    </ul>
+    <p>Dans ce cas, suivez les étapes suivantes :</p>
+    <ul>
+      <li>Prenez un stress.</li>
+      <li>Effectuez un test en opposition. Les joueurs ne peuvent appliquer ni modificiateurs, ni variations.</li>
+      <li>L'unité peut ensuite effectuer son mouvement.</li>
     </ul>
   `
   },
@@ -602,26 +615,6 @@ const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
       les unités.</p>`
   },
   {
-    title: 'Piège / Trap',
-    details: `
-      <p>Ce décor a été créé par une unité utilisant une compétence ou un
-        sort. Les unités capables de supprimer les pièges peuvent retirer
-        ce décor du champ de bataille.
-      </p>
-      <p>
-        Placer un piège
-      </p>
-      <p>Toutes les unités qui placent un piège doivent suivre les règles suivantes :</p>
-      <ul>
-        <li>A moins que ce soit spécifiée, l'élement de piège doit avoir un diamètre de 6 pas.</li>
-        <li>Vous ne pouvez le placer par dessus un élement impassable.</li>
-        <li>Les unités ne sont pas des élements de terrain, vous pouvez donc placer un piège sous l'une d'entre elle.
-        Prenez leur position actuelle comme point de référence, soulevez les unités, et placez le piège en dessous avant
-         de reposer les figurines aussi près que possible de leurs positions initiale.</li>
-      </ul>
-    `
-  },
-  {
     title: 'Sinistre (X) / Sinister',
     details: `<p>
         Les unités définies par X qui se
@@ -640,6 +633,10 @@ const MOTS_CLEFS_DECORS: CollapsibleItem[] = [
         pour X, l’effet s’applique à toutes
         les unités.
         </p>`
+  },
+  {
+    title: "Instable",
+    details: `<p>Les unités peuvent traverser se terrain mais ne peuvent pas terminer leur mouvement, ou être placé, dessus.</p>`
   },
   {
     title: 'Brouillard',
@@ -1029,7 +1026,7 @@ pour obtenir des ressources.</p>
 
   <h3>Obtenir des ressources</h3>
   <p>L’unité effectue un jet simple dont le nombre de dés dépend du nombre de troupes
-dans l’unité (Support inclus). La compagnie avance son compteur
+dans l’unité (Support et officier inclus). La compagnie avance son compteur
 d’une position par <span class="warcrow-font-Success"></span> obtenu.
 Si le compteur est déjà à « 10 », la compagnie fait reculer celui
 de l’adversaire (min. 1) au lieu d’avancer le sien.</p>
@@ -1112,7 +1109,14 @@ const RESUME_TOUR = {
         <ul>
           <li>L'unité peut effectuer 2 actions simples différentes, ou une action longue. L'action de mouvement est une exception et peut être sélectionnée 2 fois.</li>
           <li>Si l'unité a déjà été activée durant le tour, elle est stressée.</li>
-          <li>À la fin de l'activation, vérifiez le contrôle des objectifs.</li>
+          <li>À la fin de l'activation :
+            <ul>
+                <li>Appliquer les effets et compétences "A la fin de l'activation". </li>
+                <li>Tester votre volonté si le stress dépasse votre valeur de Moral.</li>
+                <li>Vérifier le contrôle des objectifs à 3 pas (sauf précision contraire du scénario)</li>
+                <li>Si des effets permettent d'activer une autre unité, un seul de ces effets peut être utilisé (avec priorité au joueur actif).</li>
+            </ul>
+          </li>
         </ul>
       </li>
       <li>
@@ -1151,13 +1155,14 @@ const RESUME_OPPOSITION = {
     title: "Résumé d'un test en opposition",
     html: `
     <ol>
-      <li><b>Rassemblez vos dés respectifs.</b> En cas d'attaque à distance, le défenseur ne peut pas utiliser de dé d'attaque (rouge, orange, jaune).</li>
-      <li>Si une règle ou un effet vous permet d’ajouter des dés ou vous oblige à en retirer, faites-le maintenant. </li>
+      <li><b>Rassemblez vos dés respectifs.</b> Appliquez toutes les règles qui ajoutent ou retirent des dés lors de cet étape. Les bonus apportés par les personnages et attachements s'appliquent à cette étape.
+      En cas d'attaque à distance, le défenseur ne peut pas utiliser de dé d'attaque (rouge, orange, jaune).</li>
       <li>Si plusieurs unités sont en combat contre vous, vous devez retirez 1 dé ou symbole automatique.</li>
       <li>Le joueur défenseur déclare s'il stress son unité pour activer des modificateurs en défense.</li>
       <li>Le joueur actif déclare s'il stress son unit pour activer des modificateurs en attaque.</li>
-      <li><b>Lancez les dés</b> en même temps.</li>
+      <li><b>Lancez les dés</b> en même temps. Si des effets permettent de relancer les dés, faites-le maintenant.</li>
       <li><b>Ajoutez les symboles automatiques</b> à vos jets, s’il y en a.</li>
+      <li><b>Annulez les dés et symboles</b>, selon les effets qui s'appliquent.</li>
       <li><b>Variations du joueur actif.</b> Le joueur dont l’activation est en cours peut dépenser autant de symboles obtenus qu’il souhaite pour appliquer
         autant de ses variations disponibles pour ce jet.</li>
       <li><b>Variation du second joueur. </b>Son adversaire a ensuite la même opportunité.</li>
@@ -1167,7 +1172,7 @@ const RESUME_OPPOSITION = {
         <span class="warcrow-font-Block" role="img" aria-label="Block" ></span> restants. Vous et votre adversaire pouvez alors appliquer les
         effets découlant activés par les symboles restants dans vos jets.</li>
       <li>S'il s'agit d'un combat, l'unité qui a subis le plus de <span class="warcrow-font-Wound" role="img" aria-label="Wound" ></span> est l'unité défaites et devient stressés. Elle peut être forcé au repli (voir action "Attaquer").</li>
-      <li>En fin d'activation seulement, les états qui ont fait effet sont retiré.</li>
+      <li>En fin de résolution seulement, les états qui ont fait effet sont retiré.</li>
     </ol>
   `
   };
